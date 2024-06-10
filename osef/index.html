@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+    <head>
+        <meta charset="utf-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>OSEF</title>
+        <meta name="description" content="PHP framework for creating websites page to page with native codes">
+        <meta name="keywords" content="codes, library, internet">
+        <meta name="author" content="MICHAEL ANDRE FRANIATTE">
+
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+        <link rel="stylesheet" href="../extra/w3.css">
+
+        <link rel="stylesheet" href="../custom/custom.css" />
+
+        <script src="../extra/jquery-3.7.1.min.js"></script>
+
+        <script src="../custom/redirect.js"></script>
+
+    </head>
+
+    <body class onLoad="window_onload()" id="bodymain">
+        <div class="modalaccept">
+            <div class="modalaccept-content">
+                <div>By continuing, you are agree to be a <a target="_blank" class="dl-link" href="https://github.com/sponsors/michaelandrefraniatte"
+                        class="dl-link" target="_blank">sponsor</a>, and you
+                    respect the <a target="_blank" class="dl-link" href="https://github.com/michaelandrefraniatte" class="dl-link" target="_blank"
+                       >copyrights and intellectual properties</a> of owner.</div>
+                <br />
+                <div>
+                    <input type="checkbox" id="acceptbox" name="acceptbox" />
+                    <label for="acceptbox">I'm agree, I respect, and understand.</label>
+                </div><br />
+                <div><button id="acceptbutton">I understand</button></div>
+            </div>
+        </div>
+        <div class="back" id="main">
+            <span aria-label="Copyrights" class="infobulle">&#8505;</span>
+            <span aria-label="Go to top" class="topbtn">▲</span>
+            <div id="banner"><img src="../img/favicon.jpg" />
+                <div id="closebanner">✖</div>
+                <div id="textbanner">By continuing, you are agree to be a <a
+                        href="https://github.com/sponsors/michaelandrefraniatte" class="dl-link" target="_blank"
+                       >sponsor</a>, and you respect the <a
+                        href="https://github.com/michaelandrefraniatte" class="dl-link" target="_blank">copyrights and
+                        intellectual properties</a> of owner.</div>
+                <div id="button1banner">I understand</div>
+                <div id="button2banner">I don't understand</div>
+            </div>
+            <span aria-label="Contact" class="infobulle-contact">&#9742;</span>
+            <div id="banner-contact"><img src="../img/favicon.jpg" />
+                <div id="closebanner-contact">✖</div>
+                <div id="textbanner-contact">If you find something usefull, please contact owner at this email address:
+                    <a href="mailto:michael.franiatte@gmail.com" class="dl-link" 
+                       >michael.franiatte@gmail.com</a>.
+                </div>
+                <div id="buttonbanner-contact">Copy</div>
+            </div>
+
+            <div class="top w3-center">
+                <img class="logo" src="favicon.png" alt="favicon" onclick="clickLogo()">
+                <div class="title colored">
+                    <h2>OSEF</h2>
+                    <h1>Optimized and Simple Enhanced Framework</h1>
+                </div>
+            </div>
+
+            <div class="container">
+
+                <div class="w3-row first-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>PHP Framework for Creating Websites Page to Page with Native
+                                Codes</b></h3>
+                        <p>
+                            I made a prototype framework for coding page to page websites, in order to demonstrate that
+                            native codes are more easy to use, than known frameworks not allowing communication between
+                            front-end and back-end in both ways. Let's see...
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-center row">
+                    <div class="column">
+                        <img src="../img/osef-main.png" alt="codinglibrary-main" style="width:30%;height:auto;"
+                            onclick='img_box("../img/osef-main.png")'>
+                    </div>
+                </div>
+
+                <div class="w3-row second-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Considerations About the Program</b></h3>
+                        <p>
+                            It's more and more difficult to find native codes in web development, because it's more and
+                            more packaged with more and more frameworks. Everybody want to create their own framework,
+                            but they forgive security and optimization, but also developer and user learning. Often it's
+                            just a copy/paste, with bugs and obscelete codes, without taking count of big groups
+                            implemented since the start with amazing tools. I also made a cookie manager with a
+                            particular workout I invented to discharge third party scripts, as a Drupal module to adapt
+                            for osef. I learned a lot always searching the best while coding, like a heavy client
+                            program is like a server, but contrary a web application running on a server must always be
+                            coded in oriented object because only one instance of the program is running on a server,
+                            you must instantiate objects for each functionnalites with everytimes classes, otherwise any
+                            same data is coalescent with other for any user, it's coalescent when variables are declared
+                            as static in class for example, even if you instantiate it as an object. Almost all programs
+                            in the world are coded with foots, even more if it's made by a lot of people, it embed
+                            libraries with big vulnerabilities and hacks, it's made with design patterns for just use
+                            design patterns with none of knowledge, the databases are full of tables full of columns,
+                            it's full of backends, and a frontend lagging as hell, for just 3 functionnalities with tons
+                            of useless lines, unbelievable and inapprehensible, sometimes with no commentaries,
+                            sometimes with functions containing 6000 lines of code, sometimes with projects linked to
+                            other projects, but in same folder for different solutions, and when you reference it, it's
+                            the hell, and everywhere in the world, it's the same bad guys believing to know coding and
+                            the effect of codes, but nothing in fact, and they all winning lot of money, some people
+                            struggle for weeks and weeks on the same problem, while when it takes 2 seconds of lucidity,
+                            and you can't touch their codes to clean a little, they are too lazzy to clean themselves
+                            their codes, thinking it's all good, even if 90% of lines are useless. You can check <a 
+                            href="../directory-showcase/">here</a> to find the right repository with same name.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-row second-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Why IT Companies are Looking but not Finding Talents?</b></h3>
+                        <ul>
+                            <li>Most of employers and employed are believing there are not so much talents, and all
+                                talents are already employed.</li>
+                            <li>It's just employed that don't know coding in fact, and so it's too hard for a true
+                                talent to scum the same and in their codes, so it's scum.</li>
+                            <li>Employed are so noobs that they don't want you return their codes for having good
+                                coding, because they are so scarry and unable to review, and do different (with the true
+                                feelings).</li>
+                            <li>Employed are training themselves with design patterns thinking it's cool and usefull
+                                because they don't know to make simple, and they believe to learn for themselves like
+                                that.</li>
+                            <li>When they doing their own frameworks, and methods, it's a rampage.</li>
+                            <li>They are just good at stealing copyrighted contents and earning money with, but without
+                                found the creators asking founds clearly, and without making any advance, quid helping
+                                the creators.</li>
+                            <li>By making nothing and bad, workers are able to deliver stuffs to employers for
+                                customers, and they not found what they use from indies even if indies are asking
+                                founds.</li>
+                            <li>They making believe to have worked hard and sometimes alone and first on a subject, but
+                                they just have stolen indies.</li>
+                            <li>They believe everything trigger circular reference error, they don't believe you can
+                                add triangular reference. They don't know circular reference is just between two
+                                projects, but it's so badly designed that you are seek to do it.</li>
+                            <li>There are all kinds of saboters and sabotage, you lose your works like never before,
+                                they are too lazy to revert one file commit to help you a little, they revert all your
+                                commit.
+                            </li>
+                            <li>The codes are over written, 10 times too much codes, 10 times too much pages, even more
+                                sometimes, for nothing more than flooded, no commentaries, no documentations, no
+                                contacts with the clients to see clearer, it's a joke.
+                            </li>
+                            <li>When you are experimented and know coding well a program, there are one or two little
+                                features you never coded that appear, but saying that to others in a job will make you
+                                appear as a crazy guy, they will say you don't know what you doing, you are bad at
+                                coding, and everybody will joke at your face, but in fact, who criticize you is badly
+                                unexperimented.
+                            </li>
+                            <li>When you want to push a commit for saving your works of the day, not a realease, you can't,
+                                because they want it all tested and completly working, and sometimes they don't want you repair
+                                an error, and push it in release... It's just because they all don't know to work together.
+                            </li>
+                            <li>Only few experimented developers can know what mean: only use it if you need it.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <footer class="bottom w3-center credits" onclick='window.open("../credits-showcase/", "_blank");'>
+                <img src="../img/favicon.png" />
+                <br>
+                <b class="white">MAF</b>
+                <br>
+                <b class="colored">©1999-2024</b>
+            </footer>
+
+        </div>
+
+    </body>
+
+</html>

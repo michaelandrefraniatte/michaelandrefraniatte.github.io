@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+    <head>
+        <meta charset="utf-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SIGIL</title>
+        <meta name="description" content="HID Competitive Mapper">
+        <meta name="keywords" content="HID, Competitive, Mapper">
+        <meta name="author" content="MICHAEL ANDRE FRANIATTE">
+
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+        <link rel="stylesheet" href="../extra/w3.css">
+
+        <link rel="stylesheet" href="../custom/custom.css" />
+
+        <script src="../extra/jquery-3.7.1.min.js"></script>
+
+        <script src="../custom/redirect.js"></script>
+
+        <script src="https://www.youtube.com/iframe_api"></script>
+
+    </head>
+
+    <body class onLoad="window_onload()" id="bodymain">
+        <div class="modalaccept">
+            <div class="modalaccept-content">
+                <div>By continuing, you are agree to be a <a target="_blank" class="dl-link" href="https://github.com/sponsors/michaelandrefraniatte"
+                        class="dl-link" target="_blank">sponsor</a>, and you
+                    respect the <a target="_blank" class="dl-link" href="https://github.com/michaelandrefraniatte" class="dl-link" target="_blank"
+                       >copyrights and intellectual properties</a> of owner.</div>
+                <br />
+                <div>
+                    <input type="checkbox" id="acceptbox" name="acceptbox" />
+                    <label for="acceptbox">I'm agree, I respect, and understand.</label>
+                </div><br />
+                <div><button id="acceptbutton">I understand</button></div>
+            </div>
+        </div>
+        <div class="back" id="main">
+            <span aria-label="Copyrights" class="infobulle">&#8505;</span>
+            <span aria-label="Go to top" class="topbtn">▲</span>
+            <div id="banner"><img src="../img/favicon.jpg" />
+                <div id="closebanner">✖</div>
+                <div id="textbanner">By continuing, you are agree to be a <a
+                        href="https://github.com/sponsors/michaelandrefraniatte" class="dl-link" target="_blank"
+                       >sponsor</a>, and you respect the <a
+                        href="https://github.com/michaelandrefraniatte" class="dl-link" target="_blank">copyrights and
+                        intellectual properties</a> of owner.</div>
+                <div id="button1banner">I understand</div>
+                <div id="button2banner">I don't understand</div>
+            </div>
+            <span aria-label="Contact" class="infobulle-contact">&#9742;</span>
+            <div id="banner-contact"><img src="../img/favicon.jpg" />
+                <div id="closebanner-contact">✖</div>
+                <div id="textbanner-contact">If you find something usefull, please contact owner at this email address:
+                    <a href="mailto:michael.franiatte@gmail.com" class="dl-link" 
+                       >michael.franiatte@gmail.com</a>.
+                </div>
+                <div id="buttonbanner-contact">Copy</div>
+            </div>
+
+            <div class="top w3-center">
+                <img class="logo" src="sigil.png" alt="sigil" onclick="clickLogo()">
+                <div class="title colored">
+                    <h2>SIGIL</h2>
+                    <h1>StandardInGamingInputLowing</h1>
+                </div>
+            </div>
+
+            <div class="container">
+
+                <div class="w3-row first-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>HID Competitive Mapper</b></h3>
+                        <p>
+                            This program is allowing to have inputs of physical HID (Human Interface Device) and
+                            transfer to outputs of virtual HID for competitive gaming. It's easy to use and the program
+                            use programmable scripting user interface. It's for competitive gaming, there isn't any
+                            cheat like read and write in process memory, so it's not cheating. Let's see...
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-center row">
+                    <div class="column">
+                        <img src="../img/sigil-main.png" alt="sigil-main" width="35%" height="auto"
+                            onclick='img_box("../img/sigil-main.png")'>
+                    </div>
+                </div>
+
+                <div class="w3-row second-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Considerations About the Program</b></h3>
+                        <p>
+                            I imagined this standard way, I named SIGIL (StandardInGamingInputLowing), for using gaming
+                            controllers in all PC games with highest level of optimization, even with lot of HID
+                            handles. You don't need any prerequist, just knowing to read and write some easy
+                            programmable scripts. I'm the only one who pushed to highest level the optimization of HID
+                            interactions in games with SIGIL. To note, for fully working, like setting options, SIGIL
+                            need to run with administrative privilege, and like using launch at PC boot option, you need
+                            to copy all external DLL in folder C:/Windows/System32/ with administrative privilege
+                            (keyboard.dll, mouse.dll, lhidread.dll, rhidread.dll, prohidread.dll,
+                            MotionInputPairing.dll, interception.dll). It need to enable synchronization of Wiimote and
+                            Joycons at script run to automatically connect it, closing SIGIL automatically disconnect
+                            it, other controllers must be wired. SIGIL is like PGM (ProGamingMapper), but fully working,
+                            more optimized, more simple, with more freedom, more HID handles, even data view is handle,
+                            and also HID network data passthrough. You can play in any manner you want, it correspond to
+                            programmable scripts you write, the way you want. Even if you write scripts to automate some
+                            bindings, it's totally not cheating, it's just handles to gaming controllers to play on PC,
+                            for competitive gaming. SIGIL is completely different than Cronus Zen and Titan Two, where
+                            you use uncompatible controllers on closed platforms, which are consoles, like for using
+                            keyboard and mouse to gain an unfair advantage on other players, and where you install
+                            gamepacks dedicated for each game, which detect the weapon you use in FPS, like for adapt
+                            the right anti-recoil, because it enter in game memory for read and write in order to cheat,
+                            like with an aimbot / aim abuse, and so it's not a simple script like everyone are
+                            believing, it's humanizing the cheat, but staying overpowered, far from competitive at all.
+                            Instead Cronus Zen and Titan Two are for cheaters which need even more than aim-assist. Any
+                            noob with any potatoe control can be the strongest with an aimbot / aim abuse, it stay a
+                            overpowered cheat, even using it with banana. For example, there are cheaters using Wiimote
+                            on consoles, and when we watching their gameplays, it look like it's not them playing, it
+                            look so fake, because of their aimbot / aim abuse, otherwise it would not be playable. To
+                            opposite, SIGIL don't require any kind of gamepack, like aimbot / aim abuse, to be a
+                            competitive gamer. Another good example, is that it's possible to have same button with a
+                            little press or a long press for one action or the other, practical when it lack some
+                            buttons on the gaming controller you want to play with. From memory, it's only implemented
+                            by game developers for their own games, not with a script like I did. I'm also the only one
+                            to have found some perfect Wiimote IR cam pointing sensor bar to axis equations. To note,
+                            SIGIL is for x player(s) with any combination possible, but above 2 players Wiimote and
+                            Joycons need to be connected manually to PC with Bluetooth using the Windows tool add
+                            peripherals from control peripherals and printers under control panel, and disconnected
+                            manually obviously after closing SIGIL. SIGIL is my final version among all the programs I
+                            did on gaming controllers for playing all games with no native supports, and it's better,
+                            and very well achieved and complete, better than any other programs and methods you find
+                            everywhere. PGM is not maintained at the expense of SIGIL, because SIGIL do everything
+                            better and more. SIGIL is 15 years of works finalization. To note, for using several times
+                            same controllers, you need each time a new instance with "Scan" function or "Connect"
+                            function having the argument number 1 for first controller, 2 for second controller, etc. I
+                            added the ability to see polling rate and input delay for each library and for each digital
+                            and analogic input and output, for you can test better each library to see what is more
+                            competitive, but also for knowledge. I also added a lot of options and accessibility features. 
+                            The program is located under bin/release folder from the code source folder in the dedicated 
+                            repository. You can check <a href="../directory-showcase/">here</a> to find the right repository with
+                            same name.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-row third-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Illustrating the Program</b></h3>
+                        <div align="center" class="center">
+                            <div class="previous" onclick="plusSlides(-1)">&#10094;</div>
+                            <div id="player"
+                                data-videoid="[QKcel8ent4Q,b6f7C9NgA0U,60TXC_WR36E,YMqS9pyFuSs,LMRJt3TIk-I,ZNH8hJusCSY,Q4FeJ2o_GvY,hJNu2oLuJoY,_CzIjuuG7wI,Zv3cgb-hyNE,GYRA_HNvjdo,r1-YwxOSfP4,zb9suPfuXBs,RnATx_KuEbM,RXujTfVyylk,0ePCuppz5xQ,S9M7jLztNMI,pC00wGksLZY,0rpV6rX3U4A,Ok8iXypPRrk,NvMZPLAhmnA,bqdxP-rVVGI,0TJWIWR3GOY]">
+                                <div class="loader"></div>
+                            </div>
+                            <div class="next" onclick="plusSlides(1)">&#10095;</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <footer class="bottom w3-center credits" onclick='window.open("../credits-showcase/", "_blank");'>
+                <img src="../img/favicon.png" />
+                <br>
+                <b class="white">MAF</b>
+                <br>
+                <b class="colored">©1999-2024</b>
+            </footer>
+
+        </div>
+
+    </body>
+
+</html>
