@@ -52,14 +52,13 @@
         </div>
 
         <copyrights
-            style="display: float; float: right; position: fixed; right: 4px; bottom: 0px; color: white; text-align: center; font-family: sans-serif; font-size: 15px; line-height:15px;">
+            style="display: float; float: right; position: fixed; right: 4px; bottom: 0px; color: white; text-align: center; font-family: sans-serif; font-size: 15px; line-height: 15px; z-index: 1;">
             <b>© MAF</b>
         </copyrights>
 
         <script>
-            images = document.getElementsByTagName('img');
-            // Modal box images
-            var bg_color_img_box = 'rgba(0,0,0,0.9)'
+
+            var bg_color_img_box = 'rgba(0,0,0,0.75)'
             var allow_hide_scroll_img_box = 'no'
             var use_fade_inout_img_box = 'no'
             var speed_img_box = 0.08
@@ -75,6 +74,7 @@
             var imageinc = 0
             var imagearray = []
 
+            // Modal box images
             var crtdv_img_box = document.createElement('div')
             crtdv_img_box.id = 'img_box'
             document.getElementsByTagName('body')[0].appendChild(crtdv_img_box)
@@ -90,6 +90,10 @@
             idpopup_img_box.style.textAlign = 'center'
             idpopup_img_box.style.zIndex = z_index_dv_img_box
             idpopup_img_box.style.backgroundColor = bg_color_img_box
+
+            var images = document.getElementsByTagName('img');
+
+            img_box("../img/ac-1.png");
 
             function img_box(self) {
                 document.getElementsByTagName('html')[0].style.overflowY = 'hidden'
@@ -171,6 +175,7 @@
                     images[3].style.width = '100%';
                 }
             }
+
         </script>
     </body>
 
