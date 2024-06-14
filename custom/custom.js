@@ -175,7 +175,6 @@ var wwin_img_box = window.innerWidth
 var himg_img_box, padtop_img_box, idfadein_img_box
 var img_img_box = new Image()
 
-var imagesource = ''
 var imageinc = 0
 var imagearray = []
 
@@ -196,9 +195,11 @@ idpopup_img_box.style.zIndex = z_index_dv_img_box
 idpopup_img_box.style.backgroundColor = bg_color_img_box
 
 function img_box(self) {
+	if (event.target.parentNode.className == 'card') {
+		imagearray = getNextSiblings(event.target);
+	}
 	document.getElementsByTagName('html')[0].style.overflowY = 'hidden'
 	var namepic_img_box = typeof self === 'string' ? self : self.src
-	imagesource = namepic_img_box
 	vopa_img_box = 0
 	img_img_box.src = namepic_img_box
 	img_img_box.onload = function () {
@@ -241,156 +242,7 @@ function img_box(self) {
 		idpopup_img_box.style.opacity = 1
 	}
 }
-idpopup_img_box.onclick = function () {
-	if (imagesource == 'img/myfavours-main.png' | imagesource == 'img/myfavours-down.png' | imagesource == 'img/myfavours-crash.png' | imagesource == 'img/myfavours-mp4.png') {
-		imagearray = ['img/myfavours-main.png', 'img/myfavours-down.png', 'img/myfavours-crash.png', 'img/myfavours-mp4.png']
-	}
-	else if (imagesource == 'img/localstreamplay-main.png' | imagesource == 'img/localstreamplay-host.png' | imagesource == 'img/localstreamplay-script.png') {
-		imagearray = ['img/localstreamplay-main.png', 'img/localstreamplay-host.png', 'img/localstreamplay-script.png']
-	}
-	else if (imagesource == 'img/faceto-main.png' | imagesource == 'img/faceto-message.png' | imagesource == 'img/faceto-list.png' | imagesource == 'img/faceto-search.png' | imagesource == 'img/faceto-modal.png') {
-		imagearray = ['img/faceto-main.png', 'img/faceto-message.png', 'img/faceto-list.png', 'img/faceto-search.png', 'img/faceto-modal.png']
-	}
-	else if (imagesource == 'img/playmedia-main.png' | imagesource == 'img/playmedia-audio.png' | imagesource == 'img/playmedia-book.png' | imagesource == 'img/playmedia-menu.png') {
-		imagearray = ['img/playmedia-main.png', 'img/playmedia-audio.png', 'img/playmedia-book.png', 'img/playmedia-menu.png']
-	}
-	else if (imagesource == 'img/playtube-main.png' | imagesource == 'img/playtube-menu.png' | imagesource == 'img/playtube-play.png' | imagesource == 'img/playtube-api.png') {
-		imagearray = ['img/playtube-main.png', 'img/playtube-menu.png', 'img/playtube-play.png', 'img/playtube-api.png',]
-	}
-	else if (imagesource == 'img/daynote-main.png' | imagesource == 'img/daynote-2024.png' | imagesource == 'img/daynote-edit.png' | imagesource == 'img/daynote-memento.png') {
-		imagearray = ['img/daynote-main.png', 'img/daynote-2024.png', 'img/daynote-edit.png', 'img/daynote-memento.png']
-	}
-	else if (imagesource == 'img/webviewer-main.png' | imagesource == 'img/webviewer-playaudio-autocompletion.png' | imagesource == 'img/webviewer-playaudio-editoff.png' | imagesource == 'img/webviewer-playaudio.png') {
-		imagearray = ['img/webviewer-main.png', 'img/webviewer-playaudio-autocompletion.png', 'img/webviewer-playaudio-editoff.png', 'img/webviewer-playaudio.png']
-	}
-	else if (imagesource == 'img/otep-checkers.png' | imagesource == 'img/otep-chess.png' | imagesource == 'img/otep-chinese-checkers.png' | imagesource == 'img/otep-othello.png' | imagesource == 'img/otep-power4.png' | imagesource == 'img/frontblock-main.png') {
-		imagearray = ['img/otep-checkers.png', 'img/otep-chess.png', 'img/otep-chinese-checkers.png', 'img/otep-othello.png', 'img/otep-power4.png', 'img/frontblock-main.png']
-	}
-	else if (imagesource == 'img/gamergate-main.png' | imagesource == 'img/gamergate-loop.png' | imagesource == 'img/gamergate-end.png' | imagesource == 'img/gamergate-edit.png') {
-		imagearray = ['img/gamergate-main.png', 'img/gamergate-loop.png', 'img/gamergate-end.png', 'img/gamergate-edit.png']
-	}
-	else if (imagesource == 'img/wiimotetheory-main.png' | imagesource == 'img/wiimotetheory-settings.png') {
-		imagearray = ['img/wiimotetheory-main.png', 'img/wiimotetheory-settings.png']
-	}
-	else if (imagesource == 'img/joyconstheory-main.png' | imagesource == 'img/joyconstheory-settings.png') {
-		imagearray = ['img/joyconstheory-main.png', 'img/joyconstheory-settings.png']
-	}
-	else if (imagesource == 'img/kme-cancelreload.png' | imagesource == 'img/kme-doubleclickreload.png' | imagesource == 'img/kme-keepaimdownsight.png' | imagesource == 'img/kme-mousemovetokeys.png' | imagesource == 'img/kme-pushreload.png' | imagesource == 'img/kme-shockmouse.png' | imagesource == 'img/afasc-main.png') {
-		imagearray = ['img/kme-cancelreload.png', 'img/kme-doubleclickreload.png', 'img/kme-keepaimdownsight.png', 'img/kme-mousemovetokeys.png', 'img/kme-pushreload.png', 'img/kme-shockmouse.png', 'img/afasc-main.png']
-	}
-	else if (imagesource == 'img/playandlisten-client.png' | imagesource == 'img/playandlisten-main.png' | imagesource == 'img/remoteaudio-main.png' | imagesource == 'img/alwaystogether.png') {
-		imagearray = ['img/playandlisten-client.png', 'img/playandlisten-main.png', 'img/remoteaudio-main.png', 'img/alwaystogether.png']
-	}
-	else if (imagesource == 'img/eosresol-main.png' | imagesource == 'img/eosresol-reaction1.png' | imagesource == 'img/eosresol-reaction2.png' | imagesource == 'img/eosresol-reaction3.png') {
-		imagearray = ['img/eosresol-main.png', 'img/eosresol-reaction1.png', 'img/eosresol-reaction2.png', 'img/eosresol-reaction3.png']
-	}
-	else if (imagesource == 'img/pgm-main.png' | imagesource == 'img/pgm-ir.png' | imagesource == 'img/pgm-classic.png' | imagesource == 'img/pgm-extra.png' | imagesource == 'img/sigil-main.png') {
-		imagearray = ['img/pgm-main.png', 'img/pgm-ir.png', 'img/pgm-classic.png', 'img/pgm-extra.png', 'img/sigil-main.png']
-	}
-	else if (imagesource == 'img/presentation-1.png' | imagesource == 'img/presentation-2.png' | imagesource == 'img/presentation-3.png' | imagesource == 'img/presentation-4.png') {
-		imagearray = ['img/presentation-1.png', 'img/presentation-2.png', 'img/presentation-3.png', 'img/presentation-4.png']
-	}
-	else if (imagesource == 'img/onsale-1.png' | imagesource == 'img/onsale-2.png' | imagesource == 'img/onsale-3.png' | imagesource == 'img/onsale-4.png' | imagesource == 'img/bio-pic-main.png' | imagesource == 'img/bio-frog-main.png' | imagesource == 'img/paint-art-main.png' | imagesource == 'img/paint-tile-main.png' | imagesource == 'img/paint-color-main.png') {
-		imagearray = ['img/onsale-1.png', 'img/onsale-2.png', 'img/onsale-3.png', 'img/onsale-4.png', 'img/bio-pic-main.png', 'img/bio-frog-main.png', 'img/paint-art-main.png', 'img/paint-tile-main.png', 'img/paint-color-main.png']
-	}
-	else if (imagesource == 'img/fta-script.png' | imagesource == 'img/fta-keyboard.png' | imagesource == 'img/fta-mouse.png' | imagesource == 'img/fta-controller.png' | imagesource == 'img/wiijoy4fps-main.png') {
-		imagearray = ['img/fta-script.png', 'img/fta-keyboard.png', 'img/fta-mouse.png', 'img/fta-controller.png', 'img/wiijoy4fps-main.png']
-	}
-	else if (imagesource == 'img/bc-router.png' | imagesource == 'img/bc-server.png' | imagesource == 'img/changemac-main.png' | imagesource == 'img/changedns-main.png') {
-		imagearray = ['img/bc-router.png', 'img/bc-server.png', 'img/changemac-main.png', 'img/changedns-main.png']
-	}
-	else if (imagesource == 'img/arva-monitor.png' | imagesource == 'img/arva-main.png') {
-		imagearray = ['img/arva-monitor.png', 'img/arva-main.png']
-	}
-	else if (imagesource == 'img/tt-main.png' | imagesource == 'img/tt-add.png') {
-		imagearray = ['img/tt-main.png', 'img/tt-add.png']
-	}
-	else if (imagesource == 'img/mo-main.png' | imagesource == 'img/mo-xc.png' | imagesource == 'img/chatoverlay-main.png' | imagesource == 'img/mousetrackeroverlay.png') {
-		imagearray = ['img/mo-main.png', 'img/mo-xc.png', 'img/chatoverlay-main.png', 'img/mousetrackeroverlay.png']
-	}
-	else if (imagesource == 'img/encryptedpages-main.png' | imagesource == 'img/pp-main.png' | imagesource == 'img/fastaccess1.png' | imagesource == 'img/fastaccess2.png' | imagesource == 'img/fastaccess3.png' | imagesource == 'img/fastaccess4.png' | imagesource == 'img/fastaccess5.png' | imagesource == 'img/fastaccess6.png' | imagesource == 'img/fastaccess.png') {
-		imagearray = ['img/encryptedpages-main.png', 'img/pp-main.png', 'img/fastaccess1.png', 'img/fastaccess2.png', 'img/fastaccess3.png', 'img/fastaccess4.png', 'img/fastaccess5.png', 'img/fastaccess6.png', 'img/fastaccess.png']
-	}
-	else if (imagesource == 'img/dc-main.png' | imagesource == 'img/dc-managed.png') {
-		imagearray = ['img/dc-main.png', 'img/dc-managed.png']
-	}
-	else if (imagesource == 'img/audiomerger-main.png' | imagesource == 'img/audiospliter-main.png') {
-		imagearray = ['img/audiomerger-main.png', 'img/audiospliter-main.png']
-	}
-	else if (imagesource == 'img/wjp-main.png' | imagesource == 'img/wjr-main.png') {
-		imagearray = ['img/wjp-main.png', 'img/wjr-main.png']
-	}
-	else if (imagesource == 'img/crossair-main.png' | imagesource == 'img/aimsight-main.png') {
-		imagearray = ['img/crossair-main.png', 'img/aimsight-main.png']
-	}
-	else if (imagesource == 'img/cf-main.jpg' | imagesource == 'img/backbone-main.png') {
-		imagearray = ['img/cf-main.jpg', 'img/backbone-main.png']
-	}
-	else if (imagesource == 'img/tv-main.jpg' | imagesource == 'img/raytube-main.png') {
-		imagearray = ['img/tv-main.jpg', 'img/raytube-main.png']
-	}
-	else if (imagesource == 'img/cv-main.png' | imagesource == 'img/profile-main.png' | imagesource == 'img/portfolio-main.png' | imagesource == 'img/soul-controller-main.png') {
-		imagearray = ['img/cv-main.png', 'img/profile-main.png', 'img/portfolio-main.png', 'img/soul-controller-main.png']
-	}
-	else if (imagesource == 'img/texteditor-main.png' | imagesource == 'img/ce-main.png' | imagesource == 'img/enumconstant.png' | imagesource == 'img/configfile.png') {
-		imagearray = ['img/texteditor-main.png', 'img/ce-main.png', 'img/enumconstant.png', 'img/configfile.png']
-	}
-	else if (imagesource == 'img/desktopcapture-main.png' | imagesource == 'img/gameplaycapture-main.png') {
-		imagearray = ['img/desktopcapture-main.png', 'img/gameplaycapture-main.png']
-	}
-	else if (imagesource == 'img/yt-mafvideo.png' | imagesource == 'img/yt-mafstream.png') {
-		imagearray = ['img/yt-mafvideo.png', 'img/yt-mafstream.png']
-	}
-	else if (imagesource == 'img/ss-main.png' | imagesource == 'img/test-gamepad.png' | imagesource == 'img/ms-paint.png' | imagesource == 'img/on-dev-main.png') {
-		imagearray = ['img/ss-main.png', 'img/test-gamepad.png', 'img/ms-paint.png', 'img/on-dev-main.png']
-	}
-	else if (imagesource == 'img/caa-main.png' | imagesource == 'img/webcamoverlay-main.png') {
-		imagearray = ['img/caa-main.png', 'img/webcamoverlay-main.png']
-	}
-	else if (imagesource == 'img/playtov.png' | imagesource == 'img/playto-main.png' | imagesource == 'img/playflix-main.png' | imagesource == 'img/playmount-main.png' | imagesource == 'img/playney-main.png' | imagesource == 'img/playprime-main.png' | imagesource == 'img/playnal-main.png' | imagesource == 'img/playocs.png' | imagesource == 'img/playchy.png' | imagesource == 'img/playhbo.png' | imagesource == 'img/playtf1.png' | imagesource == 'img/playcloud.png' | imagesource == 'img/playther-main.png') {
-		imagearray = ['img/playtov.png', 'img/playto-main.png', 'img/playflix-main.png', 'img/playmount-main.png', 'img/playney-main.png', 'img/playprime-main.png', 'img/playnal-main.png', 'img/playocs.png', 'img/playchy.png', 'img/playhbo.png', 'img/playtf1.png', 'img/playcloud.png', 'img/playther-main.png']
-	}
-	else if (imagesource == 'img/rmoto-main.png' | imagesource == 'img/rmofo-main.png' | imagesource == 'img/rmoso-main.png' | imagesource == 'img/rmopo-main.png' | imagesource == 'img/rmodo-main.png' | imagesource == 'img/rmoco-main.png') {
-		imagearray = ['img/rmoto-main.png', 'img/rmofo-main.png', 'img/rmoso-main.png', 'img/rmopo-main.png', 'img/rmodo-main.png', 'img/rmoco-main.png']
-	}
-	else if (imagesource == 'img/ac-1.png' | imagesource == 'img/ac-2.png' | imagesource == 'img/ac-3.png' | imagesource == 'img/ac-4.png') {
-		imagearray = ['img/ac-1.png', 'img/ac-2.png', 'img/ac-3.png', 'img/ac-4.png']
-	}
-	else if (imagesource == 'img/aimamplifier-main.png' | imagesource == 'img/resizedvision.png' | imagesource == 'img/av-main.png') {
-		imagearray = ['img/aimamplifier-main.png', 'img/resizedvision.png', 'img/av-main.png']
-	}
-	else if (imagesource == 'img/runandgun-main.png' | imagesource == 'img/ciine-main.png' | imagesource == 'img/trax.png' | imagesource == 'img/launcher-main.png' | imagesource == 'img/playandreplay.png') {
-		imagearray = ['img/runandgun-main.png', 'img/ciine-main.png', 'img/trax.png', 'img/launcher-main.png', 'img/playandreplay.png']
-	}
-	else if (imagesource == 'img/stopit-main.png' | imagesource == 'img/fairplay-main.png') {
-		imagearray = ['img/stopit-main.png', 'img/fairplay-main.png']
-	}
-	else if (imagesource == 'img/perfwatch-main.png' | imagesource == 'img/weboverlay-main.png') {
-		imagearray = ['img/perfwatch-main.png', 'img/weboverlay-main.png']
-	}
-	else if (imagesource == 'img/mousecontroltester-main.png' | imagesource == 'img/interceptiontest-main.png') {
-		imagearray = ['img/mousecontroltester-main.png', 'img/interceptiontest-main.png']
-	}
-	else if (imagesource == 'img/playzer.png' | imagesource == 'img/playtify-main.png') {
-		imagearray = ['img/playzer.png', 'img/playtify-main.png']
-	}
-	else if (imagesource == 'img/playcipe.png' | imagesource == 'img/mediatoy.png') {
-		imagearray = ['img/playcipe.png', 'img/mediatoy.png']
-	}
-	else if (imagesource == 'img/testconnection-main.png' | imagesource == 'img/authentication-main.png' | imagesource == 'img/installer-main.png') {
-		imagearray = ['img/testconnection-main.png', 'img/authentication-main.png', 'img/installer-main.png']
-	}
-	else if (imagesource == 'img/nono-main.png' | imagesource == 'img/mastermind-main.png' | imagesource == 'img/gumball-main.png') {
-		imagearray = ['img/nono-main.png', 'img/mastermind-main.png', 'img/gumball-main.png']
-	}
-	else if (imagesource == 'img/eden-main.png' | imagesource == 'img/symposium-main.png') {
-		imagearray = ['img/eden-main.png', 'img/symposium-main.png']
-	}
-	else if (imagesource == 'img/footstepamplifier-main.png' | imagesource == 'img/echoboost.png') {
-		imagearray = ['img/footstepamplifier-main.png', 'img/echoboost.png']
-	}
-	else
-		imagearray = []
+idpopup_img_box.onclick = function (e) {
 	imageinc++
 	if (imageinc >= imagearray.length) {
 		imageinc = 0
@@ -410,6 +262,19 @@ idpopup_img_box.onclick = function () {
 	}
 	else
 		img_box(imagearray[imageinc])
+}
+
+function getNextSiblings(elem) {
+	var result = [];
+	var node = elem.parentNode.firstChild;
+	while (node) {
+		if (node !== this & node.nodeType === Node.ELEMENT_NODE & node.tagName == 'IMG') {
+		  	result.push(node.src);
+			console.log(node.src);
+		}
+		node = node.nextElementSibling || node.nextSibling;
+	}
+	return result;
 }
 
 // Fadeout on new link
