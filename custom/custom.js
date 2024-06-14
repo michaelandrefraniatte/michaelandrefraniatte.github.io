@@ -269,8 +269,7 @@ function getNextSiblings(elem) {
 	var node = elem.parentNode.firstChild;
 	while (node) {
 		if (node !== this & node.nodeType === Node.ELEMENT_NODE & node.tagName == 'IMG') {
-		  	result.push(node.src);
-			console.log(node.src);
+			result.push(node.src);
 		}
 		node = node.nextElementSibling || node.nextSibling;
 	}
