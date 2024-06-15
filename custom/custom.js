@@ -268,10 +268,10 @@ function getNextSiblings(elem) {
 	var result = [];
 	var node = elem.parentNode.firstChild;
 	while (node) {
-		if (node !== this & node.nodeType === Node.ELEMENT_NODE & node.tagName == 'IMG') {
+		if (node.tagName == 'IMG') {
 			result.push(node.src);
 		}
-		node = node.nextElementSibling || node.nextSibling;
+		node = node.nextElementSibling;
 	}
 	return result;
 }
