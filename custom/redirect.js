@@ -23,7 +23,10 @@ addEventListener("focus", (event) => {
 function goToMain() {
 	var target = window.location.href;
 	var ismain = target.endsWith('michaelandrefraniatte.github.io') | target.endsWith('michaelandrefraniatte.github.io/') | target.endsWith('michaelandrefraniatte.github.io/index.html') | target.endsWith('michaelandrefraniatte.github.io/#copyrights') | target.endsWith('michaelandrefraniatte.github.io/#copyrights/') | target.endsWith('michaelandrefraniatte.github.io/index.html/#copyrights');
-	if (!ismain) {
+	if (ismain) {
+		window.location.href = "./#copyrights";
+	}
+	else {
 		window.location.href = "../#copyrights";
 	}
 }
