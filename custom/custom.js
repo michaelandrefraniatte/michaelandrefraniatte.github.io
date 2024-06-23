@@ -32,6 +32,7 @@ function checkingBanner() {
 	var getitem = localStorage.getItem("rgpd");
 	if (getitem == "" | getitem == null | getitem == "undefined" | getitem == "no consent") {
 		openBanner();
+		openBannerContact();
 	}
 	else if (getitem == "consent") {
 		closeBanner();
@@ -332,8 +333,6 @@ function checkAcceptCopyrights() {
 			if (chkBox.checked) {
 				localStorage.setItem("copyrights", "accept");
 				changeVisible();
-				openBanner();
-				openBannerContact();
 				setTimeout(expireAccept, 2000);
 			}
 		};
