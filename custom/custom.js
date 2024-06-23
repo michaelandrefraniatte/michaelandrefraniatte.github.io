@@ -316,7 +316,10 @@ function clickLogo() {
 	}, 1000);
 }
 
-changeVisible();
+var target = window.location.href;
+if (!target.endsWith("/#copyrights")) {
+	changeVisible();
+}
 
 checkAcceptCopyrights();
 
@@ -344,7 +347,11 @@ function expireAccept() {
 
 // Going back and reload with event handler instead of the listener addEventListener("focus", (event) => {});
 onfocus = (event) => {
-	changeVisible();
+	var target = window.location.href;
+	if (!target.endsWith("/#copyrights")) {
+		changeVisible();
+	}
+	checkAcceptCopyrights();
 };
 
 function changeVisible() {
