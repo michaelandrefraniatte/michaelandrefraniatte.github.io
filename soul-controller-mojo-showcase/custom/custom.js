@@ -63,3 +63,9 @@ document.getElementById('slidelabel4').onclick = function(){
 	clearInterval(refreshInterval);
 	refreshInterval = setInterval(slideAuto, 5000);
 }
+
+var btn = document.getElementsByClassName("btn")[0];
+btn.addEventListener('click', () => { 
+	localStorage.setItem("copyrights", "accept");
+	location.href="../soul-controller-airjoy-showcase/";
+}, false);
