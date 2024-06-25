@@ -301,8 +301,6 @@ function newPage(newlocation) {
 
 // Fadout on logo click
 function clickLogo() {
-	$('body').not('#bodymain').removeClass('fadeIn');
-	$('body').not('#bodymain').addClass('fade');
 	$('#main').removeClass('fadeIn');
 	$('#main').addClass('fade');
 	setTimeout(() => {
@@ -357,26 +355,22 @@ onfocus = (event) => {
 function changeVisible() {
 	$('#main').removeClass('fade');
 	$('#main').addClass('fadeIn');
-	setTimeout(() => {
-		modalaccept.style.display = "none";
-		document.getElementsByTagName('html')[0].style.overflowY = 'visible';
-		document.body.style.overflow = 'visible';
-	}, 500);
+	modalaccept.style.display = "none";
+	document.getElementsByTagName('html')[0].style.overflowY = 'visible';
+	document.body.style.overflow = 'visible';
 }
 
 function changeNotVisible() {
 	$('#main').removeClass('fadeIn');
 	$('#main').addClass('fade');
-	setTimeout(() => {
-		modalaccept.style.display = "block";
-		document.getElementsByTagName('html')[0].style.overflowY = "hidden";
-		document.body.style.overflow = 'hidden';
-		var getitem = localStorage.getItem("copyrights");
-		if (getitem == "no accept" | getitem == "expired accept" | localStorage.getItem("rgpd") == "no consent") {
-			var chkBox = document.getElementById('acceptbox');
-			chkBox.checked = true;
-		}
-	}, 500);
+	modalaccept.style.display = "block";
+	document.getElementsByTagName('html')[0].style.overflowY = "hidden";
+	document.body.style.overflow = 'hidden';
+	var getitem = localStorage.getItem("copyrights");
+	if (getitem == "no accept" | getitem == "expired accept" | localStorage.getItem("rgpd") == "no consent") {
+		var chkBox = document.getElementById('acceptbox');
+		chkBox.checked = true;
+	}
 }
 
 // Pagination
