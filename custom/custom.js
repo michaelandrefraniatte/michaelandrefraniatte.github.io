@@ -428,7 +428,7 @@ function processFill() {
 
 function createPlayer(videoid) {
 	var widthsize = 100 + '%';
-	var heightsize = screen.availWidth * 0.355 + 'px';
+	var heightsize = screen.availWidth * 0.4 + 'px';
 	window.YT.ready(function () {
 		Player = new YT.Player("player", {
 			width: widthsize,
