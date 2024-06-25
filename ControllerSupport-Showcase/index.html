@@ -248,8 +248,9 @@
                 <div class="large"><span style="color: grey;">Simulating an Xbox Controller</span></div>
                 <div class="large"><span style="color: grey;">An Expert Way for Aiming in FPS</span></div>
                 <div class="large"><span style="color: grey;">Well Optimized and Adapted for Competition</span></div>
-                <div class="large link"><a href="../WiiJoyPilot/" class="w3-button w3-hover-black"><i
-                            class="fa fa-link"></i></a></div>
+                <div class="large link">
+                    <div class="w3-button w3-hover-black btn1"><i class="fa fa-link"></i></div>
+                </div>
             </div>
         </header>
 
@@ -286,8 +287,9 @@
                 <div class="large"><span style="color: grey;">Simulating a Mouse and Keyboard</span></div>
                 <div class="large"><span style="color: grey;">An Expert Way for Aiming in FPS</span></div>
                 <div class="large"><span style="color: grey;">Well Optimized and Adapted for Competition</span></div>
-                <div class="large link"><a href="../WiiJoyReflex/" class="w3-button w3-hover-black"><i
-                            class="fa fa-link"></i></a></div>
+                <div class="large link">
+                    <div class="w3-button w3-hover-black btn2"><i class="fa fa-link"></i></div>
+                </div>
             </div>
         </header>
 
@@ -332,7 +334,8 @@
 
         <copyrights
             style="display: float; float: right; position: fixed; right: 4px; bottom: 0px; color: gray; text-align: center; font-family: sans-serif; font-size: 15px;">
-            <b>© MAF</b></copyrights>
+            <b>© MAF</b>
+        </copyrights>
 
         <script>
             let slideIndexPilot = 1;
@@ -422,7 +425,7 @@
             }
 
             //External navigation
-            $('a:not(.dl-link)').click(function(event) {
+            $('a:not(.dl-link)').click(function (event) {
                 event.preventDefault();
                 localStorage.setItem("copyrights", "accept");
                 newPage(this.href);
@@ -431,6 +434,22 @@
             function newPage(newlocation) {
                 window.location = newlocation;
             }
+
+        </script>
+
+        <script>
+
+            var btn1 = document.getElementsByClassName("btn1")[0];
+            btn1.addEventListener('click', () => {
+                localStorage.setItem("copyrights", "accept");
+                location.href = "../WiiJoyPilot/";
+            }, false);
+
+            var btn2 = document.getElementsByClassName("btn2")[0];
+            btn2.addEventListener('click', () => {
+                localStorage.setItem("copyrights", "accept");
+                location.href = "../WiiJoyReflex/";
+            }, false);
 
         </script>
 
