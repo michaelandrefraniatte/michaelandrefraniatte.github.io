@@ -2636,3 +2636,9 @@ $('a:not(.dl-link)').click(function(event) {
 function newPage(newlocation) {
     window.location = newlocation;
 }
+
+//Open Article
+function openArticle() {
+	localStorage.setItem("copyrights", "accept");
+	location.href="../EoSArticle-Book/";
+}

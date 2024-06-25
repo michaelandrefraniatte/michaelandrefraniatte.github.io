@@ -211,6 +211,7 @@ function clickLogo() {
     $('body').removeClass('fadeIn');
     $('body').addClass('fade');
     setTimeout(() => {
+        localStorage.setItem("copyrights", "accept");
         window.location.href = "../";
     }, 1000);
 }
@@ -224,3 +225,21 @@ onfocus = (event) => {
 // Fadein at load
 $('body').removeClass('fade');
 $('body').addClass('fadeIn');
+
+// Open CV
+function openCV() {
+	localStorage.setItem("copyrights", "accept");
+	location.href="../cv-book/";
+}
+
+// Open main
+function openMain() {
+	localStorage.setItem("copyrights", "accept");
+	location.href="../";
+}
+
+// Open thesis
+function openThesis() {
+	localStorage.setItem("copyrights", "accept");
+	location.href="../Thesis-Book/";
+}

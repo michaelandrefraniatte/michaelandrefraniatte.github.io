@@ -26,14 +26,12 @@ body {
     font-size: 1.5rem;
 }
 
-a {
+.btn {
     color: #FFFFFF;
-    border-bottom: 0.15rem solid white;
 }
 
-a:hover {
+.btn:hover {
     color: #0063ff;
-    border-bottom: 0.15rem solid #0063ff;
 }
 
 .button {
