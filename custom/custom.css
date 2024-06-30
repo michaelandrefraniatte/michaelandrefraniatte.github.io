@@ -431,7 +431,7 @@ label {
 .previous {
     position: relative;
     display: block;
-    color: white;
+    color: rgb(180, 180, 180);
     font-size: 3rem;
     cursor: pointer;
     height: 100%;
