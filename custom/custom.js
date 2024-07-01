@@ -324,8 +324,7 @@ checkAcceptCopyrights();
 
 function checkAcceptCopyrights() {
 	var target = window.location.href;
-	var ismain = target.endsWith('michaelandrefraniatte.github.io') | target.endsWith('michaelandrefraniatte.github.io/') | target.endsWith('michaelandrefraniatte.github.io/index.html') | target.endsWith('michaelandrefraniatte.github.io/#copyrights') | target.endsWith('michaelandrefraniatte.github.io/#copyrights/') | target.endsWith('michaelandrefraniatte.github.io/index.html/#copyrights');
-	if (target.endsWith("/#copyrights") | ismain) {
+	if (target.endsWith("/#copyrights")) {
 		changeNotVisible();
 		document.getElementById("acceptbutton").onclick = async () => {
 			var chkBox = document.getElementById('acceptbox');
