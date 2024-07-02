@@ -282,20 +282,13 @@ var modalaccept = document.getElementsByClassName("modalaccept")[0];
 
 $('a:not(.dl-link)').click(function (event) {
 	event.preventDefault();
-	changeNotVisible();
-	document.getElementById("acceptbutton").onclick = async () => {
-		var chkBox = document.getElementById('acceptbox');
-		if (chkBox.checked) {
-			localStorage.setItem("copyrights", "accept");
-			modalaccept.style.display = "none";
-			document.getElementsByTagName('html')[0].style.overflowY = 'visible';
-			document.body.style.overflow = 'visible';
-			newPage(this.href);
-		}
-	};
+	$('#main').removeClass('fadeIn');
+	$('#main').addClass('fade');
+	setTimeout(() => { newPage(this.href) }, 1000);
 });
 
 function newPage(newlocation) {
+	localStorage.setItem("copyrights", "accept");
 	window.location = newlocation;
 }
 
