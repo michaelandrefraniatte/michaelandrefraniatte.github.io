@@ -1,0 +1,319 @@
+<!--
+• Author: Michaël André Franiatte.
+• Contact: michael.franiatte@gmail.com.
+• Publisher: https://github.com/michaelandrefraniatte.
+• Copyrights: All rights reserved, no permissions granted.
+• License: Not open source, not free of charge to use.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+
+    <head>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TVP9X48X');</script>
+        <meta charset="utf-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>EoS</title>
+        <meta name="description" content="EoS Article">
+        <meta name="keywords" content="eos, article">
+        <meta name="author" content="MICHAEL ANDRE FRANIATTE">
+
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+        <link rel="stylesheet" href="../extra/w3.css">
+
+        <link rel="stylesheet" href="../custom/custom.css" />
+
+        <script src="../extra/jquery-3.7.1.min.js"></script>
+
+        <script src="../custom/redirect.js"></script>
+
+    </head>
+
+    <body class onLoad="window_onload()" id="bodymain">
+        <span class="backloader"></span>
+        <div class="modalaccept">
+            <div class="modalaccept-content">
+                <div>By continuing, you are agree to contact, quote and pay author, and you respect <a href="https://github.com/michaelandrefraniatte">the copyrights and the license of author</a>. You may not distribute, reproduce, copy, modify or create derivative works from work of author. Author retains all rights on his source codes.</div>
+                <br />
+                <div>
+                    <input type="checkbox" id="acceptbox" name="acceptbox" />
+                    <label for="acceptbox">I'm agree, I respect and understand.</label>
+                </div><br />
+                <div><button id="acceptbutton">I understand</button></div>
+            </div>
+        </div>
+        <div class="back" id="main">
+            <span aria-label="Copyrights" class="infobulle">&#8505;</span>
+            <span aria-label="Go to top" class="topbtn">▲</span>
+            <div id="banner"><img src="../img/favicon.jpg" alt="© MAF" />
+                <div id="closebanner">✖</div>
+                <div id="textbanner">By continuing, you are agree to contact, quote and pay author, and you respect <a href="https://github.com/michaelandrefraniatte">the copyrights and the license of author</a>. You may not distribute, reproduce, copy, modify or create derivative works from work of author. Author retains all rights on his source codes.</div>
+                <div id="button1banner">I understand</div>
+                <div id="button2banner">I don't understand</div>
+            </div>
+            <span aria-label="Contact" class="infobulle-contact">&#9742;</span>
+            <div id="banner-contact"><img src="../img/favicon.jpg" alt="© MAF" />
+                <div id="closebanner-contact">✖</div>
+                <div id="textbanner-contact">If you find something usefull, please contact author at this email address:
+                    <a href="mailto:michael.franiatte@gmail.com" class="dl-link">michael.franiatte@gmail.com</a>.
+                </div>
+                <div id="buttonbanner-contact">Copy</div>
+            </div>
+
+            <div class="top w3-center">
+                <img class="logo" src="guide.png" alt="guide" onclick="clickLogo()" title="https://michaelandrefraniatte.github.io">
+                <div class="title colored">
+                    <h2>Guide</h2>
+                    <h1>EoS</h1>
+                </div>
+            </div>
+
+            <div class="container">
+
+                <div class="w3-row first-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Molecular Gas–Liquid Symmetry in a Self-Open Closed System:<br> a New Vision of Phase Equilibria</b></h3>
+                        <p>
+                            In conventional thermodynamics, the equilibrium between liquid and gas phases is determined by chemical potentials, leading to 
+                            unequal distributions of molecules between phases and a density hierarchy where liquids are generally denser than gases. In this 
+                            work, we propose an alternative framework in which a closed system, defined as “open on itself,” exhibits a molecular symmetry: 
+                            for a given constituent, the number of molecules in the gas phase equals that in the liquid phase. This assumption implies that 
+                            the system is intrinsically half gas and half liquid, challenging the traditional view of phase coexistence. Within this model, 
+                            the density of the gas phase can exceed that of the liquid phase, a result that diverges from classical equations of state such 
+                            as Van der Waals or Peng–Robinson. The proposed approach, implemented in the EoSResol framework, opens new perspectives for the 
+                            modeling of complex fluids, equilibrium studies, and potentially prebiotic chemistry, where unconventional phase behaviors may 
+                            have played a role in molecular synthesis.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-row first-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Introduction</b></h3>
+                        <p>
+                            The study of phase equilibria between liquid and gas has long relied on classical thermodynamic frameworks and equations of 
+                            state. Since the pioneering work of Van der Waals, models have sought to capture the coexistence of phases by introducing 
+                            intermolecular interactions and volume corrections. Later refinements, such as the Peng–Robinson and Soave–Redlich–Kwong 
+                            equations, provided improved accuracy for engineering applications, particularly in hydrocarbon systems. In these approaches, 
+                            the equilibrium distribution of molecules between liquid and gas phases is determined by the equality of chemical potentials, 
+                            leading to unequal proportions of molecules in each phase. Moreover, the density hierarchy is preserved: liquids are consistently 
+                            denser than gases under equilibrium conditions, except in the vicinity of the critical point where the distinction between phases 
+                            vanishes.
+                        </p>
+                        <p>
+                            Despite their success, classical equations of state remain constrained by these assumptions. They do not account for alternative 
+                            symmetries or unconventional distributions of molecules between phases. In particular, the notion that a system could contain 
+                            equal numbers of molecules in liquid and gas phases for a given constituent has not been explored within mainstream thermodynamics. 
+                            Such a hypothesis challenges the conventional hierarchy of densities and opens the possibility that gas could, under certain 
+                            conditions, be denser than liquid.
+                        </p>
+                        <p>
+                            In this work, we introduce a novel framework, implemented in the EoSResol model, in which a closed system—defined as 
+                            “open on itself”—exhibits molecular symmetry between phases. For each constituent, the number of molecules in the gas phase 
+                            equals that in the liquid phase, implying that the system is intrinsically half gas and half liquid. This redefinition of 
+                            equilibrium leads to unconventional predictions, including the inversion of density relationships between phases. By contrasting 
+                            this approach with classical models, we aim to highlight its potential implications for the study of complex fluids, equilibrium 
+                            thermodynamics, and prebiotic chemistry, where non-standard phase behaviors may have played a role in molecular synthesis.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-row first-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Methodology / Model (EoSResol)</b></h3>
+                        <p>
+                            The proposed framework, referred to as EoSResol, redefines the equilibrium between liquid and gas phases by introducing a 
+                            principle of molecular symmetry. Unlike classical equations of state, which determine phase coexistence through minimization 
+                            of Gibbs free energy and equality of chemical potentials, EoSResol assumes that for each constituent in a closed system, 
+                            the number of molecules in the gas phase equals that in the liquid phase. This leads to a system that is intrinsically half 
+                            gas and half liquid.
+                        </p>
+                        <p>
+                            The model (EoSResol) can define and correlate all PVTX data. From fugacities calculate with the model, defining equilibrium and 
+                            reaction constants, lead to predict concentrations and synthesis of any molecule. The redistribution of molecules between liquid 
+                            and gas phases result from the model to fit all experimental measures with a strong accuracy.
+                        </p>
+                        <p>
+                            As example, Earth is a closed system, where atmosphere and ocean are self-open because in same Earth system. Water deeply in ocean 
+                            isn't frozen because of the phase redistribution equilibrium traduced by the model (EoSResol). The theory is implying a liquid has 
+                            a density always equal to 1 g/cm<sup>3</sup> and a gas has a density above or under this density for a given constituent. The 
+                            experimental measures is giving reason to the theory behind the model (EoSResol) depending of the experimental protocoles as describe 
+                            in the next chapter.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-row first-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Definition of the System</b></h3>
+                        <p>
+                            Closed but Self-Open System:<br>
+                            The system is closed with respect to external exchanges, yet internally “open on itself,” 
+                            allowing dynamic redistribution of molecules between phases.
+                        </p>
+                        <p>
+                            Constituent Symmetry:<br>
+                            For a given species 𝑖, the number of molecules in the gas phase 𝑁𝑖𝑔 equals that in the liquid phase 𝑁𝑖𝑙:<br>
+                            𝑁𝑖𝑔 = 𝑁𝑖𝑙
+                        </p>
+                        <p>
+                            Global Balance:<br>
+                            𝑁𝑖𝑡𝑜𝑡 = 𝑁𝑖𝑔 + 𝑁𝑖𝑙 = 2𝑁𝑖𝑔
+                        </p>
+                        <p>
+                            Types of Measure:<br>
+                            𝘝𝑖𝑡𝑜𝑡 / 𝘕𝑖𝑡𝑜𝑡,<br>
+                            𝘝𝑖𝑔 / 𝘕𝑖𝑔,<br>
+                            𝘝𝑖𝑔 / 𝘕𝑖𝑡𝑜𝑡
+                        </p>
+                        <p>
+                            Density Redefinition:<br>
+                            In EoSResol, density is reinterpreted as a function of molecular distribution and phase symmetry. This allows the gas phase 
+                            to exhibit higher density than the liquid phase under certain conditions, breaking the conventional hierarchy.
+                        </p>
+                        <p>
+                            Equation of State Formulation:<br>
+                            Equilibrium is defined by the constraint of equal molecular numbers across phases rather than by free energy minimization. This 
+                            leads to unconventional predictions, such as inverted density relations and stable coexistence at non-classical conditions.
+                        </p>
+                        <p>
+                            Implementation:<br>
+                            The framework is implemented in the EoSResol computational tool, available online. Numerical simulations demonstrate the coexistence 
+                            of phases under the symmetry constraint, highlighting cases where gas density surpasses liquid density.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-row first-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Results and Discussion</b></h3>
+                        <p>
+                            Symmetry and Coexistence:<br>
+                            EoSResol predicts a constant 50/50 distribution of molecules between liquid and gas phases, independent of external conditions. 
+                            This contrasts with classical models, where proportions vary with pressure and temperature.
+                        </p>
+                        <p>
+                            Density Inversion:<br>
+                            Simulations reveal conditions where gas density exceeds liquid density. This inversion is a direct consequence of the symmetry 
+                            constraint and redefinition of density.
+                        </p>
+                        <p>
+                            Comparison with Classical Models:<br>
+                            Van der Waals: unequal molecular distributions, preserved density hierarchy.<br>
+                            Peng–Robinson: improved accuracy but same assumptions.<br>
+                            EoSResol: equal molecular numbers, density inversion possible.<br>
+                        </p>
+                        <p>
+                            Implications:<br>
+                            Complex fluids: potential relevance in systems with strong interactions.<br>
+                            Prebiotic chemistry: unconventional phase behaviors may have influenced molecular synthesis.<br>
+                            Astrophysics: extreme conditions could favor density inversion.<br>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="w3-row first-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Works Supplied with the Model (EoSResol)</b></h3>
+                        <p>
+                            Synthesis:<br>
+                            A method have been find to determine the concentration of molecules in the fluid modelized. The accuracy of fugacities 
+                            has been proove with experiments by synthetizing experimentally a big number of type CHON molecules coming from the model 
+                            and this method. Ractions are as well modelized.
+                        </p>
+                        <p>
+                            Organic Chemistry:<br>
+                            It's possible to modelize results in organuc chemistry for complexe molecules and find a better direct ways for same results.
+                        </p>
+                        <p>
+                            Pressure Control:<br>
+                            Controlling pressure is an important role in chemistry for security and the behaviour of gases in industry. With the model, the 
+                            control is total. Also in instrumentation.
+                        </p>
+                        <p>
+                            Geostatistic:<br>
+                            Atmosphere and Ocean has never been such as well modelized with EoSResol, and for research in extraterestrial planet and life, 
+                            it's of primary importance.
+                        </p>
+                        <p>
+                            Osmosis Pressure:<br>
+                            The model can determine why from each side of a membrance the volumes of liquid are differents, and the exact quantity, disguarding 
+                            chemical potential.
+                        </p>
+                        <p>
+                            Electrochemical Potential:<br>
+                            From every accurate data the model can determine at any pressure and any temperature Eh-Ph equilibrium are well determined for complex 
+                            and innovative production and in such environement.
+                        </p>
+                        <p>
+                            Geology:<br>
+                            Fluids are playing an important role in geology. Determining with accuracy dissolution and precipitation in a stable environement is very 
+                            important to predict and localize ressources.
+                        </p>
+                        <p>
+                            Accurate Data:<br>
+                            To date, no unified data exist. Only from EoSResol model, the data are accurate and can extrapolate data with no experiments. The model is 
+                            of importance in a lot of domains.
+                        </p>
+                        <p>
+                            Extraterestrial:<br>
+                            Research outside Earth is asking to know where to forward measuring tools. So expensive researches are targeting a place. The knowledge of 
+                            floor and subterrains is primordial. EoSResol Model with Mars data is a good proof of concept to explore further planets.
+                        </p>
+                        <p>
+                            Unknown Systems:<br>
+                            With all kinds of drilling, without accurate data, measures are not consistent. The behaviour of every fluids and the stability state of bedrocks 
+                            need very accurate data to understand what is going on.
+                        </p>
+                        <p>
+                            Universe:<br>
+                            Exploring Universe is more easy when understanding better what happen on Earth. Without the need of expensive experiments, and correlating everything 
+                            with accuracy we can understand better the Universe.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-row first-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Conclusion</b></h3>
+                        <p>
+                            This work introduces a novel framework for phase equilibrium, implemented in the EoSResol model, based on the principle of 
+                            molecular symmetry between liquid and gas phases. By assuming that for each constituent the number of molecules in the gas 
+                            phase equals that in the liquid phase, the system is intrinsically half gas and half liquid. This redefinition of equilibrium 
+                            leads to unconventional predictions, including the possibility of gas being denser than liquid, a result that diverges fundamentally 
+                            from classical thermodynamic models.
+                        </p>
+                        <p>
+                            The implications of this approach are significant. It challenges the traditional hierarchy of densities and opens new perspectives 
+                            for the modeling of complex fluids, prebiotic chemistry, and astrophysical systems. Future work will focus on experimental 
+                            validation and numerical simulations to test the predictions of EoSResol against real systems. Ultimately, this symmetry-based 
+                            framework invites a reconsideration of the foundations of phase equilibrium and offers a new lens through which to explore the 
+                            diversity of fluid behaviors in nature and technology.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <footer class="bottom w3-center">
+                <img src="../img/favicon.png" alt="© MAF" />
+                <br>
+                <b class="date">1979</b>
+                <br>
+                <b class="white">© MAF</b>
+            </footer>
+
+        </div>
+
+    
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC469PC35"></script>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVP9X48X"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    </body>
+
+</html>

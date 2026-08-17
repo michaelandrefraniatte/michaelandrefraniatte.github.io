@@ -1,0 +1,300 @@
+﻿<!--
+• Author: Michaël André Franiatte.
+• Contact: michael.franiatte@gmail.com.
+• Publisher: https://github.com/michaelandrefraniatte.
+• Copyrights: All rights reserved, no permissions granted.
+• License: Not open source, not free of charge to use.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+
+    <head>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TVP9X48X');</script>
+
+        <meta charset="utf-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="MICHAEL ANDRE FRANIATTE">
+
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+        <title>slider-tile by michael franiatte</title>
+
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+        <script src="../extra/jquery-3.7.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <script src="../custom/redirect.js"></script>
+
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            body {
+                background: url("img/wallpaper2.jpg") no-repeat center center fixed;
+                background-size: cover;
+                overflow: hidden;
+            }
+
+            div {
+                display: float;
+                float: left;
+                width: 10vw;
+                height: 10vh;
+                background-color: green;
+                padding: 0;
+                margin: 0;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .rotate {
+                animation: rotate 1s 1 alternate ease-out forwards;
+            }
+
+            @keyframes rotate {
+                0% {
+                    opacity: 1;
+                    transform: rotateY(0deg);
+                }
+
+                99% {
+                    opacity: 0;
+                    transform: rotateY(90deg);
+                }
+
+                100% {
+                    opacity: 0;
+                    transform: rotateY(0deg);
+                }
+            }
+
+            .notrotate {
+                animation: notrotate 1s 1 alternate ease-out forwards;
+                opacity: 1;
+                transform: rotateY(0deg);
+            }
+
+            @keyframes notrotate {
+                0% {
+                    opacity: 0;
+                    transform: rotateY(90deg);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: rotateY(0deg);
+                }
+            }
+            
+            body.preload *{
+                animation-duration: 0s !important;
+                -webkit-animation-duration: 0s !important;
+                transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
+            }
+
+        </style>
+    </head>
+
+    <body class="preload">
+        <div class="notrotate"><img src="img/tile_000.jpg"></div>
+        <div class="notrotate"><img src="img/tile_001.jpg"></div>
+        <div class="notrotate"><img src="img/tile_002.jpg"></div>
+        <div class="notrotate"><img src="img/tile_003.jpg"></div>
+        <div class="notrotate"><img src="img/tile_004.jpg"></div>
+        <div class="notrotate"><img src="img/tile_005.jpg"></div>
+        <div class="notrotate"><img src="img/tile_006.jpg"></div>
+        <div class="notrotate"><img src="img/tile_007.jpg"></div>
+        <div class="notrotate"><img src="img/tile_008.jpg"></div>
+        <div class="notrotate"><img src="img/tile_009.jpg"></div>
+        <div class="notrotate"><img src="img/tile_010.jpg"></div>
+        <div class="notrotate"><img src="img/tile_011.jpg"></div>
+        <div class="notrotate"><img src="img/tile_012.jpg"></div>
+        <div class="notrotate"><img src="img/tile_013.jpg"></div>
+        <div class="notrotate"><img src="img/tile_014.jpg"></div>
+        <div class="notrotate"><img src="img/tile_015.jpg"></div>
+        <div class="notrotate"><img src="img/tile_016.jpg"></div>
+        <div class="notrotate"><img src="img/tile_017.jpg"></div>
+        <div class="notrotate"><img src="img/tile_018.jpg"></div>
+        <div class="notrotate"><img src="img/tile_019.jpg"></div>
+        <div class="notrotate"><img src="img/tile_020.jpg"></div>
+        <div class="notrotate"><img src="img/tile_021.jpg"></div>
+        <div class="notrotate"><img src="img/tile_022.jpg"></div>
+        <div class="notrotate"><img src="img/tile_023.jpg"></div>
+        <div class="notrotate"><img src="img/tile_024.jpg"></div>
+        <div class="notrotate"><img src="img/tile_025.jpg"></div>
+        <div class="notrotate"><img src="img/tile_026.jpg"></div>
+        <div class="notrotate"><img src="img/tile_027.jpg"></div>
+        <div class="notrotate"><img src="img/tile_028.jpg"></div>
+        <div class="notrotate"><img src="img/tile_029.jpg"></div>
+        <div class="notrotate"><img src="img/tile_030.jpg"></div>
+        <div class="notrotate"><img src="img/tile_031.jpg"></div>
+        <div class="notrotate"><img src="img/tile_032.jpg"></div>
+        <div class="notrotate"><img src="img/tile_033.jpg"></div>
+        <div class="notrotate"><img src="img/tile_034.jpg"></div>
+        <div class="notrotate"><img src="img/tile_035.jpg"></div>
+        <div class="notrotate"><img src="img/tile_036.jpg"></div>
+        <div class="notrotate"><img src="img/tile_037.jpg"></div>
+        <div class="notrotate"><img src="img/tile_038.jpg"></div>
+        <div class="notrotate"><img src="img/tile_039.jpg"></div>
+        <div class="notrotate"><img src="img/tile_040.jpg"></div>
+        <div class="notrotate"><img src="img/tile_041.jpg"></div>
+        <div class="notrotate"><img src="img/tile_042.jpg"></div>
+        <div class="notrotate"><img src="img/tile_043.jpg"></div>
+        <div class="notrotate"><img src="img/tile_044.jpg"></div>
+        <div class="notrotate"><img src="img/tile_045.jpg"></div>
+        <div class="notrotate"><img src="img/tile_046.jpg"></div>
+        <div class="notrotate"><img src="img/tile_047.jpg"></div>
+        <div class="notrotate"><img src="img/tile_048.jpg"></div>
+        <div class="notrotate"><img src="img/tile_049.jpg"></div>
+        <div class="notrotate"><img src="img/tile_050.jpg"></div>
+        <div class="notrotate"><img src="img/tile_051.jpg"></div>
+        <div class="notrotate"><img src="img/tile_052.jpg"></div>
+        <div class="notrotate"><img src="img/tile_053.jpg"></div>
+        <div class="notrotate"><img src="img/tile_054.jpg"></div>
+        <div class="notrotate"><img src="img/tile_055.jpg"></div>
+        <div class="notrotate"><img src="img/tile_056.jpg"></div>
+        <div class="notrotate"><img src="img/tile_057.jpg"></div>
+        <div class="notrotate"><img src="img/tile_058.jpg"></div>
+        <div class="notrotate"><img src="img/tile_059.jpg"></div>
+        <div class="notrotate"><img src="img/tile_060.jpg"></div>
+        <div class="notrotate"><img src="img/tile_061.jpg"></div>
+        <div class="notrotate"><img src="img/tile_062.jpg"></div>
+        <div class="notrotate"><img src="img/tile_063.jpg"></div>
+        <div class="notrotate"><img src="img/tile_064.jpg"></div>
+        <div class="notrotate"><img src="img/tile_065.jpg"></div>
+        <div class="notrotate"><img src="img/tile_066.jpg"></div>
+        <div class="notrotate"><img src="img/tile_067.jpg"></div>
+        <div class="notrotate"><img src="img/tile_068.jpg"></div>
+        <div class="notrotate"><img src="img/tile_069.jpg"></div>
+        <div class="notrotate"><img src="img/tile_070.jpg"></div>
+        <div class="notrotate"><img src="img/tile_071.jpg"></div>
+        <div class="notrotate"><img src="img/tile_072.jpg"></div>
+        <div class="notrotate"><img src="img/tile_073.jpg"></div>
+        <div class="notrotate"><img src="img/tile_074.jpg"></div>
+        <div class="notrotate"><img src="img/tile_075.jpg"></div>
+        <div class="notrotate"><img src="img/tile_076.jpg"></div>
+        <div class="notrotate"><img src="img/tile_077.jpg"></div>
+        <div class="notrotate"><img src="img/tile_078.jpg"></div>
+        <div class="notrotate"><img src="img/tile_079.jpg"></div>
+        <div class="notrotate"><img src="img/tile_080.jpg"></div>
+        <div class="notrotate"><img src="img/tile_081.jpg"></div>
+        <div class="notrotate"><img src="img/tile_082.jpg"></div>
+        <div class="notrotate"><img src="img/tile_083.jpg"></div>
+        <div class="notrotate"><img src="img/tile_084.jpg"></div>
+        <div class="notrotate"><img src="img/tile_085.jpg"></div>
+        <div class="notrotate"><img src="img/tile_086.jpg"></div>
+        <div class="notrotate"><img src="img/tile_087.jpg"></div>
+        <div class="notrotate"><img src="img/tile_088.jpg"></div>
+        <div class="notrotate"><img src="img/tile_089.jpg"></div>
+        <div class="notrotate"><img src="img/tile_090.jpg"></div>
+        <div class="notrotate"><img src="img/tile_091.jpg"></div>
+        <div class="notrotate"><img src="img/tile_092.jpg"></div>
+        <div class="notrotate"><img src="img/tile_093.jpg"></div>
+        <div class="notrotate"><img src="img/tile_094.jpg"></div>
+        <div class="notrotate"><img src="img/tile_095.jpg"></div>
+        <div class="notrotate"><img src="img/tile_096.jpg"></div>
+        <div class="notrotate"><img src="img/tile_097.jpg"></div>
+        <div class="notrotate"><img src="img/tile_098.jpg"></div>
+        <div class="notrotate"><img src="img/tile_099.jpg"></div>
+
+        <copyrights
+            style="display: float; float: right; position: fixed; right: 4px; bottom: 0px; color: white; text-align: center; font-family: sans-serif; font-size: 2.2vh; line-height: 2.2vh;">
+            <b>© MAF</b></copyrights>
+
+        <script>
+
+            var divs = document.querySelectorAll('div');
+            var toggle = false;
+
+            setTimeout(function() {
+                document.body.className = "";
+                setInterval(rotate, 150);
+            }, 1000);
+
+            function rotate() {
+                var inc = 0;
+                var incrotate = 0;
+                var incnotrotate = 0;
+                divs.forEach(function (div) {
+                    if (divs[inc].className == "rotate") {
+                        incrotate++;
+                    }
+                    if (divs[inc].className == "notrotate") {
+                        incnotrotate++;
+                    }
+                    inc++;
+                });
+                if (incrotate >= 100) {
+                    toggle = true;
+                }
+                if (incnotrotate >= 100) {
+                    toggle = false;
+                }
+                if (!toggle) {
+                    var rndInt;
+                    do {
+                        rndInt = randomIntFromInterval(0, divs.length - 1);
+                        if (divs[rndInt].className == "notrotate") {
+                            divs[rndInt].classList.remove('notrotate');
+                            divs[rndInt].classList.add('rotate');
+                        }
+                    }
+                    while (divs[rndInt].className != "rotate");
+                }
+                else {
+                    var rndInt;
+                    do {
+                        rndInt = randomIntFromInterval(0, divs.length - 1);
+                        if (divs[rndInt].className == "rotate") {
+                            divs[rndInt].classList.remove('rotate');
+                            divs[rndInt].classList.add('notrotate');
+                        }
+                    }
+                    while (divs[rndInt].className != "notrotate");
+                }
+            }
+
+            function randomIntFromInterval(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) + min);
+            }
+
+            divs.forEach(function (div) {
+                div.addEventListener('mouseover', function () {
+                    if (document.body.className == "") {
+                        if (!toggle) {
+                            if (div.className == "notrotate") {
+                                div.classList.remove('notrotate');
+                                div.classList.add('rotate');
+                            }
+                        }
+                        else {
+                            if (div.className == "rotate") {
+                                div.classList.remove('rotate');
+                                div.classList.add('notrotate');
+                            }
+                        }
+                    }
+                });
+            });
+
+        </script>
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC469PC35"></script>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVP9X48X"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    </body>
+
+</html>

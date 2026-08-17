@@ -1,0 +1,775 @@
+<!--
+• Author: Michaël André Franiatte.
+• Contact: michael.franiatte@gmail.com.
+• Publisher: https://github.com/michaelandrefraniatte.
+• Copyrights: All rights reserved, no permissions granted.
+• License: Not open source, not free of charge to use.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="MICHAEL ANDRE FRANIATTE">
+
+    <link rel="shortcut icon" type="image/ico" href="ciine.ico" />
+
+    <script src="../custom/redirect.js"></script>
+
+    <title>sigil-tips by michael franiatte</title>
+
+    <style>
+        body {
+            font-size: 2.2vh;
+        }
+
+        .content {
+            margin-left: 1vw;
+            margin-right: 1vw;
+            text-align: justify;
+        }
+
+        ul {
+            list-style-position: none;
+            padding-left: 0;
+            margin-left: 1vw;
+        }
+    </style>
+
+</head>
+
+<body class>
+
+    <div class="content">
+        <h2><b><u>SIGIL Tips</u></b></h2>
+        <h3>
+            <font color="#777"><u>I. Some Code Examples for Scripting</u></font>
+        </h3>
+        <p>
+            It need to explain some functions, like for connection with respective arguments, sometimes different
+            for each library.
+            The rest is in the available scripts I already made entirely and comming with SIGIL.
+        </p>
+        <p>
+        <h4><b><u>1. For Emulate:</u></b></h4>
+        </p>
+        <div>
+            <font color="#004500">/* Add joystick library */</font><br>
+            <font color="#0000FF">using DirectInputsAPI</font>;<br>
+            <font color="#004500">/* Emulate one joystick, return true if connected */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 1</font>);<br>
+            <font color="#004500">/* Emulate a second one */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 2</font>);<br>
+            <font color="#004500">/* Get all inputs */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: false</font>);<br>
+            <font color="#004500">/* Set all values to false or 0, and recenter analogic values */
+            </font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: true</font>);<br>
+            <font color="#004500">/* Shut down emulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <div>
+            <font color="#004500">/* Add PS5 controller library */</font><br>
+            <font color="#0000FF">using DualSensesAPI</font>;<br>
+            <font color="#004500">/* Emulate one PS5 controller, return true if connected */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 1</font>, <font color="#0000FF">via_usb: false</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">vendor_id: "54C"</font>, <font color="#0000FF">product_id:
+                "CE6"</font>);<br>
+            <font color="#004500">/* Emulate a second one if same vendor and product IDs */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 2</font>, <font color="#0000FF">via_usb: false</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">vendor_id: "54C"</font>, <font color="#0000FF">product_id:
+                "CE6"</font>);<br>
+            <font color="#004500">/* Get all inputs */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: false</font>, <font color="#0000FF">initgp: false</font>);<br>
+            <font color="#004500">/* Set all values to false or 0, and recenter stick and accelerometer
+                */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: true</font>, <font color="#0000FF">initgp: true</font>);<br>
+            <font color="#004500">/* Shut down emulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <div>
+            <font color="#004500">/* Add PS4 controller library */</font><br>
+            <font color="#0000FF">using DualShocks4API</font>;<br>
+            <font color="#004500">/* Emulate one PS4 controller, return true if connected */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 1</font>, <font color="#0000FF">via_usb: false</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">vendor_id: "54C"</font>, <font color="#0000FF">product_id:
+                "9CC"</font>);<br>
+            <font color="#004500">/* Emulate a second one if same vendor and product IDs */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 2</font>, <font color="#0000FF">via_usb: false</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">vendor_id: "54C"</font>, <font color="#0000FF">product_id:
+                "9CC"</font>);<br>
+            <font color="#004500">/* Get all inputs */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: false</font>, <font color="#0000FF">initgp: false</font>);<br>
+            <font color="#004500">/* Set all values to false or 0, and recenter stick and accelerometer
+                */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: true</font>, <font color="#0000FF">initgp: true</font>);<br>
+            <font color="#004500">/* Shut down emulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <div>
+            <font color="#004500">/* Add PS4 controller library */</font><br>
+            <font color="#0000FF">using DualShocks4API</font>;<br>
+            <font color="#004500">/* Emulate one PS4 Fun controller, return true if connected */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 1</font>, <font color="#0000FF">via_usb: true</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">vendor_id: "11C0"</font>, <font color="#0000FF">product_id:
+                "4001"</font>);<br>
+            <font color="#004500">/* Emulate a second one if same vendor and product IDs */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 2</font>, <font color="#0000FF">via_usb: true</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">vendor_id: "11C0"</font>, <font color="#0000FF">product_id:
+                "4001"</font>);<br>
+            <font color="#004500">/* Get all inputs */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: false</font>, <font color="#0000FF">initgp: false</font>);<br>
+            <font color="#004500">/* Set all values to false or 0, and recenter stick */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: true</font>, <font color="#0000FF">initgp: true</font>);<br>
+            <font color="#004500">/* Shut down emulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <div>
+            <font color="#004500">/* Add Joycon 2 left controller library */</font><br>
+            <font color="#0000FF">using Joycons2LeftAPI</font>;<br>
+            <font color="#004500">/* Emulate one Joycon 2 left controller, return true if connected */
+            </font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 1</font>, <font color="#0000FF">via_usb: false</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">mouse_abs_smooth: 0.50f</font>, <font color="#0000FF">mouse_rel_sens: 1.00f</font>, <font color="#0000FF">vendor_id: "57E"</font>, <font color="#0000FF">product_id:
+                "2067"</font>, <font color="#0000FF">device_id:
+                "3c:a9:ab:e8:3c:51"</font>);<br>
+            <font color="#004500">/* Emulate a second one */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 2</font>, <font color="#0000FF">via_usb: false</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">mouse_abs_smooth: 0.50f</font>, <font color="#0000FF">mouse_rel_sens: 1.00f</font>, <font color="#0000FF">vendor_id: "57E"</font>, <font color="#0000FF">product_id:
+                "2067"</font>, <font color="#0000FF">device_id:
+                "3c:a9:ab:e8:3c:51"</font>);<br>
+            <font color="#004500">/* Get all inputs */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: false</font>, <font color="#0000FF">initgp: false</font>);<br>
+            <font color="#004500">/* Set all values to false or 0, and recenter stick, mouse and
+                accelerometer */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: true</font>, <font color="#0000FF">initgp: true</font>);<br>
+            <font color="#004500">/* Shut down emulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <div>
+            <font color="#004500">/* Add Joycon 2 left controller library */</font><br>
+            <font color="#0000FF">using Joycons2LeftAPI</font>;<br>
+            <font color="#004500">/* Emulate one Joycon 2 left controller in charging grip, return true if connected */
+            </font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 1</font>, <font color="#0000FF">via_usb: true</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">mouse_abs_smooth: 0.50f</font>, <font color="#0000FF">mouse_rel_sens: 1.00f</font>, <font color="#0000FF">vendor_id: "57E"</font>, <font color="#0000FF">product_id:
+                "2067"</font>, <font color="#0000FF">device_id:
+                "3c:a9:ab:e8:3c:51"</font>);<br>
+            <font color="#004500">/* Emulate a second one */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 2</font>, <font color="#0000FF">via_usb: true</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">mouse_abs_smooth: 0.50f</font>, <font color="#0000FF">mouse_rel_sens: 1.00f</font>, <font color="#0000FF">vendor_id: "57E"</font>, <font color="#0000FF">product_id:
+                "2067"</font>, <font color="#0000FF">device_id:
+                "3c:a9:ab:e8:3c:51"</font>);<br>
+            <font color="#004500">/* Get all inputs */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: false</font>, <font color="#0000FF">initgp: false</font>);<br>
+            <font color="#004500">/* Set all values to false or 0, and recenter stick, mouse and
+                accelerometer */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: true</font>, <font color="#0000FF">initgp: true</font>);<br>
+            <font color="#004500">/* Shut down emulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <div>
+            <font color="#004500">/* Add Joycon 2 right controller library */</font><br>
+            <font color="#0000FF">using Joycons2RightAPI</font>;<br>
+            <font color="#004500">/* Emulate one Joycon 2 right controller, return true if connected */
+            </font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 1</font>, <font color="#0000FF">via_usb: false</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">mouse_abs_smooth: 0.50f</font>, <font color="#0000FF">mouse_rel_sens: 1.00f</font>, <font color="#0000FF">vendor_id: "57E"</font>, <font color="#0000FF">product_id:
+                "2066"</font>, <font color="#0000FF">device_id:
+                "3c:a9:ab:e8:3a:3b"</font>);<br>
+            <font color="#004500">/* Emulate a second one */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 2</font>, <font color="#0000FF">via_usb: false</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">mouse_abs_smooth: 0.50f</font>, <font color="#0000FF">mouse_rel_sens: 1.00f</font>, <font color="#0000FF">vendor_id: "57E"</font>, <font color="#0000FF">product_id:
+                "2066"</font>, <font color="#0000FF">device_id:
+                "3c:a9:ab:e8:3a:3b"</font>);<br>
+            <font color="#004500">/* Get all inputs */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: false</font>, <font color="#0000FF">initgp: false</font>);<br>
+            <font color="#004500">/* Set all values to false or 0, and recenter stick, mouse and
+                accelerometer */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: true</font>, <font color="#0000FF">initgp: true</font>);<br>
+            <font color="#004500">/* Shut down emulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <div>
+            <font color="#004500">/* Add Joycon 2 right controller library */</font><br>
+            <font color="#0000FF">using Joycons2RightAPI</font>;<br>
+            <font color="#004500">/* Emulate one Joycon 2 right controller in charging grip, return true if connected */
+            </font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 1</font>, <font color="#0000FF">via_usb: true</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">mouse_abs_smooth: 0.50f</font>, <font color="#0000FF">mouse_rel_sens: 1.00f</font>, <font color="#0000FF">vendor_id: "57E"</font>, <font color="#0000FF">product_id:
+                "2066"</font>, <font color="#0000FF">device_id:
+                "3c:a9:ab:e8:3a:3b"</font>);<br>
+            <font color="#004500">/* Emulate a second one */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 2</font>, <font color="#0000FF">via_usb: true</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">mouse_abs_smooth: 0.50f</font>, <font color="#0000FF">mouse_rel_sens: 1.00f</font>, <font color="#0000FF">vendor_id: "57E"</font>, <font color="#0000FF">product_id:
+                "2066"</font>, <font color="#0000FF">device_id:
+                "3c:a9:ab:e8:3a:3b"</font>);<br>
+            <font color="#004500">/* Get all inputs */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: false</font>, <font color="#0000FF">initgp: false</font>);<br>
+            <font color="#004500">/* Set all values to false or 0, and recenter stick, mouse and
+                accelerometer */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: true</font>, <font color="#0000FF">initgp: true</font>);<br>
+            <font color="#004500">/* Shut down emulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <div>
+            <font color="#004500">/* Add Joycon left controller library */</font><br>
+            <font color="#0000FF">using JoyconsLeftAPI</font>;<br>
+            <font color="#004500">/* Emulate one Joycon left controller, return true if connected */
+            </font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 1</font>, <font color="#0000FF">via_usb: false</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">vendor_id: "57E"</font>, <font color="#0000FF">product_id:
+                "2006"</font>, <font color="#0000FF">mi_id: "01"</font>
+            );<br>
+            <font color="#004500">/* Emulate a second one if same vendor and product IDs */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 2</font>, <font color="#0000FF">via_usb: false</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">vendor_id: "57E"</font>, <font color="#0000FF">product_id:
+                "2006"</font>, <font color="#0000FF">mi_id: "01"</font>
+            );<br>
+            <font color="#004500">/* Get all inputs */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: false</font>, <font color="#0000FF">initgp: false</font>);<br>
+            <font color="#004500">/* Set all values to false or 0, and recenter stick and accelerometer
+                */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: true</font>, <font color="#0000FF">initgp: true</font>);<br>
+            <font color="#004500">/* Shut down emulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <div>
+            <font color="#004500">/* Add Joycon left controller library */</font><br>
+            <font color="#0000FF">using JoyconsLeftAPI</font>;<br>
+            <font color="#004500">/* Emulate one Joycon left controller in charging grip, return true if
+                connected */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 1</font>, <font color="#0000FF">via_usb: true</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">vendor_id: "57E"</font>, <font color="#0000FF">product_id:
+                "200E"</font>, <font color="#0000FF">mi_id: "01"</font>
+            );<br>
+            <font color="#004500">/* Emulate a second one if same vendor and product IDs */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 2</font>, <font color="#0000FF">via_usb: true</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">vendor_id: "57E"</font>, <font color="#0000FF">product_id:
+                "200E"</font>, <font color="#0000FF">mi_id: "01"</font>
+            );<br>
+            <font color="#004500">/* Get all inputs */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: false</font>, <font color="#0000FF">initgp: false</font>);<br>
+            <font color="#004500">/* Set all values to false or 0, and recenter stick and accelerometer
+                */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: true</font>, <font color="#0000FF">initgp: true</font>);<br>
+            <font color="#004500">/* Shut down emulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <div>
+            <font color="#004500">/* Add Joycon right controller library */</font><br>
+            <font color="#0000FF">using JoyconsRightAPI</font>;<br>
+            <font color="#004500">/* Emulate one Joycon right controller, return true if connected */
+            </font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 1</font>, <font color="#0000FF">via_usb: false</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">vendor_id: "57E"</font>, <font color="#0000FF">product_id:
+                "2007"</font>, <font color="#0000FF">mi_id: "00"</font>
+            );<br>
+            <font color="#004500">/* Emulate a second one if same vendor and product IDs */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 2</font>, <font color="#0000FF">via_usb: false</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">vendor_id: "57E"</font>, <font color="#0000FF">product_id:
+                "2007"</font>, <font color="#0000FF">mi_id: "00"</font>
+            );<br>
+            <font color="#004500">/* Get all inputs */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: false</font>, <font color="#0000FF">initgp: false</font>);<br>
+            <font color="#004500">/* Set all values to false or 0, and recenter stick and accelerometer
+                */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: true</font>, <font color="#0000FF">initgp: true</font>);<br>
+            <font color="#004500">/* Shut down emulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <div>
+            <font color="#004500">/* Add Joycon right controller library */</font><br>
+            <font color="#0000FF">using JoyconsRightAPI</font>;<br>
+            <font color="#004500">/* Emulate one Joycon right controller in charging grip, return true
+                if connected */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 1</font>, <font color="#0000FF">via_usb: true</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">vendor_id: "57E"</font>, <font color="#0000FF">product_id:
+                "200E"</font>, <font color="#0000FF">mi_id: "00"</font>
+            );<br>
+            <font color="#004500">/* Emulate a second one if same vendor and product IDs */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 2</font>, <font color="#0000FF">via_usb: true</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">vendor_id: "57E"</font>, <font color="#0000FF">product_id:
+                "200E"</font>, <font color="#0000FF">mi_id: "00"</font>
+            );<br>
+            <font color="#004500">/* Get all inputs */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: false</font>, <font color="#0000FF">initgp: false</font>);<br>
+            <font color="#004500">/* Set all values to false or 0, and recenter stick and accelerometer
+                */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: true</font>, <font color="#0000FF">initgp: true</font>);<br>
+            <font color="#004500">/* Shut down emulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <div>
+            <font color="#004500">/* Add keyboard library */</font><br>
+            <font color="#0000FF">using KeyboardInputsAPI</font>;<br>
+            <font color="#004500">/* Emulate one keyboard, return true if connected */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 1</font>);<br>
+            <font color="#004500">/* Emulate a second one */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 2</font>);<br>
+            <font color="#004500">/* Get all inputs */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: false</font>);<br>
+            <font color="#004500">/* Set all values to false */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: true</font>);<br>
+            <font color="#004500">/* Shut down emulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <div>
+            <font color="#004500">/* Add mouse library */</font><br>
+            <font color="#0000FF">using MouseInputsAPI</font>;<br>
+            <font color="#004500">/* Emulate one mouse, return true if connected */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 1</font>);<br>
+            <font color="#004500">/* Emulate a second one */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 2</font>);<br>
+            <font color="#004500">/* Get all inputs */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: false</font>);<br>
+            <font color="#004500">/* Set all values to false or 0 */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: true</font>);<br>
+            <font color="#004500">/* Shut down emulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <div>
+            <font color="#004500">/* Add Switch 2 Pro Controller library */</font><br>
+            <font color="#0000FF">using Switch2ProControllersAPI</font>;<br>
+            <font color="#004500">/* Emulate one Switch 2 Pro Controller, return true if connected */
+            </font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 1</font>, <font color="#0000FF">via_usb: false</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">vendor_id: "57E"</font>, <font color="#0000FF">product_id:
+                "2069"</font>, <font color="#0000FF">device_id:
+                "3c:a9:ab:00:58:52"</font>);<br>
+            <font color="#004500">/* Emulate a second one if same vendor and product IDs */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 2</font>, <font color="#0000FF">via_usb: false</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">vendor_id: "57E"</font>, <font color="#0000FF">product_id:
+                "2069"</font>, <font color="#0000FF">device_id:
+                "3c:a9:ab:00:58:52"</font>);<br>
+            <font color="#004500">/* Get all inputs */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: false</font>, <font color="#0000FF">initgp: false</font>);<br>
+            <font color="#004500">/* Set all values to false or 0, and recenter stick and accelerometer
+                */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: true</font>, <font color="#0000FF">initgp: true</font>);<br>
+            <font color="#004500">/* Shut down emulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <div>
+            <font color="#004500">/* Add Switch Pro Controller library */</font><br>
+            <font color="#0000FF">using SwitchProControllersAPI</font>;<br>
+            <font color="#004500">/* Emulate one Switch Pro Controller, return true if connected */
+            </font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 1</font>, <font color="#0000FF">via_usb: false</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">vendor_id: "57E"</font>, <font color="#0000FF">product_id:
+                "2009"</font>);<br>
+            <font color="#004500">/* Emulate a second one if same vendor and product IDs */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">
+                number: 2</font>, <font color="#0000FF">via_usb: false</font>, <font color="#0000FF">tick_time: 20</font>, <font color="#0000FF">gyro_dz: 50</font>, <font color="#0000FF">vendor_id: "57E"</font>, <font color="#0000FF">product_id:
+                "2009"</font>);<br>
+            <font color="#004500">/* Get all inputs */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: false</font>, <font color="#0000FF">initgp: false</font>);<br>
+            <font color="#004500">/* Set all values to false or 0, and recenter stick and accelerometer
+                */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: true</font>, <font color="#0000FF">initgp: true</font>);<br>
+            <font color="#004500">/* Shut down emulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <div>
+            <font color="#004500">/* Add Wiimote library */</font><br>
+            <font color="#0000FF">using WiiMotesAPI</font>;<br>
+            <font color="#004500">/* Emulate one Wiimote, return true if connected */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 1</font>, <font color="#0000FF">
+                vendor_id: "57E"</font>, <font color="#0000FF">product_id: "0306"</font>
+            );<br>
+            <font color="#004500">/* Emulate a second one if same vendor and product IDs */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 2</font>, <font color="#0000FF">
+                vendor_id: "57E"</font>, <font color="#0000FF">product_id: "0306"</font>
+            );<br>
+            <font color="#004500">/* Get all inputs */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: false</font>);<br>
+            <font color="#004500">/* Set all values to false or 0, and recenter stick and accelerometer
+                */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: true</font>);<br>
+            <font color="#004500">/* Shut down emulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <div>
+            <font color="#004500">/* Add Xbox controller library */</font><br>
+            <font color="#0000FF">using XInputsAPI</font>;<br>
+            <font color="#004500">/* Emulate one Xbox controller, return true if connected */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 1</font>);<br>
+            <font color="#004500">/* Emulate a second one */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 2</font>);<br>
+            <font color="#004500">/* Get all inputs */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: false</font>);<br>
+            <font color="#004500">/* Set all values to false or 0, and recenter stick and trigger
+                position */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: true</font>);<br>
+            <font color="#004500">/* Shut down emulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <div>
+            <font color="#004500">/* Add speech recognition library */</font><br>
+            <font color="#0000FF">using SpeechAPI</font>;<br>
+            <font color="#004500">/* Emulate one microphone with language as CultureInfo, return true if
+                connected */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 1</font>, <font color="#0000FF">language:
+                "en-US"</font>);<br>
+            <font color="#004500">/* Emulate a same one */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 2</font>, <font color="#0000FF">language:
+                "en-US"</font>);<br>
+            <font color="#004500">/* Get all inputs */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: false</font>);<br>
+            <font color="#004500">/* Set all values to empty string */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: true</font>);<br>
+            <font color="#004500">/* Shut down emulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <div>
+            <font color="#004500">/* Add frequences library */</font><br>
+            <font color="#0000FF">using FrequencesAPI</font>;<br>
+            <font color="#004500">/* Emulate one audio card, return true if
+                connected */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 1</font>, <font color="#0000FF">bar_count: 100</font>, <font color="#0000FF">microphone:
+                false</font>);<br>
+            <font color="#004500">/* Emulate a second one */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 2</font>, <font color="#0000FF">bar_count: 100</font>, <font color="#0000FF">microphone:
+                false</font>);<br>
+            <font color="#004500">/* Get all inputs */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: false</font>);<br>
+            <font color="#004500">/* Set all values to 0 */</font><br>
+            <font color="#ff4500">Get</font>(<font color="#0000FF">init: true</font>);<br>
+            <font color="#004500">/* Shut down emulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <p>
+        <h4><b><u>2. For Simulate:</u></b></h4>
+        </p>
+        <div>
+            <font color="#004500">/* Add virtual Xbox controller library */</font><br>
+            <font color="#0000FF">using controllers</font>;<br>
+            <font color="#004500">/* Simulate one virtual Xbox controller, return true if connected */
+            </font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 1</font>);<br>
+            <font color="#004500">/* Simulate a second one */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 2</font>);<br>
+            <font color="#004500">/* Set all outputs */</font><br>
+            <font color="#ff4500">Set</font>(<font color="#0000FF">init: false</font>);<br>
+            <font color="#004500">/* Set all values to false or 0 */</font><br>
+            <font color="#ff4500">Set</font>(<font color="#0000FF">init: true</font>);<br>
+            <font color="#004500">/* Shut down simulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <div>
+            <font color="#004500">/* Add virtual Dualshock4 controller library */</font><br>
+            <font color="#0000FF">using controllersds4</font>;<br>
+            <font color="#004500">/* Simulate one virtual Dualshock4 controller, return true if
+                connected */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 1</font>);<br>
+            <font color="#004500">/* Simulate a second one */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 2</font>);<br>
+            <font color="#004500">/* Set all outputs */</font><br>
+            <font color="#ff4500">Set</font>(<font color="#0000FF">init: false</font>);<br>
+            <font color="#004500">/* Set all values to false or 0 */</font><br>
+            <font color="#ff4500">Set</font>(<font color="#0000FF">init: true</font>);<br>
+            <font color="#004500">/* Shut down simulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <div>
+            <font color="#004500">/* Add virtual joystick library */</font><br>
+            <font color="#0000FF">using controllersvjoy</font>;<br>
+            <font color="#004500">/* Simulate one virtual joystick, return true if connected */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 1</font>);<br>
+            <font color="#004500">/* Simulate a second one */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 2</font>);<br>
+            <font color="#004500">/* Set all outputs */</font><br>
+            <font color="#ff4500">Set</font>(<font color="#0000FF">init: false</font>);<br>
+            <font color="#004500">/* Set all values to false or 0 */</font><br>
+            <font color="#ff4500">Set</font>(<font color="#0000FF">init: true</font>);<br>
+            <font color="#004500">/* Shut down simulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <div>
+            <font color="#004500">/* Add physical keyboard and mouse library */</font><br>
+            <font color="#0000FF">using Interceptions</font>;<br>
+            <font color="#004500">/* Simulate one physical keyboard and mouse, return true if connected
+                */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 1</font>, <font color="#0000FF">mouse_id: 11</font>, <font color="#0000FF">
+                keyboard_id: 1</font>);<br>
+            <font color="#004500">/* Simulate a second one */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 2</font>, <font color="#0000FF">mouse_id: 12</font>, <font color="#0000FF">
+                keyboard_id: 2</font>);<br>
+            <font color="#004500">/* Set all outputs */</font><br>
+            <font color="#ff4500">Set</font>(<font color="#0000FF">init: false</font>);<br>
+            <font color="#004500">/* Set all values to false or 0 */</font><br>
+            <font color="#ff4500">Set</font>(<font color="#0000FF">init: true</font>);<br>
+            <font color="#004500">/* Shut down simulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <div>
+            <font color="#004500">/* Add virtual keyboard and mouse library */</font><br>
+            <font color="#0000FF">using SendInputs</font>;<br>
+            <font color="#004500">/* Simulate one virtual keyboard and mouse, return true if connected
+                */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 1</font>, <font color="#0000FF">sendinput_driver: false</font>);<br>
+            <font color="#004500">/* Simulate a same one */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 2</font>, <font color="#0000FF">sendinput_driver: false</font>);<br>
+            <font color="#004500">/* Set all outputs */</font><br>
+            <font color="#ff4500">Set</font>(<font color="#0000FF">init: false</font>);<br>
+            <font color="#004500">/* Set all values to false or 0 */</font><br>
+            <font color="#ff4500">Set</font>(<font color="#0000FF">init: true</font>);<br>
+            <font color="#004500">/* Shut down simulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <div>
+            <font color="#004500">/* Add speech synthesis library */</font><br>
+            <font color="#0000FF">using SpeechAPI</font>;<br>
+            <font color="#004500">/* Simulate one voice, return true if connected */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 1</font>, <font color="#0000FF">language:
+                "en-US"</font>, <font color="#0000FF">gender: VoiceGender.Female</font>, <font color="#0000FF">age:
+                VoiceAge.Adult</font>);<br>
+            <font color="#004500">/* Simulate a same one */</font><br>
+            <font color="#ff4500">Connect</font>(<font color="#0000FF">number: 2</font>, <font color="#0000FF">language:
+                "en-US"</font>, <font color="#0000FF">gender: VoiceGender.Female</font>, <font color="#0000FF">age:
+                VoiceAge.Adult</font>);<br>
+            <font color="#004500">/* Set output */</font><br>
+            <font color="#ff4500">Set</font>(<font color="#0000FF">init: false</font>);<br>
+            <font color="#004500">/* Set output to empty string */</font><br>
+            <font color="#ff4500">Set</font>(<font color="#0000FF">init: true</font>);<br>
+            <font color="#004500">/* Shut down simulation */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <p>
+        <h4><b><u>3. For Data:</u></b></h4>
+        </p>
+        <div>
+            <font color="#004500">/* Add data, dot1 and dot2 WinForm library */</font><br>
+            <font color="#0000FF">using WinFormAPI</font>;<br>
+            <font color="#004500">/* Display str data */</font><br>
+            <font color="#ff4500">ViewData</font>(<font color="#0000FF">str: ""</font>);<br>
+            <font color="#004500">/* Display one dot */</font><br>
+            <font color="#ff4500">ViewDot1</font>(<font color="#0000FF">x: 0</font>, <font color="#0000FF">y: 0
+            </font>);<br>
+            <font color="#004500">/* Display a second dot */</font><br>
+            <font color="#ff4500">ViewDot2</font>(<font color="#0000FF">x: 0</font>, <font color="#0000FF">y: 0
+            </font>);<br>
+            <font color="#004500">/* Shut down data, dot1 and dot2 */</font><br>
+            <font color="#ff4500">Dispose</font>();<br>
+        </div>
+        <br>
+        <h3>
+            <font color="#777"><u>II. Some Explainations for Gaming</u></font>
+        </h3>
+        <p>
+            It need to explain some tips for using a bunch of controllers in most of video games for it running as
+            you expect.
+        </p>
+        <ul>
+            <li><b><u>Trick:</u></b> In top down shooters or rail shooters, if there isn't any option to enable desktop
+                cursor,
+                setting the game in windowed mode, and removing the border if there isn't any option for windowed
+                borderless mode, with WindowTitleRemover, it's possible to make running desktop cursor.</li>
+            <li><b><u>Controller Hiding:</u></b> I've find my own workout to hide controllers by using
+                HideDevice, and it's integrate to SIGIL libraries doing the job automatically when launching a
+                script or an executable. And also, when you need to hide a DirectInput or a XInput controller, you
+                must do it each time you plug your controller with the dedicated tool under this program, also you
+                need to start a script or hide your controller before opening Steam. But there is a file named 
+                "hidedevicefromlist.txt" and an option to hide at run of the script your controllers you add (it's 
+                made for XInput and DirectInput controllers). And also, there is a file named "hideplusdevicenotfromlist.txt" 
+                and an option to hide plus at run of the script your controllers you don't add (it's made if Steam or games 
+                launch with administrative privilege).</li>
+            <li><b><u>Xbox Controller:</u></b> You can motion aiming with gyroscope using Armor-X Pro from BigBigWon
+                retailer, but it need a Android mobile with Bluetooth, WiFi, Localisation (GPS), all enable in your phone 
+                settings and firewall of your modem/router set to medium, and also it need to change some settings with the
+                official application downloaded from Google store, despite a Playstation controller is far better.
+                If you want more workaround about Armor-X Pro, check my guide for it.</li>
+            <li><b><u>Triggering Events:</u></b> You need to install all drivers for it specifically for what you need,
+                for
+                simulate Keyboard and Mouse you need Interception and XNA, for Xbox Controller you need Scp, for PS4
+                Controller you need ViGEm, for Virtual Joystick you need VJoy, etc. See DriversInstaller.</li>
+            <li><b><u>K&M Simulation:</u></b> You need to retrieve ID of keyboard and mouse from InterceptionTest, and
+                for it you
+                need to move mouse and press keyboard, also if you want to simulate several K&M, you need to connect
+                several physical K&M to your PC.</li>
+            <li><b><u>Bluetooth Controllers:</u></b> When launching a script, if your controller cannot be connected,
+                restart the
+                program or use the dedicated option to flush devices or with FlushDevices. Also, if using Joycon(s)
+                2 or Switch 2 Pro controller, you need to enable BLE (Bluetooth Low Energy) from the dedicated
+                feature, to do just once for storing your BLE ID used on your PC, needed in Joycons 2 and Switch 2
+                Pro controller libraries. For connecting your controller via Bluetooth you can use InputPairing for
+                it, or use the dedicated button.</li>
+            <li><b><u>Several Controllers:</u></b> If the vendor ID or product ID isn't the same using same library with
+                another
+                instance for a second emulate controller, it's number is still 1, otherwise it's number is
+                incremented (2), etc.</li>
+            <li><b><u>Some Bugs:</u></b> Without sacrify the optimization, I'm unable to fix some bugs. Like if you
+                disconnect
+                nunchuck of Wiimote, there are no more data. And like, when you want to stop a process with a script
+                showing dots, you need to manualy close the dots window from minimized window on task bar. Also,
+                there's the story of message box appearing minimized but it need to read information and click "ok"
+                to continue the process.</li>
+            <li><b><u>Compliant Solution:</u></b> Before starting your game launcher, you need to run the process. It's
+                particularly true with Steam and Epic Games Launcher because it handle some controllers. And also,
+                anti-cheats don't like simulation such you need to avoid playing multiplayer games otherwise you
+                will be shadow banned or life banned. We are here now, even if I never programed any cheat, and even
+                if everyone are cheating. So prefer to use a tiny build or a tiny program like ciine.</li>
+            <li><b><u>Building Solution:</u></b> Only FastColoredTextBox must be built in release Any CPU, but any other
+                projects
+                must be built in release x86. Otherwise it would not running.</li>
+            <li><b><u>Connecting Controllers:</u></b> For connecting a Wiimote, you need to press the buttons 1 & 2 at
+                same time.
+                For connecting other Nintendo controllers, you need to press the sync button above the controller
+                during 2 seconds. For connecting Playstation controllers, you need to press the buttons logo and
+                create at same time during 2 seconds. The controllers have leds starting to blink when it's in
+                pairing mode.</li>
+            <li><b><u>Using Voices:</u></b> Check
+                https://support.microsoft.com/en-us/windows/use-voice-recognition-in-windows-83ff75bd-63eb-0b6c-18d4-6fae94050571,
+                for better experiments with voice recognition from your microphone.</li>
+            <li><b><u>Bluetooth Low Energy:</u></b> Some old Bluetooth dongle have BLE (Bluetooth Low Energy) while new
+                Bluetooth
+                dongle haven't BLE and work badly to detect devices, some Bluetooth 4.0 dongle are ok for BLE and
+                detecting well devices. If you have Bluetooth on your PC but Bluetooth Low Energy (BLE) don't run for
+                handle to your BLE controllers you need to restart your PC.</li>
+            <li><b><u>Battletron Controllers:</u></b> With the controller Playstation Battletron, for configure a back
+                button, wire your controller, press the button near the back button you want to configure until your
+                controller blinking, then press and release the button you want to assign to the back button, then press
+                and release the button near the back button you want to configure. After that it's assigned which is
+                indicate by a lite rumble of your controller.</li>
+            <li><b><u>Third Party Programs:</u></b> Don't update the firmware of your controller with whatsoever
+                sources, and don't use whatsoever third party programs for handle your controllers. When using a third
+                party program for handle controllers, some data can not be retrieved at first start, but when you
+                restart, the data can be retrieved.</li>
+            <li><b><u>Binding K&M:</u></b> In game options, change key assignations, to remember easy which key to press
+                and set mouse sensitivity to lowest as possible, for playing FPS having a fine aim in center, but still
+                turn fast.</li>
+            <li><b><u>Wiimote IR Camera:</u></b> Don't use a Wii or candles or Mayflash bar to task as IR source for the
+                Wiimote but a USB Wii sensor bar, Wii Motion Plus extension for Wiimote is for having a gyroscope
+                because Wiimote alone is having only a accelerometer, but if your Wiimote have already Wii Motion Plus
+                inside, don't connect the extension, i.e. if you have Motion Plus builtin, don't insert Wii Motion Plus
+                Extension, otherwise Nunchuck will not running.</li>
+            <li><b><u>Bluetooth Dongle:</u></b> When using controllers via Bluetooth, you need to choose very well your
+                Bluetooth adapter because it can be night and day. When you having a driver error for your Bluetooth
+                dongle, avoid to check in device manager or devices and printers, but check your gamepad with joy.cpl
+                instead, and restart your PC until you don't have anymore the driver error.</li>
+            <li><b><u>Connect Playstation Controllers:</u></b> When you want to connect a Playstation controller, I
+                advice you using PlayStationAccessoriesInstaller.exe to install the tool for Playstation accessories and
+                have easy to connect Playstation controllers.</li>
+            <li><b><u>Motion Controls:</u></b> When using Wiimote or Dualsense or custom motion controller, I advice to
+                remove deadzone and add a securezone at the edge of view control to avoid unresponsive control, while
+                removing the deadzone, take care to remove it just for the view not moving, when you almost not moving
+                your aim, and with ADS of course.</li>
+            <li><b><u>K&M as Controller:</u></b> When you are using mouse as a gamepad, if you control the view with
+                mouse movements simulating a gamepad, you probably have a gaming mouse with a button above your mouse
+                for increasing the DPI, as so you need to enable the highest DPI to avoid stuttering bug.</li>
+            <li><b><u>Controller Lagging:</u></b> It's possible Bluetooth is lagging even on a brand new PC, if you have
+                a internal Bluetooth device, it can lag with your controllers, but you can solve this issue with a
+                Realtek Bluetooth 5.0 Adapter external device, you just have to uninstall the Bluetooth program from
+                control panel under Programs and Features, and make a Bluetooth diagnostic and repair with the Windows
+                tool for install the driver, and also devices connection through Bluetooth low energy can bug and not
+                connecting if you don't disable your Bluetooth network card, and also install Bluetooth drivers. When
+                you have issue with your controller via Bluetooth, you need to full charge it (7 hours connected via USB
+                port of your PC). For charging your controllers, you need rechargeable batteries (type AA, NiMH, 1.5
+                Volts, x2), you need a charger with output of 5.0 Volts and maximum 1.5 Ampers (7.5 Watts), fast charge
+                aren't handle (15 Watts) and breaking batteries, a PC USB port deliver the good energy for keep safe
+                your batteries. When you using a controller wired, the wire shall allow both charge and synchronisation.
+                When you need a cable for your controllers, you need cable allowing synchronisation (data) and power,
+                often cable only allow power, but it needs both. For better performances, keep enable the service
+                SysMain, and disable all bluetooth services but not the service bluetooth peripheral manager, for reduce
+                input lag of your wireless controllers.</li>
+            <li><b><u>Gyro Aiming:</u></b> For enabling gyroscope with Flydigi Vader 2 controller or Armor-X accessory
+                to insert in a Xbox Series X controller, you must have the dedicated applications from official
+                retaillers, otherwise it's not enable by default or too sensitive.</li>
+            <li><b><u>Anti-Cheat Issues:</u></b> Some anti-cheats are detecting interception.dll as a cheat but in this
+                case, there are other libraries to simulate keyboard and mouse, and you need to uninstall Interception
+                driver manually. You can be shadow banned or worst definitively banned but these games don't deserve
+                you.</li>
+            <li><b><u>Drivers Install:</u></b> If you are using a virtual Xbox Controller, prefer to add manually the
+                driver for it, install manually the driver as a driver for old generation device, choosing on disk with
+                file .inf, from peripheral manager under control panel, it's in the tab system peipherals.</li>
+            <li><b><u>Games Handle:</u></b> When you plug a physical controller and start a game, it recognize only this
+                one, not the virtual one, it need to unplug it, and restart your PC.</li>
+            <li><b><u>Unconventional Issues:</u></b> You can test your Xbox controller by typing joy.cpl from Run tool
+                to open with the keyboard keys shortcut Windows + R, and also open control panel by typing it, and also
+                control printers by typing it, and also audio settings by typing mmsys.cpl. Take care to bad
+                wire and extended wire because it cause disconnection / reconnection in loop each second and can break
+                your controller or USB storage device, prefer a long wire than using an extension. You cannot overclock
+                Bluetooth peripherals but you can overclock USB peripherals. Unwire your controller each time you shut
+                down your PC, and only wire it when your PC is on, and also remove batteries if you don't use it for a
+                long time, otherwise old batteries can destroy your controller with acidity leak. If you don't have
+                audio, when you using Dualshock4 or Dualsense via USB, the audio card recognize it, instead of your
+                speakers by default, you need to disable it from audio card settings, i.e. when you connect a Dualshock4
+                or a Dualsense via USB, your sound card toggle to default the speakers of the controller, but you can
+                simply disable it from sound card properties to revert the change (to do it only once, i.e. the first time). 
+                You games can run better in windowed borderless mode removing window title or if your third party tool to handle 
+                your controller is in system tray with notify icon.</li>
+            <li><b><u>Conventional Issues:</u></b> When your game is running with administrative privilege, your third
+                party programs interfering with your game, like for handle controllers, must running also like so. When
+                you are using a automatic pairing for your Bluetooth controllers, if bugs occuring because your
+                Bluetooth controllers disconnected badly, you have to connect/disconnect your Bluetooth controllers from
+                peripherals and printers manager under control panel.</li>
+            <li><b><u>Being Competitive:</u></b> If you want to be a competitive gamer in FPS, you need to set a
+                sensitivity with ADS to 1:1, and if you are using gyro aiming, the sensitivity must be real world or
+                more, i.e. a gamepad turn is a view turn with axis X, but you can check with axis Y.</li>
+            <li><b><u>Game Responsiveness:</u></b> More a mouse have DPI more you can have a mouse sensitivity lowest 
+                in game options for same speed but with better fine aiming. For a game with x FPS, a polling rate of 2x for 
+                your mouse is enough. Removing border and window title like borderless fullscreen but decreasing game resolution 
+                in game options is a good choice.</li>
+            <li><b><u>Stick Drift and Calibration:</u></b> There's a calibration each time you run a script after the prompt. So I don't advice 
+                to use any calibration gui tool from internet or inner program, because you can't reverse it, and with SIGIL it don't need.</li>
+            <li><b><u>Bluetooth Driver Error:</u></b> If you have issue with your Bluetooth dongle like driver error under Bluetooth Windows 
+                settings, you need to disable Wireless Bluetooth from network card and from device manager under control panel.</li>
+            <li><b><u>Building Competitive Motion Gaming Controller:</u></b> I have heard several times a person claiming that many of his ideas were 
+                taken or reused by companies such as Nintendo or Canal+. It is important to note that, in general, ideas themselves are not protected 
+                by copyright. Regarding the scripts he develops for devices like Cronus or Titan, even if he writes them himself, they remain part of 
+                the software and hardware ecosystem of those platforms, which belong to their creators and user communities. He says he was among the 
+                first to experiment with concepts related to motion gaming and streaming, and that he contributed to these areas. He also mentions that 
+                he can draw 3D graphics on a PC, works in IT and electronics, and spends a lot of time on gaming, including talking with well‑known 
+                YouTubers. He describes himself as highly skilled with controllers and scripting, and says he has built a group of friends who play 
+                with him. He also talks about the Wiimote and its historical accessories like the Wii Zapper and Wii Wheel. According to him, his 
+                aiming system is not fully 1:1 and relies on the controller’s characteristics rather than a mouse, especially when sensitivity decreases 
+                while aiming down sights. He claims to perceive a response time of around 10 ms on the Wiimote, based on information he read on Cronus 
+                support pages. However, in certain practical situations, the behavior observed could correspond to a higher latency. From my own experience, 
+                I have sometimes noticed differences, which can lead to technical disagreements. He has been programming controllers since 2008 and considers 
+                his scripts to be excellent. For my part, I developed view‑control code in GlovePIE that I find more effective, although he never mentions it. 
+                He also managed to implement an idea involving a single Joy‑Con combined with an infrared camera, connected to a Wiimote through a USB cable, 
+                allowing one‑handed play on consoles. He wants to design an ergonomic controller inspired by handheld barcode scanners used in stores, 
+                to make one‑handed gaming easier. Personally, I think a split Wiimote‑style controller with improved ergonomics would already be a very effective 
+                solution. On PC, it is possible to use several controllers at the same time, which offers great flexibility. Unlike consoles, where only a few 
+                games—such as Call of Duty—work well with motion controls, on PC almost all games are playable, including when simulating a joystick with a 
+                microcontroller board.</li>
+        </ul>
+        <br>
+        <br>
+    </div>
+
+    <copyrights
+        style="display: float; float: right; position: fixed; right: 4px; bottom: 0px; color: black; text-align: center; font-family: sans-serif; font-size: 2.2vh; line-height: 2.2vh;">
+        <b>© MAF</b>
+    </copyrights>
+
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+﻿<!--
+• Author: Michaël André Franiatte.
+• Contact: michael.franiatte@gmail.com.
+• Publisher: https://github.com/michaelandrefraniatte.
+• Copyrights: All rights reserved, no permissions granted.
+• License: Not open source, not free of charge to use.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+
+    <head>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TVP9X48X');</script>
+        <meta charset="utf-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ReactionResol</title>
+        <meta name="description" content="Program for equilibration of any chemical reaction">
+        <meta name="keywords" content="equilibration, chemical, reaction, program">
+        <meta name="author" content="MICHAEL ANDRE FRANIATTE">
+
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+        <link rel="stylesheet" href="../extra/w3.css">
+
+        <link rel="stylesheet" href="../custom/custom.css" />
+        
+        <script src="../extra/jquery-3.7.1.min.js"></script>
+
+        <script src="../custom/redirect.js"></script>
+        
+        <script src="../extra/iframe_api.js"></script>
+
+    </head>
+
+    <body class onLoad="window_onload()" id="bodymain">
+        <span class="backloader"></span>
+        <div class="modalaccept">
+            <div class="modalaccept-content">
+                <div>By continuing, you are agree to contact, quote and pay author, and you respect <a href="https://github.com/michaelandrefraniatte">the copyrights and the license of author</a>. You may not distribute, reproduce, copy, modify or create derivative works from work of author. Author retains all rights on his source codes.</div>
+                <br />
+                <div>
+                    <input type="checkbox" id="acceptbox" name="acceptbox" />
+                    <label for="acceptbox">I'm agree, I respect and understand.</label>
+                </div><br />
+                <div><button id="acceptbutton">I understand</button></div>
+            </div>
+        </div>
+        <div class="back" id="main">
+            <span aria-label="Copyrights" class="infobulle">&#8505;</span>
+            <span aria-label="Go to top" class="topbtn">▲</span>
+            <div id="banner"><img src="../img/favicon.jpg" alt="© MAF" />
+                <div id="closebanner">✖</div>
+                <div id="textbanner">By continuing, you are agree to contact, quote and pay author, and you respect <a href="https://github.com/michaelandrefraniatte">the copyrights and the license of author</a>. You may not distribute, reproduce, copy, modify or create derivative works from work of author. Author retains all rights on his source codes.</div>
+                <div id="button1banner">I understand</div>
+                <div id="button2banner">I don't understand</div>
+            </div>
+            <span aria-label="Contact" class="infobulle-contact">&#9742;</span>
+            <div id="banner-contact"><img src="../img/favicon.jpg" alt="© MAF" />
+                <div id="closebanner-contact">✖</div>
+                <div id="textbanner-contact">If you find something usefull, please contact author at this email address:
+                    <a href="mailto:michael.franiatte@gmail.com" class="dl-link" 
+                       >michael.franiatte@gmail.com</a>.
+                </div>
+                <div id="buttonbanner-contact">Copy</div>
+            </div>
+
+            <div class="top w3-center">
+                <img class="logo" src="reactionresol.png" alt="reactionresol" onclick="clickLogo()" title="https://michaelandrefraniatte.github.io">
+                <div class="title colored">
+                    <h2>ReactionResol</h2>
+                    <h1>Chemical Reaction Resolution</h1>
+                </div>
+            </div>
+
+            <div class="container">
+
+                <div class="w3-row first-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Program for Equilibration of Chemical Reactions</b></h3>
+                        <p>
+                            This program is for automatically equilibrate reactions with 3 to 9 constituents, and can be
+                            used in conjunction with EoSResol to synthetize molecules with 8 atomes. Let's see...
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-center row">
+                    <div class="column">
+                        <img src="../img/reaction-main.png" alt="reaction-main" style="width:50%"
+                            title="Click to expand" onclick='img_box("../img/reaction-main.png")'>
+                    </div>
+                </div>
+
+                <div class="w3-row second-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Considerations About the Program</b></h3>
+                        <p>
+                            It can resolve every reactions in terms of number of products and reactants. It's nothing
+                            for I can making changes in derivative programs, or just one line text reaction program,
+                            because I made already the method to resolve every chemical reactions which are not to
+                            change in the program. To note, a molecule shall be written with each type of atome grouped
+                            in number. For example, a carbone C shall appear only one time on a line. To note, the first
+                            product, under the first line just after the equal sign, shall have a stoechiometric
+                            coefficient set to 1. I did that because scientific community consider it as impossible like
+                            a lot of things I did and prooved... Like the spontaneous generation of any molecule, and
+                            like resolution of polynomial equations with a hand pen using my mathematical hypothesis. To
+                            note, you must set dot instead of comma for number floating as decimal separator in regional
+                            options, under control panel. I made the web version of <a 
+                            href="../ReactionResol-Web-Application/">ReactionResol</a>.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="w3-row third-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>My Own Video Demonstration</b></h3>
+                        <div align="center" class="center">
+                            <div id="player" data-videoid="[q6R1zqtaFho]">
+                                <div class="loader"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <footer class="bottom w3-center">
+                <img src="../img/favicon.png" alt="© MAF" />
+                <br>
+                <b class="date">1979</b>
+                <br>
+                <b class="white">© MAF</b>
+            </footer>
+
+        </div>
+
+    
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC469PC35"></script>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVP9X48X"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    </body>
+
+</html>

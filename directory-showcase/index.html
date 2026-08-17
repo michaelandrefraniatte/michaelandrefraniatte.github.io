@@ -1,0 +1,1731 @@
+﻿<!--
+• Author: Michaël André Franiatte.
+• Contact: michael.franiatte@gmail.com.
+• Publisher: https://github.com/michaelandrefraniatte.
+• Copyrights: All rights reserved, no permissions granted.
+• License: Not open source, not free of charge to use.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TVP9X48X');</script>
+
+    <meta charset="utf-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="MICHAEL ANDRE FRANIATTE">
+    
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+    <title>directory</title>
+
+    <script src="../custom/redirect.js"></script>
+
+    <style>
+        body {
+            margin-left: 38.3%;
+            line-height: 1.83rem;
+            font-size: 1.03rem;
+            color: white;
+            background-color: #333;
+        }
+
+        a {
+            color: white;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        a:hover {
+            color: dodgerblue;
+        }
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #444;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #eee;
+        }
+    </style>
+
+    <style>
+        /*the container must be positioned relative:*/
+        .autocomplete {
+            position: relative;
+            display: float;
+            float: left;
+            margin-right: 10px;
+        }
+
+        input {
+            position: relative;
+            display: float;
+            float: left;
+            border: 1px solid transparent;
+            background-color: #f1f1f1;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        input[type=text] {
+            background-color: #f1f1f1;
+            width: 93%;
+        }
+
+        input[type=submit] {
+            background-color: DodgerBlue;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .autocomplete-items {
+            position: absolute;
+            border: 1px solid #d4d4d4;
+            border-bottom: none;
+            border-top: none;
+            z-index: 99;
+            /*position the autocomplete items to be the same width as the container:*/
+            top: 100%;
+            left: 0;
+            right: 0;
+            width: 100%;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .autocomplete-items div {
+            padding: 10px;
+            background-color: #000;
+            border-bottom: 1px solid #d4d4d4;
+            display: block;
+            cursor: pointer;
+        }
+
+        /*when hovering an item:*/
+        .autocomplete-items div:hover {
+            background-color: #444;
+        }
+
+        /*when navigating through the items using the arrow keys:*/
+        .autocomplete-active {
+            background-color: DodgerBlue !important;
+            color: #666;
+        }
+
+        .search {
+            display: inline;
+            text-align: left;
+            margin: 0 auto;
+        }
+
+        font {
+            color: DodgerBlue;
+            text-decoration: underline;
+        }
+
+    </style>
+
+</head>
+<body class>
+
+    <div class="search">
+        <div class="autocomplete" style="width:300px;">
+            <input id="search" type="text" placeholder="search">
+        </div>
+        <input type="submit" onclick="search();" value="Search">
+    </div>
+
+    <div id="page">
+        </br>
+        </br>
+        ✅ [Repositories]</br>
+        </br>
+        📁 Local Disk (C:)</br>
+        └📁 Users</br>
+        ⠀└📁 Username</br>
+        ⠀⠀└📁 My Documents</br>
+        ⠀⠀⠀└📁 Github</br>
+        ⠀⠀⠀⠀└📁 michaelandrefraniatte</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/.github"><b>.github</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└📇 .gitattributes</br>
+        ⠀⠀⠀⠀⠀⠀└📇 .gitignore</br>
+        ⠀⠀⠀⠀⠀⠀└📇 CODE_OF_CONDUCT.md</br>
+        ⠀⠀⠀⠀⠀⠀└📇 CONTRIBUTING.md</br>
+        ⠀⠀⠀⠀⠀⠀└📇 PULL_REQUEST_TEMPLATE.md</br>
+        ⠀⠀⠀⠀⠀⠀└📇 README.md</br>
+        ⠀⠀⠀⠀⠀⠀└📇 SECURITY.md</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/AimAmplifier"><b>AimAmplifier</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 AimAmplifier4FPS</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/AimController"><b>AimController</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 arduino</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 teensy</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/AimSight"><b>AimSight</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 AimSight</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/aimtraining"><b>AimTraining</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 aim-training</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/AlbumCapture"><b>AlbumCapture</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 AlbumCapture</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/AlwaysTogether"><b>AlwaysTogether</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 user1</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 user2</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/anti-cheating-note-and-solution"><b>AntiCheatingNoteAndSolution</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 anti-cheating-note-and-solution.txt</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Autoruns</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ProcessExplorer</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Commands</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Configs</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 bgpview</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ExploitConfigfile.xml</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 firewalls.wfw</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 MBSetup.exe</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 VC_redist.exe</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 configuration.ps1</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 network.cmd</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 network.reg</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 security.cmd</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 security.reg</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 service.cmd</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 servicerepair.cmd</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Arca"><b>Arca</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Arca</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 AudioVisualizerVerticalBarre</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ArgumentHandle"><b>ArgumentHandle</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ArgumentHandle</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Arva"><b>Arva</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ARVA</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ASLRChecker"><b>ASLRChecker</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ASLRChecker</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/AssociateProgramExtension"><b>AssociateProgramExtension</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 AssociateProgramExtension</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/AudioCrossAir"><b>AudioCrossAir</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 AudioCrossAir</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/AudioFileListener"><b>AudioFileListener</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 AudioFileListener</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/AudioMerger"><b>AudioMerger</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 AudioMerger</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/AudioSpliter"><b>AudioSpliter</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 AudioSpliter</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/AudioVision"><b>AudioVision</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 AudioVision</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Test</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Authentication"><b>Authentication</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 testconnectionclass</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 testconnectiondb</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 testconnectionfirestore</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 testconnectionoffline</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 testconnectionsocket</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 testconnectiontimelimit</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 testconnectionwebsocket</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/AutoFireAutoSwitchCuphead"><b>AutoFireAutoSwitchCuphead</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 AutoFireAutoSwitchCuphead</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/BackBone"><b>BackBone</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 BackBone</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/BankAuthentication"><b>BankAuthentication</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 BankAuthentication</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 BankAuthenticationConsole</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/bassbooster"><b>bassbooster</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 bassbooster-extension</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/BehindChecker"><b>BehindChecker</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 BehindBlocker</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 LobbyBlocker</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 RouterBlocker</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 RouterBehindChecker</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ServerBehindChecker</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/BlockIP"><b>BlockIP</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 BlockIP</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/BotDetection"><b>BotDetection</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 BotDetection</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/BotInspection"><b>BotInspection</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 BotInspection</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/BTFlood"><b>BTFlood</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 BTFlood</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/CamArtASCII"><b>CamArtASCII</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 CamArtASCII</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ChangeDNS"><b>ChangeDNS</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ChangeDNS</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ChangeMAC"><b>ChangeMAC</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ChangeMAC</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ChangeRepoVisibility"><b>ChangeRepoVisibility</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ChangeRepoVisibility</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ChatOverlay"><b>ChatOverlay</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ChatOverlay</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/CheckDrives"><b>CheckDrives</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 CheckDrives</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ciine"><b>ciine</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-battlefield-6</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-black-ops-6</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-bo6</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-bo7</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-bo7-xi</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-borderlands3</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-borderlands-4</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-call-of-duty-black-ops-6</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-cod</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-cod18</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-cod20</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-cod23</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-cod24</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-cod25</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-ds4-fh4</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-ds-disney-speedstorm</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-ds-forza-vid</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-ds-vid</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-fh4</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-fh5</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-fortnite</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-fortnite-zero-build</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-forza-horizon-4</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-fv2-fh5</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-fv2-nza4</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-fzc</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-ga-fv</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-gp-ds</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-gp-ds4</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-gp-jcg</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-gp-joys</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-gp-km</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-gp-spc</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-gp-wa-fh4</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-gp-wj</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-gp-wj-fzc</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-gp-wn-cod</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-gp-wn-fzc</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-gp-wn-mw2</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-gp-wn-mw4</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-gp-xc</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-jcg-fh4</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-joys-fh4</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-km-cod20</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-km-ratchet</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-lg-ds</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-lg-ds4</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-lg-fv2</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-lg-jcg</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-lg-joys</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-lg-spc</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-lg-wj</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-lg-wn</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-mw-vid</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-modern-warfare-4</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-mw4</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-nza4</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-rw</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-rw-ds4</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-si-xc-sn</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-spc-fh4</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-wa-forza-vid</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-warzone</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-warzone-2025</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-wn-bo</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-wn-bo-vid</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-wn-call-of-duty-black-ops-6</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-wn-cod</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-wn-cod24</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-wn-cod24-vid</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-wn-cod25</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-wn-fortnite-zb</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-wn-fortnite-zero-build</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-wn-fzc</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-wn-mw</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-wn-mw2</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-wn-mw3</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-xc-fh5</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-xc-nza4</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ciine-xdefiant</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ClickableOverlay"><b>ClickableOverlay</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ClickableOverlay</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/CodeEditor"><b>CodeEditor</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 CodeEditor</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/CodingLibrary"><b>CodingLibrary</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Linux</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Windows</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Color-Picker"><b>Color-Picker</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Color-Picker-Extension</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ConfigurationFileRewriter"><b>ConfigurationFileRewriter</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ConfigurationFileChanger</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ConfigurationFileReplacer</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ConfigurationFileRewriter</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ConfigurationFileWriter</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ContinuousByte"><b>ContinuousByte</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ContinuousByte</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ControllerBotDetection"><b>ControllerBotDetection</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ControllerBotDetection</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ControllerDeadzoneFinder"><b>ControllerDeadzoneFinder</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ControllerDeadzoneFinder</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ControllerHandle"><b>ControllerHandle</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 BufferDescriptor</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 DualsenseBTLibProTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 DualsenseLib</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 DualsenseLibProTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Dualsenses</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 DualsensesBT</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 DualSense-Windows-Test</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 DualSenseReader</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Dualshock4Lib</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Dualshocks4</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Dualshocks4BT</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GameInput</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GameInputSharp</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GeneralGamepadTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GeneralJoystickTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GeneralKeyboardTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GeneralMouseTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GenericGamepadTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GenericJoyconsTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GenericJoystickTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GenericKeyboardTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GenericMouseTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 handheldlegend.github.io</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 helloworld</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 HPCamTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 jc_toolkit_irsensor</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 InputPairing</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Interceptions</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Joy2Win</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 joycon2cpp</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 joycon2leftusbinputs</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 joycon2rightusbinputs</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 JoyconChargingGripLibProTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 JoyconLeftChargingGripLibProTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 JoyconLeftLibProTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 JoyconRightChargingGripLibProTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 JoyconRightLibProTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 JoyconsChargingGripLib</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 JoyconsChargingGripLibTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 JoyInputsTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 JOYTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 KeyboardHookTester</br>
+        ⠀⠀⠀⠀⠀⠀⠀└🗃️ Libraries</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Dualsenses</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Dualshocks4</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Joyconleftcharginggrips</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Joyconrightcharginggrips</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Keyboardhook</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Keyboardinputs</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Keyboardrawhooks</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Keyboardxnahook</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Mousehook</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Mouseinputs</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Mouserawhooks</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Mouserawinputs</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Mousexnahook</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Wiimotes</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 MouseHookTester</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 procon2usbinputs</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 procon2xinput</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 PS4ControllerLib</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 PS5ControllerLib</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 QuickBluetoothLE</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 RawHooksKeyboardTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 RawHooksMouseTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 rawinputkeyboard</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 rawinputmouse</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 RawInputsTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 RawInputTrackApp</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 RawKeyboardTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 RawMouseTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Scalingfactor</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Speech</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Speech_To_Text</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 SwitchProControllerLib</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 SwitchProControllerLibProTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Switchprocontrollers</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 SwitchprocontrollersBT</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 SwitchProControllerUSBLibProTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Text_To_Speech</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Timers</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 VirtualDualshock4-test</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 vjoy-test</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 VoiceNote</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WiimoteLib</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WiimoteLibMP</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WiimoteLibProTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WiimoteLibTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WiimoteXboxTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 x360input</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 xbc-test</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 XBOX360Test</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ConvertWavToMp3"><b>ConvertWavToMp3</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ConvertWavToMp3</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/cookiebanner"><b>cookiebanner</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 cookiebanner</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/CornFlake"><b>CornFlake</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 CornFlake</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/CrossAir"><b>CrossAir</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 CrossAir</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/CSCoreDotNet"><b>CSCoreDotNet</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 CSCoreDotNet</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/CursorAmplifier"><b>CursorAmplifier</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 CursorAmplifier</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Daynote"><b>Daynote</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 DayNote</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 daynote-extension</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/DesktopAudio"><b>DesktopAudio</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 DesktopAudio</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/DesktopCapture"><b>DesktopCapture</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 DesktopCapture</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/DesktopController"><b>DesktopController</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 DesktopController</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 DesktopControllerDisplay</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/DesktopLander"><b>DesktopLander</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 DesktopLander</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/DesktopNote"><b>DesktopNote</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 DesktopNote</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/DesktopOverlay"><b>DesktopOverlay</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 DesktopOverlay</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/DetectDrivers"><b>DetectDrivers</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 DetectDrivers</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/DevicePairingWizard"><b>DevicePairingWizard</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 DevicePairingWizard</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/DriversInstaller"><b>DriversInstaller</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 DriversInstaller</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/EaseOfAccess"><b>EaseOfAccess</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 EaseOfAccess</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/EBookViewver"><b>EBookViewver</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 EBookViewver</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/EchoBoost"><b>EchoBoost</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Echo</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 EchoBoost</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 EchoEqualizer</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 EchoMic</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Echorce</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 restart</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/EchoRepulsor"><b>EchoRepulsor</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 EchoRepulsor</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/EmulatorAmbiLight"><b>EmulatorAmbiLight</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 EmulatorAmbiLight</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/EmulatorFullScreen"><b>EmulatorFullScreen</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 EmulatorFullScreen</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/EnableBLE"><b>EnableBLE</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 EnableBLE</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/EnableProcon2"><b>EnableProcon2</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 EnableProcon2</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/EncryptedFiles"><b>EncryptedFiles</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 EncryptedFiles</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/EncryptedPages"><b>EncryptedPages</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 EncryptedPagesTool</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/EnumConstantConverter"><b>EnumConstantConverter</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 EnumConstantConverter</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/EnumerateDevices"><b>EnumerateDevices</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 EnumerateDevices</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/EoSResol"><b>EoSResol</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 EoSResol</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 EoSResolForm</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 EoSResolWS</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 EoSResol.csv</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Exetoy"><b>Exetoy</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Exetoy</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/faceto"><b>FaceTo</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 FaceTo</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 go-face-so</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 to-face</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/fairplay"><b>FairPlay</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 dsm</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 FairPlay</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Run</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/FastAccessTab"><b>FastAccessTab</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 fastaccess-extension</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 fastaccess-newtab-extension</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 fastaccesstab-extension</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/FastAccessPages"><b>FastAccessPages</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 FastAccessPage1</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 FastAccessPage2</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 FastAccessPage3</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 FastAccessPage4</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 FastAccessPage5</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 FastAccessPage6</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 fastaccesspages-extension</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 fastaccesspages-newtab-extension</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 fastaccesstab1-extension</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 fastaccesstab2-extension</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 fastaccesstab3-extension</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 fastaccesstab4-extension</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 fastaccesstab5-extension</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 fastaccesstab6-extension</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/FileAuthentication"><b>FileAuthentication</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 FileAuthentication</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 FileAuthenticationCreate</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/firsttoaim"><b>FirstToAim</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 3DPrints</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 FTA</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 html</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/FlushDevices"><b>FlushDevices</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 FlushDevices</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/FlushDNS"><b>FlushDNS</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 FlushDNS</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/FootstepsAmplifier"><b>FootstepsAmplifier</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 FootstepsAmplifier</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/fpscounter"><b>FpsCounter</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 FpsCounter</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/FrameVision"><b>FrameVision</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 FrameVision</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/FreeIt"><b>FreeIt</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 FreeIt</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/freemyplay"><b>FreeMyPlay</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 FreeMyPlay</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 NewB</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/FrontBlock"><b>FrontBlock</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 FrontBlock</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/FullscreenUtility"><b>FullscreenUtility</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 FullscreenUtility</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/gameplaycapture"><b>GameplayCapture</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Duplicator</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GameplayCapture</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/GameplayOverlay"><b>GameplayOverlay</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ControllerOverlay</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 KMOverlay</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/GameRecorder"><b>GameRecorder</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GameRecorder</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/gamergate"><b>GamerGate</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GamerGate</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/GamingOverlay"><b>GamingOverlay</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GamingOverlay</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/geoquizz_mobile"><b>geoquizz_mobile</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 geoquizz_mobile</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/GraphicDrawer"><b>GraphicDrawer</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GraphicDrawer</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Gumball"><b>Gumball</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Gumball</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/GyroTester"><b>GyroTester</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GyroTester</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Joycons2left</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Joycons2right</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/HerosTrail"><b>HerosTrail</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 HerosTrail</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/HideDevice"><b>HideDevice</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 HideDevice</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 HideDevices</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/HideDeviceFromList"><b>HideDeviceFromList</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 HideDeviceFromList</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/HidePlusDeviceNotFromList"><b>HidePlusDeviceNotFromList</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 HidePlusDeviceNotFromList</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/hidread"><b>hidread</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 hidread</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 lhidread</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 rhidread</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 prohidread</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/HveicToJpg"><b>HveicToJpg</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 HveicToJpg</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/InfiniteWorker"><b>InfiniteWorker</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 InfineWorker</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 InfiniteWorker</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 InfinityWorker</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 InfinyWorker</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/InputPairing"><b>InputPairing</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Dependencies</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GetDeviceNames</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 JoyconLeftInputPairing</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 JoyconRightInputPairing</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 PSControllerInputPairing</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 SwitchControllerInputPairing</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WiimoteInputPairing</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 XboxControllerInputPairing</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/installer-test"><b>installer-test</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 installer-test</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 uninstaller-test</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 updater-test</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 test</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/InterceptionTest"><b>InterceptionTest</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 InterceptionTest</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/joycon2inputs"><b>joycon2inputs</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 joycon2inputs</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/JoyconsTheory"><b>JoyconsTheory</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 JoyconsTheory</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 JoyconsPairing</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 lhidread</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 rhidread</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/joyinputs"><b>joyinputs</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 joyinput</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 joyinputs</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/keyboardmouse"><b>keyboardmouse</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 keyboardmouse</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 keyboard</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 mouse</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Keyboard-Mouse-Emulation"><b>KeyboardMouseEmulation</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 CancelReload</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 DoubleClickRightReload</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 KeepAimDownSight</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 MouseMoveToArrows</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 PressToPush</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 PushReload</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ShockMouse</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/KeyboardMouseOverlay"><b>KeyboardMouseOverlay</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 KeyboardMouseOverlay</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/KeyLogger"><b>KeyLogger</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 KeyLogger</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/KillcamCapture"><b>KillcamCapture</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 KillcamCapture</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Launcher"><b>Launcher</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Launcher</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/LocalAuthentication"><b>LocalAuthentication</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GetChecksum</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GetChecksumSIGIL</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GetHashedChecksum</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GetInfo</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GetIP</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GetKey</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GetKeyDecryptor</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GetLocalAuthentication</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GetMAC</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GetUniqueID</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GetUser</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 KeyFileCreator</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 LA-KF-Test</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 LA-KF-Test-Console</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 LocalAuthentication</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 LocalAuthenticationTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 LocalAuthenticationCreator</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 TextCryptor</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/localstorage-info"><b>localstorage-info</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 localstorage-info-extension</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/localstreamplay"><b>LocalStreamPlay</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 BitmapArraysToBitmapTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 LSP</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 LSPDisplay</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 LSPHost</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/mapkey"><b>mapkey</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 mapkey</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Mastermind"><b>Mastermind</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Mastermind</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/MasterSound"><b>MasterSound</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 MasterSound</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/MathCalculator"><b>MathCalculator</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 MathCalculator</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Mediatoy"><b>Mediatoy</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Mediatoy</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/MemoryHandle"><b>MemoryHandle</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 MemoryHandle</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 MemoryHandleTest</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/MemoryInspection"><b>MemoryInspection</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 MemoryInspection</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/MessageBox"><b>MessageBox</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 MessageBox</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/MethodHandle"><b>MethodHandle</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 MethodHandle</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/mic2edit"><b>mic2edit</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 mic2edit</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/michaelandrefraniatte"><b>michaelandrefraniatte</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└📇 .gitattributes</br>
+        ⠀⠀⠀⠀⠀⠀└📇 README.md</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/michaelandrefraniatte"><b>michaelandrefraniatte.github</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└📇 michaelandrefraniatte.github</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/michaelandrefraniatte.github.io"><b>michaelandrefraniatte.github.io</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└📇 html</br>
+        ⠀⠀⠀⠀⠀⠀└📇 css</br>
+        ⠀⠀⠀⠀⠀⠀└📇 javascript</br>
+        ⠀⠀⠀⠀⠀⠀└📇 extra</br>
+        ⠀⠀⠀⠀⠀⠀└📇 img</br>
+        ⠀⠀⠀⠀⠀⠀└📇 custom</br>
+        ⠀⠀⠀⠀⠀⠀└📇 books</br>
+        ⠀⠀⠀⠀⠀⠀└📇 pages</br>
+        ⠀⠀⠀⠀⠀⠀└📇 guides</br>
+        ⠀⠀⠀⠀⠀⠀└📇 applications</br>
+        ⠀⠀⠀⠀⠀⠀└📇 showcases</br>
+        ⠀⠀⠀⠀⠀⠀└📇 ideas</br>
+        ⠀⠀⠀⠀⠀⠀└📇 designs</br>
+        ⠀⠀⠀⠀⠀⠀└📇 marks</br>
+        ⠀⠀⠀⠀⠀⠀└📇 icons</br>
+        ⠀⠀⠀⠀⠀⠀└📇 .well-known</br>
+        ⠀⠀⠀⠀⠀⠀└📇 hall-of-fame</br>
+        ⠀⠀⠀⠀⠀⠀└📇 Privacy</br>
+        ⠀⠀⠀⠀⠀⠀└📇 ppia</br>
+        ⠀⠀⠀⠀⠀⠀└📇 humans.txt</br>
+        ⠀⠀⠀⠀⠀⠀└📇 robots.txt</br>
+        ⠀⠀⠀⠀⠀⠀└📇 sitemap.xml</br>
+        ⠀⠀⠀⠀⠀⠀└📇 index.html</br>
+        ⠀⠀⠀⠀⠀⠀└📇 search.html</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/MinimalTab"><b>MinimalTab</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 minimaltab-extension</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/miniplayer"><b>miniplayer</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 miniplayer</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/monogame-creation-and-learning"><b>MonogameCreationAndLearning</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 CrazySpaceship</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 CursorTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Game</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 MonoGameClassTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 RenderFormTest</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/MotionInputPairing"><b>MotionInputPairing</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 MotionInputPairing</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/MotionOverlay"><b>MotionOverlay</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 KMOverlay</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 MotionOverlay</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 XCOverlay</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 XCOverlayOriginal</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 XCOverlayPixelized</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/MouseControlTester"><b>MouseControlTester</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 MouseControlTester</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 SendInputLibrary</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/MouseMenuWheel"><b>MouseMenuWheel</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 MouseMenuWheel</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/MouseTrackerOverlay"><b>MouseTrackerOverlay</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 MouseTrackerOverlay</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/myfavours"><b>MyFavours</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 my-favours</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 my-favours-extension</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Nash"><b>NASH</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 NashNamer</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 NNASH</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/NAudioDotNet"><b>NAudioDotNet</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 NAudioDotNet</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/NewB"><b>NewB</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 NewB</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/noads"><b>noads</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 noads-extension</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/NonogramGeneratorAndPlayer"><b>NonogramGeneratorAndPlayer</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 NonogramGeneratorAndPlayer</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ObjectHandle"><b>ObjectHandle</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ObjectHandle</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/osef"><b>OSEF</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 osef</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Otep"><b>Otep</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 OtepCheckers</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 OtepChess</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 OtepChineseCheckers</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 OtepOthello</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 OtepPower4</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/pdfgenerator"><b>PdfGenerator</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 pdf-generator</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/perfwatch"><b>PerfWatch</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 PerfWatch</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/PlayAndListen"><b>PlayAndListen</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Listen</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Play</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/PlayAndReplay"><b>PlayAndReplay</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 controller</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 km</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Playcipe"><b>Playcipe</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Playcipe</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Players"><b>Players</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Playchy</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Playcloud</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Playflix</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Playhbo</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Playmount</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Playnal</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Playney</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Playocs</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Playprime</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Playtf1</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Playto</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Playtov</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Playmedia"><b>Playmedia</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Playmedia</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/PlayMusic"><b>PlayMusic</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 PlayMusic</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Playther"><b>Playther</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Playther</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Playtify"><b>Playtify</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 audio-visualizer-extension</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Playtify</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Playtube"><b>Playtube</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Playtube</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 playtube-extension</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Playzer"><b>Playzer</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Playzer</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/png2blackandwhite"><b>Png2BlackAndWhite</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 PNG2BLACKANDWHITE</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/png2ico"><b>Png2Ico</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 PNG2ICO</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/png2shadow"><b>Png2Shadow</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 PNG2SHADOW</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/png2transparent"><b>Png2Transparent</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 PNG2TRANSPARENT</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/png2unblurred"><b>Png2Unblurred</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 PNG2UNBLURRED</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/PrintScreen"><b>PrintScreen</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 CaptureMirror</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 CaptureScreen</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 CaptureScreenDuplication</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 CaptureScreenProcessTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 CaptureScreenTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 CaptureTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 DesktopDuplicationTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 PrintScreen</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/PrivatePages"><b>PrivatePages</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 gpp</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 pp</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 pp.html</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ProcessCleaner"><b>ProcessCleaner</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ProcessCleaner</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/procon2inputs"><b>procon2inputs</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 procon2inputs</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ProGamingMapper"><b>ProGamingMapper</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Dependencies</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Libraries</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 PGM</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 PGMHost</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/PromptHandle"><b>PromptHandle</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 InputTextHandle</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 PromptHandle</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/QuickControl"><b>QuickControl</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 BattlefieldQuickControl</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 BorderlandsQuickControl</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 CallOfDutyQuickControl</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ForzaQuickControl</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/RayTube"><b>RayTube</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 RayTube</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ReactionResol"><b>ReactionResol</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ReactionResol</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ReadDevice"><b>ReadDevice</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ReadDevice</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ReadFile</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ReadHID</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Recipe"><b>Recipe</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Recipe</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/RecordYoutube"><b>RecordYoutube</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 GameRecorder</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 RecordYoutube</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/RecordYoutubeOverlay"><b>RecordYoutubeOverlay</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 RecordYoutubeOverlay</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/RemoteAudio"><b>RemoteAudio</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 RemoteAudio</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 RemoteAudioHost</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/RemoteGameplay"><b>RemoteGameplay</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 FullscreenUtility</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 RemoteGameplay</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 RemoteGameplayHost</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ResizedVision"><b>ResizedVision</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ResizedVision</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/RestoreServices"><b>RestoreServices</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 RestoreServices</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/rmoco"><b>rmoco</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 rmoco</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/rmodo"><b>rmodo</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 rmodo</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/rmofo"><b>rmofo</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 rmofo</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/rmogo"><b>rmogo</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 rmogo</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/rmoho"><b>rmoho</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 rmoho</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/rmoio"><b>rmoio</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 rmoio</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/rmolo"><b>rmolo</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 rmolo</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/rmomo"><b>rmomo</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 rmomo</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/rmopo"><b>rmopo</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 rmopo</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/rmoro"><b>rmoro</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 rmoro</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/rmoso"><b>rmoso</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 rmoso</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/rmoto"><b>rmoto</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 rmoto</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/rmovo"><b>rmovo</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 rmovo</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/rmowo"><b>rmowo</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 rmowo</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/rmoyo"><b>rmoyo</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 rmoyo</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/rmozo"><b>rmozo</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 rmozo</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/rollchicken"><b>rollchicken</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 RollChicken</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 rollchicken-extension-v3</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/roslyn-test"><b>roslyn-test</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 RoslynFCTB</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 RoslynAgregator</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/RunAndGun"><b>RunAndGun</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Gun</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Run</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 run.cmd</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 run.vbs</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ScpInstaller"><b>ScpInstaller</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ScpDriverInterface</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ScpInstaller</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/SCR"><b>SCR</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 SCR</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ScreenInspection"><b>ScreenInspection</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ScreenInspection</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ScrollingShooter"><b>ScrollingShooter</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ScrollingShooter</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/SendInputLibrary"><b>SendInputLibrary</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 SendInputLibrary</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ServiceDisabling"><b>ServiceDisabling</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ServiceDisabling</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ShortYoutube"><b>ShortYoutube</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 input.txt</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 crop.cmd</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 merge.cmd</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 rescale.cmd</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 short.cmd</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 short.html</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 video.html</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ffmpeg.exe</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/SilenceRemover"><b>SilenceRemover</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 SilenceRemover</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Skipy"><b>Skipy</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 skipads-extension</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 skipads-extension-v3</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 skipyclick-extension-v3</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 skipy-extension-v3</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 skipyiframe-extension-v3</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 skipyignore-extension-v3</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 skipylity-extension-v3</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/slider-tile-cutter"><b>slider-tile-cutter</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 slider-tile-cutter</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/SongCapture"><b>SongCapture</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 SongCapture</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/SoundCapture"><b>SoundCapture</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 SoundCapture</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/SoundControl"><b>SoundControl</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 SoundControl</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/SpaceShooter"><b>SpaceShooter</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 SpaceShooter</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/speech-comments"><b>speech-comments</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 speech-comments-extension</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Spicify"><b>Spicify</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 spicify-extension</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Spirify"><b>Spirify</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Spirify</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 spirify-extension</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/StandardInGamingInputLinker"><b>StandardInGamingInputLinker</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Scripts-SIGIL</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 SIGIL</br>
+        ⠀⠀⠀⠀⠀⠀⠀└🗃️ Dependencies</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 InputPairing</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 MotionInputPairing</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/StandardInGamingInputLite"><b>StandardInGamingInputLite</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 DriversInstaller</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 EnableBLE</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 RepairBLE</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 FlushDevices</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 HideDevice</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Build</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 InterceptionTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 EnableProcon2</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WindowTitleRemover</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Executables-SIGIL</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Scripts-SIGIL</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 SIGIL</br>
+        ⠀⠀⠀⠀⠀⠀⠀└🗃️ Dependencies</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 InputPairing</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 MotionInputPairing</br>
+        ⠀⠀⠀⠀⠀⠀⠀└🗃️ Libraries</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 controllers</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 controllersds4</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 controllersvjoy</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Directinputs</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Dualsenses</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Dualshocks4</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 FastColoredTextBox</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Interceptions</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Joycons2left</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Joycons2right</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Joyconsleft</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Joyconsright</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Keyboardinputs</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Mouseinputs</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 sendinputs</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Speech</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Switch2procontrollers</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Switchprocontrollers</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Tickers</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Wiimotes</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 WinForm</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Xinputs</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/StandardInGamingInputLowing"><b>StandardInGamingInputLowing</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 assets</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Drivers</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 PrintScreen</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 sounds</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 X-Aim</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 xsrp</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Scripts-SIGIL</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 SIGIL</br>
+        ⠀⠀⠀⠀⠀⠀⠀└🗃️ Dependencies</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 InputPairing</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 MotionInputPairing</br>
+        ⠀⠀⠀⠀⠀⠀⠀└🗃️ Libraries</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 arduinocommunications</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 AutocompleteMenu</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Camera</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 controllers</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 controllersds4</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 controllersvid</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 controllersvjoy</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Directinputs</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Dualsenses</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 DualsensesBT</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Dualshocks4</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Dualshocks4BT</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 FastColoredTextBox</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Gamepadshook</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Interceptions</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Joyconcharginggrips</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Joyconleftcharginggrips</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Joyconrightcharginggrips</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Joyconsleft</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Joyconsright</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Joystickshook</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Keyboardhook</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Keyboardinputs</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Keyboardrawhooks</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Keyboardrawinputs</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 keyboardsmouses</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Keyboardxnahook</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 kmsvid</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Mousehook</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Mouseinputs</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Mouserawhooks</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Mouserawinputs</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Mousexnahook</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Networks</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Networkshost</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Readdevices</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Readfiles</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Readhids</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Scalingfactor</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 sendinputs</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Sound</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Speech</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Switchprocontrollers</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 SwitchprocontrollersBT</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 teensycommunications</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 teensyjoysticks</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Timers</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Valuechanges</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Valuestatechanges</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 websocketsharp</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Wiimotes</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 X360inputs</br>
+        ⠀⠀⠀⠀⠀⠀⠀⠀└📇 Xinputs</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/StartMeToStartup"><b>StartMeToStartup</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 StartMeToStartup</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/SteamLauncher"><b>SteamLauncher</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 SteamLauncher</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/STFU"><b>STFU</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 STFU</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Stoping"><b>Stoping</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Stoping</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/StopIt"><b>StopIt</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 StopIt</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Streamchat"><b>Streamchat</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Streamchat</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/StreamchatOverlay"><b>StreamchatOverlay</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 StreamchatOverlay</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/StreamchatToSpeech"><b>StreamchatToSpeech</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 StreamchatToSpeech</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/StreamTwitch"><b>StreamTwitch</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 StreamTwitch</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 cmd</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 firewall</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/StreamTwitchOverlay"><b>StreamTwitchOverlay</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 StreamTwitchOverlay</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/StringInspection"><b>StringInspection</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 StringInspection</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/StringToCode"><b>StringToCode</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 RessourceHandle</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 StringHandle</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/TalkingAvatar"><b>TalkingAvatar</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 TalkingAvatar</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/teamtrooper"><b>TeamTrooper</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 NetworkFileShare</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 NetworkFileShareTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 NetworkLanComputers</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 TeamTrooper</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/TeleVision"><b>TeleVision</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 TeleVision</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/TempBlocking"><b>TempBlocking</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 TempBlocking</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/TempRemoving"><b>TempRemoving</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 TempRemoving</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/TextEditor"><b>TextEditor</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 TextEditor</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/TextFromImage"><b>TextFromImage</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 TextFromImage</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ThumbnailCreator"><b>ThumbnailCreator</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ThumbnailCreator</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Tick"><b>Tick</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Tick</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/tiktok-voicer"><b>tiktok-voicer</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 tiktok-voicer-extension</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/timecounter"><b>TimeCounter</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 TimeCounter</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/TPMP"><b>TPMP</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 TPMP</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/TransferVoice"><b>TransferVoice</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 TransferVoice</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/trax"><b>TraX</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 TraX</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ui-libraries"><b>ui-libraries</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ui-cefsharp-test</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ui-library-test</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ui-webview-test</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/UniqueObject"><b>UniqueObject</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 UniqueObject</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/UpscaleVision"><b>UpscaleVision</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 UpscaleVision</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ValueAbsoluteToRelative"><b>ValueAbsoluteToRelative</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ValueAbsoluteToRelative</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ValueStateChanged"><b>ValueStateChanged</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 StateChanged</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 StatesChanges</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ValueChanged</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ValuesChanges</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ValueStateChanged</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/VideoPlayer"><b>VideoPlayer</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 VideoPlayer</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/VideoSpliter"><b>VideoSpliter</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 VideoSpliter</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/VirtualBassSpeaker"><b>VirtualBassSpeaker</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ModernEqualizer</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 SoundBooster</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 UniversalEqualizer</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 VirtualBassSpeaker</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/VirtualKeyboard"><b>VirtualKeyboard</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 VirtualKeyboard</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/VirtualStreamDeck"><b>VirtualStreamDeck</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 VirtualStreamDeck</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/vocable"><b>vocable</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 vocable-extension</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/wakeupnow"><b>WakeUpNow</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WakeUp</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 wakeup-extension</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/WebcamOverlay"><b>WebcamOverlay</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WebcamOverlay</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WebcamOverlayBlob</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WebcamOverlayCircle</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WebcamOverlayCircleAudio</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WebcamOverlayFeatured</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WebcamOverlayFirst</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WebcamOverlayHeart</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WebcamOverlayMorphing</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WebcamOverlayPolaroid</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WebcamOverlayPolygon</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WebcamOverlayRounded</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WebcamOverlaySecond</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WebcamOverlaySimple</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WebcamOverlayStar</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WebcamOverlayTransparent</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/WebOverlay"><b>WebOverlay</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WebOverlay</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WebOverlayConplete</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WebOverlayConpleteFullscreen</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/WebsiteResolutionTester"><b>WebsiteResolutionTester</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WebsiteResolutionTester</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/webViewer"><b>webViewer</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 webViewer</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/WiiJoy4FPS"><b>WiiJoy4FPS</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 JoyconsPairing</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WiimotePairing</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WiiJoyPairing</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 Scripts</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WiiJoy4</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WiiJoyScripter</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 JoyZone</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WiiDerlands</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WiiNite</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WiiTrol</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WiiZone</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/WiiJoyPilot"><b>WiiJoyPilot</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WiiJoyPilot</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/WiiJoyReflex"><b>WiiJoyReflex</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WiiJoyReflex</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/WiiJoyXS"><b>WiiJoyXS</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WiiJoyS</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WiiJoyX</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WiiJoyXS</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WiiJoyXSConfigHelper</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/WiimoteOnUbuntu"><b>WiimoteOnUbuntu</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WiimoteOnUbuntu</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/WiimoteTheory"><b>WiimoteTheory</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WiimotePairing</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WiimoteTheory</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/WindowTitle"><b>WindowTitle</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WindowTitle</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/WindowTitleRemover"><b>WindowTitleRemover</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WindowTitleRemover</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/WindowToolbox"><b>WindowToolbox</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WindowToolbox</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/WindowTopmostRemover"><b>WindowTopmostRemover</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WindowTopmostRemover</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/WinFormsDarkModeTest"><b>WinFormsDarkModeTest</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 MaterialSkinTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 MetroFrameworkTest</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 WinFormsDarkModeTest</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/x360inputs"><b>x360inputs</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 x360input</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 x360inputs</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/XboxControllerOverlay"><b>XboxControllerOverlay</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 XboxControllerOverlay</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/XboxControllerTester"><b>XboxControllerTester</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 XboxControllerTester</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/xsrp"><b>xsrp</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 xsrp</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/Yeah"><b>Yeah</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 rmomo.exe</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ffmpeg.exe</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 extractor.cmd</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 convert.cmd</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 repair.cmd</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ZoomAndRead"><b>ZoomAndRead</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ZoomAndRead</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ZoomCrossAir"><b>ZoomCrossAir</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ZoomCrossAir</br>
+        ⠀⠀⠀⠀⠀└📂 <a href="https://github.com/michaelandrefraniatte/ZoomVision"><b>ZoomVision</b></a></br>
+        ⠀⠀⠀⠀⠀⠀└🗄️ Src</br>
+        ⠀⠀⠀⠀⠀⠀⠀└📇 ZoomVision</br>
+        </br>
+        📂 [Repository]</br>
+         └🗄️ [SDK(s) | Program(s) | DLL(s) | Stuff(s)]</br>
+         └📇 [Work(s) | Version(s)]</br>
+
+    </div>
+    <copyrights style="display: float; float: right; position: fixed; right: 4px; bottom: 0px; color: white; text-align: center; font-family: sans-serif; font-size: 2.2vh; line-height: 2.2vh;"><b>© MAF</b></copyrights>
+
+    <script>
+
+        var elem = document.getElementById('search');
+        var el = document.getElementById("page");
+        var originalHtml = el.innerHTML;
+        var stringsearches;
+        function search() {
+            var searchword = elem.value;
+            if (searchword != '') {
+                var newHtml = originalHtml.replace(new RegExp('<b>' + searchword + '</b>', "g"), '<b>' + searchword.fontcolor("DodgerBlue") + '</b>');
+                el.innerHTML = newHtml;
+                document.querySelector('font').scrollIntoView({ behavior: 'smooth' })
+            }
+            else {
+                setTimeout(function () {
+                    document.querySelector('#wait').style.display = 'block';
+                }, 0);
+                setTimeout(function () {
+                    deleteSearchWords();
+                }, 100);
+            }
+        }
+
+        function deleteSearchWords() {
+            stringsearches = '[';
+            searches.forEach(function (search) {
+                if (search != "") {
+                    stringsearches += '"' + search + '", ';
+                    originalHtml = el.innerHTML;
+                    var newHtml = originalHtml.replace(new RegExp('<b>' + search.fontcolor("DodgerBlue") + '</b>', "g"), '<b>' + search + '</b>');
+                    el.innerHTML = newHtml;
+                }
+            });
+
+        }
+
+    </script>
+
+    <script>
+        function autocomplete(inp, arr) {
+            /*the autocomplete function takes two arguments,
+            the text field element and an array of possible autocompleted values:*/
+            var currentFocus;
+            /*execute a function when someone writes in the text field:*/
+            inp.addEventListener("input", function (e) {
+                var a, b, i, val = this.value;
+                /*close any already open lists of autocompleted values*/
+                closeAllLists();
+                if (!val) { return false; }
+                currentFocus = -1;
+                /*create a DIV element that will contain the items (values):*/
+                a = document.createElement("DIV");
+                a.setAttribute("id", this.id + "autocomplete-list");
+                a.setAttribute("class", "autocomplete-items");
+                /*append the DIV element as a child of the autocomplete container:*/
+                this.parentNode.appendChild(a);
+                /*for each item in the array...*/
+                for (i = 0; i < arr.length; i++) {
+                    /*check if the item starts with the same letters as the text field value:*/
+                    if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                        /*create a DIV element for each matching element:*/
+                        b = document.createElement("DIV");
+                        /*make the matching letters bold:*/
+                        b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                        b.innerHTML += arr[i].substr(val.length);
+                        /*insert a input field that will hold the current array item's value:*/
+                        b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                        /*execute a function when someone clicks on the item value (DIV element):*/
+                        b.addEventListener("click", function (e) {
+                            /*insert the value for the autocomplete text field:*/
+                            inp.value = this.getElementsByTagName("input")[0].value;
+                            /*close the list of autocompleted values,
+                            (or any other open lists of autocompleted values:*/
+                            closeAllLists();
+                        });
+                        a.appendChild(b);
+                    }
+                }
+            });
+            /*execute a function presses a key on the keyboard:*/
+            inp.addEventListener("keydown", function (e) {
+                if (e.keyCode == 13) {
+                    search();
+                }
+                var x = document.getElementById(this.id + "autocomplete-list");
+                if (x) x = x.getElementsByTagName("div");
+                if (e.keyCode == 40) {
+                    /*If the arrow DOWN key is pressed,
+                    increase the currentFocus variable:*/
+                    currentFocus++;
+                    /*and and make the current item more visible:*/
+                    addActive(x);
+                } else if (e.keyCode == 38) { //up
+                    /*If the arrow UP key is pressed,
+                    decrease the currentFocus variable:*/
+                    currentFocus--;
+                    /*and and make the current item more visible:*/
+                    addActive(x);
+                } else if (e.keyCode == 13) {
+                    /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                    e.preventDefault();
+                    if (currentFocus > -1) {
+                        /*and simulate a click on the "active" item:*/
+                        if (x) x[currentFocus].click();
+                    }
+                }
+            });
+            function addActive(x) {
+                /*a function to classify an item as "active":*/
+                if (!x) return false;
+                /*start by removing the "active" class on all items:*/
+                removeActive(x);
+                if (currentFocus >= x.length) currentFocus = 0;
+                if (currentFocus < 0) currentFocus = (x.length - 1);
+                /*add class "autocomplete-active":*/
+                x[currentFocus].classList.add("autocomplete-active");
+            }
+            function removeActive(x) {
+                /*a function to remove the "active" class from all autocomplete items:*/
+                for (var i = 0; i < x.length; i++) {
+                    x[i].classList.remove("autocomplete-active");
+                }
+            }
+            function closeAllLists(elmnt) {
+                /*close all autocomplete lists in the document,
+                except the one passed as an argument:*/
+                var x = document.getElementsByClassName("autocomplete-items");
+                for (var i = 0; i < x.length; i++) {
+                    if (elmnt != x[i] && elmnt != inp) {
+                        x[i].parentNode.removeChild(x[i]);
+                    }
+                }
+            }
+            /*execute a function when someone clicks in the document:*/
+            document.addEventListener("click", function (e) {
+                closeAllLists(e.target);
+            });
+        }
+
+        /*An array containing all the country names in the world:*/
+        var searches = [];
+
+        var elements = document.getElementsByTagName('a');
+        for (var i = 0; i < elements.length; i++) {
+            var txt = elements[i].textContent || elements[i].innerText;
+            searches.push(txt);
+        }
+
+        /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+        autocomplete(document.getElementById("search"), searches);
+    </script>
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC469PC35"></script>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVP9X48X"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    </body>
+</html>

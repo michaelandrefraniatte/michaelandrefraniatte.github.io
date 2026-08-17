@@ -1,0 +1,452 @@
+﻿<!--
+• Author: Michaël André Franiatte.
+• Contact: michael.franiatte@gmail.com.
+• Publisher: https://github.com/michaelandrefraniatte.
+• Copyrights: All rights reserved, no permissions granted.
+• License: Not open source, not free of charge to use.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+
+    <head>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TVP9X48X');</script>
+
+        <meta charset="utf-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="MICHAEL ANDRE FRANIATTE">
+
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+        <title>Symposium</title>
+
+        <script src="../custom/redirect.js"></script>
+
+        <style>
+
+            html, * {
+                background-color: rgb(15, 15, 15);
+                padding: 0;
+            }
+
+            body {
+                overflow-x: hidden;
+                overflow-y: auto;
+            }
+
+            #logo {
+                margin: auto;
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #logo img {
+                width: 4vw;
+                height: auto;
+                margin: 3vh;
+                border-radius: 50%;
+            }
+
+            #banner {
+                margin: auto;
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+                height: 17vh;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                background-color: black;
+            }
+
+            nav.loaded {
+                display: flex;
+                width: 90vw;
+                height: 17vh;
+                z-index: 0;
+                background-color: black;
+            }
+
+            nav.loaded div.loaded {
+                transform: skew(-45deg);
+                overflow: hidden;
+                z-index: 1;
+                display: block;
+                background-color: black;
+            }
+
+            nav.loaded div.loaded img {
+                width: 90vw;
+                height: auto;
+                transform: skew(45deg);
+                z-index: 0;
+                background-color: black;
+            }
+
+            nav.loaded div.loaded div.loaded {
+                width: 60vw;
+                height: 50vh;
+                transform: skew(45deg);
+                display: flex;
+                object-fit: cover;
+                opacity: 1;
+                background-color: black;
+            }
+
+            #back.loaded {
+                width: 100vw;
+                height: 17vh;
+            }
+
+            #content {
+                margin-left: 33vw;
+                margin-right: 33vw;
+                width: 33vw;
+                display: inline-block;
+            }
+
+            #title {
+                text-align: center;
+                margin: 0;
+                padding: 2vh;
+                color: gray;
+            }
+
+            #content div {
+                text-align: justify;
+                width: 100%;
+                color: white;
+                height: 60%;
+            }
+
+            p {
+                text-indent: 10%;
+            }
+
+            h5 {
+                text-align: right;
+            }
+
+            #first.loaded {
+                background-image: url("img/exterior1.png");
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                background-size: cover;
+                opacity: 1;
+                z-index: 1;
+                animation: showFirst 15s steps(2) infinite;
+                animation-delay: 1s;
+            }
+
+            #second.loaded {
+                background-image: url("img/museum1.png");
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                background-size: cover;
+                opacity: 1;
+                z-index: 1;
+                animation: showSecond 15s steps(2) infinite;
+                animation-delay: 6s;
+            }
+
+            #third.loaded {
+                background-image: url("img/interior1.png");
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                background-size: cover;
+                opacity: 1;
+                z-index: 1;
+                animation: showThird 15s steps(2) infinite;
+                animation-delay: 11s;
+            }
+
+            @keyframes showFirst {
+
+                0%,
+                50% {
+                    background-image: url("img/exterior1.png");
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-position: center;
+                    background-size: cover;
+                    opacity: 1;
+                }
+
+                50.01%,
+                100% {
+                    background-image: url("img/exterior2.png");
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-position: center;
+                    background-size: cover;
+                    opacity: 1;
+                }
+            }
+
+            @keyframes showSecond {
+
+                0%,
+                50% {
+                    background-image: url("img/museum1.png");
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-position: center;
+                    background-size: cover;
+                    opacity: 1;
+                }
+
+                50.01%,
+                100% {
+                    background-image: url("img/museum2.png");
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-position: center;
+                    background-size: cover;
+                    opacity: 1;
+                }
+            }
+
+            @keyframes showThird {
+
+                0%,
+                50% {
+                    background-image: url("img/interior1.png");
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-position: center;
+                    background-size: cover;
+                    opacity: 1;
+                }
+
+                50.01%,
+                100% {
+                    background-image: url("img/interior2.png");
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-position: center;
+                    background-size: cover;
+                    opacity: 1;
+                }
+            }
+
+            #firstOut.loaded {
+                position: relative;
+                bottom: 0vh;
+                background: black;
+                width: 60vw;
+                height: 50vh;
+                transform: skew(45deg);
+                display: flex;
+                object-fit: cover;
+                opacity: 1;
+                animation: HideFirst 15s ease-in alternate infinite;
+                animation-delay: 1s;
+            }
+
+            #secondOut.loaded {
+                position: relative;
+                bottom: 0vh;
+                background: black;
+                width: 60vw;
+                height: 50vh;
+                transform: skew(45deg);
+                display: flex;
+                object-fit: cover;
+                opacity: 1;
+                animation: HideSecond 15s ease-in alternate infinite;
+                animation-delay: 6s;
+            }
+
+            #thirdOut.loaded {
+                position: relative;
+                bottom: 0vh;
+                background: black;
+                width: 60vw;
+                height: 50vh;
+                transform: skew(45deg);
+                display: flex;
+                object-fit: cover;
+                opacity: 1;
+                animation: HideThird 15s ease-in alternate infinite;
+                animation-delay: 11s;
+            }
+
+            @keyframes HideFirst {
+                0% {
+                    bottom: 0vh;
+                }
+
+                10% {
+                    bottom: -50vh;
+                }
+
+                50% {
+                    bottom: 0vh;
+                }
+
+                60% {
+                    bottom: -50vh;
+                }
+            }
+
+            @keyframes HideSecond {
+                0% {
+                    bottom: 0vh;
+                }
+
+                10% {
+                    bottom: -50vh;
+                }
+
+                50% {
+                    bottom: 0vh;
+                }
+
+                60% {
+                    bottom: -50vh;
+                }
+            }
+
+            @keyframes HideThird {
+                0% {
+                    bottom: 0vh;
+                }
+
+                10% {
+                    bottom: -50vh;
+                }
+
+                50% {
+                    bottom: 0vh;
+                }
+
+                60% {
+                    bottom: -50vh;
+                }
+            }
+
+            .black, .black img, #banner, #banner nav {
+                max-height: 17vh;
+                background-color: black;
+            }
+
+            #back {
+                max-height: 60vh;
+            }
+
+            h1 {
+                font-size: 4.4vh;
+            }
+
+            h4, h5 {
+                font-size: 2.2vh;
+            }
+
+            p {
+                font-size: 2vh;
+            }
+
+            ::-webkit-scrollbar {
+                width: 1.3vmin;
+            }
+
+            ::-webkit-scrollbar-track {
+                background-color: black;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background-color: gray;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background-color: white;
+            }
+
+        </style>
+
+    </head>
+
+    <body class>
+        <div id="logo">
+            <img src="img/favicon.png">
+        </div>
+        <div id="banner">
+            <nav>
+                <div class="black"><img src="img/black.png"></div>
+                <div>
+                    <div id="first" class="fadingEffect">
+                        <div id="firstOut"></div>
+                    </div>
+                </div>
+                <img src="img/exterior1.png" alt="exterior" style="display:none;">
+                <img src="img/exterior2.png" alt="exterior" style="display:none;">
+                <div>
+                    <div id="second" class="fadingEffect">
+                        <div id="secondOut"></div>
+                    </div>
+                </div>
+                <img src="img/museum1.png" alt="museum" style="display:none;">
+                <img src="img/museum2.png" alt="museum" style="display:none;">
+                <div>
+                    <div id="third" class="fadingEffect">
+                        <div id="thirdOut"></div>
+                    </div>
+                </div>
+                <img src="img/interior1.png" alt="interior" style="display:none;">
+                <img src="img/interior2.png" alt="interior" style="display:none;">
+                <div class="black"><img src="img/black.png"></div>
+            </nav>
+        </div>
+        <div id="back">
+            <div id="content">
+                <h1 id="title">SYMPOSIUM</h1>
+                <div>
+                    <h4>Bienvenue à Symposium,</h4>
+                    <p>Nous sommes une communauté de tous les horizons qui avons des idées et des connaissances
+                        importantes dans beaucoup de domaines et nous voulons les faire connaitre à travers le monde et
+                        l'univers.</p>
+                    <p>Nous pensons que beaucoup trop de personnes sont dans notre cas, ne pouvant pas faire connaitre
+                        nos idées et nos connaissances, c'est pourquoi nous invitons tous ceux dans notre cas.</p>
+                    <p>Nous créons avec vous des expositions, des stands, des conférences, sur les thémes que vous
+                        chérissez. Vous êtes invités à partager vos idées et vos connaissances afin de faire valoir vos
+                        droits sur vos propriétés intellectuels que nous respectons et mettons en avant. Nous vous
+                        aidons dans ce sens et créons pour vous les attractions envers vos idées et vos connaissances.
+                    </p>
+                    <p>Non, vous n'étes pas seul, et vous ne serez jamais seul face aux poids des détracteurs et des
+                        détraqués.</p>
+                    <h5>Signé par Symposium</h5>
+                </div>
+            </div>
+        </div>
+        <copyrights
+            style="display: float; float: right; position: fixed; right: 4px; bottom: 0px; color: white; text-align: center; font-family: sans-serif; font-size: 2.2vh; line-height: 2.2vh;">
+            <b>© MAF</b></copyrights>
+
+        <script>
+            window. addEventListener('load', (event) => { 
+                document.querySelectorAll("*").forEach((el) => {
+                    el.classList.add('loaded');
+                });
+            });
+        </script>
+
+    
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC469PC35"></script>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVP9X48X"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    </body>
+
+</html>

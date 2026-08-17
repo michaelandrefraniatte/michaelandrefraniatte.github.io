@@ -1,0 +1,165 @@
+﻿<!--
+• Author: Michaël André Franiatte.
+• Contact: michael.franiatte@gmail.com.
+• Publisher: https://github.com/michaelandrefraniatte.
+• Copyrights: All rights reserved, no permissions granted.
+• License: Not open source, not free of charge to use.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+
+    <head>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TVP9X48X');</script>
+        <meta charset="utf-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>TraX</title>
+        <meta name="description" content="Dedicated standalone HID screen tracker">
+        <meta name="keywords" content="standalone, hid, screen, tracker">
+        <meta name="author" content="MICHAEL ANDRE FRANIATTE">
+
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+        <link rel="stylesheet" href="../extra/w3.css">
+
+        <link rel="stylesheet" href="../custom/custom.css" />
+        
+        <script src="../extra/jquery-3.7.1.min.js"></script>
+
+        <script src="../custom/redirect.js"></script>
+
+    </head>
+
+    <body class onLoad="window_onload()" id="bodymain">
+        <span class="backloader"></span>
+        <div class="modalaccept">
+            <div class="modalaccept-content">
+                <div>By continuing, you are agree to contact, quote and pay author, and you respect <a href="https://github.com/michaelandrefraniatte">the copyrights and the license of author</a>. You may not distribute, reproduce, copy, modify or create derivative works from work of author. Author retains all rights on his source codes.</div>
+                <br />
+                <div>
+                    <input type="checkbox" id="acceptbox" name="acceptbox" />
+                    <label for="acceptbox">I'm agree, I respect and understand.</label>
+                </div><br />
+                <div><button id="acceptbutton">I understand</button></div>
+            </div>
+        </div>
+        <div class="back" id="main">
+            <span aria-label="Copyrights" class="infobulle">&#8505;</span>
+            <span aria-label="Go to top" class="topbtn">▲</span>
+            <div id="banner"><img src="../img/favicon.jpg" alt="© MAF" />
+                <div id="closebanner">✖</div>
+                <div id="textbanner">By continuing, you are agree to contact, quote and pay author, and you respect <a href="https://github.com/michaelandrefraniatte">the copyrights and the license of author</a>. You may not distribute, reproduce, copy, modify or create derivative works from work of author. Author retains all rights on his source codes.</div>
+                <div id="button1banner">I understand</div>
+                <div id="button2banner">I don't understand</div>
+            </div>
+            <span aria-label="Contact" class="infobulle-contact">&#9742;</span>
+            <div id="banner-contact"><img src="../img/favicon.jpg" alt="© MAF" />
+                <div id="closebanner-contact">✖</div>
+                <div id="textbanner-contact">If you find something usefull, please contact author at this email address:
+                    <a href="mailto:michael.franiatte@gmail.com" class="dl-link" 
+                       >michael.franiatte@gmail.com</a>.
+                </div>
+                <div id="buttonbanner-contact">Copy</div>
+            </div>
+
+            <div class="top w3-center">
+                <img class="logo" src="cod.png" alt="cod" onclick="clickLogo()" title="https://michaelandrefraniatte.github.io">
+                <div class="title colored">
+                    <h2>TraX</h2>
+                    <h1>Be Like a Pro</h1>
+                </div>
+            </div>
+
+            <div class="container">
+
+                <div class="w3-row first-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Dedicated Standalone Screen Tracker</b></h3>
+                        <p>
+                            This program is allowing to have inputs of physical HID and transfer to outputs of virtual
+                            HID for screen tracking in flight games or racing games. It's easy to use and the program
+                            use configuration interface. A IR helmet is needed tracking by a Wiimote, and the
+                            keyboard/mouse is used as a Xbox controller. Let's see...
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-center row">
+                    <div class="column">
+                        <img src="../img/trax.png" alt="trax" width="33%" height="auto"
+                            title="Click to expand" onclick='img_box("../img/trax.png")'>
+                    </div>
+                </div>
+
+                <div class="w3-row second-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Considerations About the Program</b></h3>
+                        <p>
+                            You don't need any prerequist, just knowing to read and write some easy config files.
+                            Pressing both buttons 1 and 2 of Wiimote is connecting it automatically at program launch.
+                            It use setting files needing to set decimal instead of comma for number separator in
+                            regional advanced options under control panel. Pressing button A of Wiimote enable/disable
+                            outputs in order to change settings. It's possible to have different settings for different
+                            games by creating different name game folders, renaming the program for create different
+                            shortcuts in the desktop.
+                        </p>
+                        <p>
+                            If using it as a driver you need to know the information as following:<br>
+                            Pressing both buttons 1 and 2 of Wiimote is connecting it automatically at program launch.<br>
+                            It use setting files needing to set decimal instead of comma for number separator in regional advanced options under 
+                            control panel.<br>
+                            Pressing button A of Wiimote enable/disable outputs in order to change settings.<br>
+                            It's possible to have different settings for different games by creating different name game folders, renaming the program 
+                            for create different shortcuts in the desktop.<br>
+                        </p>
+                        <p>
+                            The inputs to outputs are as following:<br>
+                            irx = right stick axis x<br>
+                            iry = right stick axis y, triggers<br>
+                            mousex = left stick axis x<br>
+                            mousey = left stick axis y<br>
+                            W = left<br>
+                            left shift = left stick<br>
+                            space = A<br>
+                            V = right stick<br>
+                            R = W<br>
+                            Tab = back<br>
+                            C = B<br>
+                            middle button = X<br>
+                            A = right<br>
+                            E = down<br>
+                            F = up<br>
+                            wheel scroll = Y<br>
+                            escape = start<br>
+                            G = right bumper<br>
+                            T = left bumper<br>
+                            right button = left trigger<br>
+                            left button = right trigger<br>
+                            Z, Q, S, D = left stick<br>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <footer class="bottom w3-center">
+                <img src="../img/favicon.png" alt="© MAF" />
+                <br>
+                <b class="date">1979</b>
+                <br>
+                <b class="white">© MAF</b>
+            </footer>
+
+        </div>
+
+    
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC469PC35"></script>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVP9X48X"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    </body>
+
+</html>

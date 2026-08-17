@@ -1,0 +1,306 @@
+﻿<!--
+• Author: Michaël André Franiatte.
+• Contact: michael.franiatte@gmail.com.
+• Publisher: https://github.com/michaelandrefraniatte.
+• Copyrights: All rights reserved, no permissions granted.
+• License: Not open source, not free of charge to use.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+
+    <head>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TVP9X48X');</script>
+
+        <meta charset="utf-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="MICHAEL ANDRE FRANIATTE">
+
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+        <title>paint-tile by michael franiatte</title>
+
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+        <script src="../extra/jquery-3.7.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <script src="../custom/redirect.js"></script>
+
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            body {
+                background: url("img/saloon.jpg") no-repeat center center fixed;
+                background-size: cover;
+                overflow: hidden;
+            }
+
+            div {
+                display: float;
+                float: left;
+                width: 10vw;
+                height: 10vh;
+                background-color: green;
+                padding: 0;
+                margin: 0;
+            }
+
+            .rotate {
+                animation: rotate 1s 1 alternate ease-out forwards;
+            }
+
+            @keyframes rotate {
+                0% {
+                    opacity: 1;
+                    transform: rotateY(0deg);
+                }
+
+                99% {
+                    opacity: 0;
+                    transform: rotateY(90deg);
+                }
+
+                100% {
+                    opacity: 0;
+                    transform: rotateY(0deg);
+                }
+            }
+
+            .notrotate {
+                animation: notrotate 1s 1 alternate ease-out forwards;
+            }
+
+            @keyframes notrotate {
+                0% {
+                    opacity: 0;
+                    transform: rotateY(90deg);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: rotateY(0deg);
+                }
+            }
+            
+            body.preload *{
+                animation-duration: 0s !important;
+                -webkit-animation-duration: 0s !important;
+                transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
+            }
+
+        </style>
+    </head>
+
+    <body class="preload">
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+        <div class="notrotate"></div>
+
+        <copyrights
+            style="display: float; float: right; position: fixed; right: 4px; bottom: 0px; color: white; text-align: center; font-family: sans-serif; font-size: 2.2vh; line-height: 2.2vh;">
+            <b>© MAF</b></copyrights>
+
+        <script>
+
+            document.querySelectorAll('div').forEach(function (div) {
+                div.style.backgroundColor = getRandomColor();
+            });
+
+            function getRandomColor() {
+                var letters = '0123456789ABCDEF';
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+
+            var divs = document.querySelectorAll('div');
+            var toggle = false;
+
+            setTimeout(function() {
+                document.body.className = "";
+                setInterval(rotate, 150);
+            }, 1000);
+
+            function rotate() {
+                var inc = 0;
+                var incrotate = 0;
+                var incnotrotate = 0;
+                divs.forEach(function (div) {
+                    if (divs[inc].className == "rotate") {
+                        incrotate++;
+                    }
+                    if (divs[inc].className == "notrotate") {
+                        incnotrotate++;
+                    }
+                    inc++;
+                });
+                if (incrotate >= 100) {
+                    toggle = true;
+                }
+                if (incnotrotate >= 100) {
+                    toggle = false;
+                }
+                if (!toggle) {
+                    var rndInt;
+                    do {
+                        rndInt = randomIntFromInterval(0, divs.length - 1);
+                        if (divs[rndInt].className == "notrotate") {
+                            divs[rndInt].classList.remove('notrotate');
+                            divs[rndInt].classList.add('rotate');
+                        }
+                    }
+                    while (divs[rndInt].className != "rotate");
+                }
+                else {
+                    var rndInt;
+                    do {
+                        rndInt = randomIntFromInterval(0, divs.length - 1);
+                        if (divs[rndInt].className == "rotate") {
+                            divs[rndInt].classList.remove('rotate');
+                            divs[rndInt].classList.add('notrotate');
+                        }
+                    }
+                    while (divs[rndInt].className != "notrotate");
+                }
+            }
+
+            function randomIntFromInterval(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) + min);
+            }
+
+            divs.forEach(function (div) {
+                div.addEventListener('mouseover', function () {
+                    if (document.body.className == "") {
+                        if (!toggle) {
+                            if (div.className == "notrotate") {
+                                div.classList.remove('notrotate');
+                                div.classList.add('rotate');
+                            }
+                        }
+                        else {
+                            if (div.className == "rotate") {
+                                div.classList.remove('rotate');
+                                div.classList.add('notrotate');
+                            }
+                        }
+                    }
+                });
+            });
+
+        </script>
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC469PC35"></script>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVP9X48X"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    </body>
+
+</html>

@@ -1,0 +1,325 @@
+﻿<!--
+• Author: Michaël André Franiatte.
+• Contact: michael.franiatte@gmail.com.
+• Publisher: https://github.com/michaelandrefraniatte.
+• Copyrights: All rights reserved, no permissions granted.
+• License: Not open source, not free of charge to use.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TVP9X48X');</script>
+
+    <meta charset="utf-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="MICHAEL ANDRE FRANIATTE">
+
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+    <title>fortune wheel by michael franiatte</title>
+
+    <script src="../custom/redirect.js"></script>
+
+    <style>
+        html,
+        body {
+            height: 100vh;
+            width: 100vw;
+            background-color: black;
+            overflow: hidden;
+            font-size: 2.2vh;
+        }
+
+        body {
+            display: flex;
+            flex-direction: row;
+        }
+
+        aside {
+            display: flex;
+            flex-direction: column;
+            padding: 0.5vh 0 0 0.5vh;
+            width: 15vw;
+        }
+
+        aside>div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        aside>div>div {
+            display: flex;
+            flex-direction: row;
+            justify-content: stretch;
+        }
+
+        aside>div>div>input {
+            width: 100%;
+        }
+
+        main,
+        canvas {
+            width: 85vw;
+        }
+
+        input,
+        button {
+            border-radius: 0;
+        }
+
+        aside input {
+            border-right: none;
+            border-bottom: none;
+        }
+
+        aside button {
+            border-bottom: none;
+        }
+
+        aside> :last-child {
+            margin-top: 0.5vh;
+            border-bottom: 0.1vh solid black;
+        }
+
+        aside> :nth-child(n - 1) {
+            border-bottom: 0.1vh solid black;
+        }
+
+        button {
+            background-color: white;
+            color: black;
+            font-weight: bold;
+        }
+
+        input {
+            background-color: white;
+            color: black;
+            font-weight: bold;
+        }
+
+        input+button:last-child:active {
+            background-color: white;
+        }
+
+        #add {
+            margin-top: 0.5vh;
+        }
+
+        button {
+            width: 15vw;
+            height: 2.5vh;
+            font-size: 1.5vh;
+        }
+
+        .remove {
+            width: 2.75vh;
+            height: 2.5vh;
+        }
+
+        input {
+            font-size: 1.5vh;
+        }
+    </style>
+
+</head>
+
+<body class>
+
+    <aside>
+        <div>
+        </div>
+        <button id="add">Add</button>
+        <button id="remove">Remove</button>
+    </aside>
+    <main>
+        <canvas></canvas>
+    </main>
+
+    <copyrights
+        style="display: float; float: right; position: fixed; right: 4px; bottom: 0px; color: white; text-align: center; font-family: sans-serif; font-size: 2.2vh; line-height: 2.2vh;">
+        <b>© MAF</b>
+    </copyrights>
+
+    <script>
+
+        var canvas = document.querySelector('canvas');
+        var ctx = canvas.getContext('2d');
+        var inputStyles = [];
+        var fillStyles = [];
+        var contrastStyles = [];
+        var decay = -0.01;
+        var a = 0;
+        var ang = 0;
+        var addBtn = document.querySelector('#add');
+        var removeBtn = document.querySelector('#remove');
+        var wrapper = document.querySelector('aside > div');
+
+        addBtn.onclick = function () {
+            createStyle();
+            addAnother();
+        };
+
+        removeBtn.onclick = function () {
+            var row = document.querySelectorAll('.row');
+            var index = row.length - 1;
+            inputStyles.splice(index, 1);
+            fillStyles.splice(index, 1);
+            contrastStyles.splice(index, 1);
+            wrapper.removeChild(row[index]);
+        };
+
+        function createStyle() {
+            var randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+            var r = randomBetween(0, 255);
+            var g = randomBetween(0, 255);
+            var b = randomBetween(0, 255);
+            fillStyles.push("rgba(" + r + ", " + g + ", " + b + ", 1)");
+            contrastStyles.push(contrastingColor("rgba(" + r + ", " + g + ", " + b + ", 1)"));
+        }
+
+        function drawWheel() {
+            canvas.height = document.body.offsetHeight;
+            canvas.width = document.body.offsetWidth;
+            ctx.font = '3vh sans-serif';
+            var R = Math.min(canvas.height, canvas.width) / 2 - 10;
+            ctx.save();
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.translate(canvas.width / 2, canvas.height / 2);
+            ctx.rotate(Math.PI / (inputStyles.length + 1));
+            ctx.rotate(ang += a);
+            ctx.beginPath();
+            var inc = 2 * Math.PI / inputStyles.length;
+            ctx.arc(0, 0, R, 0, 2 * Math.PI);
+            var c, s, m;
+            for (var i = 0, j = 0; i <= 2 * Math.PI && j < inputStyles.length; i += inc, j++) {
+                c = Math.cos(i);
+                s = Math.sin(i);
+                ctx.beginPath();
+                ctx.fillStyle = fillStyles[j];
+                ctx.moveTo(0, 0);
+                ctx.lineTo(R * c, R * s);
+                ctx.arc(0, 0, R, i, i + inc);
+                ctx.closePath();
+                ctx.fill();
+                ctx.stroke();
+                ctx.save();
+                m = ctx.measureText(inputStyles[j]);
+                ctx.translate(0, 0);
+                ctx.rotate((i + i + inc) / 2);
+                ctx.textAlign = 'center';
+                ctx.textBaseline = "bottom";
+                ctx.lineHeight = '3vh';
+                ctx.fillStyle = contrastStyles[j];
+                ctx.fillText(inputStyles[j], 220, 0);
+                ctx.restore();
+            }
+            ctx.stroke();
+            ctx.restore();
+            ctx.beginPath();
+            ctx.fillStyle = 'white';
+            ctx.moveTo(canvas.width / 2, 10);
+            ctx.lineTo(canvas.width / 2 - 10, 10);
+            ctx.lineTo(canvas.width / 2 + 10 * (ang % inc), 50);
+            ctx.lineTo(canvas.width / 2 + 10, 10);
+            ctx.fill();
+            ctx.stroke();
+        }
+
+        var lastUpdate;
+
+        canvas.onclick = function () {
+            a = Math.random() / 2;
+        };
+
+        window.requestAnimationFrame(function tick(ts) {
+            if (!lastUpdate)
+                lastUpdate = ts;
+            if (ts - lastUpdate < 10) {
+                return window.requestAnimationFrame(tick);
+            }
+            lastUpdate = ts;
+            a += a * decay;
+            drawWheel();
+            return window.requestAnimationFrame(tick);
+        });
+
+        drawWheel();
+
+        function addAnother() {
+            inputStyles.push("");
+            var row = document.createElement('div');
+            row.className = "row";
+            var input = document.createElement('input');
+            input.className = "name";
+            input.oninput = (e) => {
+                var alle = Array.from(document.querySelectorAll('.name'));
+                if (e.target.classList.contains('name')) {
+                    var index = alle.indexOf(e.target);
+                    inputStyles[index] = e.target.value;
+                }
+            };
+            var removeButton = document.createElement('button');
+            removeButton.innerText = 'x';
+            removeButton.className = "remove";
+            removeButton.addEventListener("click", (e) => {
+                var alle = Array.from(document.querySelectorAll('.remove'));
+                if (e.target.classList.contains('remove')) {
+                    var index = alle.indexOf(e.target);
+                    inputStyles.splice(index, 1);
+                    fillStyles.splice(index, 1);
+                    contrastStyles.splice(index, 1);
+                    wrapper.removeChild(document.querySelectorAll('.row')[index]);
+                }
+            });
+            row.appendChild(input);
+            row.appendChild(removeButton);
+            wrapper.appendChild(row);
+        }
+
+        function contrastingColor(color) {
+            return (luma(HexCode(color)) >= 165) ? '#000' : '#fff';
+        }
+
+        function luma(color) {
+            try {
+                var rgb = (typeof color === 'string') ? hexToRGBArray(color) : color;
+                return (0.2126 * rgb[0]) + (0.7152 * rgb[1]) + (0.0722 * rgb[2]);
+            }
+            catch { }
+        }
+
+        function hexToRGBArray(color) {
+            try {
+                color = color.charAt(1) + color.charAt(2) + color.charAt(3) + color.charAt(4) + color.charAt(5) + color.charAt(6);
+                var rgb = [];
+                for (var i = 0; i <= 2; i++)
+                    rgb[i] = parseInt(color.substr(i * 2, 2), 16);
+                return rgb;
+            }
+            catch { }
+        }
+
+        function HexCode(color) {
+            try {
+                const rgba = color.replace(/^rgba?\(|\s+|\)$/g, '').split(',');
+                const hex = `#${((1 << 24) + (parseInt(rgba[0]) << 16) + (parseInt(rgba[1]) << 8) + parseInt(rgba[2])).toString(16).slice(1)}`;
+                return hex;
+            }
+            catch { }
+        }
+
+    </script>
+
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC469PC35"></script>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVP9X48X"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    </body>
+
+</html>

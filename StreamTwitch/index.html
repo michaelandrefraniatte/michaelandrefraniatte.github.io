@@ -1,0 +1,201 @@
+﻿<!--
+• Author: Michaël André Franiatte.
+• Contact: michael.franiatte@gmail.com.
+• Publisher: https://github.com/michaelandrefraniatte.
+• Copyrights: All rights reserved, no permissions granted.
+• License: Not open source, not free of charge to use.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+
+    <head>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TVP9X48X');</script>
+        <meta charset="utf-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>StreamTwitch</title>
+        <meta name="description"
+            content="Tool to stream with FFMPEG on Twitch with 2 buttons on your keyboard, one to start, and one to stop">
+        <meta name="keywords" content="ffmpeg, program, stream, capture, games">
+        <meta name="author" content="MICHAEL ANDRE FRANIATTE">
+
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+        <link rel="stylesheet" href="../extra/w3.css">
+
+        <link rel="stylesheet" href="../custom/custom.css" />
+         
+        <script src="../extra/jquery-3.7.1.min.js"></script>
+
+        <script src="../custom/redirect.js"></script>
+
+    </head>
+
+    <body class onLoad="window_onload()" id="bodymain">
+        <span class="backloader"></span>
+        <div class="modalaccept">
+            <div class="modalaccept-content">
+                <div>By continuing, you are agree to contact, quote and pay author, and you respect <a href="https://github.com/michaelandrefraniatte">the copyrights and the license of author</a>. You may not distribute, reproduce, copy, modify or create derivative works from work of author. Author retains all rights on his source codes.</div>
+                <br />
+                <div>
+                    <input type="checkbox" id="acceptbox" name="acceptbox" />
+                    <label for="acceptbox">I'm agree, I respect and understand.</label>
+                </div><br />
+                <div><button id="acceptbutton">I understand</button></div>
+            </div>
+        </div>
+        <div class="back" id="main">
+            <span aria-label="Copyrights" class="infobulle">&#8505;</span>
+            <span aria-label="Go to top" class="topbtn">▲</span>
+            <div id="banner"><img src="../img/favicon.jpg" alt="© MAF" />
+                <div id="closebanner">✖</div>
+                <div id="textbanner">By continuing, you are agree to contact, quote and pay author, and you respect <a href="https://github.com/michaelandrefraniatte">the copyrights and the license of author</a>. You may not distribute, reproduce, copy, modify or create derivative works from work of author. Author retains all rights on his source codes.</div>
+                <div id="button1banner">I understand</div>
+                <div id="button2banner">I don't understand</div>
+            </div>
+            <span aria-label="Contact" class="infobulle-contact">&#9742;</span>
+            <div id="banner-contact"><img src="../img/favicon.jpg" alt="© MAF" />
+                <div id="closebanner-contact">✖</div>
+                <div id="textbanner-contact">If you find something usefull, please contact author at this email address:
+                    <a href="mailto:michael.franiatte@gmail.com" class="dl-link" 
+                       >michael.franiatte@gmail.com</a>.
+                </div>
+                <div id="buttonbanner-contact">Copy</div>
+            </div>
+
+            <div class="top w3-center">
+                <img class="logo" src="stream.png" alt="stream" onclick="clickLogo()" title="https://michaelandrefraniatte.github.io">
+                <div class="title colored">
+                    <h2>StreamTwitch</h2>
+                    <h1>Easy Streaming</h1>
+                </div>
+            </div>
+
+            <div class="container">
+
+                <div class="w3-row first-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Stream Easy and Nicely Your Gameplays</b></h3>
+                        <p>
+                            The program enable you to stream with FFMPEG on Twitch with 2 buttons on your keyboard, one
+                            to start, the numpad key decimal (.), and one to stop, the numpad key 0. It's easy to be on
+                            live with this tool, and the quality with low performance PC is here. Let's see...
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-center row">
+                    <div class="column">
+                        <img src="../img/stream-main.png" alt="stream-main" style="width:40%"
+                            title="Click to expand" onclick='img_box("../img/stream-main.png")'>
+                    </div>
+                </div>
+
+                <div class="w3-row second-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Considerations About the Program</b></h3>
+                        <p>
+                            There a parameter file to tweak for having sound with Stereo Mixer sound card information,
+                            link to be on live, and quality adapted to your PC. There's also a TCP outbound port to
+                            allow. It comes with another program to forward sound you can enable with the parameter file.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-row second-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Quality Information for Streaming on Twitch</b></h3>
+                        <ul>
+                            <li>Prefer to use Geforce Experience for streaming games instead of ffmpeg, because
+                                with bad settings it destroy a little your PC.</li>
+                            <li>If you want streaming, it's better to use GeForce Experience if you have a
+                                Nvidia card, in this case, lower to minimum the audio quality from audio card settings,
+                                to not have unsynchronisation of audio and video, and disable all audio cards useless.
+                            </li>
+                            <li>GeForce experience with latest driver for Nvidia graphic card is a must have for
+                                streaming.</li>
+                            <li>If you have a fiber internet conncetion, you can stream with all highest settings
+                                (1080p, 60 or 30 fps, 18 Mb/s) on Youtube.</li>
+                            <li>If you don't have a good internet connection you can record games and desktop with
+                                higher quality and upload on Youtube.</li>
+                            <li>You just need a webcam with integrated microphone you connect via USB and start your PC,
+                                use predefined shortcuts.</li>
+                            <li>Enable desktop capture under confidentiality parameter in order to have some custom
+                                overlays.</li>
+                            <li>Set your game in windowed borderless mode for better quality of video and audio enabling
+                                desktop capture.</li>
+                            <li>Set audio quality to 16 bits 44100 Hz under audio settings for your audio cards,
+                                lowering audio quality decrease use of bandwidth.</li>
+                            <li>The audio level for your audio card recorded ingame shall be set to 100, you just have
+                                to adjust your level of earing with your screen or helmet.</li>
+                            <li>It's simplest way and more optimized way than using OBS or Twitch Studio, you can find
+                                nice overlays to integrate as standalone programs, and it's more important to be
+                                concentrate on the content and the gameplay than fight with OBS or Twitch Studio.</li>
+                            <li>To open the GeForceExperience gaming overlay after changing audio settings or connecting
+                                a microphone or a camera, you need to restart your computer.</li>
+                            <li>With GeForceExperience, you need to allow Windows firewall rules, like with the
+                                configuration I made for Steam, but only for traffic in TCP, it don't need any traffic
+                                in UDP.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="w3-row second-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Usefull Information for Streaming on Twitch</b></h3>
+                        <ul>
+                            <li>Wire a jack helmet or jack speakers with volume selector, set it enable and set it default peripheral, and set HDMI enable and set it default communication peripheral, under play tab from sound properties.</li>
+                            <li>Set sound properties under record tab to stereo mixer enable and set it default peripheral, and check the box listen this peripheral, and in the list under, choose HDMI.</li>
+                            <li>Enable microphone and set it default communication peripheral, under record tab from sound properties, set jack helmet or jack speakers microphone on, under play tab from sound properties.</li>
+                            <li>Test if Stereo Mixer audio card is listening your main audio card, if it don't listening, reboot your PC, or enable EchoBoost from params.txt.</li>
+                            <li>For listen your microphone through audio card, you can set listen to default audio card under your microphone card settings.</li>
+                            <li>Set game option listen helmet or speakers, HDMI output instead of RGB, 30 FPS.</li>
+                            <li>Allow applications to use microphone under privacy tab from parameters.</li>
+                            <li>Window title without accented characters for title="Window title" instead of desktop.</li>
+                            <li>Find file ffmpeg.exe from https://www.gyan.dev/ffmpeg/builds/ (don't use BtBN file, it lags too much your computer).</li>
+                            <li>Command cmd.exe to have audio device list for find stereo mixer name: ffmpeg -list_devices true -f dshow -i dummy.</li>
+                            <li>Command cmd.exe to list available codecs: ffmpeg -codecs true -f dshow -i dummy.</li>
+                            <li>Stream key twitch : https://dashboard.twitch.tv/u/michael113b/settings/channel.</li>
+                            <li>Stream key youtube : https://studio.youtube.com/channel/UCBRGE1JY7aBbh7Qe4_ugF3Q/livestreaming/dashboard.</li>
+                            <li>Launch cmd.exe and run command for debugging : golive.</li>
+                            <li>Use my StreamTwitch with good parameters in file : params.txt.</li>
+                            <li>Keyboard numpad decimal is used to start streaming and numpad 0 to stop it.</li>
+                            <li>It's possible to disable a maximum of services but not video and audio services.</li>
+                            <li>Right-click Command Prompt and choose Run as administrator, in the Command Prompt, enter netstat -o -n and then press Enter, see IP of ffmpeg used for port 1935, and then check IP range with bgpview.io.</li>
+                            <li>Allow your sound card to listen your microphone under sound properties.</li>
+                            <li>Reduce and disable sound qualities and features under sound properties.</li>
+                            <li>When using webcam overlay, it needs to switch between windowed to without border, to make appear overlay.</li>
+                            <li>Twitch recommended bitrate : https://help.twitch.tv/s/article/guide-to-broadcast-health-and-using-twitch-inspector (8000K is good enough, but above there is restriction for non-affiliate like Youtubers are saying but I don't trust them).</li>
+                            <li>Twitch bitrate: 10000K.</li>
+                            <li>Youtube recommended bitrate: https://support.google.com/youtube/answer/1722171 (10000K is good enough).</li>
+                            <li>It's possible to have a secure connection streaming on Youtube.</li>
+                            <li>Using Nvidia GPU and updating GPU is required.</li>
+                            <li>Distant port for outbound trafic to stream is 1935 in TCP for both twitch and youtube streams, you need to allow local ports 49152-65535 with distant port 1935 in TCP for outbound traffic.</li>
+                            <li>You need to allow for your DNS server the domain name live.justin.tv for Twitch streaming.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <footer class="bottom w3-center">
+                <img src="../img/favicon.png" alt="© MAF" />
+                <br>
+                <b class="date">1979</b>
+                <br>
+                <b class="white">© MAF</b>
+            </footer>
+
+        </div>
+
+    
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC469PC35"></script>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVP9X48X"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    </body>
+
+</html>

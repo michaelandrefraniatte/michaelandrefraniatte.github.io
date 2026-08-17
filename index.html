@@ -1,0 +1,2284 @@
+﻿<!--
+• Author: Michaël André Franiatte.
+• Contact: michael.franiatte@gmail.com.
+• Publisher: https://github.com/michaelandrefraniatte.
+• Copyrights: All rights reserved, no permissions granted.
+• License: Not open source, not free of charge to use.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TVP9X48X');</script>
+        <title>MAF Personal Works</title>
+        <meta charset="utf-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Michaël André Franiatte Works" />
+        <meta name="keywords" content="PC, Windows, Programs, Books, Projects, Personal Works" />
+        <meta name="author" content="MICHAEL ANDRE FRANIATTE" />
+        <link rel="icon" href="favicon.ico">
+        <link type="text/plain" rel="author" href="humans.txt" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="extra/w3.css" />
+        <script src="extra/jquery-3.7.1.min.js"></script>
+        <link rel="stylesheet" href="custom/custom.css" />
+        <script src="custom/redirect.js"></script>
+    </head>
+    <body class onLoad="window_onload()" id="bodymain">
+        <span class="backloader"></span>
+        <div class="modalaccept">
+            <div class="modalaccept-content">
+                <div>By continuing, you are agree to contact, quote and pay author, and you respect <a href="https://github.com/michaelandrefraniatte">the copyrights and the license of author</a>. You may not distribute, reproduce, copy, modify or create derivative works from work of author. Author retains all rights on his source codes.</div>
+                <br />
+                <div>
+                    <input type="checkbox" id="acceptbox" name="acceptbox" />
+                    <label for="acceptbox">I'm agree, I respect and understand.</label>
+                </div><br />
+                <div><button id="acceptbutton">I understand</button></div>
+            </div>
+        </div>
+        <div class="back" id="main">
+            <span aria-label="Copyrights" class="infobulle">&#8505;</span>
+            <span aria-label="Go to top" class="topbtn">▲</span>
+            <div id="banner"><img loading="lazy" src="img/favicon.jpg" alt="© MAF" />
+                <div id="closebanner">✖</div>
+                <div id="textbanner">By continuing, you are agree to contact, quote and pay author, and you respect <a href="https://github.com/michaelandrefraniatte">the copyrights and the license of author</a>. You may not distribute, reproduce, copy, modify or create derivative works from work of author. Author retains all rights on his source codes.</div>
+                <div id="button1banner">I understand</div>
+                <div id="button2banner">I don't understand</div>
+            </div>
+            <span aria-label="Contact" class="infobulle-contact">&#9742;</span>
+            <div id="banner-contact"><img loading="lazy" src="img/favicon.jpg" alt="© MAF" />
+                <div id="closebanner-contact">✖</div>
+                <div id="textbanner-contact">If you find something usefull, please contact author at this email address:
+                    <a href="mailto:michael.franiatte@gmail.com" class="dl-link">michael.franiatte@gmail.com</a>.
+                </div>
+                <div id="buttonbanner-contact">Copy</div>
+            </div>
+            <div class="top w3-center">
+                <img loading="lazy" class="logo" src="img/favicon.png" alt="© MAF" onclick="clickLogo()" title="https://github.com/michaelandrefraniatte">
+                <div class="title colored">
+                    <h2>Michaël André Franiatte</h2>
+                    <h1>Personal <font>Works</font> Since <font>2006</font> Until <font>2026</font></h1>
+                </div>
+            </div>
+            <div class="container">
+                <div id="pagination">
+                    <div id="first" onclick="goToPage(1)">«</div>
+                    <div id="before" onclick="sliceToPage(-1)">‹</div>
+                    <div class="pagination" id="firstpage" onclick="goToPage(1)" data-id="1">⬤</div>
+                    <div class="pagination" id="secondpage" onclick="goToPage(2)" data-id="2">〇</div>
+                    <div class="pagination" id="thirdpage" onclick="goToPage(3)" data-id="3">〇</div>
+                    <div class="pagination" id="fourthpage" onclick="goToPage(4)" data-id="4">〇</div>
+                    <div class="pagination" id="fifthpage" onclick="goToPage(5)" data-id="5">〇</div>
+                    <div class="pagination" id="sithpage" onclick="goToPage(6)" data-id="6">〇</div>
+                    <div id="after" onclick="sliceToPage(1)">›</div>
+                    <div id="last" onclick="goToPage(6)">»</div>
+                </div>
+                <label class="expandSearch">
+                    <input type="text" placeholder="search..." name="search" id="search">
+                    <div id="search-icon">🔎</div>
+                </label>
+                <div class="page fadeout" data-id="1">
+                    <span class="card" id="Playmedia">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/playmedia-main.png" class="card-img-top" alt="Playmedia"
+                            title="Click to expand" onclick='img_box("img/playmedia-main.png")'>
+                        <img loading="lazy" src="img/playmedia-audio.png" class="card-img-top" alt="Playmedia" style="display:none;">
+                        <img loading="lazy" src="img/playmedia-book.png" class="card-img-top" alt="Playmedia" style="display:none;">
+                        <img loading="lazy" src="img/playmedia-menu.png" class="card-img-top" alt="Playmedia" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="Playmedia/">Playmedia</a></b></h5>
+                            <p class="card-text">Nice, modern, custom, and simple gallery player for watching your
+                                media, PDF, PNG, JPG, GIF, MP4 and MP3 files, with visualization of sounds while playing
+                                for MP3 file.</p>
+                            <div class="card-word"><b>Keywords:</b> media, files, gallery, custom.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="Playtube">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/playtube-main.png" class="card-img-top" alt="Playtube"
+                            title="Click to expand" onclick='img_box("img/playtube-main.png")'>
+                        <img loading="lazy" src="img/playtube-menu.png" class="card-img-top" alt="Playtube" style="display:none;">
+                        <img loading="lazy" src="img/playtube-play.png" class="card-img-top" alt="Playtube" style="display:none;">
+                        <img loading="lazy" src="img/playtube-api.png" class="card-img-top" alt="Playtube" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="Playtube/">Playtube</a></b></h5>
+                            <p class="card-text">Nice, modern, custom, and simple Youtube jukebox with your videos or
+                                your friend videos.</p>
+                            <div class="card-word"><b>Keywords:</b> videos, jukebox, gallery, custom.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="myfavours">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/myfavours-main.png" class="card-img-top" alt="my-favours"
+                            title="Click to expand" onclick='img_box("img/myfavours-main.png")'>
+                        <img loading="lazy" src="img/myfavours-down.png" class="card-img-top" alt="my-favours" style="display:none;">
+                        <img loading="lazy" src="img/myfavours-crash.png" class="card-img-top" alt="my-favours" style="display:none;">
+                        <img loading="lazy" src="img/myfavours-mp4.png" class="card-img-top" alt="my-favours" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="myfavours/">myfavours</a></b></h5>
+                            <p class="card-text">Your custom wall of pictures and videos in slides for all your gaming
+                                experiences or from your friend.</p>
+                            <div class="card-word"><b>Keywords:</b> videos, pictures, slides, gaming.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="faceto">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/faceto-main.png" class="card-img-top" alt="FaceTo"
+                            title="Click to expand" onclick='img_box("img/faceto-main.png")'>
+                        <img loading="lazy" src="img/faceto-message.png" class="card-img-top" alt="FaceTo" style="display:none;">
+                        <img loading="lazy" src="img/faceto-list.png" class="card-img-top" alt="FaceTo" style="display:none;">
+                        <img loading="lazy" src="img/faceto-search.png" class="card-img-top" alt="FaceTo" style="display:none;">
+                        <img loading="lazy" src="img/faceto-modal.png" class="card-img-top" alt="FaceTo" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="faceto/">FaceTo</a></b></h5>
+                            <p class="card-text">Don't let fake news invade your mind, free your mind instead, free your
+                                truth, free your thoughts on Youtube videos, with uncensored and annonymous comments let
+                                by other users and you.</p>
+                            <div class="card-word"><b>Keywords:</b> fake, news, uncensored, annonymous.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="Nash">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/nash-main.png" class="card-img-top" alt="NASH"
+                            title="Click to expand" onclick='img_box("img/nash-main.png")'>
+                        <img loading="lazy" src="img/cmd.png" class="card-img-top" alt="cmd" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="Nash/">NASH</a> / <a href="Yeah/">YEAH</a></b></h5>
+                            <p class="card-text">Tool to download the fastest Youtube embed, audio, and video files with
+                                associated thumbnails, from channels or playlists if it's allowed or a very simple one.</p>
+                            <div class="card-word"><b>Keywords:</b> embed, audio, video, files, download.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="Daynote">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/daynote-main.png" class="card-img-top" alt="Daynote"
+                            title="Click to expand" onclick='img_box("img/daynote-main.png")'>
+                        <img loading="lazy" src="img/daynote-2024.png" class="card-img-top" alt="Daynote" style="display:none;">
+                        <img loading="lazy" src="img/daynote-edit.png" class="card-img-top" alt="Daynote" style="display:none;">
+                        <img loading="lazy" src="img/daynote-memento.png" class="card-img-top" alt="Daynote" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="Daynote/">Daynote</a></b></h5>
+                            <p class="card-text">Practical, simple and easy to use visual agenda with your tasks and
+                                notes or from your friend, for all years and days.</p>
+                            <div class="card-word"><b>Keywords:</b> agenda, tasks, notes.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="webViewer">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/webviewer-main.png" class="card-img-top" alt="webViewer"
+                            title="Click to expand" onclick='img_box("img/webviewer-main.png")'>
+                        <img loading="lazy" src="img/webviewer-playaudio-autocompletion.png" class="card-img-top" alt="webViewer"
+                            style="display:none;">
+                        <img loading="lazy" src="img/webviewer-playaudio-editoff.png" class="card-img-top" alt="webViewer"
+                            style="display:none;">
+                        <img loading="lazy" src="img/webviewer-playaudio.png" class="card-img-top" alt="webViewer"
+                            style="display:none;">
+                        <img loading="lazy" src="img/speech-comments.png" class="card-img-top" alt="speech-comments"
+                            style="display:none;">
+                        <img loading="lazy" src="img/tiktok-voicer.png" class="card-img-top" alt="tiktok-voicer"
+                            style="display:none;">
+                        <img loading="lazy" src="img/mic2edit.png" class="card-img-top" alt="mic2edit"
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="webViewer/">webViewer</a> / 
+                                <a href="speech-comments/">speech-comments</a> / 
+                                <a href="tiktok-voicer/">tiktok-voicer</a> / 
+                                <a href="mic2edit/">mic2edit</a></b></h5>
+                            <p class="card-text">Program for browse Youtube with all your sites and songs, 
+                                record audio, or extensions for comment or command voiced or speech to text on input div.</p>
+                            <div class="card-word"><b>Keywords:</b> browse, speech, command.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="aimtraining">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/aimtraining-main.png" class="card-img-top" alt="aimtraining"
+                            title="Click to expand" onclick='img_box("img/aimtraining-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="aimtraining/">aimtraining</a></b></h5>
+                            <p class="card-text">Click on the target moving for reach higher score, for train your aim,
+                                if you have time lost.</p>
+                            <div class="card-word"><b>Keywords:</b> target, score, aim.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="wakeupnow">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/wakeup-main.png" class="card-img-top" alt="Wakeup"
+                            title="Click to expand" onclick='img_box("img/wakeup-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="wakeupnow/">WakeUpNow</a></b></h5>
+                            <p class="card-text">Wakeup with your music and your mood, and have time remaining before.
+                            </p>
+                            <div class="card-word"><b>Keywords:</b> music, wakeup, time.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="playzer">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/playzer.png" class="card-img-top" alt="playzer"
+                            title="Click to expand" onclick='img_box("img/playzer.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="Playzer/">Playzer</a></b></h5>
+                            <p class="card-text">Program to listen music on Deezer with audio visualization
+                                of frequencies and the best quality as possible.</p>
+                            <div class="card-word"><b>Keywords:</b> listen, music, frequencies.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="playtify">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/playtify-main.png" class="card-img-top" alt="playtify"
+                            title="Click to expand" onclick='img_box("img/playtify-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="Playtify/">Playtify</a></b></h5>
+                            <p class="card-text">Program to listen music on Spotify with audio visualization
+                                of frequencies and the best quality as possible.</p>
+                            <div class="card-word"><b>Keywords:</b> listen, music, frequencies.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="playcipe">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/playcipe.png" class="card-img-top" alt="playcipe"
+                            title="Click to expand" onclick='img_box("img/playcipe.png")'>
+                        <img loading="lazy" src="img/skipy.png" class="card-img-top" alt="Skipy" style="display:none;">
+                        <img loading="lazy" src="img/noads.png" class="card-img-top" alt="noads" style="display:none;">
+                        <img loading="lazy" src="img/recipe.png" class="card-img-top" alt="Recipe" style="display:none;">
+                        <img loading="lazy" src="img/miniplayer.png" class="card-img-top" alt="miniplayer" style="display:none;">
+                        <img loading="lazy" src="img/vocable.png" class="card-img-top" alt="vocable" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="Playcipe/">Playcipe</a> / <a
+                                        href="Skipy/">Skipy</a> / <a
+                                        href="noads/">NoAds</a> / <br><a
+                                        href="Recipe/">Recipe</a> / <a
+                                        href="miniplayer/">MiniPlayer</a> / <a
+                                        href="vocable/">Vocable</a></b></h5>
+                            <p class="card-text">Programs to watch Youtube with a dedicated and customizable menu and
+                                with invading ads removed like cutting sound and displaying thumbnail instead, or  
+                                extensions for Edge on the same way, or another one to have all your links in one place 
+                                or Youtube in a mini player as topmost or to text.</p>
+                            <div class="card-word"><b>Keywords:</b> menu, thumbnail, ads, links, player.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="playther">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/playther-main.png" class="card-img-top" alt="playther"
+                            title="Click to expand" onclick='img_box("img/playther-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="Playther/">Playther</a></b></h5>
+                            <p class="card-text">Programs to watch weather.</p>
+                            <div class="card-word"><b>Keywords:</b> watch, weather.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="playtov">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/playtov.png" class="card-img-top" alt="playtov"
+                            title="Click to expand" onclick='img_box("img/playtov.png")'>
+                        <img loading="lazy" src="img/playto-main.png" class="card-img-top" alt="playto" style="display:none;">
+                        <img loading="lazy" src="img/playflix-main.png" class="card-img-top" alt="playflix" style="display:none;">
+                        <img loading="lazy" src="img/playmount-main.png" class="card-img-top" alt="playmount" style="display:none;">
+                        <img loading="lazy" src="img/playney-main.png" class="card-img-top" alt="playney" style="display:none;">
+                        <img loading="lazy" src="img/playprime-main.png" class="card-img-top" alt="playprime" style="display:none;">
+                        <img loading="lazy" src="img/playnal-main.png" class="card-img-top" alt="playnal" style="display:none;">
+                        <img loading="lazy" src="img/playocs.png" class="card-img-top" alt="playocs" style="display:none;">
+                        <img loading="lazy" src="img/playchy.png" class="card-img-top" alt="playchy" style="display:none;">
+                        <img loading="lazy" src="img/playhbo.png" class="card-img-top" alt="playhbo" style="display:none;">
+                        <img loading="lazy" src="img/playtf1.png" class="card-img-top" alt="playtf1" style="display:none;">
+                        <img loading="lazy" src="img/playcloud.png" class="card-img-top" alt="playcloud" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="Players/">Players</a></b></h5>
+                            <p class="card-text">Bunch of programs to watch Molotov TV or Pluto TV or Netflix or ParamountPlus or
+                                DisneyPlus or PrimeVideo or CanalPlus or OCS or Crunchyroll or HBO or TF1Plus or Xbox
+                                Cloud Gaming.</p>
+                            <div class="card-word"><b>Keywords:</b> bunch, players.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="mediatoy">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/mediatoy.png" class="card-img-top" alt="mediatoy"
+                            title="Click to expand" onclick='img_box("img/mediatoy.png")'>
+                        <img loading="lazy" src="img/exetoy.png" class="card-img-top" alt="exetoy" style="display:none;">
+                        <img loading="lazy" src="img/virtualstreamdeck.png" class="card-img-top" alt="VirtualStreamDeck" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="Mediatoy/">Mediatoy</a> / <a href="Exetoy/">Exetoy</a> / <br> 
+                                <a href="VirtualStreamDeck/">VirtualStreamDeck</a></b></h5>
+                            <p class="card-text">Programs to watch all your favorite media or to launch all your executables or 
+                                to launch sounds and executables with numpad keys or left click.</p>
+                            <div class="card-word"><b>Keywords:</b> favorite, media, executables.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="Streamchat">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/streamchat-main.png" class="card-img-top" alt="Streamchat"
+                            title="Click to expand" onclick='img_box("img/streamchat-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="Streamchat/">Streamchat</a></b></h5>
+                            <p class="card-text">Simple Twitch stream chat for optimizing your stream and gaming
+                                experiences.</p>
+                            <div class="card-word"><b>Keywords:</b> stream, chat, gaming.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="ThumbnailCreator">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/thumbnailcreator-main.png" class="card-img-top" alt="ThumbnailCreator"
+                            title="Click to expand" onclick='img_box("img/thumbnailcreator-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="ThumbnailCreator/">ThumbnailCreator</a></b></h5>
+                            <p class="card-text">Create easy and fast your thumbnail importing images, locating,
+                                resizing and rotating it.</p>
+                            <div class="card-word"><b>Keywords:</b> create, easy, fast, thumbnail, images.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="gamergate">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/gamergate-main.png" class="card-img-top" alt="GamerGate"
+                            title="Click to expand" onclick='img_box("img/gamergate-main.png")'>
+                        <img loading="lazy" src="img/gamergate-loop.png" class="card-img-top" alt="GamerGate" style="display:none;">
+                        <img loading="lazy" src="img/gamergate-end.png" class="card-img-top" alt="GamerGate" style="display:none;">
+                        <img loading="lazy" src="img/gamergate-edit.png" class="card-img-top" alt="GamerGate" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="gamergate/">GamerGate</a></b></h5>
+                            <p class="card-text">Nice, modern, custom, and simple game launcher for all your games,
+                                doing what it's made for, simply.</p>
+                            <div class="card-word"><b>Keywords:</b> game, launcher.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="pdfgenerator">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/pdfgenerator-main.png" class="card-img-top" alt="PDFGenerator"
+                            title="Click to expand" onclick='img_box("img/pdfgenerator-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="pdfgenerator/">PDFGenerator</a></b></h5>
+                            <p class="card-text">Convert your web page, local or online, to PDF file, and check if the
+                                contents are well there and in place, before converting, for creating commercial books,
+                                or simply sharing worldwide your contents correctly.</p>
+                            <div class="card-word"><b>Keywords:</b> pdf, file, converting, creating.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="EoSResol">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/eosresol-main.png" class="card-img-top" alt="EoSResol"
+                            title="Click to expand" onclick='img_box("img/eosresol-main.png")'>
+                        <img loading="lazy" src="img/eosresol-reaction1.png" class="card-img-top" alt="EoSResol" style="display:none;">
+                        <img loading="lazy" src="img/eosresol-reaction2.png" class="card-img-top" alt="EoSResol" style="display:none;">
+                        <img loading="lazy" src="img/eosresol-reaction3.png" class="card-img-top" alt="EoSResol" style="display:none;">
+                        <img loading="lazy" src="img/reaction-main.png" class="card-img-top" alt="ReactionResol" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="EoSResol/">EoSResol</a> / <a href="ReactionResol/">ReactionResol</a></b></h5>
+                            <p class="card-text">The program for calculating and defining all PVTX and all reaction data
+                                of fluids with 1 to 8 constituents and the program for automatically equilibrate reactions with 3 to 9
+                                constituents, and can be used in conjunction with EoSResol to synthetize molecules with
+                                8 atomes.</p>
+                            <div class="card-word"><b>Keywords:</b> pvtx, reaction, data, equilibrate.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="DesktopLander">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/dl-main.png" class="card-img-top" alt="DesktopLander"
+                            title="Click to expand" onclick='img_box("img/dl-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="DesktopLander/">DesktopLander</a></b></h5>
+                            <p class="card-text">Simple overlay for desktop showing week day, date, and san of the day able to be locate
+                                everywhere on desktop screen, and able to be close with the notify icon.</p>
+                            <div class="card-word"><b>Keywords:</b> overlay, date, san.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="DesktopAudio">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/da-main.png" class="card-img-top" alt="DesktopAudio"
+                            title="Click to expand" onclick='img_box("img/da-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="DesktopAudio/">DesktopAudio</a></b></h5>
+                            <p class="card-text">Simple overlay for desktop audio random listening showing audio visualization.</p>
+                            <div class="card-word"><b>Keywords:</b> overlay, audio, visualization.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="DesktopOverlay">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/do-main.png" class="card-img-top" alt="DesktopOverlay"
+                            title="Click to expand" onclick='img_box("img/do-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="DesktopOverlay/">DesktopOverlay</a></b></h5>
+                            <p class="card-text">Simple overlay for full desktop audio listening showing audio visualization, 
+                                simple calendar to take notes and animated background.</p>
+                            <div class="card-word"><b>Keywords:</b> overlay, audio, visualization, calendar.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="DesktopNote">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/dn-main.png" class="card-img-top" alt="DesktopNote"
+                            title="Click to expand" onclick='img_box("img/dn-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="DesktopNote/">DesktopNote</a></b></h5>
+                            <p class="card-text">Simple overlay for desktop showing simple calendar to take notes 
+                                and animated background.</p>
+                            <div class="card-word"><b>Keywords:</b> overlay, calendar, background.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="teamtrooper">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/tt-main.png" class="card-img-top" alt="TeamTrooper"
+                            title="Click to expand" onclick='img_box("img/tt-main.png")'>
+                        <img loading="lazy" src="img/tt-add.png" class="card-img-top" alt="TeamTrooper" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="teamtrooper/">TeamTrooper</a></b></h5>
+                            <p class="card-text">Diagram for managing projects and files with teammates in groups, in a
+                                local network, and it's also a proof of concept of a new structure of database, allowing
+                                programing smarter.</p>
+                            <div class="card-word"><b>Keywords:</b> managing, projects, files, teammates.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="png2ico">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/png2ico-main.png" class="card-img-top" alt="PNG2ICO"
+                            title="Click to expand" onclick='img_box("img/png2ico-main.png")'>
+                        <img loading="lazy" src="img/png2shadow-main.png" class="card-img-top" alt="PNG2SHADOW" style="display:none;">
+                        <img loading="lazy" src="img/png2transparent-main.png" class="card-img-top" alt="PNG2TRANSPARENT" style="display:none;">
+                        <img loading="lazy" src="img/png2unblurred-main.png" class="card-img-top" alt="PNG2SHADOW" style="display:none;">
+                        <img loading="lazy" src="img/png2blackandwhite-main.png" class="card-img-top" alt="PNG2BLACKANDWHITE" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="png2ico/">PNG2ICO</a> / <a
+                                        href="png2shadow/">PNG2SHADOW</a> / <a
+                                        href="png2transparent/">PNG2TRANSPARENT</a> / <a
+                                        href="png2unblurred/">PNG2UNBLURRED</a> / <a
+                                        href="png2blackandwhite/">PNG2BLACKANDWHITE</a></b></h5>
+                            <p class="card-text">Transform your image files to icon files with color transparencies or
+                                the same but as shadow or semi-transparent or enhanced removing blur or black and white.</p>
+                            <div class="card-word"><b>Keywords:</b> image, files, icon.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="CamArtASCII">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/caa-main.png" class="card-img-top" alt="CamArtASCII"
+                            title="Click to expand" onclick='img_box("img/caa-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="CamArtASCII/">CamArtASCII</a></b></h5>
+                            <p class="card-text">Display your webcam capture with ASCII characters.</p>
+                            <div class="card-word"><b>Keywords:</b> webcam, ascii, characters.</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="page" data-id="2" style="display:none;">
+                    <span class="card" id="keylogger">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/keylogger.png" class="card-img-top" alt="keylogger"
+                            title="Click to expand" onclick='img_box("img/keylogger.png")'>
+                        <img loading="lazy" src="img/mousemenuwheel-main.png" class="card-img-top" alt="MouseMenuWheel" style="display:none;">
+                        <img loading="lazy" src="img/mousemenuwheel-simple.png" class="card-img-top" alt="MouseMenuWheel" style="display:none;">
+                        <img loading="lazy" src="img/mousemenuwheel-square.png" class="card-img-top" alt="MouseMenuWheel" style="display:none;">
+                        <img loading="lazy" src="img/mousemenuwheel-cross.png" class="card-img-top" alt="MouseMenuWheel" style="display:none;">
+                        <img loading="lazy" src="img/mousemenuwheel-hex.png" class="card-img-top" alt="MouseMenuWheel" style="display:none;">
+                        <img loading="lazy" src="img/mousemenuwheel-tri.png" class="card-img-top" alt="MouseMenuWheel" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="KeyLogger/">KeyLogger</a> / <a href="MouseMenuWheel/">MouseMenuWheel</a></b></h5>
+                            <p class="card-text">Overlays for showing logging keys or for sending keys.</p>
+                            <div class="card-word"><b>Keywords:</b> overlay, logging, keys, menu.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="mousetracker">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/mousetrackeroverlay.png" class="card-img-top" alt="mousetracker"
+                            title="Click to expand" onclick='img_box("img/mousetrackeroverlay.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="MouseTrackerOverlay/">MouseTrackerOverlay</a></b></h5>
+                            <p class="card-text">Overlay for showing mouse cursor position.</p>
+                            <div class="card-word"><b>Keywords:</b> overlay, mouse, position.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="UpscaleVision">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/upscalevision-main.png" class="card-img-top" alt="UpscaleVision"
+                            title="Click to expand" onclick='img_box("img/upscalevision-main.png")'>
+                        <img loading="lazy" src="img/zoomvision-main.png" class="card-img-top" alt="ZoomVision" style="display:none;">
+                        <img loading="lazy" src="img/fv-main.png" class="card-img-top" alt="FrameVision" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="UpscaleVision/">UpscaleVision</a> / 
+                                <a href="ZoomVision/">ZoomVision</a> / 
+                                <a href="FrameVision/">FrameVision</a></b></h5>
+                            <p class="card-text">Upscale graphism as overlay for better graphisms or just zoomed or with more FPS.</p>
+                            <div class="card-word"><b>Keywords:</b> upscale, zoomed, fps.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="AimAmplifier">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/aimamplifier-main.png" class="card-img-top" alt="AimAmplifier"
+                            title="Click to expand" onclick='img_box("img/aimamplifier-main.png")'>
+                        <img loading="lazy" src="img/cursoramplifier-main.png" class="card-img-top" alt="CursorAmplifier" style="display:none;">
+                        <img loading="lazy" src="img/zoomandread-main.png" class="card-img-top" alt="ZoomAndRead" style="display:none;">
+                        <img loading="lazy" src="img/zoomcrossair-main.png" class="card-img-top" alt="ZoomCrossAir" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="AimAmplifier/">AimAmplifier</a> / <a href="CursorAmplifier/">CursorAmplifier</a>
+                                 / <a href="ZoomAndRead/">ZoomAndRead</a> / <a href="ZoomCrossAir/">ZoomCrossAir</a></b></h5>
+                            <p class="card-text">Central zone zoomed for FPS as overlay for competitive gamers or where cursor position or 
+                                selection to read or zoomed in a crosshair.</p>
+                            <div class="card-word"><b>Keywords:</b> overlay, zoomed, fps, cursor.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="ResizedVision">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/resizedvision.png" class="card-img-top" alt="ResizedVision"
+                            title="Click to expand" onclick='img_box("img/resizedvision.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="ResizedVision/">ResizedVision</a></b></h5>
+                            <p class="card-text">Cursor zone zoomed for top down shooters as overlay for competitive gamers.</p>
+                            <div class="card-word"><b>Keywords:</b> overlay, zoom, tds.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="AudioVision">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/av-center.png" class="card-img-top" alt="AudioVision"
+                            title="Click to expand" onclick='img_box("img/av-center.png")'>
+                        <img loading="lazy" src="img/av-main.png" class="card-img-top" alt="AudioVision" style="display:none;">
+                        <img loading="lazy" src="img/av-ui.png" class="card-img-top" alt="AudioVision" style="display:none;">
+                        <img loading="lazy" src="img/audiocrossair-main.png" class="card-img-top" alt="AudioCrossAir" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="AudioVision/">AudioVision</a> / <a href="AudioCrossAir/">AudioCrossAir</a></b></h5>
+                            <p class="card-text">Audio visualizers of left and right speakers as overlay for competitive gamers.</p>
+                            <div class="card-word"><b>Keywords:</b> audio, left, right, crossair.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="ChatOverlay">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/chatoverlay-main.png" class="card-img-top" alt="ChatOverlay"
+                            title="Click to expand" onclick='img_box("img/chatoverlay-main.png")'>
+                        <img loading="lazy" src="img/weboverlay-main.png" class="card-img-top" alt="WebOverlay" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="ChatOverlay/">ChatOverlay</a> / <a
+                                        href="WebOverlay/">WebOverlay</a></b></h5>
+                            <p class="card-text">Overlays for showing Youtube chat, or videast infos, while streaming.</p>
+                            <div class="card-word"><b>Keywords:</b> overlays, chat, infos, streaming.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="crosshair">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/crossair-main.png" class="card-img-top" alt="CrossAir"
+                            title="Click to expand" onclick='img_box("img/crossair-main.png")'>
+                        <img loading="lazy" src="img/aimsight-main.png" class="card-img-top" alt="AimSight" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="CrossAir/">CrossAir</a> / <a
+                                        href="AimSight/">AimSight</a></b></h5>
+                            <p class="card-text">Crosshairs for playing First Person Shooters or Top Down Shooters.</p>
+                            <div class="card-word"><b>Keywords:</b> crosshairs, fps, tds.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="MotionOverlay">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/mo-main.png" class="card-img-top" alt="MotionOverlay"
+                            title="Click to expand" onclick='img_box("img/mo-main.png")'>
+                        <img loading="lazy" src="img/mo-xc.png" class="card-img-top" alt="MotionOverlay" style="display:none;">
+                        <img loading="lazy" src="img/go-main.png" class="card-img-top" alt="ControllerOverlay"
+                            style="display:none;">
+                        <img loading="lazy" src="img/go-km.png" class="card-img-top" alt="KMOverlay"
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="MotionOverlay/">MotionOverlay</a> / <a
+                                        href="GameplayOverlay/">GameplayOverlay</a></b></h5>
+                            <p class="card-text">Overlays for showing gameplay with gaming devices in action, while recording or streaming.</p>
+                            <div class="card-word"><b>Keywords:</b> overlays, gameplay, devices.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="WebcamOverlay">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/webcamoverlay-main.png" class="card-img-top" alt="WebcamOverlay"
+                            title="Click to expand" onclick='img_box("img/webcamoverlay-main.png")'>
+                        <img loading="lazy" src="img/webcamoverlay-simple.png" class="card-img-top" alt="WebcamOverlay"
+                            style="display:none;">
+                        <img loading="lazy" src="img/webcamoverlay-morphing.png" class="card-img-top" alt="WebcamOverlay"
+                            style="display:none;">
+                        <img loading="lazy" src="img/webcamoverlay-polaroid.png" class="card-img-top" alt="WebcamOverlay"
+                            style="display:none;">
+                        <img loading="lazy" src="img/webcamoverlay-polygon.png" class="card-img-top" alt="WebcamOverlay"
+                            style="display:none;">
+                        <img loading="lazy" src="img/webcamoverlay-original.png" class="card-img-top" alt="WebcamOverlay"
+                            style="display:none;">
+                        <img loading="lazy" src="img/webcamoverlay-heart.png" class="card-img-top" alt="WebcamOverlay"
+                            style="display:none;">
+                        <img loading="lazy" src="img/webcamoverlay-blob.png" class="card-img-top" alt="WebcamOverlay"
+                            style="display:none;">
+                        <img loading="lazy" src="img/webcamoverlay-star.png" class="card-img-top" alt="WebcamOverlay"
+                            style="display:none;">
+                        <img loading="lazy" src="img/webcamoverlay-circle.png" class="card-img-top" alt="WebcamOverlay"
+                            style="display:none;">
+                        <img loading="lazy" src="img/gamingoverlay-ui.png" class="card-img-top" alt="GamingOverlay"
+                            style="display:none;">
+                        <img loading="lazy" src="img/gamingoverlay-main.png" class="card-img-top" alt="GamingOverlay"
+                            style="display:none;">
+                        <img loading="lazy" src="img/gamingoverlay-km.png" class="card-img-top" alt="GamingOverlay"
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="WebcamOverlay/">WebcamOverlay</a> / <a href="GamingOverlay/">GamingOverlay</a></b></h5>
+                            <p class="card-text">Overlay for showing webcam with grayscale or in circle or in circle morphing or in polaroid or ..., 
+                                in a optimized way or a complete overlay for gaming, while recording or streaming.</p>
+                            <div class="card-word"><b>Keywords:</b> webcam, grayscale, morphing.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="TalkingAvatar">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/talkingavatar-main.png" class="card-img-top" alt="TalkingAvatar"
+                            title="Click to expand" onclick='img_box("img/talkingavatar-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="TalkingAvatar/">TalkingAvatar</a></b></h5>
+                            <p class="card-text">Overlay for showing a talking avatar synchronized from microphone, while recording or streaming.</p>
+                            <div class="card-word"><b>Keywords:</b> overlay, avatar, microphone.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="perfwatch">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/perfwatch-main.png" class="card-img-top" alt="PerfWatch"
+                            title="Click to expand" onclick='img_box("img/perfwatch-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="perfwatch/">PerfWatch</a></b></h5>
+                            <p class="card-text">Tool to watch performances of your PC in game, tasking as a benchmark
+                                for all your games, as overlay with all information to know like FPS, fan speed, CPU
+                                usage.</p>
+                            <div class="card-word"><b>Keywords:</b> tool, performances, fps.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="EmulatorAmbiLight">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img loading="lazy" src="img/eal-main.png" class="card-img-top" alt="EmulatorAmbiLight"
+                            title="Click to expand" onclick='img_box("img/eal-main.png")'>
+                        <img loading="lazy" src="img/eal-fade.png" class="card-img-top" alt="EmulatorAmbiLight"
+                            style="display:none;">
+                        <img loading="lazy" src="img/eal-pixel.png" class="card-img-top" alt="EmulatorAmbiLight"
+                            style="display:none;">
+                        <img loading="lazy" src="img/eal-al.png" class="card-img-top" alt="EmulatorAmbiLight"
+                            style="display:none;">
+                        <img loading="lazy" src="img/efs-main.png" class="card-img-top" alt="EmulatorFullScreen"
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="EmulatorAmbiLight/">EmulatorAmbiLight</a>
+                                 / <a href="EmulatorFullScreen/">EmulatorFullScreen</a></b></h5>
+                            <p class="card-text">Overlays for retro gaming or tool to fullscreen retro games.</p>
+                            <div class="card-word"><b>Keywords:</b> tool, emulator, retro.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="XboxControllerOverlay">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img loading="lazy" src="img/xboxcontrolleroverlay-white.png" class="card-img-top" alt="XboxControllerOverlay"
+                            title="Click to expand" onclick='img_box("img/xboxcontrolleroverlay-white.png")'>
+                        <img loading="lazy" src="img/xboxcontrolleroverlay-main.png" class="card-img-top" alt="XboxControllerOverlay"
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="XboxControllerOverlay/">XboxControllerOverlay</a></b></h5>
+                            <p class="card-text">Overlay for showing a simple and optimized
+                                Xbox controller, while recording or streaming.</p>
+                            <div class="card-word"><b>Keywords:</b> overlay, xbox, controller.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="KeyboardMouseOverlay">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img loading="lazy" src="img/keyboardmouseoverlay-main.png" class="card-img-top" alt="KeyboardMouseOverlay"
+                            title="Click to expand" onclick='img_box("img/keyboardmouseoverlay-main.png")'>
+                        <img loading="lazy" src="img/keyboardmouseoverlay-black.png" class="card-img-top" alt="KeyboardMouseOverlay"
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="KeyboardMouseOverlay/">KeyboardMouseOverlay</a></b></h5>
+                            <p class="card-text">Overlay for showing a simple and optimized
+                                Keyboard & Mouse, while recording or streaming.</p>
+                            <div class="card-word"><b>Keywords:</b> overlay, keyboard, mouse.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="StreamTwitchOverlay">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/streamtwitchoverlay-main.png" class="card-img-top" alt="StreamTwitchOverlay"
+                            title="Click to expand" onclick='img_box("img/streamtwitchoverlay-main.png")'>
+                        <img loading="lazy" src="img/streamtwitchoverlay-fullscreen.png" class="card-img-top" alt="StreamTwitchOverlay"
+                            style="display:none;">
+                        <img loading="lazy" src="img/streamtwitchoverlay-km.png" class="card-img-top" alt="StreamTwitchOverlay"
+                            style="display:none;">
+                        <img loading="lazy" src="img/recordyoutubeoverlay-controller.png" class="card-img-top" alt="RecordYoutubeOverlay"
+                            style="display:none;">
+                        <img loading="lazy" src="img/recordyoutubeoverlay-km.png" class="card-img-top" alt="RecordYoutubeOverlay"
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="StreamTwitchOverlay/">StreamTwitchOverlay</a> 
+                                / <a href="RecordYoutubeOverlay/">RecordYoutubeOverlay</a></b></h5>
+                            <p class="card-text">A full nice overlay for streaming on Twitch or for recording to upload on Youtube.</p>
+                            <div class="card-word"><b>Keywords:</b> overlay, streaming, recording.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="StreamchatOverlay">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/streamchatoverlay.png" class="card-img-top" alt="StreamchatOverlay"
+                            title="Click to expand" onclick='img_box("img/streamchatoverlay.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="StreamchatOverlay/">StreamchatOverlay</a></b></h5>
+                            <p class="card-text">Transparent Streamchat for any stream on Twitch.</p>
+                            <div class="card-word"><b>Keywords:</b> stream, streamchat.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="FpsCounter">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/fpscounter-main.png" class="card-img-top" alt="FpsCounter"
+                            title="Click to expand" onclick='img_box("img/fpscounter-main.png")'>
+                        <img loading="lazy" src="img/timecounter.png" class="card-img-top" alt="TimeCounter" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="fpscounter/">FpsCounter</a> / <a href="timecounter/">TimeCounter</a></b></h5>
+                            <p class="card-text">Tools to just see FPS or date and time in any game.</p>
+                            <div class="card-word"><b>Keywords:</b> tools, fps, date, game.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="cornflake">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/cf-main.jpg" class="card-img-top" alt="CornFlake"
+                            title="Click to expand" onclick='img_box("img/cf-main.jpg")'>
+                        <img loading="lazy" src="img/backbone-main.png" class="card-img-top" alt="BackBone" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="CornFlake/">CornFlake</a> / <a
+                                        href="BackBone/">BackBone</a></b></h5>
+                            <p class="card-text">Tools to show a picture or show a screen with filter like grayscale for
+                                games as overlays.</p>
+                            <div class="card-word"><b>Keywords:</b> tools, picture, screen, grayscale.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="television">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/tv-main.jpg" class="card-img-top" alt="TeleVision"
+                            title="Click to expand" onclick='img_box("img/tv-main.jpg")'>
+                        <img loading="lazy" src="img/raytube-main.png" class="card-img-top" alt="RayTube" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="TeleVision/">TeleVision</a> / <a
+                                        href="RayTube/">RayTube</a></b></h5>
+                            <p class="card-text">Tools to show games in television overlays.</p>
+                            <div class="card-word"><b>Keywords:</b> overlays, tools, tv.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="TransferVoice">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/transfervoice.png" class="card-img-top" alt="TransferVoice"
+                            title="Click to expand" onclick='img_box("img/transfervoice.png")'>
+                        <img loading="lazy" src="img/sts.png" class="card-img-top" alt="StreamchatToSpeech" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="TransferVoice/">TransferVoice</a> / 
+                                <a href="StreamchatToSpeech/">StreamchatToSpeech</a></b></h5>
+                            <p class="card-text">Transfering voice from microphone to sound card with robotic voice or 
+                                Twitch streamchat to speech.</p>
+                            <div class="card-word"><b>Keywords:</b> voice, microphone, sound, robotic.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="WindowTitleRemover">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/wtr-main.png" class="card-img-top" alt="WindowTitleRemover"
+                            title="Click to expand" onclick='img_box("img/wtr-main.png")'>
+                        <img loading="lazy" src="img/xboxtr.png" class="card-img-top" alt="WindowTopmostRemover"
+                            style="display:none;">
+                        <img loading="lazy" src="img/windowtoolbox.png" class="card-img-top" alt="WindowToolbox"
+                            style="display:none;">
+                        <img loading="lazy" src="img/utilities.png" class="card-img-top" alt="utilities" 
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="WindowTitleRemover/">WindowTitleRemover</a> / 
+                                <a href="WindowTopmostRemover/">WindowTopmostRemover</a> / 
+                                <a href="WindowToolbox/">WindowToolbox</a> / 
+                                <a href="FullscreenUtility/">FullscreenUtility</a></b></h5>
+                            <p class="card-text">Programs to set a game in windowed borderless mode from a windowed
+                                game in foreground or to remove topmost attribute or set size and position or a utility 
+                                for fullscreen mode for game you created .</p>
+                            <div class="card-word"><b>Keywords:</b> game, windowed, borderless.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="WindowTitle">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/wt-main.png" class="card-img-top" alt="WindowTitle"
+                            title="Click to expand" onclick='img_box("img/wt-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="WindowTitle/">WindowTitle</a></b></h5>
+                            <p class="card-text">A program to retrieve window title of any program or any game from PID.</p>
+                            <div class="card-word"><b>Keywords:</b> program, window, title.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="StreamTwitch">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/stream-main.png" class="card-img-top" alt="StreamTwitch RecordYoutube"
+                            title="Click to expand" onclick='img_box("img/stream-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="StreamTwitch/">StreamTwitch</a> / <a
+                                        href="RecordYoutube/">RecordYoutube</a> / <a
+                                        href="ShortYoutube/">ShortYoutube</a></b></h5>
+                            <p class="card-text">Tools to stream / record with FFMPEG on Twitch / Youtube with 2 buttons
+                                on your keyboard, one to start, and one to stop, or FFMPEG commands to create short.</p>
+                            <div class="card-word"><b>Keywords:</b> tools, stream, record, create, short.</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="page" data-id="3" style="display:none;">
+                    <span class="card" id="printscreen">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/ps-main.jpg" class="card-img-top" alt="PrintScreen"
+                            title="Click to expand" onclick='img_box("img/ps-main.jpg")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="PrintScreen/">PrintScreen</a></b></h5>
+                            <p class="card-text">Tool to print screen or foreground window and manage genrated files.</p>
+                            <div class="card-word"><b>Keywords:</b> tool, print, screen.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="Otep">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/otep-checkers.png" class="card-img-top" alt="Otep"
+                            title="Click to expand" onclick='img_box("img/otep-checkers.png")'>
+                        <img loading="lazy" src="img/otep-chess.png" class="card-img-top" alt="Otep" style="display:none;">
+                        <img loading="lazy" src="img/otep-chinese-checkers.png" class="card-img-top" alt="Otep" style="display:none;">
+                        <img loading="lazy" src="img/otep-othello.png" class="card-img-top" alt="Otep" style="display:none;">
+                        <img loading="lazy" src="img/otep-power4.png" class="card-img-top" alt="Otep" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="Otep/">Otep</a></b></h5>
+                            <p class="card-text">Plate games for 2 players on table top.</p>
+                            <div class="card-word"><b>Keywords:</b> games, players, table.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="FrontBlock">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/frontblock-main.png" class="card-img-top" alt="FrontBlock"
+                            title="Click to expand" onclick='img_box("img/frontblock-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="FrontBlock/">FrontBlock</a></b></h5>
+                            <p class="card-text">Plate game I imagined for 2 players on table top.</p>
+                            <div class="card-word"><b>Keywords:</b> games, players, table.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="NonogramGeneratorAndPlayer">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/nono-main.png" class="card-img-top" alt="NonogramGeneratorAndPlayer"
+                            title="Click to expand" onclick='img_box("img/nono-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a
+                                        href="NonogramGeneratorAndPlayer/">NonogramGeneratorAndPlayer</a></b></h5>
+                            <p class="card-text">Standalone game for 1 or 2 player(s) on desktop.</p>
+                            <div class="card-word"><b>Keywords:</b> game, desktop, players, table.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="Mastermind">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/mastermind-main.png" class="card-img-top" alt="Mastermind"
+                            title="Click to expand" onclick='img_box("img/mastermind-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="Mastermind/">Mastermind</a></b></h5>
+                            <p class="card-text">Standalone game for 1 player on desktop.</p>
+                            <div class="card-word"><b>Keywords:</b> game, desktop, player.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="Gumball">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/gumball-main.png" class="card-img-top" alt="Gumball"
+                            title="Click to expand" onclick='img_box("img/gumball-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="Gumball/">Gumball</a></b></h5>
+                            <p class="card-text">Standalone game I imagined for 2 players on desktop.</p>
+                            <div class="card-word"><b>Keywords:</b> game, desktop, players.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="mathcalculator">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/mathcalculator.png" class="card-img-top" alt="mathcalculator"
+                            title="Click to expand" onclick='img_box("img/mathcalculator.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="MathCalculator/">MathCalculator</a></b></h5>
+                            <p class="card-text">Tool to calculate math from string to code reflection.</p>
+                            <div class="card-word"><b>Keywords:</b> tool, calculator.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="VideoSpliter">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/videospliter.png" class="card-img-top" alt="VideoSpliter" 
+                            title="Click to expand" onclick='img_box("img/videospliter.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="VideoSpliter/">VideoSpliter</a></b></h5>
+                            <p class="card-text">Tiny standalone to split a video.</p>
+                            <div class="card-word"><b>Keywords:</b> tool, split, video.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="AudioFileListener">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/afl-main.png" class="card-img-top" alt="AudioFileListener"
+                            title="Click to expand" onclick='img_box("img/afl-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="AudioFileListener/">AudioFileListener</a></b></h5>
+                            <p class="card-text">Tiny standalone audio file listener.</p>
+                            <div class="card-word"><b>Keywords:</b> tool, audio, file.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="PlayMusic">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/playmusic-main.png" class="card-img-top" alt="PlayMusic"
+                            title="Click to expand" onclick='img_box("img/playmusic-main.png")'>
+                        <img loading="lazy" src="img/tpmp-main.png" class="card-img-top" alt="TPMP" style="display:none;">
+                        <img loading="lazy" src="img/mastersound.png" class="card-img-top" alt="MasterSound" style="display:none;">
+                        <img loading="lazy" src="img/soundcontrol.png" class="card-img-top" alt="SoundControl" style="display:none;">
+                        <img loading="lazy" src="img/videoplayer.png" class="card-img-top" alt="VideoPlayer" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="PlayMusic/">PlayMusic</a> / 
+                                <a href="TPMP/">TPMP</a> / <br> 
+                                <a href="MasterSound/">MasterSound</a> / 
+                                <a href="SoundControl/">SoundControl</a> / 
+                                <a href="VideoPlayer/">VideoPlayer</a></b></h5>
+                            <p class="card-text">Nice, simple, and optimized ways to listen all your music present on
+                                your computer with associated pictures or without but with nice features or auto level 
+                                of earing balancer or another but manual or for playing a video.</p>
+                            <div class="card-word"><b>Keywords:</b> listen, music, balancer, playing, video.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="VirtualBassSpeaker">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/virtualbassspeaker-main.png" class="card-img-top" alt="FootstepAmplifier4FPS"
+                            title="Click to expand" onclick='img_box("img/virtualbassspeaker-main.png")'>
+                        <img loading="lazy" src="img/echoboost.png" class="card-img-top" alt="EchoBoost" style="display:none;">
+                        <img loading="lazy" src="img/echorepulsor.png" class="card-img-top" alt="EchoRepulsor" style="display:none;">
+                        <img loading="lazy" src="img/bassbooster.png" class="card-img-top" alt="BassBooster" style="display:none;">
+                        <img loading="lazy" src="img/footstepsamplifier.png" class="card-img-top" alt="FootstepsAmplifier" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="VirtualBassSpeaker/">VirtualBassSpeaker</a> / <a
+                                        href="EchoBoost/">EchoBoost</a> / <br><a
+                                        href="EchoRepulsor/">EchoRepulsor</a> / <a
+                                        href="bassbooster/">BassBooster</a> / <a
+                                        href="FootstepsAmplifier/">FootstepsAmplifier</a></b></h5>
+                            <p class="card-text">Equalizer and amplifier and echo of sound able to forward sound
+                                simultaneously on several sound peripherals and echo for respulse mosquitos or in 
+                                a simple extension for boost bass or simple footsteps amplifier ready to use.</p>
+                            <div class="card-word"><b>Keywords:</b> tool, equalizer, amplifier, echo.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="ConvertWavToMp3">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/cwtm-main.png" class="card-img-top" alt="ConvertWavToMp3"
+                            title="Click to expand" onclick='img_box("img/cwtm-main.png")'>
+                        <img loading="lazy" src="img/silenceremover-main.png" class="card-img-top" alt="SilenceRemover" style="display:none;">
+                        <img loading="lazy" src="img/silenceremover-audio.png" class="card-img-top" alt="SilenceRemover" style="display:none;">
+                        <img loading="lazy" src="img/utilities.png" class="card-img-top" alt="utilities" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="ConvertWavToMp3/">ConvertWavToMp3</a> / 
+                                <a href="SilenceRemover/">SilenceRemover</a> / 
+                                <a href="NAudioDotNet/">NAudioDotNet</a> / 
+                                <a href="CSCoreDotNet/">CSCoreDotNet</a></b></h5>
+                            <p class="card-text">Converting audio WAV format to audio MP3 format or removing silence from video or audio or 
+                                or my own versions of NAudio and CSCore open source libraries.</p>
+                            <div class="card-word"><b>Keywords:</b> audio, remove, silence.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="Arca">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/arca-main.png" class="card-img-top" alt="ARCA"
+                            title="Click to expand" onclick='img_box("img/arca-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="Arca/">ARCA</a></b></h5>
+                            <p class="card-text">Simple tool to create scenes with songs ready to be captured for stream
+                                or upload on Youtube.</p>
+                            <div class="card-word"><b>Keywords:</b> tool, create, scences.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="Arva">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/arva-monitor.png" class="card-img-top" alt="ARVA"
+                            title="Click to expand" onclick='img_box("img/arva-monitor.png")'>
+                        <img loading="lazy" src="img/arva-main.png" class="card-img-top" alt="ARVA" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="Arva/">ARVA</a></b></h5>
+                            <p class="card-text">Simple tool to create scenes with contents ready to be captured for
+                                stream or upload on Youtube.</p>
+                            <div class="card-word"><b>Keywords:</b> tool, create, scences.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="SongCapture">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/songcapture-main.png" class="card-img-top" alt="SongCapture"
+                            title="Click to expand" onclick='img_box("img/songcapture-main.png")'>
+                        <img loading="lazy" src="img/albumcapture-main.png" class="card-img-top" alt="AlbumCapture"
+                            style="display:none;">
+                        <img loading="lazy" src="img/stfu-main.png" class="card-img-top" alt="STFU"
+                            style="display:none;">
+                        <img loading="lazy" src="img/spicify.png" class="card-img-top" alt="Spicify"
+                            style="display:none;">
+                        <img loading="lazy" src="img/spirify.png" class="card-img-top" alt="Spirify"
+                            style="display:none;">
+                        <img loading="lazy" src="img/utilities.png" class="card-img-top" alt="SoundCapture"
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="SongCapture/">SongCapture</a> / <a href="AlbumCapture/">AlbumCapture</a>
+                                / <br> <a href="STFU/">STFU</a>
+                                / <a href="Spicify/">Spicify</a>
+                                / <a href="Spirify/">Spirify</a>
+                                / <a href="SoundCapture/">SoundCapture</a></b></h5>
+                            <p class="card-text">Easy tools to capture audio from sound card.</p>
+                            <div class="card-word"><b>Keywords:</b> tools, capture, audio, sound.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="PlayAndListen">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/playandlisten-client.png" class="card-img-top" alt="PlayAndListen"
+                            title="Click to expand" onclick='img_box("img/playandlisten-client.png")'>
+                        <img loading="lazy" src="img/playandlisten-main.png" class="card-img-top" alt="PlayAndListen"
+                            style="display:none;">
+                        <img loading="lazy" src="img/remoteaudio-main.png" class="card-img-top" alt="RemoteAudio"
+                            style="display:none;">
+                        <img loading="lazy" src="img/alwaystogether.png" class="card-img-top" alt="AlwaysTogether"
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="PlayAndListen/">PlayAndListen</a> / <a
+                                        href="RemoteAudio/">RemoteAudio</a> / <a
+                                        href="AlwaysTogether/">AlwaysTogether</a></b></h5>
+                            <p class="card-text">Listening music on all your PC playing on one of your PC or listening
+                                each other from microphones.</p>
+                            <div class="card-word"><b>Keywords:</b> remote, audio.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="Audio">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/audiomerger-main.png" class="card-img-top" alt="AudioMerger"
+                            title="Click to expand" onclick='img_box("img/audiomerger-main.png")'>
+                        <img loading="lazy" src="img/audiospliter-main.png" class="card-img-top" alt="AudioSpliter"
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="AudioMerger/">AudioMerger</a> / <a
+                                        href="AudioSpliter/">AudioSpliter</a></b></h5>
+                            <p class="card-text">Merging sound tracks or spliting a sound track and adjust timing.</p>
+                            <div class="card-word"><b>Keywords:</b> merge, split, audio.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="DesktopCapture">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/desktopcapture-main.png" class="card-img-top" alt="DesktopCapture"
+                            title="Click to expand" onclick='img_box("img/desktopcapture-main.png")'>
+                        <img loading="lazy" src="img/gameplaycapture-main.png" class="card-img-top" alt="GameplayCapture"
+                            style="display:none;">
+                        <img loading="lazy" src="img/stream-main.png" class="card-img-top" alt="GameRecorder"
+                            style="display:none;">
+                        <img loading="lazy" src="img/killcamcapture.png" class="card-img-top" alt="KillcamCapture"
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="DesktopCapture/">DesktopCapture</a> / <a
+                                        href="gameplaycapture/">GameplayCapture</a> / <a
+                                        href="GameRecorder/">GameRecorder</a> / <a
+                                        href="KillcamCapture/">KillcamCapture</a></b></h5>
+                            <p class="card-text">Record your screen, your webcam, and your audio like your microphone or
+                                stereo mixer sound card, for creating tutorials or life moments very easily.
+                            </p>
+                            <div class="card-word"><b>Keywords:</b> record, screen, audio.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="localstreamplay">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/localstreamplay-main.png" class="card-img-top" alt="Local Stream Play"
+                            title="Click to expand" onclick='img_box("img/localstreamplay-main.png")'>
+                        <img loading="lazy" src="img/localstreamplay-host.png" class="card-img-top" alt="Local Stream Play"
+                            style="display:none;">
+                        <img loading="lazy" src="img/localstreamplay-script.png" class="card-img-top" alt="Local Stream Play"
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="localstreamplay/">Local Stream Play</a></b></h5>
+                            <p class="card-text">Play your game from a PC on another PC with Xbox Controller or Keyboard
+                                and Mouse connected to it, with 0 latency and full quality, even if it is powerless.</p>
+                            <div class="card-word"><b>Keywords:</b> remote, play, game.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="remotegameplay">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/rg-main.png" class="card-img-top" alt="RemoteGameplay"
+                            title="Click to expand" onclick='img_box("img/rg-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="RemoteGameplay/">RemoteGameplay</a></b></h5>
+                            <p class="card-text">Remotly ear and view your PC from another PC mainly for gaming, with
+                                low latency and high quality audio and video.</p>
+                            <div class="card-word"><b>Keywords:</b> remote, play, audio, video, game.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="DesktopController">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/dc-main.png" class="card-img-top" alt="DesktopController"
+                            title="Click to expand" onclick='img_box("img/dc-main.png")'>
+                        <img loading="lazy" src="img/dc-managed.png" class="card-img-top" alt="DesktopController"
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="DesktopController/">DesktopController</a></b></h5>
+                            <p class="card-text">Made for controlling any PC from one other PC in a network.</p>
+                            <div class="card-word"><b>Keywords:</b> remote, pc, network.</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="page" data-id="4" style="display:none;">
+                    <span class="card" id="Keyboard-Mouse-Emulation">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/kme-cancelreload.png" class="card-img-top" alt="Keyboard Mouse Emulation"
+                            title="Click to expand" onclick='img_box("img/kme-cancelreload.png")'>
+                        <img loading="lazy" src="img/kme-doubleclickreload.png" class="card-img-top" alt="Keyboard Mouse Emulation"
+                            style="display:none;">
+                        <img loading="lazy" src="img/kme-keepaimdownsight.png" class="card-img-top" alt="Keyboard Mouse Emulation"
+                            style="display:none;">
+                        <img loading="lazy" src="img/kme-mousemovetokeys.png" class="card-img-top" alt="Keyboard Mouse Emulation"
+                            style="display:none;">
+                        <img loading="lazy" src="img/kme-pushreload.png" class="card-img-top" alt="Keyboard Mouse Emulation"
+                            style="display:none;">
+                        <img loading="lazy" src="img/kme-shockmouse.png" class="card-img-top" alt="Keyboard Mouse Emulation"
+                            style="display:none;">
+                        <img loading="lazy" src="img/afasc-main.png" class="card-img-top" alt="AutoFireAutoSwitchCuphead"
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="Keyboard-Mouse-Emulation/">Keyboard Mouse Emulation</a> /
+                                    <a href="AutoFireAutoSwitchCuphead/">AutoFireAutoSwitchCuphead</a></b></h5>
+                            <p class="card-text">Different little tools for helping players in games to be more
+                                competitive.</p>
+                            <div class="card-word"><b>Keywords:</b> tools, games, competitive.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="ProGamingMapper">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/pgm-main.png" class="card-img-top" alt="ProGamingMapper"
+                            title="Click to expand" onclick='img_box("img/pgm-main.png")'>
+                        <img loading="lazy" src="img/pgm-ir.png" class="card-img-top" alt="ProGamingMapper" style="display:none;">
+                        <img loading="lazy" src="img/pgm-classic.png" class="card-img-top" alt="ProGamingMapper" style="display:none;">
+                        <img loading="lazy" src="img/pgm-extra.png" class="card-img-top" alt="ProGamingMapper" style="display:none;">
+                        <img loading="lazy" src="img/sigil-main.png" class="card-img-top" alt="StandardInGamingInputLowing" style="display:none;">
+                        <img loading="lazy" src="img/sigil-option.png" class="card-img-top" alt="StandardInGamingInputLowing" style="display:none;">
+                        <img loading="lazy" src="img/sigil-accessibility.png" class="card-img-top" alt="StandardInGamingInputLowing" style="display:none;">
+                        <img loading="lazy" src="img/sigil-feature.png" class="card-img-top" alt="StandardInGamingInputLowing" style="display:none;">
+                        <img loading="lazy" src="img/sigillite-main.png" class="card-img-top" alt="StandardInGamingInputLite" style="display:none;">
+                        <img loading="lazy" src="img/sigil-linker.png" class="card-img-top" alt="StandardInGamingInputLinker" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="ProGamingMapper/">ProGamingMapper</a> / <a
+                                        href="StandardInGamingInputLowing/">StandardInGamingInputLowing</a> / <a
+                                        href="StandardInGamingInputLite/">StandardInGamingInputLite</a> / <a
+                                        href="StandardInGamingInputLinker/">StandardInGamingInputLinker</a></b></h5>
+                            <p class="card-text">Mappers of inputs to outputs, with scripts you can sale to other users,
+                                for all your Gaming devices, and other devices, like webcam and microphone, to play all
+                                your games as a Pro.</p>
+                            <div class="card-word"><b>Keywords:</b> mappers, inputs, outputs.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="AimController">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/ac-1.png" class="card-img-top" alt="AimController"
+                            title="Click to expand" onclick='img_box("img/ac-1.png")'>
+                        <img loading="lazy" src="img/ac-2.png" class="card-img-top" alt="AimController" style="display:none;">
+                        <img loading="lazy" src="img/ac-3.png" class="card-img-top" alt="AimController" style="display:none;">
+                        <img loading="lazy" src="img/ac-4.png" class="card-img-top" alt="AimController" style="display:none;">
+                        <img loading="lazy" src="img/wiinux.png" class="card-img-top" alt="WiimoteOnUbuntu" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="AimController/">AimController</a> / 
+                                <a href="WiimoteOnUbuntu/">WiimoteOnUbuntu</a></b></h5>
+                            <p class="card-text">Build and test of custom controllers with motion abilities for playing
+                                every games on PC or of custom Wiimote on Linux.</p>
+                            <div class="card-word"><b>Keywords:</b> aim, controller, wiimote, ubuntu.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="WiimoteTheory">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/wiimotetheory-main.png" class="card-img-top" alt="WiimoteTheory"
+                            title="Click to expand" onclick='img_box("img/wiimotetheory-main.png")'>
+                        <img loading="lazy" src="img/wiimotetheory-settings.png" class="card-img-top" alt="WiimoteTheory"
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="WiimoteTheory/">WiimoteTheory</a></b></h5>
+                            <p class="card-text">Game ready Wiimote and Nunchuck support.</p>
+                            <div class="card-word"><b>Keywords:</b> game, wiimote, support.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="JoyconsTheory">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/joyconstheory-main.png" class="card-img-top" alt="JoyconsTheory"
+                            title="Click to expand" onclick='img_box("img/joyconstheory-main.png")'>
+                        <img loading="lazy" src="img/joyconstheory-settings.png" class="card-img-top" alt="JoyconsTheory"
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="JoyconsTheory/">JoyconsTheory</a></b></h5>
+                            <p class="card-text">Game ready Joycons support.</p>
+                            <div class="card-word"><b>Keywords:</b> game, joycons, support.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="WiiJoy">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/wjp-main.png" class="card-img-top" alt="WiiJoyPilot"
+                            title="Click to expand" onclick='img_box("img/wjp-main.png")'>
+                        <img loading="lazy" src="img/wjr-main.png" class="card-img-top" alt="WiiJoyReflex" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="WiiJoyPilot/">WiiJoyPilot</a> / <a
+                                        href="WiiJoyReflex/">WiiJoyReflex</a></b></h5>
+                            <p class="card-text">Using Joycon left and Wiimote as Xbox Controller or Keyboard and Mouse
+                                in FPS games.</p>
+                            <div class="card-word"><b>Keywords:</b> game, joycons, wiimote, support.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="firsttoaim">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/fta-script.png" class="card-img-top" alt="firsttoaim"
+                            title="Click to expand" onclick='img_box("img/fta-script.png")'>
+                        <img loading="lazy" src="img/fta-keyboard.png" class="card-img-top" alt="firsttoaim" style="display:none;">
+                        <img loading="lazy" src="img/fta-mouse.png" class="card-img-top" alt="firsttoaim" style="display:none;">
+                        <img loading="lazy" src="img/fta-controller.png" class="card-img-top" alt="firsttoaim" style="display:none;">
+                        <img loading="lazy" src="img/wiijoy4fps-main.png" class="card-img-top" alt="WiiJoy4FPS" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="firsttoaim/">FirstToAim</a> / <a
+                                        href="WiiJoy4FPS/">WiiJoy4FPS</a></b></h5>
+                            <p class="card-text">Tools to use Motion Controllers as Keyboard, Mouse, Xbox Controller in
+                                All Games.</p>
+                            <div class="card-word"><b>Keywords:</b> tools, motion, controllers.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="VirtualKeyboard">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/vk-main.png" class="card-img-top" alt="VirtualKeyboard"
+                            title="Click to expand" onclick='img_box("img/vk-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="VirtualKeyboard/">VirtualKeyboard</a></b></h5>
+                            <p class="card-text">A virtual Keyboard made to replace a physical Keyboard.</p>
+                            <div class="card-word"><b>Keywords:</b> virtual, physical, keyboard.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="clickableoverlay">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/co-main.png" class="card-img-top" alt="clickableoverlay"
+                            title="Click to expand" onclick='img_box("img/co-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="ClickableOverlay/">ClickableOverlay</a></b></h5>
+                            <p class="card-text">Overlay for receive click with mouse.</p>
+                            <div class="card-word"><b>Keywords:</b> overlay, click.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="RunAndGun">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/runandgun-main.png" class="card-img-top" alt="RunAndGun"
+                            title="Click to expand" onclick='img_box("img/runandgun-main.png")'>
+                        <img loading="lazy" src="img/ciine-main.png" class="card-img-top" alt="ciine" style="display:none;">
+                        <img loading="lazy" src="img/quickcontrol-main.png" class="card-img-top" alt="QuickControl" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="RunAndGun/">RunAndGun</a> / <a href="ciine/">ciine</a> 
+                                / <a href="QuickControl/">QuickControl</a></b></h5>
+                            <p class="card-text">Tiny standalones network HID data passthrough or HID competitive.</p>
+                            <div class="card-word"><b>Keywords:</b> remote, network, hid, competitive.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="playandreplay">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/playandreplay-main.png" class="card-img-top" alt="playandreplay"
+                            title="Click to expand" onclick='img_box("img/playandreplay-main.png")'>
+                        <img loading="lazy" src="img/playandreplay-km.png" class="card-img-top" alt="playandreplay" style="display:none;">
+                        <img loading="lazy" src="img/easeofaccess.png" class="card-img-top" alt="EaseOfAccess" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="PlayAndReplay/">PlayAndReplay</a> / <a href="EaseOfAccess/">EaseOfAccess</a></b></h5>
+                            <p class="card-text">Tiny standalones for play/replay controller events or keyboard and mouse events or for memory write.</p>
+                            <div class="card-word"><b>Keywords:</b> play, replay, memory, game.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="launcher">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/launcher-main.png" class="card-img-top" alt="launcher"
+                            title="Click to expand" onclick='img_box("img/launcher-main.png")'>
+                        <img loading="lazy" src="img/trax.png" class="card-img-top" alt="trax" style="display:none;">
+                        <img loading="lazy" src="img/steamlauncher.png" class="card-img-top" alt="SteamLauncher" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="Launcher/">Launcher</a>
+                                 / <a href="trax/">TraX</a>
+                                 / <a href="SteamLauncher/">SteamLauncher</a></b></h5>
+                            <p class="card-text">Tiny standalones Cronus X-Aim launcher or screen tracker or Steam launcher.</p>
+                            <div class="card-word"><b>Keywords:</b> launcher, tracker, games.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="ValueStateChanged">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/vsc-main.png" class="card-img-top" alt="ValueStateChanged" 
+                            title="Click to expand" onclick='img_box("img/vsc-main.png")'>
+                        <img loading="lazy" src="img/valueabsolutetorelative.png" class="card-img-top" alt="ValueAbsoluteToRelative" style="display:none;">
+                        <img loading="lazy" src="img/continuousbyte.png" class="card-img-top" alt="ContinuousByte" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="ValueStateChanged/">ValueStateChanged</a> /
+                                <a href="ValueAbsoluteToRelative/">ValueAbsoluteToRelative</a> /
+                                <a href="ContinuousByte/">ContinuousByte</a></b></h5>
+                            <p class="card-text">Tools for click once, there are good and less good, and a tool for simulate a relative mouse 
+                                from absolute position and also a byte continuous whatever the value changing.</p>
+                            <div class="card-word"><b>Keywords:</b> tools, clickonce, values.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="MouseControlTester">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/mousecontroltester-main.png" class="card-img-top" alt="MouseControlTester"
+                            title="Click to expand" onclick='img_box("img/mousecontroltester-main.png")'>
+                        <img loading="lazy" src="img/interceptiontest-main.png" class="card-img-top" alt="InterceptionTest"
+                            style="display:none;">
+                        <img loading="lazy" src="img/xboxcontrollertester.png" class="card-img-top" alt="XboxControllerTester"
+                            style="display:none;">
+                        <img loading="lazy" src="img/gyrotester-main.png" class="card-img-top" alt="GyroTester"
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="MouseControlTester/">MouseControlTester</a> / 
+                                <a href="InterceptionTest/">InterceptionTest</a> / 
+                                <a href="XboxControllerTester/">XboxControllerTester</a> / 
+                                <a href="GyroTester/">GyroTester</a></b></h5>
+                            <p class="card-text">Tools to find better mouse control in all FPS and top down shooters or
+                                to retrieve keyboard and mouse ID or to test controllers or IMU.</p>
+                            <div class="card-word"><b>Keywords:</b> tools, mouse, control, id.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="EnumerateDevices">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/enumeratedevices.png" class="card-img-top" alt="EnumerateDevices" 
+                            title="Click to expand" onclick='img_box("img/enumeratedevices.png")'>
+                        <img loading="lazy" src="img/readdevice.png" class="card-img-top" alt="ReadDevice" style="display:none;">
+                        <img loading="lazy" src="img/hidedevice-main.png" class="card-img-top" alt="HideDevice" style="display:none;">
+                        <img loading="lazy" src="img/utilities.png" class="card-img-top" alt="HideDeviceFromList" style="display:none;">
+                        <img loading="lazy" src="img/flushdevices.png" class="card-img-top" alt="FlushDevices" style="display:none;">
+                        <img loading="lazy" src="img/enableble.png" class="card-img-top" alt="EnableBLE" style="display:none;">
+                        <img loading="lazy" src="img/enableprocon2.png" class="card-img-top" alt="EnableProcon2" style="display:none;">
+                        <img loading="lazy" src="img/devicepairingwizard.png" class="card-img-top" alt="DevicePairingWizard" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="EnumerateDevices/">EnumerateDevices</a> / <a href="ReadDevice/">ReadDevice</a> / 
+                                <a href="HideDevice/">HideDevice</a> / <a href="HideDeviceFromList/">HideDeviceFromList</a> / 
+                                <a href="HidePlusDeviceNotFromList/">HidePlusDeviceNotFromList</a> / 
+                                <a href="FlushDevices/">FlushDevices</a> / <a href="EnableBLE/">EnableBLE</a> / 
+                                <a href="EnableProcon2/">EnableProcon2</a> / <a href="DevicePairingWizard/">DevicePairingWizard</a></b></h5>
+                            <p class="card-text">Tools for retrieve data of devices or a tool for hide devices or flush it 
+                                or for enable BLE or for enable ProCon 2 via USB or pair devices.</p>
+                            <div class="card-word"><b>Keywords:</b> tools, data, hid, devices, ble.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="mapkey">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/mapkey-main.png" class="card-img-top" alt="mapkey"
+                            title="Click to expand" onclick='img_box("img/mapkey-main.png")'>
+                        <img loading="lazy" src="img/scpinstaller.png" class="card-img-top" alt="scpinstaller"
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="mapkey/">mapkey</a> / <a href="ScpInstaller/">ScpInstaller</a></b></h5>
+                            <p class="card-text">Tool to to retrieve all scan codes from virtual key codes of keyboard keys
+                                and another tool to install SCP driver for having a virtual Xbox controller.</p>
+                            <div class="card-word"><b>Keywords:</b> tool, scancode, scp.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="ControllerHandle">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/controllerhandle.png" class="card-img-top" alt="ControllerHandle"
+                            title="Click to expand" onclick='img_box("img/controllerhandle.png")'>
+                        <img loading="lazy" src="img/scr.png" class="card-img-top" alt="scr" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="ControllerHandle/">ControllerHandle</a> / <a href="SCR/">SCR</a></b></h5>
+                            <p class="card-text">Tools to handle some controllers I used for testing purposes or a tool to receive 
+                                subcommands of controllers.</p>
+                            <div class="card-word"><b>Keywords:</b> tools, handle, controllers.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="ControllerDeadzoneFinder">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/controllerdeadzonefinder-main.png" class="card-img-top"
+                            alt="ControllerDeadzoneFinder" title="Click to expand" onclick='img_box("img/controllerdeadzonefinder-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a
+                                        href="ControllerDeadzoneFinder/">ControllerDeadzoneFinder</a></b></h5>
+                            <p class="card-text">Tool to find deadzone of controller in game for remove it.</p>
+                            <div class="card-word"><b>Keywords:</b> tool, deadzone, controller, game.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="xinputs">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/xinputs.png" class="card-img-top" alt="xinputs"
+                            title="Click to expand" onclick='img_box("img/xinputs.png")'>
+                        <img loading="lazy" src="img/joyinputs.png" class="card-img-top" alt="joyinputs" style="display:none;">
+                        <img loading="lazy" src="img/joycon2inputs-main.png" class="card-img-top" alt="joycon2inputs" style="display:none;">
+                        <img loading="lazy" src="img/joycon2inputs-right.png" class="card-img-top" alt="joycon2inputs" style="display:none;">
+                        <img loading="lazy" src="img/procon2inputs-main.png" class="card-img-top" alt="procon2inputs" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="x360inputs/">x360inputs</a> / <a href="joyinputs/">joyinputs</a> / <br>
+                                <a href="joycon2inputs/">joycon2inputs</a> / <a href="procon2inputs/">procon2inputs</a></b></h5>
+                            <p class="card-text">Tools to handle Xbox or joystick controller or Joycon 2 left or right or Pro controller 2 as libraries.</p>
+                            <div class="card-word"><b>Keywords:</b> tools, handle, controllers.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="InputPairing">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/inputpairing.png" class="card-img-top" alt="InputPairing"
+                            title="Click to expand" onclick='img_box("img/inputpairing.png")'>
+                        <img loading="lazy" src="img/dll.png" class="card-img-top" alt="dll" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="InputPairing/">InputPairing</a> / 
+                                <a href="MotionInputPairing/">MotionInputPairing</a> / 
+                                <a href="hidread/">hidread</a> / 
+                                <a href="keyboardmouse/">keyboardmouse</a> / 
+                                <a href="SendInputLibrary/">SendInputLibrary</a></b></h5>
+                            <p class="card-text">Tools for pairing some controllers via Bluetooth or read HID or send K&M events.</p>
+                            <div class="card-word"><b>Keywords:</b> tools, pairing, devices, hid.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="xsrp">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/xsrp.png" class="card-img-top" alt="xsrp"
+                            title="Click to expand" onclick='img_box("img/xsrp.png")'>
+                        <img loading="lazy" src="img/wiijoyxs.png" class="card-img-top" alt="wiijoyxs" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="xsrp/">xsrp</a> / <a href="WiiJoyXS/">WiiJoyXS</a></b></h5>
+                            <p class="card-text">Tool to play any controller very well on Xbox Series X or S via Remote Play 
+                                or tool to play Wiimote with a setting interface.</p>
+                            <div class="card-word"><b>Keywords:</b> tools, remote, play, wiimote.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="StopIt">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/stopit-main.png" class="card-img-top" alt="StopIt"
+                            title="Click to expand" onclick='img_box("img/stopit-main.png")'>
+                        <img loading="lazy" src="img/stoping-main.png" class="card-img-top" alt="Stoping" style="display:none;">
+                        <img loading="lazy" src="img/servicedisabling.png" class="card-img-top" alt="ServiceDisabling" style="display:none;">
+                        <img loading="lazy" src="img/tempremoving.png" class="card-img-top" alt="TempRemoving" style="display:none;">
+                        <img loading="lazy" src="img/tempblocking.png" class="card-img-top" alt="TempBlocking" style="display:none;">
+                        <img loading="lazy" src="img/flushdns.png" class="card-img-top" alt="FlushDNS" style="display:none;">
+                        <img loading="lazy" src="img/btflood-main.png" class="card-img-top" alt="BTFlood" style="display:none;">
+                        <img loading="lazy" src="img/freeit.png" class="card-img-top" alt="FreeIt" style="display:none;">
+                        <img loading="lazy" src="img/newb.png" class="card-img-top" alt="NewB" style="display:none;">
+                        <img loading="lazy" src="img/processcleaner-main.png" class="card-img-top" alt="ProcessCleaner" style="display:none;">
+                        <img loading="lazy" src="img/restoreservices.png" class="card-img-top" alt="RestoreServices" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="StopIt/">StopIt</a> / <a
+                                href="Stoping/">Stoping</a> / <a
+                                href="ServiceDisabling/">ServiceDisabling</a> / <a
+                                href="TempRemoving/">TempRemoving</a> / <a
+                                href="TempBlocking/">TempBlocking</a> / <a
+                                href="FlushDNS/">FlushDNS</a> / <a
+                                href="BTFlood/">BTFlood</a> / <a
+                                href="FreeIt/">FreeIt</a> / <a
+                                href="NewB/">NewB</a> / <a
+                                href="ProcessCleaner/">ProcessCleaner</a> / <a
+                                href="RestoreServices/">RestoreServices</a></b></h5>
+                            <p class="card-text">Programs to stop useless programs and services for playing in a optimized 
+                                way, or with once pass, or stop and disable useless services, or delete or block automatically all 
+                                contents of %temp% folder, or flush DNS, or flood Bluetooth or process basic maintenance or network 
+                                maintenance or clean unwanted programs or just bring back default services status.</p>
+                            <div class="card-word"><b>Keywords:</b> programs, optimization, performance.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="freemyplay">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/freemyplay-main.png" class="card-img-top" alt="FreeMyPlay"
+                            title="Click to expand" onclick='img_box("img/freemyplay-main.png")'>
+                        <img loading="lazy" src="img/fairplay-main.png" class="card-img-top" alt="FairPlay" style="display:none;">
+                        <img loading="lazy" src="img/blockip.png" class="card-img-top" alt="blockip" style="display:none;">
+                        <img loading="lazy" src="img/botdetection.png" class="card-img-top" alt="BotDetection" style="display:none;">
+                        <img loading="lazy" src="img/controllerbotdetection.png" class="card-img-top" alt="ControllerBotDetection" style="display:none;">
+                        <img loading="lazy" src="img/botinspection-main.png" class="card-img-top" alt="BotInspection" style="display:none;">
+                        <img loading="lazy" src="img/botinspection-cpp.png" class="card-img-top" alt="BotInspection" style="display:none;">
+                        <img loading="lazy" src="img/memoryinspection-main.png" class="card-img-top" alt="MemoryInspection" style="display:none;">
+                        <img loading="lazy" src="img/stringinspection.png" class="card-img-top" alt="StringInspection" style="display:none;">
+                        <img loading="lazy" src="img/detectdrivers-main.png" class="card-img-top" alt="DetectDrivers" style="display:none;">
+                        <img loading="lazy" src="img/detectdrivers-ms.png" class="card-img-top" alt="DetectDrivers" style="display:none;">
+                        <img loading="lazy" src="img/detectdrivers-scp.png" class="card-img-top" alt="DetectDrivers" style="display:none;">
+                        <img loading="lazy" src="img/screeninspection.png" class="card-img-top" alt="ScreenInspection" style="display:none;">
+                        <img loading="lazy" src="img/aslrchecker.png" class="card-img-top" alt="ASLRChecker" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="freemyplay/">FreeMyPlay</a> / <a
+                                href="fairplay/">FairPlay</a> / <a
+                                href="BlockIP/">BlockIP</a> / <a
+                                href="BotDetection/">BotDetection</a> / <a
+                                href="ControllerBotDetection/">ControllerBotDetection</a> / <a
+                                href="BotInspection/">BotInspection</a> / <a
+                                href="MemoryInspection/">MemoryInspection</a> / <a
+                                href="StringInspection/">StringInspection</a> / <a
+                                href="DetectDrivers/">DetectDrivers</a> / <a
+                                href="ScreenInspection/">ScreenInspection</a> / <a
+                                href="ASLRChecker/">ASLRChecker</a></b></h5>
+                            <p class="card-text">Free of cheaters a respectable game for play a little for change a
+                                little or flood process memory as a universal anti-cheat or create firewall rule or 
+                                detect cheater or cheater program or injected DLL or from string or unwanted drivers 
+                                or screen or ASLR.</p>
+                            <div class="card-word"><b>Keywords:</b> tools, cheaters, firewall, drivers.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="BehindChecker">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/bc-router.png" class="card-img-top" alt="BehindChecker"
+                            title="Click to expand" onclick='img_box("img/bc-router.png")'>
+                        <img loading="lazy" src="img/bc-server.png" class="card-img-top" alt="BehindChecker" style="display:none;">
+                        <img loading="lazy" src="img/changemac-main.png" class="card-img-top" alt="ChangeMAC" style="display:none;">
+                        <img loading="lazy" src="img/changedns-main.png" class="card-img-top" alt="ChangeDNS" style="display:none;">
+                        <img loading="lazy" src="img/checkdrives-main.png" class="card-img-top" alt="CheckDrives" style="display:none;">
+                        <img loading="lazy" src="img/checkdrives-cpp.png" class="card-img-top" alt="CheckDrives" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="BehindChecker/">BehindChecker</a> / <br> <a 
+                                    href="ChangeMAC/">ChangeMAC</a> / <a href="ChangeDNS/">ChangeDNS</a> / <a 
+                                    href="CheckDrives/">CheckDrives</a></b></h5>
+                            <p class="card-text">Programs to check router or server IP and ports or change MAC network
+                                address or DNS server address or check files and directories the most huge on your drives.</p>
+                            <div class="card-word"><b>Keywords:</b> programs, network, ports, drives.</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="page" data-id="5" style="display:none;">
+                    <span class="card" id="localstorageinfo">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/lsio-main.png" class="card-img-top" alt="localstorage-info"
+                            title="Click to expand" onclick='img_box("img/lsio-main.png")'>
+                        <img loading="lazy" src="img/ip-main.png" class="card-img-top" alt="ip-main"
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="localstorage-info/">localstorage-info</a> / 
+                                <a href="ip-info/">ip-info</a></b></h5>
+                            <p class="card-text">A Edge browser extension for retrieve space of any
+                                site or a simple page to get external IP.</p>
+                            <div class="card-word"><b>Keywords:</b> extension, space, ip.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="EncryptedPages">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/encryptedpages-main.png" class="card-img-top" alt="EncryptedPages"
+                            title="Click to expand" onclick='img_box("img/encryptedpages-main.png")'>
+                        <img loading="lazy" src="img/pp-main.png" class="card-img-top" alt="PrivatePages" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="EncryptedPages/">EncryptedPages</a>
+                                 / <a href="PrivatePages/">PrivatePages</a></b></h5>
+                            <p class="card-text">Allow entering your pages with a password or a token.</p>
+                            <div class="card-word"><b>Keywords:</b> pages, password, token, private.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="FastAccessPages">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/fastaccess1.png" class="card-img-top" alt="FastAccessPages"
+                            title="Click to expand" onclick='img_box("img/fastaccess1.png")'>
+                        <img loading="lazy" src="img/fastaccess2.png" class="card-img-top" alt="FastAccessPages" style="display:none;">
+                        <img loading="lazy" src="img/fastaccess3.png" class="card-img-top" alt="FastAccessPages" style="display:none;">
+                        <img loading="lazy" src="img/fastaccess4.png" class="card-img-top" alt="FastAccessPages" style="display:none;">
+                        <img loading="lazy" src="img/fastaccess5.png" class="card-img-top" alt="FastAccessPages" style="display:none;">
+                        <img loading="lazy" src="img/fastaccess6.png" class="card-img-top" alt="FastAccessPages" style="display:none;">
+                        <img loading="lazy" src="img/fastaccess.png" class="card-img-top" alt="FastAccessTab" style="display:none;">
+                        <img loading="lazy" src="img/minimaltab.png" class="card-img-top" alt="MinimalTab" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="FastAccessPages/">FastAccessPages</a> / <br> 
+                                <a href="FastAccessTab/">FastAccessTab</a> / 
+                                <a href="MinimalTab/">MinimalTab</a></b></h5>
+                            <p class="card-text">Tab and new tab pages for WebBrowser startup allowing to set links or just purified.</p>
+                            <div class="card-word"><b>Keywords:</b> extension, browser, links, purified.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="StringToCode">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/stc-main.png" class="card-img-top" alt="StringToCode"
+                            title="Click to expand" onclick='img_box("img/stc-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="StringToCode/">StringToCode</a></b></h5>
+                            <p class="card-text">Test tools for programs with codes from string with classes.</p>
+                            <div class="card-word"><b>Keywords:</b> string, codes.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="InfiniteWorker">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/iw-main.png" class="card-img-top" alt="InfiniteWorker"
+                            title="Click to expand" onclick='img_box("img/iw-main.png")'>
+                        <img loading="lazy" src="img/tick-main.png" class="card-img-top" alt="Tick" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="InfiniteWorker/">InfiniteWorker</a> 
+                                / <a href="Tick/">Tick</a></b></h5>
+                            <p class="card-text">Test tools for handle threading tasks or accurate timer.</p>
+                            <div class="card-word"><b>Keywords:</b> thread, task, loop.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="UniqueObject">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/uniqueobject.png" class="card-img-top" alt="UniqueObject"
+                            title="Click to expand" onclick='img_box("img/uniqueobject.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="UniqueObject/">UniqueObject</a></b></h5>
+                            <p class="card-text">Program as proof it's possible to make a good web application 
+                                without any bug.</p>
+                            <div class="card-word"><b>Keywords:</b> web, application, bug.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="GraphicDrawer">
+                        <div class="ribbon green">☣︎</div>
+                        <img loading="lazy" src="img/graphicdrawer-main.png" class="card-img-top" alt="GraphicDrawer"
+                            title="Click to expand" onclick='img_box("img/graphicdrawer-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="GraphicDrawer/">GraphicDrawer</a></b></h5>
+                            <p class="card-text">Display your own graphics.</p>
+                            <div class="card-word"><b>Keywords:</b> display, draw, graphic.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="MessageBox">
+                        <div class="ribbon green">☣︎</div>
+                        <img loading="lazy" src="img/messagebox.png" class="card-img-top" alt="MessageBox"
+                            title="Click to expand" onclick='img_box("img/messagebox.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="MessageBox/">MessageBox</a></b></h5>
+                            <p class="card-text">Display your custom prompt.</p>
+                            <div class="card-word"><b>Keywords:</b> display, custom, prompt.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="RollChicken">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/rollchicken.png" class="card-img-top" alt="RollChicken"
+                            title="Click to expand" onclick='img_box("img/rollchicken.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="rollchicken/">RollChicken</a></b></h5>
+                            <p class="card-text">Screen rotation under Edge.</p>
+                            <div class="card-word"><b>Keywords:</b> edge, screen, rotate.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="PromptHandle">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/ph-main.png" class="card-img-top" alt="PromptHandle"
+                            title="Click to expand" onclick='img_box("img/ph-main.png")'>
+                        <img loading="lazy" src="img/oh-main.png" class="card-img-top" alt="ObjectHandle"
+                            style="display:none;">
+                        <img loading="lazy" src="img/methodhandle.png" class="card-img-top" alt="MethodHandle"
+                            style="display:none;">
+                        <img loading="lazy" src="img/mh-main.png" class="card-img-top" alt="MemoryHandle"
+                            style="display:none;">
+                        <img loading="lazy" src="img/argumenthandle.png" class="card-img-top" alt="ArgumentHandle"
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="PromptHandle/">PromptHandle</a>
+                                / <a href="ObjectHandle/">ObjectHandle</a>
+                                / <a href="MethodHandle/">MethodHandle</a>
+                                / <a href="MemoryHandle/">MemoryHandle</a>
+                                / <a href="ArgumentHandle/">ArgumentHandle</a></b></h5>
+                            <p class="card-text">Test tools for handle user inputs, or for static variables, or for programs 
+                                started in memory, or for passing arguments between two programs.</p>
+                            <div class="card-word"><b>Keywords:</b> tools, handle, codes.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="Authentication">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/testconnection-main.png" class="card-img-top" alt="Authentication"
+                            title="Click to expand" onclick='img_box("img/testconnection-main.png")'>
+                        <img loading="lazy" src="img/authentication-main.png" class="card-img-top" alt="Local Authentication"
+                            style="display:none;">
+                        <img loading="lazy" src="img/fileauthentication.png" class="card-img-top" alt="File Authentication"
+                            style="display:none;">
+                        <img loading="lazy" src="img/bankauthentication.png" class="card-img-top" alt="Bank Authentication"
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="Authentication/">Authentication</a> / <br><a
+                                        href="LocalAuthentication/">LocalAuthentication</a> / <a
+                                        href="FileAuthentication/">FileAuthentication</a> / <a
+                                        href="BankAuthentication/">BankAuthentication</a></b></h5>
+                            <p class="card-text">Methods to authenticate a user for allowing to open a program.</p>
+                            <div class="card-word"><b>Keywords:</b> methods, authentication.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="AssociateProgramExtension">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/associateprogramextension.png" class="card-img-top" alt="AssociateProgramExtension"
+                            title="Click to expand" onclick='img_box("img/associateprogramextension.png")'>
+                        <img loading="lazy" src="img/startme.png" class="card-img-top" alt="StartMeToStartup"
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="AssociateProgramExtension/">AssociateProgramExtension</a>
+                                 / <a href="StartMeToStartup/">StartMeToStartup</a></b></h5>
+                            <p class="card-text">Programs to remove/add association of extension to any program 
+                                or remove/add from startup boot any program.</p>
+                            <div class="card-word"><b>Keywords:</b> extension, startup, boot.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="installer-test">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/installer-main.png" class="card-img-top" alt="installer-test"
+                            title="Click to expand" onclick='img_box("img/installer-main.png")'>
+                        <img loading="lazy" src="img/driversinstaller.png" class="card-img-top" alt="DriversInstaller"
+                            style="display:none;">
+                        <img loading="lazy" src="img/roslyn-test.png" class="card-img-top" alt="roslyn-test"
+                            style="display:none;">
+                        <img loading="lazy" src="img/winformsdarkmodetest-main.png" class="card-img-top" alt="WinFormsDarkModeTest"
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="installer-test/">installer-test</a> / 
+                                <a href="DriversInstaller/">DriversInstaller</a> / 
+                                <a href="roslyn-test/">roslyn-test</a> / 
+                                <a href="WinFormsDarkModeTest/">WinFormsDarkModeTest</a></b></h5>
+                            <p class="card-text">Test programs for installing a program zipped or 
+                                for installing a bunch of drivers or for testing Roslyn or dark mode in WinForms.</p>
+                            <div class="card-word"><b>Keywords:</b> zip, drivers, test.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="ChangeRepoVisibility">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/changerepovisibility.png" class="card-img-top" alt="ChangeRepoVisibility"
+                            title="Click to expand" onclick='img_box("img/changerepovisibility.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="ChangeRepoVisibility/">ChangeRepoVisibility</a></b></h5>
+                            <p class="card-text">Program to change visibilities of repositories.</p>
+                            <div class="card-word"><b>Keywords:</b> repository, visibility.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="ui-libraries">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/ui-libraries.png" class="card-img-top" alt="ui-libraries"
+                            title="Click to expand" onclick='img_box("img/ui-libraries.png")'>
+                        <img loading="lazy" src="img/websiteresolutiontester.png" class="card-img-top" alt="WebsiteResolutionTester"
+                            style="display:none;">
+                        <img loading="lazy" src="img/maf.github.png" class="card-img-top" alt="michaelandrefraniatte.github"
+                            style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="ui-libraries/">ui-libraries</a> / <br> 
+                                <a href="WebsiteResolutionTester/">WebsiteResolutionTester</a> / <br> 
+                                <a href="michaelandrefraniatte.github/">michaelandrefraniatte.github</a></b></h5>
+                            <p class="card-text">Test libraries for user interface of executables with web browsers or simple test of different resolutions 
+                                for your website or simple program to open my website.</p>
+                            <div class="card-word"><b>Keywords:</b> browser, embed, resolution, websites.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="EBookViewver">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/ebv.png" class="card-img-top" alt="EBookViewver"
+                            title="Click to expand" onclick='img_box("img/ebv.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="EBookViewver/">EBookViewver</a></b></h5>
+                            <p class="card-text">A program to sell EBooks.</p>
+                            <div class="card-word"><b>Keywords:</b> ebooks, sell.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="EncryptedFiles">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/ef-main.png" class="card-img-top" alt="EncryptedFiles"
+                            title="Click to expand" onclick='img_box("img/ef-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="EncryptedFiles/">EncryptedFiles</a></b></h5>
+                            <p class="card-text">A program to encrypt/decrypt files with the password and indicator.</p>
+                            <div class="card-word"><b>Keywords:</b> encrypt, files, password.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="TextEditor">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/texteditor-main.png" class="card-img-top" alt="TextEditor"
+                            title="Click to expand" onclick='img_box("img/texteditor-main.png")'>
+                        <img loading="lazy" src="img/ce-main.png" class="card-img-top" alt="CodeEditor" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="TextEditor/">TextEditor</a> / <a
+                                        href="CodeEditor/">CodeEditor</a></b></h5>
+                            <p class="card-text">Programs to edit text like notepad or to edit code simply.</p>
+                            <div class="card-word"><b>Keywords:</b> edit, text, code.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="EnumConstantConverter">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/enumconstant.png" class="card-img-top" alt="EnumConstantConverter"
+                            title="Click to expand" onclick='img_box("img/enumconstant.png")'>
+                        <img loading="lazy" src="img/configfile.png" class="card-img-top" alt="ConfigurationFileRewriter" style="display:none;">
+                        <img loading="lazy" src="img/textfromimage.png" class="card-img-top" alt="TextFromImage" style="display:none;">
+                        <img loading="lazy" src="img/utilities.png" class="card-img-top" alt="utilities" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="EnumConstantConverter/">EnumConstantConverter</a> / <a
+                                        href="ConfigurationFileRewriter/">ConfigurationFileRewriter</a> / <a
+                                        href="TextFromImage/">TextFromImage</a> / <a 
+                                        href="slider-tile-cutter/">slider-tile-cutter</a> / <a 
+                                        href="HveicToJpg/">HveicToJpg</a></b></h5>
+                            <p class="card-text">Programs to edit enumerator or to edit configuration file or to retrieve text 
+                                from image, it correspond to easy and simple tools to convert string in files without having to 
+                                do it manually or image cutter or image converter from heic format to jpg.
+                            </p>
+                            <div class="card-word"><b>Keywords:</b> edit, file, enumeration, image.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="rmoto">
+                        <div class="ribbon yellow">𓇼</div>
+                        <img src="img/rmoto-main.png" class="card-img-top" alt="rmoto"
+                            title="Click to expand" onclick='img_box("img/rmoto-main.png")'>
+                        <img loading="lazy" src="img/rmofo-main.png" class="card-img-top" alt="rmofo" style="display:none;">
+                        <img loading="lazy" src="img/rmoso-main.png" class="card-img-top" alt="rmoso" style="display:none;">
+                        <img loading="lazy" src="img/rmopo-main.png" class="card-img-top" alt="rmopo" style="display:none;">
+                        <img loading="lazy" src="img/rmodo-main.png" class="card-img-top" alt="rmodo" style="display:none;">
+                        <img loading="lazy" src="img/rmoco-main.png" class="card-img-top" alt="rmoco" style="display:none;">
+                        <img loading="lazy" src="img/rmowo-main.png" class="card-img-top" alt="rmowo" style="display:none;">
+                        <img loading="lazy" src="img/rmoyo-main.png" class="card-img-top" alt="rmoyo" style="display:none;">
+                        <img loading="lazy" src="img/rmomo-main.png" class="card-img-top" alt="rmomo" style="display:none;">
+                        <img loading="lazy" src="img/rmolo-main.png" class="card-img-top" alt="rmolo" style="display:none;">
+                        <img loading="lazy" src="img/rmovo-main.png" class="card-img-top" alt="rmolo" style="display:none;">
+                        <img loading="lazy" src="img/rmoho-main.png" class="card-img-top" alt="rmoho" style="display:none;">
+                        <img loading="lazy" src="img/rmoho-cpp.png" class="card-img-top" alt="rmoho" style="display:none;">
+                        <img loading="lazy" src="img/rmogo-main.png" class="card-img-top" alt="rmogo" style="display:none;">
+                        <img loading="lazy" src="img/rmogo-cpp.png" class="card-img-top" alt="rmogo" style="display:none;">
+                        <img loading="lazy" src="img/rmoio-main.png" class="card-img-top" alt="rmoio" style="display:none;">
+                        <img loading="lazy" src="img/rmoro-main.png" class="card-img-top" alt="rmoro" style="display:none;">
+                        <img loading="lazy" src="img/utilities.png" class="card-img-top" alt="utilities" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="rmoto/">rmoto</a> / <a href="rmofo/">rmofo</a> / <a
+                                        href="rmoso/">rmoso</a> / <a href="rmopo/">rmopo</a> / <a
+                                        href="rmodo/">rmodo</a> / <a href="rmoco/">rmoco</a> / <a href="rmowo/">rmowo</a>
+                                        / <a href="rmoyo/">rmoyo</a> / <a href="rmomo/">rmomo</a> 
+                                        / <a href="rmolo/">rmolo</a> 
+                                        / <a href="rmovo/">rmovo</a> 
+                                        / <a href="rmoho/">rmoho</a> 
+                                        / <a href="rmogo/">rmogo</a> 
+                                        / <a href="rmoio/">rmoio</a> 
+                                        / <a href="rmoro/">rmoro</a> 
+                                        / <a href="rmozo/">rmozo</a></b></h5>
+                            <p class="card-text">Programs for removing mark of the web of all files in a unzipped folder
+                                downloaded from internet or for protecting all files or for searching in all files or
+                                for copy/paste files or for create a shortcut icon on desktop or see path of services
+                                or open exe/link from exe associate with a file or unlock all achievements in Find You 
+                                or create audio tags from MP3 files or copy a file in subfolders of a folder or get process 
+                                or filenames of running process or DLL or get filenames instead of ID or extract zip files.
+                            </p>
+                            <div class="card-word"><b>Keywords:</b> tools, airflow.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="StageCFA">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/stage-main.png" class="card-img-top" alt="StageCFA"
+                            title="Click to expand" onclick='img_box("img/stage-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="StageCFA/">Stage CFA</a></b></h5>
+                            <p class="card-text">Stage in CFA for end study. I returned to school for a Professional Licence in 
+                                web development. I enjoyed my year. Very interesting and formating. I succeded with a mention. I 
+                                would not learned as fast without this year. Studying at school is very important because self-teaching 
+                                isn't enough from far. It learned to me to code fast and to make clean code. I advice to everyone to 
+                                make studies. And complementary self-teaching. Other students are helping a lot as usual.
+                            </p>
+                            <div class="card-word"><b>Keywords:</b> stage, study.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="Thesis">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/thesis-main.png" class="card-img-top" alt="Thesis"
+                            title="Click to expand" onclick='img_box("img/thesis-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="Thesis-Book/">Thesis</a></b></h5>
+                            <p class="card-text">The Thesis I made on Origin of Life.</p>
+                            <div class="card-word"><b>Keywords:</b> thesis, origin, life, molecules, abiotic.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="presentation">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/presentation-1.png" class="card-img-top" alt="presentation"
+                            title="Click to expand" onclick='img_box("img/presentation-1.png")'>
+                        <img loading="lazy" src="img/presentation-2.png" class="card-img-top" alt="presentation" style="display:none;">
+                        <img loading="lazy" src="img/presentation-3.png" class="card-img-top" alt="presentation" style="display:none;">
+                        <img loading="lazy" src="img/presentation-4.png" class="card-img-top" alt="presentation" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="presentation/">presentation</a></b></h5>
+                            <p class="card-text">Page to present each of my programs.</p>
+                            <div class="card-word"><b>Keywords:</b> pages, programs.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="MyOwnGamingGlories">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/mogg-main.png" class="card-img-top" alt="MyOwnGamingGlories MOGG"
+                            title="Click to expand" onclick='img_box("img/mogg-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="MyOwnGamingGlories/">MyOwnGamingGlories</a></b></h5>
+                            <p class="card-text">Showing pictures and gameplay videos worldwide with better quality than
+                                on Youtube.</p>
+                            <div class="card-word"><b>Keywords:</b> pictures, videos, player, website.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="Eden">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/eden-main.png" class="card-img-top" alt="eden"
+                            title="Click to expand" onclick='img_box("img/eden-main.png")'>
+                        <img loading="lazy" src="img/symposium-main.png" class="card-img-top" alt="symposium" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="Eden-Showcase/">Eden of Mars Crater Clouds</a> / <a
+                                        href="Symposium-Showcase/">Symposium</a></b></h5>
+                            <p class="card-text">French pages I let my imagination under delirium about Mars travel or meeting.</p>
+                            <div class="card-word"><b>Keywords:</b> pages, delirium.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="on-sale">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/onsale-1.png" class="card-img-top" alt="on-sale"
+                            title="Click to expand" onclick='img_box("img/onsale-1.png")'>
+                        <img loading="lazy" src="img/onsale-2.png" class="card-img-top" alt="on-sale" style="display:none;">
+                        <img loading="lazy" src="img/onsale-3.png" class="card-img-top" alt="on-sale" style="display:none;">
+                        <img loading="lazy" src="img/onsale-4.png" class="card-img-top" alt="on-sale" style="display:none;">
+                        <img loading="lazy" src="img/bio-pic-main.png" class="card-img-top" alt="bio-pic" style="display:none;">
+                        <img loading="lazy" src="img/bio-frog-main.png" class="card-img-top" alt="bio-frog" style="display:none;">
+                        <img loading="lazy" src="img/paint-art-main.png" class="card-img-top" alt="paint-art" style="display:none;">
+                        <img loading="lazy" src="img/paint-tile-main.png" class="card-img-top" alt="paint-tile" style="display:none;">
+                        <img loading="lazy" src="img/slider-tile-main.png" class="card-img-top" alt="slider-tile" style="display:none;">
+                        <img loading="lazy" src="img/paint-color-main.png" class="card-img-top" alt="paint-color" style="display:none;">
+                        <img loading="lazy" src="img/spacetravel.png" class="card-img-top" alt="spacetravel" style="display:none;">
+                        <img loading="lazy" src="img/shootingstar.png" class="card-img-top" alt="shootingstar" style="display:none;">
+                        <img loading="lazy" src="img/soul-controller-main.png" class="card-img-top" alt="soul-controller" style="display:none;">
+                        <img loading="lazy" src="img/fortunewheel.png" class="card-img-top" alt="fortunewheel" style="display:none;">
+                        <img loading="lazy" src="img/controllersupport.png" class="card-img-top" alt="controllersupport" style="display:none;">
+                        <img loading="lazy" src="img/aimcontroller.png" class="card-img-top" alt="aimcontroller" style="display:none;">
+                        <img loading="lazy" src="img/sigil-demo.png" class="card-img-top" alt="sigil-demo" style="display:none;">
+                        <img loading="lazy" src="img/sigil-support.png" class="card-img-top" alt="sigil-support" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="on-sale-showcase/">on-sale</a> / <a
+                                        href="bio-pic-showcase/">bio-pic</a> / <a 
+                                        href="bio-frog-showcase/">bio-frog</a> / <a 
+                                        href="paint-art-showcase/">paint-art</a> / <a
+                                        href="paint-tile-showcase/">paint-tile</a> / <a
+                                        href="slider-tile-showcase/">slider-tile</a> / <a
+                                        href="paint-color-web-application/">paint-color</a> / <a
+                                        href="space-travel-showcase/">space-travel</a> / <a
+                                        href="shooting-star-showcase/">shooting-star</a> / <a
+                                        href="soul-controller-wiijoy-showcase/">soul-controller</a> / <a
+                                        href="fortune-wheel-showcase/">fortune-wheel</a> / <a
+                                        href="WiiJoy-Showcase/">controller-support</a> / <a
+                                        href="AimController-Showcase/">aim-controller</a> / <a
+                                        href="sigil-demo-showcase/">sigil-demo</a> / <a
+                                        href="sigil-support-showcase/">sigil-support</a></b></h5>
+                            <p class="card-text">Pages to present myself or ghost wife or frog or art or picture or
+                                panel color or space travel or shooting star or controller combination or wheel of fortune or 
+                                WiiJoyPilot/WiiJoyReflex or Wiimote-like controller or about my heart project.</p>
+                            <div class="card-word"><b>Keywords:</b> websites, pages.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="portfolio">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/cv-main.png" class="card-img-top" alt="cv" title="Click to expand" onclick='img_box("img/cv-main.png")'>
+                        <img loading="lazy" src="img/profile-main.png" class="card-img-top" alt="profile" style="display:none;">
+                        <img loading="lazy" src="img/portfolio-main.png" class="card-img-top" alt="portfolio" style="display:none;">
+                        <img loading="lazy" src="img/credits-main.png" class="card-img-top" alt="credits" style="display:none;">
+                        <img loading="lazy" src="img/website-main.png" class="card-img-top" alt="this" style="display:none;">
+                        <img loading="lazy" src="img/website-folder.png" class="card-img-top" alt="this" style="display:none;">
+                        <img loading="lazy" src="img/website-copy.png" class="card-img-top" alt="this" style="display:none;">
+                        <img loading="lazy" src="img/website-enter.png" class="card-img-top" alt="this" style="display:none;">
+                        <img loading="lazy" src="img/links.png" class="card-img-top" alt="links" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="cv-showcase/">cv</a> / <a
+                                        href="profile-showcase/">profile</a> / <a
+                                        href="portfolio-showcase/">portfolio</a> / <br> <a
+                                        href="credits-showcase/">credits</a> / <a
+                                        onclick="location.reload();">this</a> / <a
+                                        href="links-showcase/">links</a></b></h5>
+                            <p class="card-text">Pages to present my curriculum vitae or my profile or my portfolio or my credits or my personal works, or my links.</p>
+                            <div class="card-word"><b>Keywords:</b> pages, websites.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="directory">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/directory-main.png" class="card-img-top" alt="directory"
+                            title="Click to expand" onclick='img_box("img/directory-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="directory-showcase/">directory</a></b></h5>
+                            <p class="card-text">Page to localize my SDK and programs among my GitHub user repositories. It's a preview 
+                                of what I did. It correspond to 1000 works I made alone during several decades. I'm waiting
+                                to be paid for it. Unfortunatly people seem too bad. I published publicly, and people were
+                                able to see how it was running, all the works around, all the codes, but it not changed their minds
+                                in any manner, even if some works I made are of big quality and with a lot of times I used for it. 
+                                Even if several works are the best of the world, I had no stars and no messages. I made 300 videos, I 
+                                had no likes and no views. I tried everything to win money even tried to find contacts. I had only screams 
+                                and insults.
+                            </p>
+                            <div class="card-word"><b>Keywords:</b> page, repository.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="Guides">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/guide.png" class="card-img-top" alt="Guides"
+                            title="Click to expand" onclick='img_box("img/guide.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="GuideAbout/">GuideAbout</a> / 
+                                    <a href="GuideArmorXPro/">GuideArmorXPro</a> / <br>
+                                    <a href="GuideCheaters/">GuideCheaters</a> / 
+                                    <a href="GuideConsoles/">GuideConsoles</a> / <br>
+                                    <a href="GuideControl/">GuideControl</a> / 
+                                    <a href="GuideEoS/">GuideEoS</a> / <br>
+                                    <a href="GuideFirewall/">GuideFirewall</a> / 
+                                    <a href="GuideFortnite/">GuideFortnite</a> / <br>
+                                    <a href="GuideGaming/">GuideGaming</a> /  
+                                    <a href="GuideHidHide/">GuideHidHide</a> / <br>
+                                    <a href="GuideLaunchers/">GuideLaunchers</a> / 
+                                    <a href="GuideMPGs/">GuideMPGs</a> / <br>
+                                    <a href="GuideRemotePlay/">GuideRemotePlay</a> / 
+                                    <a href="GuideStorm/">GuideStorm</a> / <br>
+                                    <a href="GuideVVGs/">GuideVVGs</a> / 
+                                    <a href="GuideWar/">GuideWar</a> / <br>
+                                    <a href="GuideXDefiant/">GuideXDefiant</a> / 
+                                    <a href="GuideYoutube/">GuideYoutube</a></b></h5>
+                            <p class="card-text">A bunch of guides where I'm explaining my thoughts and a lot of practical things.</p>
+                            <div class="card-word"><b>Keywords:</b> guide, game, about.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="solar-system">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/ss-main.png" class="card-img-top" alt="solar-system"
+                            title="Click to expand" onclick='img_box("img/ss-main.png")'>
+                        <img loading="lazy" src="img/test-gamepad.png" class="card-img-top" alt="test-gamepad" style="display:none;">
+                        <img loading="lazy" src="img/ms-paint.png" class="card-img-top" alt="ms-paint" style="display:none;">
+                        <img loading="lazy" src="img/on-dev-main.png" class="card-img-top" alt="on-dev" style="display:none;">
+                        <img loading="lazy" src="img/clip-path.png" class="card-img-top" alt="clip-path" style="display:none;">
+                        <img loading="lazy" src="img/basic-pong.png" class="card-img-top" alt="basic-pong" style="display:none;">
+                        <img loading="lazy" src="img/overlay-image.png" class="card-img-top" alt="overlay-image" style="display:none;">
+                        <img loading="lazy" src="img/colorpicker.png" class="card-img-top" alt="Color-Picker" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="solar-system-showcase/">solar-system</a> / <a
+                                        href="test-gamepad-web-application/">test-gamepad</a> / <a
+                                        href="ms-paint-web-application/">ms-paint</a> / <a
+                                        href="on-dev-showcase/">on-dev</a> / <a
+                                        href="clip-path-web-application/">clip-path</a> / <a
+                                        href="basic-pong-showcase/">basic-pong</a> / <a
+                                        href="overlay-image-web-application/">overlay-image</a> / <br> <a target="_blank" 
+                                        href="https://github.com/davidelvar/Color-Picker-Extension">color-picker</a></b></h5>
+                            <p class="card-text">Pages I found on internet with open source MIT license, but I tweaked
+                                for contemplation or for use personally. I brought a lot of usefull modifications. It 
+                                was not easy to make it running without any default. It inspired me in some works I made.
+                                It's not for using it like so, even if originally it's with open source MIT license. I 
+                                worked a lot on it, like on all of my works. And now so, I can reuse it in my works, but 
+                                I'm quoting original sources, this is normal.
+                            </p>
+                            <div class="card-word"><b>Keywords:</b> pages, websites, mit, license, tweak.</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="page" data-id="6" style="display:none;">
+                    <span class="card" id="yt-ammaugust">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/yt-ammaugust.png" class="card-img-top" alt="yt-ammaugust"
+                            title="Click to expand" onclick='img_box("img/yt-ammaugust.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a
+                                        href="https://www.youtube.com/@ammaugust/videos">ammaugust</a></b></h5>
+                            <p class="card-text">A Youtube channel I made for presenting a video about metal detection with a
+                                friend.</p>
+                            <div class="card-word"><b>Keywords:</b> channel, video.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="yt-michaelmicas">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/yt-michaelmicas.png" class="card-img-top" alt="yt-michaelmicas"
+                            title="Click to expand" onclick='img_box("img/yt-michaelmicas.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="https://www.youtube.com/@michaelmicas7168/videos">Michael
+                                        Micas</a></b></h5>
+                            <p class="card-text">A Youtube channel I made for presenting a video about my EoS model proof of concept.</p>
+                            <div class="card-word"><b>Keywords:</b> channel, video.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="git">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/gitconfig.png" class="card-img-top" alt="vendich"
+                            title="Click to expand" onclick='img_box("img/gitconfig.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="gitconfig/">Git Configuration</a></b></h5>
+                            <p class="card-text">I made special repositories like a .github for configure my GitHub.</p>
+                            <div class="card-word"><b>Keywords:</b> special, repository.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="adenine">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/adenine-stability.png" class="card-img-top" alt="adenine"
+                            title="Click to expand" onclick='img_box("img/adenine-stability.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="https://pubmed.ncbi.nlm.nih.gov/18297413/">Stability of Adenine at 300°C</a></b>
+                            </h5>
+                            <p class="card-text">The proof I found, in 2008, Origin of Life. I synthetized, in 2009, the most reduced molecule.</p>
+                            <div class="card-word"><b>Keywords:</b> origin, life, synthesis, molecules.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="Synthesis">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/abiotic.png" class="card-img-top" alt="abiotic"
+                            title="Click to expand" onclick='img_box("img/abiotic.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="https://pubmed.ncbi.nlm.nih.gov/37089554/">Abiotic Synthesis</a> / 
+                                <a href="https://www.cambridge.org/core/journals/international-journal-of-astrobiology/article/abs/submarine-hydrothermal-vent-systems-the-relevance-of-dynamic-systems-in-chemical-evolution-and-prebiotic-chemistry-experiments/A017EC3AE6AA3130FEFEAF49720475FD/">Prebiotic Chemistry</a></b>
+                            </h5>
+                            <p class="card-text">I've been gratefully quoted.</p>
+                            <div class="card-word"><b>Keywords:</b> abiotic, prebiotic, chemistry, article.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="Goldschmidt">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/autoclave.png" class="card-img-top" alt="github"
+                            title="Click to expand" onclick='img_box("img/autoclave.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="Goldschmidt-Book/">Goldschmidt 2007</a></b></h5>
+                            </h5>
+                            <p class="card-text">I participated in the Goldschmidt congress of year 2007.</p>
+                            <div class="card-word"><b>Keywords:</b> congress, research.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="osef">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/osef-main.png" class="card-img-top" alt="OSEF"
+                            title="Click to expand" onclick='img_box("img/osef-main.png")'>
+                        <img loading="lazy" src="img/cookiebanner.png" class="card-img-top" alt="cookiebanner" style="display:none;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="osef/">OSEF</a> / <a href="cookiebanner/">CookieBanner</a></b></h5>
+                            <p class="card-text">PHP framework for creating websites page to page with native codes or Drupal 
+                                module for managing RGPD.</p>
+                            <div class="card-word"><b>Keywords:</b> page, website.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="geoquizz_mobile">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/geoquizz-main.png" class="card-img-top" alt="geoquizz_mobile"
+                            title="Click to expand" onclick='img_box("img/geoquizz-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="geoquizz_mobile/">Geoquizz_Mobile</a></b></h5>
+                            <p class="card-text">Taking photo with geolocalisation on a mobile and sending it via Ngrok
+                                in a docker container using online IDE Playground.</p>
+                            <div class="card-word"><b>Keywords:</b> photo, geolocalisation, mobile, app.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="CodingLibrary">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/codinglibrary-main.png" class="card-img-top" alt="CodingLibrary"
+                            title="Click to expand" onclick='img_box("img/codinglibrary-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="CodingLibrary/">Coding Library</a></b></h5>
+                            <p class="card-text">Keeping tracks of codes found on internet which are interesting.</p>
+                            <div class="card-word"><b>Keywords:</b> codes, tracking, research.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="DerivationEquation">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/derive-main.png" class="card-img-top" alt="DerivationEquation"
+                            title="Click to expand" onclick='img_box("img/derive-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="DerivationEquation/">Equation Derivation</a></b></h5>
+                            <p class="card-text">Deriving equations with a new mathematical method I found in 1999.</p>
+                            <div class="card-word"><b>Keywords:</b> equation, hypothesis.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="DifferentialEquation">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/differentialequation-main.png" class="card-img-top" alt="DifferentialEquation"
+                            title="Click to expand" onclick='img_box("img/differentialequation-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="DifferentialEquation/">Differential Equation
+                                        Resolution</a></b></h5>
+                            <p class="card-text">Resolving differential equation with new mathematical hypothesis.</p>
+                            <div class="card-word"><b>Keywords:</b> equation, math.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="ElectrochemicalPotentials">
+                        <div class="ribbon red">࣪ ִֶָ☾.</div>
+                        <img src="img/electrochemicalpotentials-main.png" class="card-img-top"
+                            alt="ElectrochemicalPotentials" title="Click to expand" onclick='img_box("img/electrochemicalpotentials-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="ElectrochemicalPotentials/">Electrochemical Potentials
+                                        Resolution</a></b></h5>
+                            <p class="card-text">Resolving electrochemical potentials from new methods and old.</p>
+                            <div class="card-word"><b>Keywords:</b> chemistry, research.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="anti-cheating-note-and-solution">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/newb-main.png" class="card-img-top" alt="anti-cheating"
+                            title="Click to expand" onclick='img_box("img/newb-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="anti-cheating-note-and-solution/">Anti-Cheating Note and
+                                        Solution</a></b></h5>
+                            <p class="card-text">Secure and optimize your computer.</p>
+                            <div class="card-word"><b>Keywords:</b> performance, optimization, security.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="monogame-creation-and-learning">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/monogame-main.png" class="card-img-top" alt="Monogame"
+                            title="Click to expand" onclick='img_box("img/monogame-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="monogame-creation-and-learning/">Monogame Creation and
+                                        Learning</a></b></h5>
+                            <p class="card-text">Learning and creating games with Monogame.</p>
+                            <div class="card-word"><b>Keywords:</b> learn, create, games, engine.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="HydrogenDiffusion">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/diffusion-main.png" class="card-img-top" alt="HydrogenDiffusion"
+                            title="Click to expand" onclick='img_box("img/diffusion-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="HydrogenDiffusion/">Hydrogen Diffusion
+                                        Coefficients</a></b></h5>
+                            <p class="card-text">Diffusion coefficients from diffusion profiles.</p>
+                            <div class="card-word"><b>Keywords:</b> equation, research.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="micedition">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/micedition-main.png" class="card-img-top" alt="micedition"
+                            title="Click to expand" onclick='img_box("img/micedition-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="micedition/">Micedition</a></b></h5>
+                            <p class="card-text">Recycling my blog in a book containing a lot of complementary information.</p>
+                            <div class="card-word"><b>Keywords:</b> blogs, information.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="PolynomialEquation">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/polynomial-main.png" class="card-img-top" alt="PolynomialEquationResol"
+                            title="Click to expand" onclick='img_box("img/polynomial-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="PolynomialEquation/">Polynomial Equation Resolution</a></b></h5>
+                            <p class="card-text">Resolving all polynomial equations with a new mathematical hypothesis I found in 2009.</p>
+                            <div class="card-word"><b>Keywords:</b> equation, research.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="GamepadLibraries">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/gamepadlibraries-main.png" class="card-img-top" alt="GamepadLibraries"
+                            title="Click to expand" onclick='img_box("img/gamepadlibraries-main.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="GamepadLibraries/">Codes in Gamepad Libraries</a></b>
+                            </h5>
+                            <p class="card-text">Codes in C++ and C# to play Wiimote and Xbox360 in PC games.</p>
+                            <div class="card-word"><b>Keywords:</b> codes, wiimote, games.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="wiijoy4fps">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/wiijoy4fps-book.png" class="card-img-top" alt="wiijoy4fps"
+                            title="Click to expand" onclick='img_box("img/wiijoy4fps-book.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="WiiJoy4FPS-Book/">WiiJoy4FPS Book</a></b>
+                            </h5>
+                            <p class="card-text">Codes in C++ and C# to play Wiimote and Joycons in PC games.</p>
+                            <div class="card-word"><b>Keywords:</b> codes, wiimote, joycons, games.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="WiiJoyConfiguration">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/wiijoyconfiguration-book.png" class="card-img-top" alt="WiiJoyConfiguration"
+                            title="Click to expand" onclick='img_box("img/wiijoyconfiguration-book.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="WiiJoyConfiguration-Book/">WiiJoyConfiguration Book</a></b>
+                            </h5>
+                            <p class="card-text">Configuration to play Wiimote and Joycons in PC games.</p>
+                            <div class="card-word"><b>Keywords:</b> codes, wiimote, joycons, games.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="WiiJoySetting">
+                        <div class="ribbon blue">❀</div>
+                        <img src="img/wiijoysetting-book.png" class="card-img-top" alt="WiiJoySetting"
+                            title="Click to expand" onclick='img_box("img/wiijoysetting-book.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="WiiJoySetting-Book/">WiiJoySetting Book</a></b>
+                            </h5>
+                            <p class="card-text">Setting to play Wiimote and Joycons in PC games.</p>
+                            <div class="card-word"><b>Keywords:</b> codes, wiimote, joycons, games.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="SpaceShooter">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/spaceshooter.png" class="card-img-top" alt="SpaceShooter"
+                            title="Click to expand" onclick='img_box("img/spaceshooter.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="SpaceShooter/">SpaceShooter</a></b>
+                            </h5>
+                            <p class="card-text">Learning a game engine by following a tutorial.</p>
+                            <div class="card-word"><b>Keywords:</b> game, engine, tutorial.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="HerosTrail">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/herostrail.png" class="card-img-top" alt="HerosTrail"
+                            title="Click to expand" onclick='img_box("img/herostrail.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="HerosTrail/">HerosTrail</a></b>
+                            </h5>
+                            <p class="card-text">Learning a game engine by following a tutorial.</p>
+                            <div class="card-word"><b>Keywords:</b> game, engine, tutorial.</div>
+                        </div>
+                    </span>
+                    <span class="card" id="ScrollingShooter">
+                        <div class="ribbon green">☣︎</div>
+                        <img src="img/scrollingshooter.png" class="card-img-top" alt="ScrollingShooter"
+                            title="Click to expand" onclick='img_box("img/scrollingshooter.png")'>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><a href="ScrollingShooter/">ScrollingShooter</a></b>
+                            </h5>
+                            <p class="card-text">Learning a game engine by following a tutorial.</p>
+                            <div class="card-word"><b>Keywords:</b> game, engine, tutorial.</div>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <footer class="bottom w3-center">
+                <img loading="lazy" src="img/favicon.png" alt="© MAF" />
+                <br>
+                <b class="date">1979</b>
+                <br>
+                <b class="white">© MAF</b>
+            </footer>
+        </div>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC469PC35"></script>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVP9X48X"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    </body>
+</html>

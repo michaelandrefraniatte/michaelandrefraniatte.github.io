@@ -1,0 +1,127 @@
+﻿/*
+• Author: Michaël André Franiatte.
+• Contact: michael.franiatte@gmail.com.
+• Publisher: https://github.com/michaelandrefraniatte.
+• Copyrights: All rights reserved, no permissions granted.
+• License: Not open source, not free of charge to use.
+*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #21262d;
+    width: 100vw;
+    height: 100vh;
+    font-family: Arial;
+    overflow: hidden;
+}
+
+#menu {
+    position: absolute;
+    display: block;
+    left: 16vw;
+    top: 10vh;
+    width: 20vw;
+    height: 80vh;
+}
+
+.menu-item {
+    margin: 1vw;
+    width: 18vw;
+    height: 5vh;
+    color: white;
+    font-weight: 900;
+    background-color: #32373e;
+    border-style: solid;
+    border-color: gray;
+    border-radius: 1.5vw;
+    font-size: 2vh;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #d6436f;
+}
+
+center {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+#content {
+    position: absolute;
+    display: block;
+    left: 38vw;
+    top: 10vh;
+    width: 45vw;
+    height: 80vh;
+    border-style: solid;
+    border-color: gray;
+    border-radius: 0.5vw;
+}
+
+#content-box {
+    width: 45vw;
+    height: 80vh;
+    border-radius: 0.5vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.content-item {
+    margin: 2vw;
+    width: 40vw;
+    color: white;
+    font-size: 1.9vh;
+}
+
+::-webkit-scrollbar {
+    width: 0.5vw;
+    height: 0.5vw;
+    border-radius: 0.5vw;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+    background: gray;
+    border-radius: 0.5vw;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #32373e;
+    border-radius: 0.5vw;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #d6436f;
+    border-radius: 0.5vw;
+    cursor: pointer;
+}
+
+title-item {
+    text-decoration: underline;
+    font-weight: 900;
+}
+
+a {
+    text-decoration: none;
+}
+
+#About,
+#Job,
+#Fluid,
+#Program,
+#Webbrowser,
+#Controller,
+#Project {
+    scroll-behavior: smooth !important;
+    transition: 0.6s ease;
+}
+
+* {
+    line-height: 3vh;
+}

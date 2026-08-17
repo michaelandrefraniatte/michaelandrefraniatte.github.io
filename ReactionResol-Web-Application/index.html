@@ -1,0 +1,223 @@
+﻿<!--
+• Author: Michaël André Franiatte.
+• Contact: michael.franiatte@gmail.com.
+• Publisher: https://github.com/michaelandrefraniatte.
+• Copyrights: All rights reserved, no permissions granted.
+• License: Not open source, not free of charge to use.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TVP9X48X');</script>
+
+    <meta charset="utf-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="MICHAEL ANDRE FRANIATTE">
+
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+    <title>ReactionResol by Michael Franiatte</title>
+
+    <script src="../custom/redirect.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 2vh;
+            font-size: 2vh;
+        }
+
+        h2 {
+            text-decoration: underline;
+        }
+
+        input {
+            width: 98%;
+            padding: 2vh;
+            margin-bottom: 2vh;
+        }
+
+        button {
+            padding: 2vh 4vh;
+        }
+
+        pre {
+            background: #eee;
+            padding: 2vh;
+            line-height: 2vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>ReactionResol</h2>
+
+    <h3>Unbalanced Reaction:</h3>
+    <input id="reaction" value="H2 + O2 = H2O">
+
+    <button onclick="balance()">Balance Reaction</button>
+
+    <h3>Balanced Reaction:</h3>
+    <pre id="output">2 H2 + 1 O2 = 2 H2O</pre>
+
+    <copyrights
+        style="display: float; float: right; position: fixed; right: 4px; bottom: 0px; color: black; text-align: center; font-family: sans-serif; font-size: 2.2vh; line-height: 2.2vh;">
+        <b>© MAF</b>
+    </copyrights>
+
+    <script>
+
+        /* Parse a chemical formula into element counts */
+        function parseFormula(formula) {
+            const tokens = formula.match(/[A-Z][a-z]?|\d+|\(|\)/g);
+            const stack = [{}];
+
+            for (let i = 0; i < tokens.length; i++) {
+                const t = tokens[i];
+
+                if (t === "(") {
+                    stack.push({});
+                } else if (t === ")") {
+                    const group = stack.pop();
+                    const mult = (/\d+/.test(tokens[i + 1])) ? parseFloat(tokens[++i]) : 1;
+                    for (const e in group)
+                        stack[stack.length - 1][e] =
+                            (stack[stack.length - 1][e] || 0) + group[e] * mult;
+
+                } else if (/\d+/.test(t)) {
+                    const prev = tokens[i - 1];
+                    if (prev !== ")" && !/\d+/.test(prev)) {
+                        const elem = prev;
+                        stack[stack.length - 1][elem] += (parseFloat(t) - 1);
+                    }
+
+                } else {
+                    stack[stack.length - 1][t] = (stack[stack.length - 1][t] || 0) + 1;
+                }
+            }
+            return stack[0];
+        }
+
+        /* Compute nullspace of matrix using Gauss-Jordan elimination */
+        function nullspace(A) {
+            const rows = A.length;
+            const cols = A[0].length;
+
+            A = A.map(r => r.slice());
+            let lead = 0;
+            const pivots = [];
+
+            for (let r = 0; r < rows; r++) {
+                if (lead >= cols) break;
+                let i = r;
+
+                while (A[i][lead] === 0) {
+                    i++;
+                    if (i === rows) {
+                        i = r;
+                        lead++;
+                        if (lead === cols) break;
+                    }
+                }
+                if (lead === cols) break;
+
+                [A[i], A[r]] = [A[r], A[i]];
+
+                const lv = A[r][lead];
+                for (let j = 0; j < cols; j++) A[r][j] /= lv;
+
+                for (let i2 = 0; i2 < rows; i2++) {
+                    if (i2 !== r) {
+                        const lv2 = A[i2][lead];
+                        for (let j = 0; j < cols; j++)
+                            A[i2][j] -= lv2 * A[r][j];
+                    }
+                }
+
+                pivots.push(lead);
+                lead++;
+            }
+
+            const freeVars = [];
+            for (let j = 0; j < cols; j++)
+                if (!pivots.includes(j)) freeVars.push(j);
+
+            const x = Array(cols).fill(0);
+            freeVars.forEach(fv => x[fv] = 1);
+
+            for (let i = pivots.length - 1; i >= 0; i--) {
+                const pivotCol = pivots[i];
+                let sum = 0;
+                for (let j = pivotCol + 1; j < cols; j++)
+                    sum += A[i][j] * x[j];
+                x[pivotCol] = -sum;
+            }
+
+            return x;
+        }
+
+        /* Balance reaction using nullspace */
+        function balanceReaction(reaction) {
+            const [lhs, rhs] = reaction.split("=").map(s => s.trim());
+            const left = lhs.split("+").map(s => s.trim());
+            const right = rhs.split("+").map(s => s.trim());
+            const species = [...left, ...right];
+
+            const parsed = species.map(parseFormula);
+            const elements = [...new Set(parsed.flatMap(obj => Object.keys(obj)))];
+
+            const rows = elements.length;
+            const cols = species.length;
+            const A = Array(rows).fill(0).map(() => Array(cols).fill(0));
+
+            elements.forEach((el, i) => {
+                species.forEach((sp, j) => {
+                    const count = parsed[j][el] || 0;
+                    A[i][j] = (j < left.length ? count : -count);
+                });
+            });
+
+            let x = nullspace(A);
+
+            const min = Math.min(...x.filter(v => v !== 0).map(v => Math.abs(v)));
+            x = x.map(v => v / min);   // keep floats
+
+            return x;
+        }
+
+        /* Build readable balanced reaction */
+        function formatBalanced(reaction, coeffs) {
+            const [lhs, rhs] = reaction.split("=").map(s => s.trim());
+            const left = lhs.split("+").map(s => s.trim());
+            const right = rhs.split("+").map(s => s.trim());
+
+            const L = left.map((sp, i) => `${coeffs[i]} ${sp}`).join(" + ");
+            const R = right.map((sp, i) => `${coeffs[left.length + i]} ${sp}`).join(" + ");
+
+            return `${L} = ${R}`;
+        }
+
+        /* Main */
+        function balance() {
+            const reaction = document.getElementById("reaction").value;
+            const coeffs = balanceReaction(reaction);
+            const balanced = formatBalanced(reaction, coeffs);
+            document.getElementById("output").textContent = balanced;
+        }
+
+    </script>
+
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC469PC35"></script>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVP9X48X"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    </body>
+
+</html>

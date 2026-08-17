@@ -1,0 +1,207 @@
+﻿<!--
+• Author: Michaël André Franiatte.
+• Contact: michael.franiatte@gmail.com.
+• Publisher: https://github.com/michaelandrefraniatte.
+• Copyrights: All rights reserved, no permissions granted.
+• License: Not open source, not free of charge to use.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+
+    <head>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TVP9X48X');</script>
+        <meta charset="utf-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>RecordYoutube</title>
+        <meta name="description"
+            content="Tool to record with FFMPEG on Youtube with 2 buttons on your keyboard, one to start, and one to stop">
+        <meta name="keywords" content="ffmpeg, program, record, capture, games">
+        <meta name="author" content="MICHAEL ANDRE FRANIATTE">
+
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+        <link rel="stylesheet" href="../extra/w3.css">
+
+        <link rel="stylesheet" href="../custom/custom.css" />
+
+        <script src="../extra/jquery-3.7.1.min.js"></script>
+
+        <script src="../custom/redirect.js"></script>
+
+    </head>
+
+    <body class onLoad="window_onload()" id="bodymain">
+        <span class="backloader"></span>
+        <div class="modalaccept">
+            <div class="modalaccept-content">
+                <div>By continuing, you are agree to contact, quote and pay author, and you respect <a href="https://github.com/michaelandrefraniatte">the copyrights and the license of author</a>. You may not distribute, reproduce, copy, modify or create derivative works from work of author. Author retains all rights on his source codes.</div>
+                <br />
+                <div>
+                    <input type="checkbox" id="acceptbox" name="acceptbox" />
+                    <label for="acceptbox">I'm agree, I respect and understand.</label>
+                </div><br />
+                <div><button id="acceptbutton">I understand</button></div>
+            </div>
+        </div>
+        <div class="back" id="main">
+            <span aria-label="Copyrights" class="infobulle">&#8505;</span>
+            <span aria-label="Go to top" class="topbtn">▲</span>
+            <div id="banner"><img src="../img/favicon.jpg" alt="© MAF" />
+                <div id="closebanner">✖</div>
+                <div id="textbanner">By continuing, you are agree to contact, quote and pay author, and you respect <a href="https://github.com/michaelandrefraniatte">the copyrights and the license of author</a>. You may not distribute, reproduce, copy, modify or create derivative works from work of author. Author retains all rights on his source codes.</div>
+                <div id="button1banner">I understand</div>
+                <div id="button2banner">I don't understand</div>
+            </div>
+            <span aria-label="Contact" class="infobulle-contact">&#9742;</span>
+            <div id="banner-contact"><img src="../img/favicon.jpg" alt="© MAF" />
+                <div id="closebanner-contact">✖</div>
+                <div id="textbanner-contact">If you find something usefull, please contact author at this email address:
+                    <a href="mailto:michael.franiatte@gmail.com" class="dl-link" 
+                       >michael.franiatte@gmail.com</a>.
+                </div>
+                <div id="buttonbanner-contact">Copy</div>
+            </div>
+
+            <div class="top w3-center">
+                <img class="logo" src="stream.png" alt="stream" onclick="clickLogo()" title="https://michaelandrefraniatte.github.io">
+                <div class="title colored">
+                    <h2>RecordYoutube</h2>
+                    <h1>Easy Recording</h1>
+                </div>
+            </div>
+
+            <div class="container">
+
+                <div class="w3-row first-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Record Easy and Nicely Your Gameplays</b></h3>
+                        <p>
+                            The program enable you to record with FFMPEG with 2 buttons on your keyboard, one to start,
+                            the numpad key decimal (.), and one to stop, the numpad key 0. It's easy to be on Youtube
+                            with this tool, and the quality with low performance PC is here. Let's see...
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-center row">
+                    <div class="column">
+                        <img src="../img/stream-main.png" alt="stream-main" style="width:40%"
+                            title="Click to expand" onclick='img_box("../img/stream-main.png")'>
+                    </div>
+                </div>
+
+                <div class="w3-row second-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Considerations About the Program</b></h3>
+                        <p>
+                            There's a parameter file to choose between CPU or GPU for recording your screen. This is the best program to record your gameplays, and 
+                            upload it on Youtube. To note, when you want to record video for upload on Youtube, you need to know as following:<br>
+                            <ul>
+                                <li>Wire a jack helmet or jack speakers with volume selector, set it enable and set it default peripheral, and set HDMI enable and set 
+                                it default communication peripheral, under play tab from sound properties.</li>
+                                <li>Set sound properties under record tab to stereo mixer enable and set it default peripheral, and check the box listen this 
+                                peripheral, and in the list under, choose HDMI.</li>
+                                <li>Enable microphone and set it default communication peripheral, under record tab from sound properties, set jack helmet or 
+                                jack speakers microphone on, under play tab from sound properties.</li>
+                                <li>Set game option listen helmet or speakers, HDMI output instead of RGB, 30 FPS.</li>
+                                <li>Allow applications to use microphone under privacy tab from parameters.</li>
+                                <li>File ffmpeg.exe from https://www.gyan.dev/ffmpeg/builds/ (don't use BtBN file, it lags too much your computer).</li>
+                                <li>Command cmd.exe to have audio device list for find stereo mixer name : ffmpeg -list_devices true -f dshow -i dummy.</li>
+                                <li>Keyboard numpad decimal is used to start streaming and numpad 0 to stop it.</li>
+                                <li>It's possible to disable a maximum of services but not video and audio services.</li>
+                                <li>Allow applications to access microphone from privacy settings under parameters.</li>
+                                <li>Reduce and disable sound qualities and features under sound properties.</li>
+                                <li>When using webcam overlay, it needs to switch between windowed to without border, to make appear overlay.</li>
+                                <li>Using Nvidia GPU and updating GPU is required.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-row second-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Quality Information for Youtube Upload</b></h3>
+                        <p>
+                            When you want to create a video, here some usefull information for quality and toolbox for edition as following:
+                            <ul>
+                                <li>Prefer to use Geforce Experience for recording games instead of ffmpeg, because
+                                    with bad settings it destroy a little your PC.</li>
+                                <li>If you want recording, it's better to use GeForce Experience if you have a
+                                    Nvidia card, in this case, lower to minimum the audio quality from audio card settings,
+                                    to not have unsynchronisation of audio and video, and disable all audio cards useless.
+                                </li>
+                                <li>GeForce experience with latest driver for Nvidia graphic card is a must have for
+                                    recording.</li>
+                                <li>Capturing with GeForce Experience for uploading on Youtube need to set parameters as
+                                    following:</li>
+                                Game with best graphisms and highest resolution of your game screen, while not encounter
+                                lags, or better choosing native resolution but upscaling after capture with ffmpeg
+                                720p, 30 FPS, 15 Mbits/s, or 1440p, 30 FPS, 30 MBits/s, or 4k, 30 FPS, 50 Mbits/s, with in
+                                game resolution, in video settings of Geforce.<br />
+                                Allow capturing desktop if using webcam and if using WebcamOverlay in confidentiality
+                                settings of Geforce, but resolution of video will be the resolution of your monitor
+                                screen.<br />
+                                Disable game capture in Windows settings and restart your computer.<br />
+                                To embed a video in Html5 video tag instead of using Youtube iframe, I advice you to rezise
+                                video with bitrate using cmd command "ffmpeg -i input.mp4 -b:v 6M output.mp4", because video
+                                tag aren't compressing video like Youtube is doing and so low connexion can't watch your
+                                video.<br />
+                                It's made for avoid loss of video quality while uploading on Youtube, and not having low
+                                resolution badly compressed by Youtube, so you can use the cmd command "ffmpeg -i input.mp4
+                                -vf scale=3840:2160:flags=neighbor -b:v 15M output.mp4" for transforming to 4k your video
+                                before uploading on Youtube, but you must recalculate the resolution ratio to fit original
+                                resolution ratio of your video, with a cruce product.<br />
+                                <li>With ffmpeg you can paste several videos one after the others.</li>
+                                Make input.txt containing the following:
+                                <ul>
+                                    file 'input1.mp4'<br />
+                                    file 'input2.mp4'<br />
+                                    file 'input3.mp4'<br />
+                                </ul>
+                                Concatenate:
+                                <ul>
+                                    ffmpeg -f concat -i input.txt -c copy output.mp4
+                                </ul>
+                                <li>With ffmpeg you can crop in time a video without the need of an encoder useless for this
+                                    purpose:</li>
+                                ffmpeg -ss 00:01:00 -to 00:02:00 -i input.mp4 -c copy output.mp4
+                                <li>You can convert the output AVI video to a output MP4 video and display it with a HTML
+                                    file:</li>
+                                ffmpeg -i output.avi -c:v copy -c:a copy output.mp4<br />
+                                &lt;video controls width="400"&gt;&lt;source src="output.mp4"
+                                type="video/mp4"&gt;&lt;/video&gt;<br />
+                                <li>You can convert the output MP4 video to a short 9:16 ratio MP4 video and display it with
+                                    a HTML
+                                    file to create a Youtube short:</li>
+                                ffmpeg -i output.mp4 -vf crop=ih*(9/16):ih short.mp4<br />
+                                &lt;iframe src="short.mp4" frameborder="0" width="480" height="860"
+                                allowfullscreen&gt;&lt;/iframe&gt;<br />
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <footer class="bottom w3-center">
+                <img src="../img/favicon.png" alt="© MAF" />
+                <br>
+                <b class="date">1979</b>
+                <br>
+                <b class="white">© MAF</b>
+            </footer>
+
+        </div>
+
+    
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC469PC35"></script>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVP9X48X"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    </body>
+
+</html>

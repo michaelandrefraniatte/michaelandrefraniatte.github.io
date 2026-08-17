@@ -1,0 +1,233 @@
+﻿<!--
+• Author: Michaël André Franiatte.
+• Contact: michael.franiatte@gmail.com.
+• Publisher: https://github.com/michaelandrefraniatte.
+• Copyrights: All rights reserved, no permissions granted.
+• License: Not open source, not free of charge to use.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TVP9X48X');</script>
+        <meta charset="utf-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SIGIL</title>
+        <meta name="description" content="HID Competitive Mapper">
+        <meta name="keywords" content="HID, Competitive, Mapper">
+        <meta name="author" content="MICHAEL ANDRE FRANIATTE">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="../extra/w3.css">
+        <link rel="stylesheet" href="../custom/custom.css">
+        <script src="../extra/jquery-3.7.1.min.js"></script>
+        <script src="../custom/redirect.js"></script>
+        <script src="../extra/iframe_api.js"></script>
+    </head>
+    <body class onLoad="window_onload()" id="bodymain">
+        <span class="backloader"></span>
+        <div class="modalaccept">
+            <div class="modalaccept-content">
+                <div>By continuing, you are agree to contact, quote and pay author, and you respect <a href="https://github.com/michaelandrefraniatte">the copyrights and the license of author</a>. You may not distribute, reproduce, copy, modify or create derivative works from work of author. Author retains all rights on his source codes.</div>
+                <br />
+                <div>
+                    <input type="checkbox" id="acceptbox" name="acceptbox" />
+                    <label for="acceptbox">I'm agree, I respect and understand.</label>
+                </div><br />
+                <div><button id="acceptbutton">I understand</button></div>
+            </div>
+        </div>
+        <div class="back" id="main">
+            <span aria-label="Copyrights" class="infobulle">&#8505;</span>
+            <span aria-label="Go to top" class="topbtn">▲</span>
+            <div id="banner"><img src="../img/favicon.jpg" alt="© MAF" />
+                <div id="closebanner">✖</div>
+                <div id="textbanner">By continuing, you are agree to contact, quote and pay author, and you respect <a href="https://github.com/michaelandrefraniatte">the copyrights and the license of author</a>. You may not distribute, reproduce, copy, modify or create derivative works from work of author. Author retains all rights on his source codes.</div>
+                <div id="button1banner">I understand</div>
+                <div id="button2banner">I don't understand</div>
+            </div>
+            <span aria-label="Contact" class="infobulle-contact">&#9742;</span>
+            <div id="banner-contact"><img src="../img/favicon.jpg" alt="© MAF" />
+                <div id="closebanner-contact">✖</div>
+                <div id="textbanner-contact">If you find something usefull, please contact author at this email address:
+                    <a href="mailto:michael.franiatte@gmail.com" class="dl-link" 
+                       >michael.franiatte@gmail.com</a>.
+                </div>
+                <div id="buttonbanner-contact">Copy</div>
+            </div>
+            <div class="top w3-center">
+                <img class="logo" src="sigil.png" alt="sigil" onclick="clickLogo()" title="https://michaelandrefraniatte.github.io">
+                <div class="title colored">
+                    <h2>SIGIL</h2>
+                    <h1>StandardInGamingInputLite</h1>
+                </div>
+            </div>
+            <div class="container">
+                <div class="w3-row first-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>HID Competitive Mapper</b></h3>
+                        <p>
+                            This program is allowing to have inputs of physical HID (Human Interface Device) and
+                            transfer to outputs of virtual HID for competitive gaming. It's easy to use and the 
+                            program use programmable scripting user interface. It's my biggest program and there 
+                            are no bugs, I made it in mind to be a standard, it's the best in every points, but 
+                            it was a lot of hard works. Let's see...
+                        </p>
+                    </div>
+                </div>
+                <div class="w3-center row">
+                    <div class="column">
+                        <img src="../img/sigillite-main.png" alt="sigillite-main" width="40%" height="auto"
+                            title="Click to expand" onclick='img_box("../img/sigillite-main.png")'>
+                    </div>
+                </div>
+                <div class="w3-row second-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Considerations About the Program</b></h3>
+                        <p>
+                            I've been inspired by <a href="https://github.com/PavelTorgashov/FastColoredTextBox">FastColoredTextBox</a>, 
+                            but with a lot of modifications I made for better optimization and design with no bugs. SIGIL (StandardInGamingInputLite) is a 
+                            lite standard way for using gaming controllers in all PC games with highest level of optimization, even with a lot of HID handles. 
+                            It corresponds to tiny scripted programs (less than 200 lines) which are using well prepared libraries with all data of inputs and 
+                            outputs and all simular functions to have easy to script and customize every controls. It's possible to mix every inputs and 
+                            outputs. This version is my last formalized version. It have the essential libraries to start playing games with a lot of gaming 
+                            controllers on PC. It also have all the essential options, tools and features. To note, it need to enable notifications, to get 
+                            notified, go to "Settings > System > Notifications & actions", and then turn on "Get notifications from apps and other senders". 
+                            To note also, it lack rumble and haptic triggers for simplification, optimization and competitive mind. You can find the showcase 
+                            <a href="../sigil-support-showcase/">here</a>, for some videos demonstration <a href="../sigil-demo-showcase/">here</a>, and for 
+                            some tips <a href="../sigil-tips-showcase/">here</a>.
+                        </p>
+                    </div>
+                </div>
+                <div class="w3-row second-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Note About Going More Deeper and Further</b></h3>
+                        <p>
+                            I was able to integrate a scripting automation with a local AI agent inside the program but it removing the pleasure to script by yourself the 
+                            controllers and the render. By the way, scripting is always a copy/paste from existing scripts and add of some tweaking to the already in use 
+                            configurations. So it's better to not add an AI agent for these reasons, and the meaning to understand better the programation language with 
+                            basis on a scripting program you create by your own on the fun subjects which are gaming controllers on PC. Learning is always a source of 
+                            expertise, and my program is very fun to use for understanding motion controls on video games and all handle of controllers, and it become even 
+                            more truly for competitive gamers. It would be a shame not to have a choice because I'm unable to play with a keyboard and a mouse nor a Xbox 
+                            controller to FPS (First Person Shooter). I never use to it, so I prefer motion controls and to have the perfect curve for handle aiming with 
+                            pleasure and competitive way. So AI would never do it for me and at my place, nor anybody, but I was here, and I did it. To note, I also was able 
+                            to associate magnetometer with gyro controls, and it's better in term of avoiding drift like a flawless pointer, but it add too much latency for 
+                            aiming like a competitive gamer, it ask some work around a little bit more to have a competitive program without any latency, like for a camera 
+                            interpolating a lightning dot.
+                        </p>
+                    </div>
+                </div>
+                <div class="w3-row second-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Best Way Ever to Play</b></h3>
+                        <p>
+                            Playing with any controller wanted is asking an optimized program because it's not hardware handle and game handle, there is an intermediary called 
+                            software handle. This last optimized version with almost all features and controllers, is the ultimate program to play with any controller the way only 
+                            limited by imagination. Among any other program I made, even the most optimized one like <a href="../ciine/">ciine</a> or the most practical one like 
+                            <a href="../QuickControl/">QuickControl</a>, this last version of SIGIL is filling all perks. It only lack the handle of a camera like with 
+                            <a href="../ProGamingMapper/">PGM</a> but I think there's not enough fastest codes to retrieve a tracked light position. Who knows? Nothing compare 
+                            to IR camera of the Wii Remote of course. So I keep this last version of SIGIL and all its scripts well warm up. You can check these links of my other 
+                            programs in order to get usefull complementary information. Check also the tips before to get started, under the program. I really advice you to check 
+                            all of that before being lost and trying anything else. You really will find very usefull information.
+                        </p>
+                    </div>
+                </div>
+                <div class="w3-row fifth-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Available Inputs (Emulation)</b></h3>
+                        <ul>
+                            <li>Keyboard</li>
+                            <li>Mouse</li>
+                            <li>Joystick</li>
+                            <li>Dualsense</li>
+                            <li>Dualshock4</li>
+                            <li>Xbox controller</li>
+                            <li>Joycon left charging grip</li>
+                            <li>Joycon right charging grip</li>
+                            <li>Joycon left</li>
+                            <li>Joycon right</li>
+                            <li>Joycon 2 left charging grip</li>
+                            <li>Joycon 2 right charging grip</li>
+                            <li>Joycon 2 left</li>
+                            <li>Joycon 2 right</li>
+                            <li>Switch pro controller</li>
+                            <li>Switch 2 pro controller</li>
+                            <li>Wiimote and Nunchuck</li>
+                            <li>Speech recognition</li>
+                            <li>Audio frequencies</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w3-row fifth-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Available Outputs (Simulation)</b></h3>
+                        <ul>
+                            <li>Keyboard</li>
+                            <li>Mouse</li>
+                            <li>Joystick</li>
+                            <li>Dualshock4</li>
+                            <li>Xbox controller</li>
+                            <li>Speech synthesis</li>
+                            <li>Sound play</li>
+                            <li>String and dots</li>
+                            <li>Values tweaking</li>
+                            <li>Menu wheels</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w3-row fifth-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Available Scripts (200+)</b></h3>
+                        <ul>
+                            <li>Joycon left Mouse Warzone</li>
+                            <li>Joycon left Wiimote Fortnite</li>
+                            <li>Joycon left Wiimote Warzone</li>
+                            <li>Wiimote Nunchuck Warzone</li>
+                            <li>Wiimote Forza Horizon</li>
+                            <li>Joycon Forza Horizon</li>
+                            <li>Dualsense Forza Horizon</li>
+                            <li>and far more...</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w3-row third-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>My Own Videos Demo</b></h3>
+                        <div align="center" class="center">
+                            <div class="previous" onclick="plusSlides(-1)">&#10094;</div>
+                            <div id="player" data-videoid="[_iBb1lrX2p0,nJWKQVNO07g,OSfoa_HlDTE,WtzknboNmU4,XnEXCs_5Pnw,El_yDG_pjbY,gsXSyBOwJEo,zk9S0PlMON0]">
+                                <div class="loader"></div>
+                            </div>
+                            <div class="next" onclick="plusSlides(1)">&#10095;</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-row first-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Only to Make Controller Work Better: 100% Safe</b></h3>
+                    </div>
+                    <div class="w3-center row">
+                        <div class="column">
+                            <img src="../img/AnticheatBanControllers.png" alt="gaming" style="width:75%"
+                                title="Click to expand" onclick='img_box("../img/AnticheatBanControllers.png")'>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="bottom w3-center">
+                <img src="../img/favicon.png" alt="© MAF" />
+                <br>
+                <b class="date">1979</b>
+                <br>
+                <b class="white">© MAF</b>
+            </footer>
+        </div>
+    
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC469PC35"></script>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVP9X48X"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    </body>
+</html>

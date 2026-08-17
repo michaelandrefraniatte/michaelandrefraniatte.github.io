@@ -1,0 +1,155 @@
+﻿<!--
+• Author: Michaël André Franiatte.
+• Contact: michael.franiatte@gmail.com.
+• Publisher: https://github.com/michaelandrefraniatte.
+• Copyrights: All rights reserved, no permissions granted.
+• License: Not open source, not free of charge to use.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+
+    <head>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TVP9X48X');</script>
+        <meta charset="utf-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DesktopController</title>
+        <meta name="description" content="Program made for controlling any PC from one other PC in a network">
+        <meta name="keywords" content="desktop, control, network, PC, program">
+        <meta name="author" content="MICHAEL ANDRE FRANIATTE">
+
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+        <link rel="stylesheet" href="../extra/w3.css">
+
+        <link rel="stylesheet" href="../custom/custom.css" />
+        
+        <script src="../extra/jquery-3.7.1.min.js"></script>
+
+        <script src="../custom/redirect.js"></script>
+
+    </head>
+
+    <body class onLoad="window_onload()" id="bodymain">
+        <span class="backloader"></span>
+        <div class="modalaccept">
+            <div class="modalaccept-content">
+                <div>By continuing, you are agree to contact, quote and pay author, and you respect <a href="https://github.com/michaelandrefraniatte">the copyrights and the license of author</a>. You may not distribute, reproduce, copy, modify or create derivative works from work of author. Author retains all rights on his source codes.</div>
+                <br />
+                <div>
+                    <input type="checkbox" id="acceptbox" name="acceptbox" />
+                    <label for="acceptbox">I'm agree, I respect and understand.</label>
+                </div><br />
+                <div><button id="acceptbutton">I understand</button></div>
+            </div>
+        </div>
+        <div class="back" id="main">
+            <span aria-label="Copyrights" class="infobulle">&#8505;</span>
+            <span aria-label="Go to top" class="topbtn">▲</span>
+            <div id="banner"><img src="../img/favicon.jpg" alt="© MAF" />
+                <div id="closebanner">✖</div>
+                <div id="textbanner">By continuing, you are agree to contact, quote and pay author, and you respect <a href="https://github.com/michaelandrefraniatte">the copyrights and the license of author</a>. You may not distribute, reproduce, copy, modify or create derivative works from work of author. Author retains all rights on his source codes.</div>
+                <div id="button1banner">I understand</div>
+                <div id="button2banner">I don't understand</div>
+            </div>
+            <span aria-label="Contact" class="infobulle-contact">&#9742;</span>
+            <div id="banner-contact"><img src="../img/favicon.jpg" alt="© MAF" />
+                <div id="closebanner-contact">✖</div>
+                <div id="textbanner-contact">If you find something usefull, please contact author at this email address:
+                    <a href="mailto:michael.franiatte@gmail.com" class="dl-link" 
+                       >michael.franiatte@gmail.com</a>.
+                </div>
+                <div id="buttonbanner-contact">Copy</div>
+            </div>
+
+            <div class="top w3-center">
+                <img class="logo" src="dc.png" alt="dc" onclick="clickLogo()" title="https://michaelandrefraniatte.github.io">
+                <div class="title colored">
+                    <h2>DesktopController</h2>
+                    <h1>Control All Your PC</h1>
+                </div>
+            </div>
+
+            <div class="container">
+
+                <div class="w3-row first-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Easy Tool to Take Controls of All Your PC</b></h3>
+                        <p>
+                            The program is made for controlling any PC from one other PC in a local network. It allow
+                            any distant controls, like any PC audio on all other PC at same time. Let's see...
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-center row">
+                    <div class="column">
+                        <img src="../img/dc-main.png" alt="dc-main" style="width:100%"
+                            title="Click to expand" onclick='img_box("../img/dc-main.png")'>
+                    </div>
+                    <div class="column">
+                        <img src="../img/dc-managed.png" alt="dc-managed" style="width:100%"
+                            title="Click to expand" onclick='img_box("../img/dc-managed.png")'>
+                    </div>
+                </div>
+
+                <div class="w3-row second-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Considerations About the Program</b></h3>
+                        <p>
+                            It's easy to take controls of any of your PC and make your music on any PC lives everywhere
+                            you have a PC in your local network.
+                        </p>
+                        <p>
+                            For server-client connection:<br>
+                            In Windows firewall, the client needs an outbound rule allowing distant internal IP of server in TCP (10.0.0.13).<br>
+                            In Windows firewall, the server needs an inbound rule allowing distant internal IP of client in TCP (10.0.0.11).<br>
+                        </p>
+                        <p>
+                            For Shared Folder:<br>
+                            It corresponds to a folder on PC receiver hard disk.<br>
+                            Functionnalities activating default ones from programs and functionnalities under control panel.<br>
+                            Network properties to enable features of IPv4 and NetBios TCP.<br>
+                            Network must be private.<br>
+                            Share center to allow network sharing disabling authentication for all network.<br>
+                            Network connection set to private.<br>
+                            Service Server and NetBios TCP running.<br>
+                            Create the folder C:/test to share in read/write allowing.<br>
+                            File to transfer must not be higher than 100 Ko.<br>
+                            Lower screen resolution to not have a too bigger file to transfer.<br>
+                        </p>
+                        <p>
+                            For programing:<br>
+                            Each PC open a server with a socket in infinite loop worker closed by the PC controlling with this socket as a client, only one client socket, and one server socket for each PC, data are characteristics of open/close socket and websocket, mouse and keyboard hooks and events, and folder shared path.<br>
+                            This control socket above controls also websocket under.<br>
+                            Each PC have one client websocket and one server websocket for receiving sound from one PC and for sending sound to every PC.<br>
+                            The PC controlling can control one by one each PC with buttons for receive sound, for send sound, for send mouse and keyboard, and for receive the screen of the PC controlled.<br>
+                            The controls are going through socket as a string script for having array, like booleans, int, double, float, well parsed.<br>
+                            Using list to array of computers in networks knowing which ones are receiving audio, conversion tolist, toarray, finally to list.<br>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <footer class="bottom w3-center">
+                <img src="../img/favicon.png" alt="© MAF" />
+                <br>
+                <b class="date">1979</b>
+                <br>
+                <b class="white">© MAF</b>
+            </footer>
+
+        </div>
+
+    
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC469PC35"></script>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVP9X48X"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    </body>
+
+</html>

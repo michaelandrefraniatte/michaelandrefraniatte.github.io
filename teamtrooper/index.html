@@ -1,0 +1,163 @@
+﻿<!--
+• Author: Michaël André Franiatte.
+• Contact: michael.franiatte@gmail.com.
+• Publisher: https://github.com/michaelandrefraniatte.
+• Copyrights: All rights reserved, no permissions granted.
+• License: Not open source, not free of charge to use.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+
+    <head>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TVP9X48X');</script>
+        <meta charset="utf-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>TeamTrooper</title>
+        <meta name="description" content="Program for managing projects with teammates in groups">
+        <meta name="keywords" content="manager, projects, team">
+        <meta name="author" content="MICHAEL ANDRE FRANIATTE">
+
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+        <link rel="stylesheet" href="../extra/w3.css">
+
+        <link rel="stylesheet" href="../custom/custom.css" />
+        
+        <script src="../extra/jquery-3.7.1.min.js"></script>
+
+        <script src="../custom/redirect.js"></script>
+
+    </head>
+
+    <body class onLoad="window_onload()" id="bodymain">
+        <span class="backloader"></span>
+        <div class="modalaccept">
+            <div class="modalaccept-content">
+                <div>By continuing, you are agree to contact, quote and pay author, and you respect <a href="https://github.com/michaelandrefraniatte">the copyrights and the license of author</a>. You may not distribute, reproduce, copy, modify or create derivative works from work of author. Author retains all rights on his source codes.</div>
+                <br />
+                <div>
+                    <input type="checkbox" id="acceptbox" name="acceptbox" />
+                    <label for="acceptbox">I'm agree, I respect and understand.</label>
+                </div><br />
+                <div><button id="acceptbutton">I understand</button></div>
+            </div>
+        </div>
+        <div class="back" id="main">
+            <span aria-label="Copyrights" class="infobulle">&#8505;</span>
+            <span aria-label="Go to top" class="topbtn">▲</span>
+            <div id="banner"><img src="../img/favicon.jpg" alt="© MAF" />
+                <div id="closebanner">✖</div>
+                <div id="textbanner">By continuing, you are agree to contact, quote and pay author, and you respect <a href="https://github.com/michaelandrefraniatte">the copyrights and the license of author</a>. You may not distribute, reproduce, copy, modify or create derivative works from work of author. Author retains all rights on his source codes.</div>
+                <div id="button1banner">I understand</div>
+                <div id="button2banner">I don't understand</div>
+            </div>
+            <span aria-label="Contact" class="infobulle-contact">&#9742;</span>
+            <div id="banner-contact"><img src="../img/favicon.jpg" alt="© MAF" />
+                <div id="closebanner-contact">✖</div>
+                <div id="textbanner-contact">If you find something usefull, please contact author at this email address:
+                    <a href="mailto:michael.franiatte@gmail.com" class="dl-link" 
+                       >michael.franiatte@gmail.com</a>.
+                </div>
+                <div id="buttonbanner-contact">Copy</div>
+            </div>
+
+            <div class="top w3-center">
+                <img class="logo" src="tt.png" alt="tt" onclick="clickLogo()" title="https://michaelandrefraniatte.github.io">
+                <div class="title colored">
+                    <h2 class="">TeamTrooper</h2>
+                    <h1>Helping Team Projects</h1>
+                </div>
+            </div>
+
+            <div class="container">
+
+                <div class="w3-row first-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Program for Managing Projects with Teammates in Groups</b></h3>
+                        <p>
+                            This program is a diagram for managing projects and files associated, with teammates in
+                            groups, in a local network, and it's also a proof of concept of a new structure of database,
+                            allowing programing smarter. Let's see...
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-center row">
+                    <div class="column">
+                        <img src="../img/tt-main.png" alt="tt-main" style="width:100%"
+                            title="Click to expand" onclick='img_box("../img/tt-main.png")'>
+                    </div>
+                    <div class="column">
+                        <img src="../img/tt-add.png" alt="tt-main" style="width:100%"
+                            title="Click to expand" onclick='img_box("../img/tt-add.png")'>
+                    </div>
+                </div>
+
+                <div class="w3-row second-section">
+                    <div class="w3-container">
+                        <h3 class="w3-center colored"><b>Considerations About the Program</b></h3>
+                        <p>
+                            It needs at least 2 administrators, even with same account authenticated. The administrators
+                            are setting root folder, projects and teammates in groups for initialize it. You must set
+                            the root folder with credentials (computer name, and session password) from the file named
+                            teamtrooper.txt. For be able to open the program it need to create the local authentication
+                            file by just opening the program for it under same folder. This for each PC you want to use
+                            TeamTrooper and each time TeamTrooper change.
+                        </p>
+                        <p>
+                            Database Structure:<br>
+                            admin + mount<br>
+                            chief1 + IP + port, chief2 + IP + port, chief3 + IP + port, member1 + IP + port, member2 + IP + port, member3 + IP + port<br>
+                            project1 + member1 + member2 + member3, project2 + member1 + member2 + member3, project3 + member1 + member2 + member3<br>
+                            task1, task2, task3<br>
+                            debug1, debug2, debug3<br>
+                            file1, file2, file3<br>
+                        </p>
+                        <p>
+                            Database Format:<br>
+                            Folders and Files trees.<br>
+                            Files with string to split with comma or line break.<br>
+                        </p>
+                        <p>
+                            Database example:<br>
+                            First root : File admin with admin name and mount folder with credentials, Folder chiefs.<br>
+                            Second root : File chiefs with chiefs + IPs + ports, Folders named with name of each chief.<br>
+                            Third root : File projects with projects + members + IPs + ports, Folders with name of each project (number).<br>
+                            Fourth root : File tasks with tasks, Folders with name of each task (number).<br>
+                            Fifth root : File debugs with debugs, Folders with name of each debug (number).<br>
+                            Sixth root : File files with name and information of files, Folders with name of each file (number).<br>
+                            Seventh root : File versions with versions, Folder with name of each version (number).<br>
+                            last root : File.<br>
+                        </p>
+                        <p>
+                            Update for each user:<br>
+                            Websocket sending name of function with arguments (server).<br>
+                            Websockets receiving name of function with arguments to execute (clients).<br>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <footer class="bottom w3-center">
+                <img src="../img/favicon.png" alt="© MAF" />
+                <br>
+                <b class="date">1979</b>
+                <br>
+                <b class="white">© MAF</b>
+            </footer>
+
+        </div>
+
+    
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC469PC35"></script>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVP9X48X"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    </body>
+
+</html>
