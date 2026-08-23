@@ -337,26 +337,32 @@
                 SmallRock1PosY += SmallRock1SpeedY;
                 SmallRock1.style.left = SmallRock1PosX + "%";
                 SmallRock1.style.top = SmallRock1PosY + "%";
+                SmallRock1.style.rotate = SmallRock1Rotate + "deg";
                 SmallRock2PosX += SmallRock2SpeedX;
                 SmallRock2PosY += SmallRock2SpeedY;
                 SmallRock2.style.left = SmallRock2PosX + "%";
                 SmallRock2.style.top = SmallRock2PosY + "%";
+                SmallRock2.style.rotate = SmallRock1Rotate + "deg";
                 SmallRock3PosX += SmallRock3SpeedX;
                 SmallRock3PosY += SmallRock3SpeedY;
                 SmallRock3.style.left = SmallRock3PosX + "%";
                 SmallRock3.style.top = SmallRock3PosY + "%";
+                SmallRock3.style.rotate = SmallRock1Rotate + "deg";
                 BigRock1PosX += BigRock1SpeedX;
                 BigRock1PosY += BigRock1SpeedY;
                 BigRock1.style.left = BigRock1PosX + "%";
                 BigRock1.style.top = BigRock1PosY + "%";
+                BigRock1.style.rotate = SmallRock1Rotate + "deg";
                 BigRock2PosX += BigRock2SpeedX;
                 BigRock2PosY += BigRock2SpeedY;
                 BigRock2.style.left = BigRock2PosX + "%";
                 BigRock2.style.top = BigRock2PosY + "%";
+                BigRock2.style.rotate = SmallRock1Rotate + "deg";
                 BigRock3PosX += BigRock3SpeedX;
                 BigRock3PosY += BigRock3SpeedY;
                 BigRock3.style.left = BigRock3PosX + "%";
                 BigRock3.style.top = BigRock3PosY + "%";
+                BigRock3.style.rotate = SmallRock1Rotate + "deg";
                 if (SmallRock1PosX >= 120 | SmallRock1PosX <= -20 | SmallRock1PosY >= 120) {
                     SmallRock1PosX = 10 + parseInt(80 * Math.random());
                     SmallRock1PosY = -10 - parseInt(90 * Math.random());
@@ -399,7 +405,276 @@
                     BigRock3SpeedY = (0.2 + Math.random() * 2) / 3;
                     BigRock3Rotate = parseInt(360 * Math.random());
                 }
-
+                if ((intersects(SmallRock1.getBoundingClientRect(), bullet1.getBoundingClientRect())
+                    | intersects(SmallRock1.getBoundingClientRect(), bullet2.getBoundingClientRect())
+                    | intersects(SmallRock1.getBoundingClientRect(), bullet3.getBoundingClientRect())
+                    | intersects(SmallRock1.getBoundingClientRect(), bullet4.getBoundingClientRect())
+                    | intersects(SmallRock1.getBoundingClientRect(), SmallRock2.getBoundingClientRect())
+                    | intersects(SmallRock1.getBoundingClientRect(), SmallRock3.getBoundingClientRect())
+                    | intersects(SmallRock1.getBoundingClientRect(), BigRock1.getBoundingClientRect())
+                    | intersects(SmallRock1.getBoundingClientRect(), BigRock2.getBoundingClientRect())
+                    | intersects(SmallRock1.getBoundingClientRect(), BigRock3.getBoundingClientRect())
+                    | intersects(SmallRock1.getBoundingClientRect(), spaceShip.getBoundingClientRect()))
+                    & SmallRock1PosY >= -10) {
+                    if (intersects(SmallRock1.getBoundingClientRect(), bullet1.getBoundingClientRect())) {
+                        firing1 = false;
+                        bullet1.style.left = (spaceShipPosX + 45) + "%";
+                        bullet1.style.top = (spaceShipPosY + 80) + "%";
+                        bullet1InitY = (spaceShipPosY + 80);
+                        bullet1PosY = 0;
+                    }
+                    if (intersects(SmallRock1.getBoundingClientRect(), bullet2.getBoundingClientRect())) {
+                        firing2 = false;
+                        bullet2.style.left = (spaceShipPosX + 45) + "%";
+                        bullet2.style.top = (spaceShipPosY + 80) + "%";
+                        bullet2InitY = (spaceShipPosY + 80);
+                        bullet2PosY = 0;
+                    }
+                    if (intersects(SmallRock1.getBoundingClientRect(), bullet3.getBoundingClientRect())) {
+                        firing3 = false;
+                        bullet3.style.left = (spaceShipPosX + 45) + "%";
+                        bullet3.style.top = (spaceShipPosY + 80) + "%";
+                        bullet3InitY = (spaceShipPosY + 80);
+                        bullet3PosY = 0;
+                    }
+                    if (intersects(SmallRock1.getBoundingClientRect(), bullet4.getBoundingClientRect())) {
+                        firing4 = false;
+                        bullet4.style.left = (spaceShipPosX + 45) + "%";
+                        bullet4.style.top = (spaceShipPosY + 80) + "%";
+                        bullet4InitY = (spaceShipPosY + 80);
+                        bullet4PosY = 0;
+                    }
+                    SmallRock1PosX = 10 + parseInt(80 * Math.random());
+                    SmallRock1PosY = -10 - parseInt(90 * Math.random());
+                    SmallRock1SpeedX = (Math.random() * 2 - 1) / 3;
+                    SmallRock1SpeedY = (0.2 + Math.random() * 2) / 3;
+                    SmallRock1Rotate = parseInt(360 * Math.random());
+                }
+                if ((intersects(SmallRock2.getBoundingClientRect(), bullet1.getBoundingClientRect())
+                    | intersects(SmallRock2.getBoundingClientRect(), bullet2.getBoundingClientRect())
+                    | intersects(SmallRock2.getBoundingClientRect(), bullet3.getBoundingClientRect())
+                    | intersects(SmallRock2.getBoundingClientRect(), bullet4.getBoundingClientRect())
+                    | intersects(SmallRock2.getBoundingClientRect(), SmallRock1.getBoundingClientRect())
+                    | intersects(SmallRock2.getBoundingClientRect(), SmallRock3.getBoundingClientRect())
+                    | intersects(SmallRock2.getBoundingClientRect(), BigRock1.getBoundingClientRect())
+                    | intersects(SmallRock2.getBoundingClientRect(), BigRock2.getBoundingClientRect())
+                    | intersects(SmallRock2.getBoundingClientRect(), BigRock3.getBoundingClientRect())
+                    | intersects(SmallRock2.getBoundingClientRect(), spaceShip.getBoundingClientRect()))
+                    & SmallRock2PosY >= -10) {
+                    if (intersects(SmallRock2.getBoundingClientRect(), bullet1.getBoundingClientRect())) {
+                        firing1 = false;
+                        bullet1.style.left = (spaceShipPosX + 45) + "%";
+                        bullet1.style.top = (spaceShipPosY + 80) + "%";
+                        bullet1InitY = (spaceShipPosY + 80);
+                        bullet1PosY = 0;
+                    }
+                    if (intersects(SmallRock2.getBoundingClientRect(), bullet2.getBoundingClientRect())) {
+                        firing2 = false;
+                        bullet2.style.left = (spaceShipPosX + 45) + "%";
+                        bullet2.style.top = (spaceShipPosY + 80) + "%";
+                        bullet2InitY = (spaceShipPosY + 80);
+                        bullet2PosY = 0;
+                    }
+                    if (intersects(SmallRock2.getBoundingClientRect(), bullet3.getBoundingClientRect())) {
+                        firing3 = false;
+                        bullet3.style.left = (spaceShipPosX + 45) + "%";
+                        bullet3.style.top = (spaceShipPosY + 80) + "%";
+                        bullet3InitY = (spaceShipPosY + 80);
+                        bullet3PosY = 0;
+                    }
+                    if (intersects(SmallRock2.getBoundingClientRect(), bullet4.getBoundingClientRect())) {
+                        firing4 = false;
+                        bullet4.style.left = (spaceShipPosX + 45) + "%";
+                        bullet4.style.top = (spaceShipPosY + 80) + "%";
+                        bullet4InitY = (spaceShipPosY + 80);
+                        bullet4PosY = 0;
+                    }
+                    SmallRock2PosX = 10 + parseInt(80 * Math.random());
+                    SmallRock2PosY = -10 - parseInt(90 * Math.random());
+                    SmallRock2SpeedX = (Math.random() * 2 - 1) / 3;
+                    SmallRock2SpeedY = (0.2 + Math.random() * 2) / 3;
+                    SmallRock2Rotate = parseInt(360 * Math.random());
+                }
+                if ((intersects(SmallRock3.getBoundingClientRect(), bullet1.getBoundingClientRect())
+                    | intersects(SmallRock3.getBoundingClientRect(), bullet2.getBoundingClientRect())
+                    | intersects(SmallRock3.getBoundingClientRect(), bullet3.getBoundingClientRect())
+                    | intersects(SmallRock3.getBoundingClientRect(), bullet4.getBoundingClientRect())
+                    | intersects(SmallRock3.getBoundingClientRect(), SmallRock1.getBoundingClientRect())
+                    | intersects(SmallRock3.getBoundingClientRect(), SmallRock2.getBoundingClientRect())
+                    | intersects(SmallRock3.getBoundingClientRect(), BigRock1.getBoundingClientRect())
+                    | intersects(SmallRock3.getBoundingClientRect(), BigRock2.getBoundingClientRect())
+                    | intersects(SmallRock3.getBoundingClientRect(), BigRock3.getBoundingClientRect())
+                    | intersects(SmallRock3.getBoundingClientRect(), spaceShip.getBoundingClientRect()))
+                    & SmallRock3PosY >= -10) {
+                    if (intersects(SmallRock3.getBoundingClientRect(), bullet1.getBoundingClientRect())) {
+                        firing1 = false;
+                        bullet1.style.left = (spaceShipPosX + 45) + "%";
+                        bullet1.style.top = (spaceShipPosY + 80) + "%";
+                        bullet1InitY = (spaceShipPosY + 80);
+                        bullet1PosY = 0;
+                    }
+                    if (intersects(SmallRock3.getBoundingClientRect(), bullet2.getBoundingClientRect())) {
+                        firing2 = false;
+                        bullet2.style.left = (spaceShipPosX + 45) + "%";
+                        bullet2.style.top = (spaceShipPosY + 80) + "%";
+                        bullet2InitY = (spaceShipPosY + 80);
+                        bullet2PosY = 0;
+                    }
+                    if (intersects(SmallRock3.getBoundingClientRect(), bullet3.getBoundingClientRect())) {
+                        firing3 = false;
+                        bullet3.style.left = (spaceShipPosX + 45) + "%";
+                        bullet3.style.top = (spaceShipPosY + 80) + "%";
+                        bullet3InitY = (spaceShipPosY + 80);
+                        bullet3PosY = 0;
+                    }
+                    if (intersects(SmallRock3.getBoundingClientRect(), bullet4.getBoundingClientRect())) {
+                        firing4 = false;
+                        bullet4.style.left = (spaceShipPosX + 45) + "%";
+                        bullet4.style.top = (spaceShipPosY + 80) + "%";
+                        bullet4InitY = (spaceShipPosY + 80);
+                        bullet4PosY = 0;
+                    }
+                    SmallRock3PosX = 10 + parseInt(80 * Math.random());
+                    SmallRock3PosY = -10 - parseInt(90 * Math.random());
+                    SmallRock3SpeedX = (Math.random() * 2 - 1) / 3;
+                    SmallRock3SpeedY = (0.2 + Math.random() * 2) / 3;
+                    SmallRock3Rotate = parseInt(360 * Math.random());
+                }
+                if ((intersects(BigRock1.getBoundingClientRect(), bullet1.getBoundingClientRect())
+                    | intersects(BigRock1.getBoundingClientRect(), bullet2.getBoundingClientRect())
+                    | intersects(BigRock1.getBoundingClientRect(), bullet3.getBoundingClientRect())
+                    | intersects(BigRock1.getBoundingClientRect(), bullet4.getBoundingClientRect())
+                    | intersects(BigRock1.getBoundingClientRect(), SmallRock1.getBoundingClientRect())
+                    | intersects(BigRock1.getBoundingClientRect(), SmallRock2.getBoundingClientRect())
+                    | intersects(BigRock1.getBoundingClientRect(), SmallRock3.getBoundingClientRect())
+                    | intersects(BigRock1.getBoundingClientRect(), BigRock2.getBoundingClientRect())
+                    | intersects(BigRock1.getBoundingClientRect(), BigRock3.getBoundingClientRect())
+                    | intersects(BigRock1.getBoundingClientRect(), spaceShip.getBoundingClientRect()))
+                    & BigRock1PosY >= -10) {
+                    if (intersects(BigRock1.getBoundingClientRect(), bullet1.getBoundingClientRect())) {
+                        firing1 = false;
+                        bullet1.style.left = (spaceShipPosX + 45) + "%";
+                        bullet1.style.top = (spaceShipPosY + 80) + "%";
+                        bullet1InitY = (spaceShipPosY + 80);
+                        bullet1PosY = 0;
+                    }
+                    if (intersects(BigRock1.getBoundingClientRect(), bullet2.getBoundingClientRect())) {
+                        firing2 = false;
+                        bullet2.style.left = (spaceShipPosX + 45) + "%";
+                        bullet2.style.top = (spaceShipPosY + 80) + "%";
+                        bullet2InitY = (spaceShipPosY + 80);
+                        bullet2PosY = 0;
+                    }
+                    if (intersects(BigRock1.getBoundingClientRect(), bullet3.getBoundingClientRect())) {
+                        firing3 = false;
+                        bullet3.style.left = (spaceShipPosX + 45) + "%";
+                        bullet3.style.top = (spaceShipPosY + 80) + "%";
+                        bullet3InitY = (spaceShipPosY + 80);
+                        bullet3PosY = 0;
+                    }
+                    if (intersects(BigRock1.getBoundingClientRect(), bullet4.getBoundingClientRect())) {
+                        firing4 = false;
+                        bullet4.style.left = (spaceShipPosX + 45) + "%";
+                        bullet4.style.top = (spaceShipPosY + 80) + "%";
+                        bullet4InitY = (spaceShipPosY + 80);
+                        bullet4PosY = 0;
+                    }
+                    BigRock1PosX = 10 + parseInt(80 * Math.random());
+                    BigRock1PosY = -10 - parseInt(90 * Math.random());
+                    BigRock1SpeedX = (Math.random() * 2 - 1) / 3;
+                    BigRock1SpeedY = (0.2 + Math.random() * 2) / 3;
+                    BigRock1Rotate = parseInt(360 * Math.random());
+                }
+                if ((intersects(BigRock2.getBoundingClientRect(), bullet1.getBoundingClientRect())
+                    | intersects(BigRock2.getBoundingClientRect(), bullet2.getBoundingClientRect())
+                    | intersects(BigRock2.getBoundingClientRect(), bullet3.getBoundingClientRect())
+                    | intersects(BigRock2.getBoundingClientRect(), bullet4.getBoundingClientRect())
+                    | intersects(BigRock2.getBoundingClientRect(), SmallRock1.getBoundingClientRect())
+                    | intersects(BigRock2.getBoundingClientRect(), SmallRock2.getBoundingClientRect())
+                    | intersects(BigRock2.getBoundingClientRect(), SmallRock3.getBoundingClientRect())
+                    | intersects(BigRock2.getBoundingClientRect(), BigRock1.getBoundingClientRect())
+                    | intersects(BigRock2.getBoundingClientRect(), BigRock3.getBoundingClientRect())
+                    | intersects(BigRock2.getBoundingClientRect(), spaceShip.getBoundingClientRect()))
+                    & BigRock2PosY >= -10) {
+                    if (intersects(BigRock2.getBoundingClientRect(), bullet1.getBoundingClientRect())) {
+                        firing1 = false;
+                        bullet1.style.left = (spaceShipPosX + 45) + "%";
+                        bullet1.style.top = (spaceShipPosY + 80) + "%";
+                        bullet1InitY = (spaceShipPosY + 80);
+                        bullet1PosY = 0;
+                    }
+                    if (intersects(BigRock2.getBoundingClientRect(), bullet2.getBoundingClientRect())) {
+                        firing2 = false;
+                        bullet2.style.left = (spaceShipPosX + 45) + "%";
+                        bullet2.style.top = (spaceShipPosY + 80) + "%";
+                        bullet2InitY = (spaceShipPosY + 80);
+                        bullet2PosY = 0;
+                    }
+                    if (intersects(BigRock2.getBoundingClientRect(), bullet3.getBoundingClientRect())) {
+                        firing3 = false;
+                        bullet3.style.left = (spaceShipPosX + 45) + "%";
+                        bullet3.style.top = (spaceShipPosY + 80) + "%";
+                        bullet3InitY = (spaceShipPosY + 80);
+                        bullet3PosY = 0;
+                    }
+                    if (intersects(BigRock2.getBoundingClientRect(), bullet4.getBoundingClientRect())) {
+                        firing4 = false;
+                        bullet4.style.left = (spaceShipPosX + 45) + "%";
+                        bullet4.style.top = (spaceShipPosY + 80) + "%";
+                        bullet4InitY = (spaceShipPosY + 80);
+                        bullet4PosY = 0;
+                    }
+                    BigRock2PosX = 10 + parseInt(80 * Math.random());
+                    BigRock2PosY = -10 - parseInt(90 * Math.random());
+                    BigRock2SpeedX = (Math.random() * 2 - 1) / 3;
+                    BigRock2SpeedY = (0.2 + Math.random() * 2) / 3;
+                    BigRock2Rotate = parseInt(360 * Math.random());
+                }
+                if ((intersects(BigRock3.getBoundingClientRect(), bullet1.getBoundingClientRect())
+                    | intersects(BigRock3.getBoundingClientRect(), bullet2.getBoundingClientRect())
+                    | intersects(BigRock3.getBoundingClientRect(), bullet3.getBoundingClientRect())
+                    | intersects(BigRock3.getBoundingClientRect(), bullet4.getBoundingClientRect())
+                    | intersects(BigRock3.getBoundingClientRect(), SmallRock1.getBoundingClientRect())
+                    | intersects(BigRock3.getBoundingClientRect(), SmallRock2.getBoundingClientRect())
+                    | intersects(BigRock3.getBoundingClientRect(), SmallRock3.getBoundingClientRect())
+                    | intersects(BigRock3.getBoundingClientRect(), BigRock1.getBoundingClientRect())
+                    | intersects(BigRock3.getBoundingClientRect(), BigRock2.getBoundingClientRect())
+                    | intersects(BigRock3.getBoundingClientRect(), spaceShip.getBoundingClientRect()))
+                    & BigRock3PosY >= -10) {
+                    if (intersects(BigRock3.getBoundingClientRect(), bullet1.getBoundingClientRect())) {
+                        firing1 = false;
+                        bullet1.style.left = (spaceShipPosX + 45) + "%";
+                        bullet1.style.top = (spaceShipPosY + 80) + "%";
+                        bullet1InitY = (spaceShipPosY + 80);
+                        bullet1PosY = 0;
+                    }
+                    if (intersects(BigRock3.getBoundingClientRect(), bullet2.getBoundingClientRect())) {
+                        firing2 = false;
+                        bullet2.style.left = (spaceShipPosX + 45) + "%";
+                        bullet2.style.top = (spaceShipPosY + 80) + "%";
+                        bullet2InitY = (spaceShipPosY + 80);
+                        bullet2PosY = 0;
+                    }
+                    if (intersects(BigRock3.getBoundingClientRect(), bullet3.getBoundingClientRect())) {
+                        firing3 = false;
+                        bullet3.style.left = (spaceShipPosX + 45) + "%";
+                        bullet3.style.top = (spaceShipPosY + 80) + "%";
+                        bullet3InitY = (spaceShipPosY + 80);
+                        bullet3PosY = 0;
+                    }
+                    if (intersects(BigRock3.getBoundingClientRect(), bullet4.getBoundingClientRect())) {
+                        firing4 = false;
+                        bullet4.style.left = (spaceShipPosX + 45) + "%";
+                        bullet4.style.top = (spaceShipPosY + 80) + "%";
+                        bullet4InitY = (spaceShipPosY + 80);
+                        bullet4PosY = 0;
+                    }
+                    BigRock3PosX = 10 + parseInt(80 * Math.random());
+                    BigRock3PosY = -10 - parseInt(90 * Math.random());
+                    BigRock3SpeedX = (Math.random() * 2 - 1) / 3;
+                    BigRock3SpeedY = (0.2 + Math.random() * 2) / 3;
+                    BigRock3Rotate = parseInt(360 * Math.random());
+                }
                 requestAnimationFrame(gameLoop);
             }
 
@@ -440,6 +715,15 @@
             BigRock3SpeedX = (Math.random() * 2 - 1) / 3;
             BigRock3SpeedY = (0.2 + Math.random() * 2) / 3;
             BigRock3Rotate = parseInt(360 * Math.random());
+
+            function intersects(r1, r2) {
+                return !(
+                    r2.x > r1.x + r1.width ||
+                    r2.x + r2.width < r1.x ||
+                    r2.y > r1.y + r1.height ||
+                    r2.y + r2.height < r1.y
+                );
+            }
 
         });
 
