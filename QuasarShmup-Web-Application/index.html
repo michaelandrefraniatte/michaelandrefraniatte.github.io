@@ -167,6 +167,59 @@
     <script>
 
         var gamestart = false;
+        var keys = {};
+        var spaceShipPosX = 0;
+        var spaceShipPosY = 0;
+        var spaceShip = document.getElementById("spaceShip");
+        var firing1, firing2, firing3, firing4;
+        var bullet1 = document.getElementById("bullet1");
+        var bullet2 = document.getElementById("bullet2");
+        var bullet3 = document.getElementById("bullet3");
+        var bullet4 = document.getElementById("bullet4");
+        var bullet1PosY = 0;
+        var bullet2PosY = 0;
+        var bullet3PosY = 0;
+        var bullet4PosY = 0;
+        var bullet1InitY = 0;
+        var bullet2InitY = 0;
+        var bullet3InitY = 0;
+        var bullet4InitY = 0;
+        var SmallRock1 = document.getElementById("SmallRock1");
+        var SmallRock2 = document.getElementById("SmallRock2");
+        var SmallRock3 = document.getElementById("SmallRock3");
+        var BigRock1 = document.getElementById("BigRock1");
+        var BigRock2 = document.getElementById("BigRock2");
+        var BigRock3 = document.getElementById("BigRock3");
+        var SmallRock1PosX = 0;
+        var SmallRock1PosY = 0;
+        var SmallRock2PosX = 0;
+        var SmallRock2PosY = 0;
+        var SmallRock3PosX = 0;
+        var SmallRock3PosY = 0;
+        var BigRock1PosX = 0;
+        var BigRock1PosY = 0;
+        var BigRock2PosX = 0;
+        var BigRock2PosY = 0;
+        var BigRock3PosX = 0;
+        var BigRock3PosY = 0;
+        var SmallRock1SpeedX = 0;
+        var SmallRock1SpeedY = 0;
+        var SmallRock2SpeedX = 0;
+        var SmallRock2SpeedY = 0;
+        var SmallRock3SpeedX = 0;
+        var SmallRock3SpeedY = 0;
+        var BigRock1SpeedX = 0;
+        var BigRock1SpeedY = 0;
+        var BigRock2SpeedX = 0;
+        var BigRock2SpeedY = 0;
+        var BigRock3SpeedX = 0;
+        var BigRock3SpeedY = 0;
+        var SmallRock1Rotate = 0;
+        var SmallRock2Rotate = 0;
+        var SmallRock3Rotate = 0;
+        var BigRock1Rotate = 0;
+        var BigRock2Rotate = 0;
+        var BigRock3Rotate = 0;
 
         document.body.addEventListener("click", () => {
 
@@ -197,60 +250,6 @@
                 BigRock2ExplosionSound.volume = 0.8;
                 const BigRock3ExplosionSound = new Audio("contents/Explosion5.mp3");
                 BigRock3ExplosionSound.volume = 1.0;
-
-                var keys = {};
-                var spaceShipPosX = 0;
-                var spaceShipPosY = 0;
-                var spaceShip = document.getElementById("spaceShip");
-                var firing1, firing2, firing3, firing4;
-                var bullet1 = document.getElementById("bullet1");
-                var bullet2 = document.getElementById("bullet2");
-                var bullet3 = document.getElementById("bullet3");
-                var bullet4 = document.getElementById("bullet4");
-                var bullet1PosY = 0;
-                var bullet2PosY = 0;
-                var bullet3PosY = 0;
-                var bullet4PosY = 0;
-                var bullet1InitY = 0;
-                var bullet2InitY = 0;
-                var bullet3InitY = 0;
-                var bullet4InitY = 0;
-                var SmallRock1 = document.getElementById("SmallRock1");
-                var SmallRock2 = document.getElementById("SmallRock2");
-                var SmallRock3 = document.getElementById("SmallRock3");
-                var BigRock1 = document.getElementById("BigRock1");
-                var BigRock2 = document.getElementById("BigRock2");
-                var BigRock3 = document.getElementById("BigRock3");
-                var SmallRock1PosX = 0;
-                var SmallRock1PosY = 0;
-                var SmallRock2PosX = 0;
-                var SmallRock2PosY = 0;
-                var SmallRock3PosX = 0;
-                var SmallRock3PosY = 0;
-                var BigRock1PosX = 0;
-                var BigRock1PosY = 0;
-                var BigRock2PosX = 0;
-                var BigRock2PosY = 0;
-                var BigRock3PosX = 0;
-                var BigRock3PosY = 0;
-                var SmallRock1SpeedX = 0;
-                var SmallRock1SpeedY = 0;
-                var SmallRock2SpeedX = 0;
-                var SmallRock2SpeedY = 0;
-                var SmallRock3SpeedX = 0;
-                var SmallRock3SpeedY = 0;
-                var BigRock1SpeedX = 0;
-                var BigRock1SpeedY = 0;
-                var BigRock2SpeedX = 0;
-                var BigRock2SpeedY = 0;
-                var BigRock3SpeedX = 0;
-                var BigRock3SpeedY = 0;
-                var SmallRock1Rotate = 0;
-                var SmallRock2Rotate = 0;
-                var SmallRock3Rotate = 0;
-                var BigRock1Rotate = 0;
-                var BigRock2Rotate = 0;
-                var BigRock3Rotate = 0;
 
                 document.body.addEventListener("keydown", (event) => {
                     keys[event.key] = true;
@@ -317,40 +316,28 @@
                         bullet1.style.top = bullet1PosY + bullet1InitY + "%";
                     }
                     else {
-                        bullet1.style.left = (spaceShipPosX + 45) + "%";
-                        bullet1.style.top = (spaceShipPosY + 80) + "%";
-                        bullet1InitY = (spaceShipPosY + 80);
-                        bullet1PosY = 0;
+                        bullet1Init();
                     }
                     if (firing2) {
                         bullet2PosY -= 4;
                         bullet2.style.top = bullet2PosY + bullet2InitY + "%";
                     }
                     else {
-                        bullet2.style.left = (spaceShipPosX + 45) + "%";
-                        bullet2.style.top = (spaceShipPosY + 80) + "%";
-                        bullet2InitY = (spaceShipPosY + 80);
-                        bullet2PosY = 0;
+                        bullet2Init();
                     }
                     if (firing3) {
                         bullet3PosY -= 4;
                         bullet3.style.top = bullet3PosY + bullet3InitY + "%";
                     }
                     else {
-                        bullet3.style.left = (spaceShipPosX + 45) + "%";
-                        bullet3.style.top = (spaceShipPosY + 80) + "%";
-                        bullet3InitY = (spaceShipPosY + 80);
-                        bullet3PosY = 0;
+                        bullet3Init();
                     }
                     if (firing4) {
                         bullet4PosY -= 4;
                         bullet4.style.top = bullet4PosY + bullet4InitY + "%";
                     }
                     else {
-                        bullet4.style.left = (spaceShipPosX + 45) + "%";
-                        bullet4.style.top = (spaceShipPosY + 80) + "%";
-                        bullet4InitY = (spaceShipPosY + 80);
-                        bullet4PosY = 0;
+                        bullet4Init();
                     }
                     SmallRock1PosX += SmallRock1SpeedX;
                     SmallRock1PosY += SmallRock1SpeedY;
@@ -377,52 +364,22 @@
                     BigRock3.style.left = BigRock3PosX + "%";
                     BigRock3.style.top = BigRock3PosY + "%";
                     if (SmallRock1PosX >= 120 | SmallRock1PosX <= -20 | SmallRock1PosY >= 120) {
-                        SmallRock1PosX = 10 + parseInt(80 * Math.random());
-                        SmallRock1PosY = -10 - parseInt(90 * Math.random());
-                        SmallRock1SpeedX = (Math.random() * 2 - 1) / 3;
-                        SmallRock1SpeedY = (0.2 + Math.random() * 2) / 3;
-                        SmallRock1Rotate = parseInt(360 * Math.random());
-                        SmallRock1.style.rotate = SmallRock1Rotate + "deg";
+                        smallRock1Init();
                     }
                     if (SmallRock2PosX >= 120 | SmallRock2PosX <= -20 | SmallRock2PosY >= 120) {
-                        SmallRock2PosX = 10 + parseInt(80 * Math.random());
-                        SmallRock2PosY = -10 - parseInt(90 * Math.random());
-                        SmallRock2SpeedX = (Math.random() * 2 - 1) / 3;
-                        SmallRock2SpeedY = (0.2 + Math.random() * 2) / 3;
-                        SmallRock2Rotate = parseInt(360 * Math.random());
-                        SmallRock2.style.rotate = SmallRock1Rotate + "deg";
+                        smallRock2Init();
                     }
                     if (SmallRock3PosX >= 120 | SmallRock3PosX <= -20 | SmallRock3PosY >= 120) {
-                        SmallRock3PosX = 10 + parseInt(80 * Math.random());
-                        SmallRock3PosY = -10 - parseInt(90 * Math.random());
-                        SmallRock3SpeedX = (Math.random() * 2 - 1) / 3;
-                        SmallRock3SpeedY = (0.2 + Math.random() * 2) / 3;
-                        SmallRock3Rotate = parseInt(360 * Math.random());
-                        SmallRock3.style.rotate = SmallRock1Rotate + "deg";
+                        smallRock3Init();
                     }
                     if (BigRock1PosX >= 120 | BigRock1PosX <= -20 | BigRock1PosY >= 120) {
-                        BigRock1PosX = 10 + parseInt(80 * Math.random());
-                        BigRock1PosY = -10 - parseInt(90 * Math.random());
-                        BigRock1SpeedX = (Math.random() * 2 - 1) / 3;
-                        BigRock1SpeedY = (0.2 + Math.random() * 2) / 3;
-                        BigRock1Rotate = parseInt(360 * Math.random());
-                        BigRock1.style.rotate = SmallRock1Rotate + "deg";
+                        bigRock1Init();
                     }
                     if (BigRock2PosX >= 120 | BigRock2PosX <= -20 | BigRock2PosY >= 120) {
-                        BigRock2PosX = 10 + parseInt(80 * Math.random());
-                        BigRock2PosY = -10 - parseInt(90 * Math.random());
-                        BigRock2SpeedX = (Math.random() * 2 - 1) / 3;
-                        BigRock2SpeedY = (0.2 + Math.random() * 2) / 3;
-                        BigRock2Rotate = parseInt(360 * Math.random());
-                        BigRock2.style.rotate = SmallRock1Rotate + "deg";
+                        bigRock2Init();
                     }
                     if (BigRock3PosX >= 120 | BigRock3PosX <= -20 | BigRock3PosY >= 120) {
-                        BigRock3PosX = 10 + parseInt(80 * Math.random());
-                        BigRock3PosY = -10 - parseInt(90 * Math.random());
-                        BigRock3SpeedX = (Math.random() * 2 - 1) / 3;
-                        BigRock3SpeedY = (0.2 + Math.random() * 2) / 3;
-                        BigRock3Rotate = parseInt(360 * Math.random());
-                        BigRock3.style.rotate = SmallRock1Rotate + "deg";
+                        bigRock3Init();
                     }
                     if ((intersects(SmallRock1.getBoundingClientRect(), bullet1.getBoundingClientRect())
                         | intersects(SmallRock1.getBoundingClientRect(), bullet2.getBoundingClientRect())
@@ -437,41 +394,24 @@
                         & SmallRock1PosY >= -10) {
                         if (intersects(SmallRock1.getBoundingClientRect(), bullet1.getBoundingClientRect())) {
                             firing1 = false;
-                            bullet1.style.left = (spaceShipPosX + 45) + "%";
-                            bullet1.style.top = (spaceShipPosY + 80) + "%";
-                            bullet1InitY = (spaceShipPosY + 80);
-                            bullet1PosY = 0;
+                            bullet1Init();
                         }
                         if (intersects(SmallRock1.getBoundingClientRect(), bullet2.getBoundingClientRect())) {
                             firing2 = false;
-                            bullet2.style.left = (spaceShipPosX + 45) + "%";
-                            bullet2.style.top = (spaceShipPosY + 80) + "%";
-                            bullet2InitY = (spaceShipPosY + 80);
-                            bullet2PosY = 0;
+                            bullet2Init();
                         }
                         if (intersects(SmallRock1.getBoundingClientRect(), bullet3.getBoundingClientRect())) {
                             firing3 = false;
-                            bullet3.style.left = (spaceShipPosX + 45) + "%";
-                            bullet3.style.top = (spaceShipPosY + 80) + "%";
-                            bullet3InitY = (spaceShipPosY + 80);
-                            bullet3PosY = 0;
+                            bullet3Init();
                         }
                         if (intersects(SmallRock1.getBoundingClientRect(), bullet4.getBoundingClientRect())) {
                             firing4 = false;
-                            bullet4.style.left = (spaceShipPosX + 45) + "%";
-                            bullet4.style.top = (spaceShipPosY + 80) + "%";
-                            bullet4InitY = (spaceShipPosY + 80);
-                            bullet4PosY = 0;
+                            bullet4Init();
                         }
                         playExplosion(SmallRock1);
                         SmallRock1ExplosionSound.currentTime = 0;
                         SmallRock1ExplosionSound.play();
-                        SmallRock1PosX = 10 + parseInt(80 * Math.random());
-                        SmallRock1PosY = -10 - parseInt(90 * Math.random());
-                        SmallRock1SpeedX = (Math.random() * 2 - 1) / 3;
-                        SmallRock1SpeedY = (0.2 + Math.random() * 2) / 3;
-                        SmallRock1Rotate = parseInt(360 * Math.random());
-                        SmallRock1.style.rotate = SmallRock1Rotate + "deg";
+                        smallRock1Init();
                     }
                     if ((intersects(SmallRock2.getBoundingClientRect(), bullet1.getBoundingClientRect())
                         | intersects(SmallRock2.getBoundingClientRect(), bullet2.getBoundingClientRect())
@@ -486,41 +426,24 @@
                         & SmallRock2PosY >= -10) {
                         if (intersects(SmallRock2.getBoundingClientRect(), bullet1.getBoundingClientRect())) {
                             firing1 = false;
-                            bullet1.style.left = (spaceShipPosX + 45) + "%";
-                            bullet1.style.top = (spaceShipPosY + 80) + "%";
-                            bullet1InitY = (spaceShipPosY + 80);
-                            bullet1PosY = 0;
+                            bullet1Init();
                         }
                         if (intersects(SmallRock2.getBoundingClientRect(), bullet2.getBoundingClientRect())) {
                             firing2 = false;
-                            bullet2.style.left = (spaceShipPosX + 45) + "%";
-                            bullet2.style.top = (spaceShipPosY + 80) + "%";
-                            bullet2InitY = (spaceShipPosY + 80);
-                            bullet2PosY = 0;
+                            bullet2Init();
                         }
                         if (intersects(SmallRock2.getBoundingClientRect(), bullet3.getBoundingClientRect())) {
                             firing3 = false;
-                            bullet3.style.left = (spaceShipPosX + 45) + "%";
-                            bullet3.style.top = (spaceShipPosY + 80) + "%";
-                            bullet3InitY = (spaceShipPosY + 80);
-                            bullet3PosY = 0;
+                            bullet3Init();
                         }
                         if (intersects(SmallRock2.getBoundingClientRect(), bullet4.getBoundingClientRect())) {
                             firing4 = false;
-                            bullet4.style.left = (spaceShipPosX + 45) + "%";
-                            bullet4.style.top = (spaceShipPosY + 80) + "%";
-                            bullet4InitY = (spaceShipPosY + 80);
-                            bullet4PosY = 0;
+                            bullet4Init();
                         }
                         playExplosion(SmallRock2);
                         SmallRock2ExplosionSound.currentTime = 0;
                         SmallRock2ExplosionSound.play();
-                        SmallRock2PosX = 10 + parseInt(80 * Math.random());
-                        SmallRock2PosY = -10 - parseInt(90 * Math.random());
-                        SmallRock2SpeedX = (Math.random() * 2 - 1) / 3;
-                        SmallRock2SpeedY = (0.2 + Math.random() * 2) / 3;
-                        SmallRock2Rotate = parseInt(360 * Math.random());
-                        SmallRock2.style.rotate = SmallRock1Rotate + "deg";
+                        smallRock2Init();
                     }
                     if ((intersects(SmallRock3.getBoundingClientRect(), bullet1.getBoundingClientRect())
                         | intersects(SmallRock3.getBoundingClientRect(), bullet2.getBoundingClientRect())
@@ -535,41 +458,24 @@
                         & SmallRock3PosY >= -10) {
                         if (intersects(SmallRock3.getBoundingClientRect(), bullet1.getBoundingClientRect())) {
                             firing1 = false;
-                            bullet1.style.left = (spaceShipPosX + 45) + "%";
-                            bullet1.style.top = (spaceShipPosY + 80) + "%";
-                            bullet1InitY = (spaceShipPosY + 80);
-                            bullet1PosY = 0;
+                            bullet1Init();
                         }
                         if (intersects(SmallRock3.getBoundingClientRect(), bullet2.getBoundingClientRect())) {
                             firing2 = false;
-                            bullet2.style.left = (spaceShipPosX + 45) + "%";
-                            bullet2.style.top = (spaceShipPosY + 80) + "%";
-                            bullet2InitY = (spaceShipPosY + 80);
-                            bullet2PosY = 0;
+                            bullet2Init();
                         }
                         if (intersects(SmallRock3.getBoundingClientRect(), bullet3.getBoundingClientRect())) {
                             firing3 = false;
-                            bullet3.style.left = (spaceShipPosX + 45) + "%";
-                            bullet3.style.top = (spaceShipPosY + 80) + "%";
-                            bullet3InitY = (spaceShipPosY + 80);
-                            bullet3PosY = 0;
+                            bullet3Init();
                         }
                         if (intersects(SmallRock3.getBoundingClientRect(), bullet4.getBoundingClientRect())) {
                             firing4 = false;
-                            bullet4.style.left = (spaceShipPosX + 45) + "%";
-                            bullet4.style.top = (spaceShipPosY + 80) + "%";
-                            bullet4InitY = (spaceShipPosY + 80);
-                            bullet4PosY = 0;
+                            bullet4Init();
                         }
                         playExplosion(SmallRock3);
                         SmallRock3ExplosionSound.currentTime = 0;
                         SmallRock3ExplosionSound.play();
-                        SmallRock3PosX = 10 + parseInt(80 * Math.random());
-                        SmallRock3PosY = -10 - parseInt(90 * Math.random());
-                        SmallRock3SpeedX = (Math.random() * 2 - 1) / 3;
-                        SmallRock3SpeedY = (0.2 + Math.random() * 2) / 3;
-                        SmallRock3Rotate = parseInt(360 * Math.random());
-                        SmallRock3.style.rotate = SmallRock1Rotate + "deg";
+                        smallRock3Init();
                     }
                     if ((intersects(BigRock1.getBoundingClientRect(), bullet1.getBoundingClientRect())
                         | intersects(BigRock1.getBoundingClientRect(), bullet2.getBoundingClientRect())
@@ -584,41 +490,24 @@
                         & BigRock1PosY >= -10) {
                         if (intersects(BigRock1.getBoundingClientRect(), bullet1.getBoundingClientRect())) {
                             firing1 = false;
-                            bullet1.style.left = (spaceShipPosX + 45) + "%";
-                            bullet1.style.top = (spaceShipPosY + 80) + "%";
-                            bullet1InitY = (spaceShipPosY + 80);
-                            bullet1PosY = 0;
+                            bullet1Init();
                         }
                         if (intersects(BigRock1.getBoundingClientRect(), bullet2.getBoundingClientRect())) {
                             firing2 = false;
-                            bullet2.style.left = (spaceShipPosX + 45) + "%";
-                            bullet2.style.top = (spaceShipPosY + 80) + "%";
-                            bullet2InitY = (spaceShipPosY + 80);
-                            bullet2PosY = 0;
+                            bullet2Init();
                         }
                         if (intersects(BigRock1.getBoundingClientRect(), bullet3.getBoundingClientRect())) {
                             firing3 = false;
-                            bullet3.style.left = (spaceShipPosX + 45) + "%";
-                            bullet3.style.top = (spaceShipPosY + 80) + "%";
-                            bullet3InitY = (spaceShipPosY + 80);
-                            bullet3PosY = 0;
+                            bullet3Init();
                         }
                         if (intersects(BigRock1.getBoundingClientRect(), bullet4.getBoundingClientRect())) {
                             firing4 = false;
-                            bullet4.style.left = (spaceShipPosX + 45) + "%";
-                            bullet4.style.top = (spaceShipPosY + 80) + "%";
-                            bullet4InitY = (spaceShipPosY + 80);
-                            bullet4PosY = 0;
+                            bullet4Init();
                         }
                         playExplosion(BigRock1);
                         BigRock1ExplosionSound.currentTime = 0;
                         BigRock1ExplosionSound.play();
-                        BigRock1PosX = 10 + parseInt(80 * Math.random());
-                        BigRock1PosY = -10 - parseInt(90 * Math.random());
-                        BigRock1SpeedX = (Math.random() * 2 - 1) / 3;
-                        BigRock1SpeedY = (0.2 + Math.random() * 2) / 3;
-                        BigRock1Rotate = parseInt(360 * Math.random());
-                        BigRock1.style.rotate = SmallRock1Rotate + "deg";
+                        bigRock1Init();
                     }
                     if ((intersects(BigRock2.getBoundingClientRect(), bullet1.getBoundingClientRect())
                         | intersects(BigRock2.getBoundingClientRect(), bullet2.getBoundingClientRect())
@@ -633,41 +522,24 @@
                         & BigRock2PosY >= -10) {
                         if (intersects(BigRock2.getBoundingClientRect(), bullet1.getBoundingClientRect())) {
                             firing1 = false;
-                            bullet1.style.left = (spaceShipPosX + 45) + "%";
-                            bullet1.style.top = (spaceShipPosY + 80) + "%";
-                            bullet1InitY = (spaceShipPosY + 80);
-                            bullet1PosY = 0;
+                            bullet1Init();
                         }
                         if (intersects(BigRock2.getBoundingClientRect(), bullet2.getBoundingClientRect())) {
                             firing2 = false;
-                            bullet2.style.left = (spaceShipPosX + 45) + "%";
-                            bullet2.style.top = (spaceShipPosY + 80) + "%";
-                            bullet2InitY = (spaceShipPosY + 80);
-                            bullet2PosY = 0;
+                            bullet2Init();
                         }
                         if (intersects(BigRock2.getBoundingClientRect(), bullet3.getBoundingClientRect())) {
                             firing3 = false;
-                            bullet3.style.left = (spaceShipPosX + 45) + "%";
-                            bullet3.style.top = (spaceShipPosY + 80) + "%";
-                            bullet3InitY = (spaceShipPosY + 80);
-                            bullet3PosY = 0;
+                            bullet3Init();
                         }
                         if (intersects(BigRock2.getBoundingClientRect(), bullet4.getBoundingClientRect())) {
                             firing4 = false;
-                            bullet4.style.left = (spaceShipPosX + 45) + "%";
-                            bullet4.style.top = (spaceShipPosY + 80) + "%";
-                            bullet4InitY = (spaceShipPosY + 80);
-                            bullet4PosY = 0;
+                            bullet4Init();
                         }
                         playExplosion(BigRock2);
                         BigRock2ExplosionSound.currentTime = 0;
                         BigRock2ExplosionSound.play();
-                        BigRock2PosX = 10 + parseInt(80 * Math.random());
-                        BigRock2PosY = -10 - parseInt(90 * Math.random());
-                        BigRock2SpeedX = (Math.random() * 2 - 1) / 3;
-                        BigRock2SpeedY = (0.2 + Math.random() * 2) / 3;
-                        BigRock2Rotate = parseInt(360 * Math.random());
-                        BigRock2.style.rotate = SmallRock1Rotate + "deg";
+                        bigRock2Init();
                     }
                     if ((intersects(BigRock3.getBoundingClientRect(), bullet1.getBoundingClientRect())
                         | intersects(BigRock3.getBoundingClientRect(), bullet2.getBoundingClientRect())
@@ -682,41 +554,24 @@
                         & BigRock3PosY >= -10) {
                         if (intersects(BigRock3.getBoundingClientRect(), bullet1.getBoundingClientRect())) {
                             firing1 = false;
-                            bullet1.style.left = (spaceShipPosX + 45) + "%";
-                            bullet1.style.top = (spaceShipPosY + 80) + "%";
-                            bullet1InitY = (spaceShipPosY + 80);
-                            bullet1PosY = 0;
+                            bullet1Init();
                         }
                         if (intersects(BigRock3.getBoundingClientRect(), bullet2.getBoundingClientRect())) {
                             firing2 = false;
-                            bullet2.style.left = (spaceShipPosX + 45) + "%";
-                            bullet2.style.top = (spaceShipPosY + 80) + "%";
-                            bullet2InitY = (spaceShipPosY + 80);
-                            bullet2PosY = 0;
+                            bullet2Init();
                         }
                         if (intersects(BigRock3.getBoundingClientRect(), bullet3.getBoundingClientRect())) {
                             firing3 = false;
-                            bullet3.style.left = (spaceShipPosX + 45) + "%";
-                            bullet3.style.top = (spaceShipPosY + 80) + "%";
-                            bullet3InitY = (spaceShipPosY + 80);
-                            bullet3PosY = 0;
+                            bullet3Init();
                         }
                         if (intersects(BigRock3.getBoundingClientRect(), bullet4.getBoundingClientRect())) {
                             firing4 = false;
-                            bullet4.style.left = (spaceShipPosX + 45) + "%";
-                            bullet4.style.top = (spaceShipPosY + 80) + "%";
-                            bullet4InitY = (spaceShipPosY + 80);
-                            bullet4PosY = 0;
+                            bullet4Init();
                         }
                         playExplosion(BigRock3);
                         BigRock3ExplosionSound.currentTime = 0;
                         BigRock3ExplosionSound.play();
-                        BigRock3PosX = 10 + parseInt(80 * Math.random());
-                        BigRock3PosY = -10 - parseInt(90 * Math.random());
-                        BigRock3SpeedX = (Math.random() * 2 - 1) / 3;
-                        BigRock3SpeedY = (0.2 + Math.random() * 2) / 3;
-                        BigRock3Rotate = parseInt(360 * Math.random());
-                        BigRock3.style.rotate = SmallRock1Rotate + "deg";
+                        bigRock3Init();
                     }
                     requestAnimationFrame(gameLoop);
                 }
@@ -724,43 +579,91 @@
                 gameLoop();
 
             }
+
         });
 
-        SmallRock1PosX = 10 + parseInt(80 * Math.random());
-        SmallRock1PosY = -10 - parseInt(90 * Math.random());
-        SmallRock1SpeedX = (Math.random() * 2 - 1) / 3;
-        SmallRock1SpeedY = (0.2 + Math.random() * 2) / 3;
-        SmallRock1Rotate = parseInt(360 * Math.random());
+        function bullet1Init() {
+            bullet1.style.left = (spaceShipPosX + 45) + "%";
+            bullet1.style.top = (spaceShipPosY + 80) + "%";
+            bullet1InitY = (spaceShipPosY + 80);
+            bullet1PosY = 0;
+        }
 
-        SmallRock2PosX = 10 + parseInt(80 * Math.random());
-        SmallRock2PosY = -10 - parseInt(90 * Math.random());
-        SmallRock2SpeedX = (Math.random() * 2 - 1) / 3;
-        SmallRock2SpeedY = (0.2 + Math.random() * 2) / 3;
-        SmallRock2Rotate = parseInt(360 * Math.random());
+        function bullet2Init() {
+            bullet2.style.left = (spaceShipPosX + 45) + "%";
+            bullet2.style.top = (spaceShipPosY + 80) + "%";
+            bullet2InitY = (spaceShipPosY + 80);
+            bullet2PosY = 0;
+        }
 
-        SmallRock3PosX = 10 + parseInt(80 * Math.random());
-        SmallRock3PosY = -10 - parseInt(90 * Math.random());
-        SmallRock3SpeedX = (Math.random() * 2 - 1) / 3;
-        SmallRock3SpeedY = (0.2 + Math.random() * 2) / 3;
-        SmallRock3Rotate = parseInt(360 * Math.random());
+        function bullet3Init() {
+            bullet3.style.left = (spaceShipPosX + 45) + "%";
+            bullet3.style.top = (spaceShipPosY + 80) + "%";
+            bullet3InitY = (spaceShipPosY + 80);
+            bullet3PosY = 0;
+        }
 
-        BigRock1PosX = 10 + parseInt(80 * Math.random());
-        BigRock1PosY = -10 - parseInt(90 * Math.random());
-        BigRock1SpeedX = (Math.random() * 2 - 1) / 3;
-        BigRock1SpeedY = (0.2 + Math.random() * 2) / 3;
-        BigRock1Rotate = parseInt(360 * Math.random());
+        function bullet4Init() {
+            bullet4.style.left = (spaceShipPosX + 45) + "%";
+            bullet4.style.top = (spaceShipPosY + 80) + "%";
+            bullet4InitY = (spaceShipPosY + 80);
+            bullet4PosY = 0;
+        }
 
-        BigRock2PosX = 10 + parseInt(80 * Math.random());
-        BigRock2PosY = -10 - parseInt(90 * Math.random());
-        BigRock2SpeedX = (Math.random() * 2 - 1) / 3;
-        BigRock2SpeedY = (0.2 + Math.random() * 2) / 3;
-        BigRock2Rotate = parseInt(360 * Math.random());
-
-        BigRock3PosX = 10 + parseInt(80 * Math.random());
-        BigRock3PosY = -10 - parseInt(90 * Math.random());
-        BigRock3SpeedX = (Math.random() * 2 - 1) / 3;
-        BigRock3SpeedY = (0.2 + Math.random() * 2) / 3;
-        BigRock3Rotate = parseInt(360 * Math.random());
+        smallRock1Init();
+        function smallRock1Init() {
+            SmallRock1PosX = 10 + parseInt(80 * Math.random());
+            SmallRock1PosY = -10 - parseInt(90 * Math.random());
+            SmallRock1SpeedX = (Math.random() * 2 - 1) / 3;
+            SmallRock1SpeedY = (0.2 + Math.random() * 2) / 3;
+            SmallRock1Rotate = parseInt(360 * Math.random());
+            SmallRock1.style.rotate = SmallRock1Rotate + "deg";
+        }
+        smallRock2Init();
+        function smallRock2Init() {
+            SmallRock2PosX = 10 + parseInt(80 * Math.random());
+            SmallRock2PosY = -10 - parseInt(90 * Math.random());
+            SmallRock2SpeedX = (Math.random() * 2 - 1) / 3;
+            SmallRock2SpeedY = (0.2 + Math.random() * 2) / 3;
+            SmallRock2Rotate = parseInt(360 * Math.random());
+            SmallRock2.style.rotate = SmallRock1Rotate + "deg";
+        }
+        smallRock3Init();
+        function smallRock3Init() {
+            SmallRock3PosX = 10 + parseInt(80 * Math.random());
+            SmallRock3PosY = -10 - parseInt(90 * Math.random());
+            SmallRock3SpeedX = (Math.random() * 2 - 1) / 3;
+            SmallRock3SpeedY = (0.2 + Math.random() * 2) / 3;
+            SmallRock3Rotate = parseInt(360 * Math.random());
+            SmallRock3.style.rotate = SmallRock1Rotate + "deg";
+        }
+        bigRock1Init();
+        function bigRock1Init() {
+            BigRock1PosX = 10 + parseInt(80 * Math.random());
+            BigRock1PosY = -10 - parseInt(90 * Math.random());
+            BigRock1SpeedX = (Math.random() * 2 - 1) / 3;
+            BigRock1SpeedY = (0.2 + Math.random() * 2) / 3;
+            BigRock1Rotate = parseInt(360 * Math.random());
+            BigRock1.style.rotate = SmallRock1Rotate + "deg";
+        }
+        bigRock2Init();
+        function bigRock2Init() {
+            BigRock2PosX = 10 + parseInt(80 * Math.random());
+            BigRock2PosY = -10 - parseInt(90 * Math.random());
+            BigRock2SpeedX = (Math.random() * 2 - 1) / 3;
+            BigRock2SpeedY = (0.2 + Math.random() * 2) / 3;
+            BigRock2Rotate = parseInt(360 * Math.random());
+            BigRock2.style.rotate = SmallRock1Rotate + "deg";
+        }
+        bigRock3Init();
+        function bigRock3Init() {
+            BigRock3PosX = 10 + parseInt(80 * Math.random());
+            BigRock3PosY = -10 - parseInt(90 * Math.random());
+            BigRock3SpeedX = (Math.random() * 2 - 1) / 3;
+            BigRock3SpeedY = (0.2 + Math.random() * 2) / 3;
+            BigRock3Rotate = parseInt(360 * Math.random());
+            BigRock3.style.rotate = SmallRock1Rotate + "deg";
+        }
 
         function intersects(r1, r2) {
             var inset = 30;
