@@ -179,6 +179,19 @@
             const firingSound = new Audio("contents/LaserShot7.mp3");
             firingSound.volume = 1.0;
 
+            const SmallRock1ExplosionSound = new Audio("contents/Explosion5.mp3");
+            SmallRock1ExplosionSound.volume = 1.0;
+            const SmallRock2ExplosionSound = new Audio("contents/Explosion5.mp3");
+            SmallRock2ExplosionSound.volume = 1.0;
+            const SmallRock3ExplosionSound = new Audio("contents/Explosion5.mp3");
+            SmallRock3ExplosionSound.volume = 1.0;
+            const BigRock1ExplosionSound = new Audio("contents/Explosion5.mp3");
+            BigRock1ExplosionSound.volume = 1.0;
+            const BigRock2ExplosionSound = new Audio("contents/Explosion5.mp3");
+            BigRock2ExplosionSound.volume = 1.0;
+            const BigRock3ExplosionSound = new Audio("contents/Explosion5.mp3");
+            BigRock3ExplosionSound.volume = 1.0;
+
             var keys = {};
             var spaceShipPosX = 0;
             var spaceShipPosY = 0;
@@ -337,38 +350,33 @@
                 SmallRock1PosY += SmallRock1SpeedY;
                 SmallRock1.style.left = SmallRock1PosX + "%";
                 SmallRock1.style.top = SmallRock1PosY + "%";
-                SmallRock1.style.rotate = SmallRock1Rotate + "deg";
                 SmallRock2PosX += SmallRock2SpeedX;
                 SmallRock2PosY += SmallRock2SpeedY;
                 SmallRock2.style.left = SmallRock2PosX + "%";
                 SmallRock2.style.top = SmallRock2PosY + "%";
-                SmallRock2.style.rotate = SmallRock1Rotate + "deg";
                 SmallRock3PosX += SmallRock3SpeedX;
                 SmallRock3PosY += SmallRock3SpeedY;
                 SmallRock3.style.left = SmallRock3PosX + "%";
                 SmallRock3.style.top = SmallRock3PosY + "%";
-                SmallRock3.style.rotate = SmallRock1Rotate + "deg";
                 BigRock1PosX += BigRock1SpeedX;
                 BigRock1PosY += BigRock1SpeedY;
                 BigRock1.style.left = BigRock1PosX + "%";
                 BigRock1.style.top = BigRock1PosY + "%";
-                BigRock1.style.rotate = SmallRock1Rotate + "deg";
                 BigRock2PosX += BigRock2SpeedX;
                 BigRock2PosY += BigRock2SpeedY;
                 BigRock2.style.left = BigRock2PosX + "%";
                 BigRock2.style.top = BigRock2PosY + "%";
-                BigRock2.style.rotate = SmallRock1Rotate + "deg";
                 BigRock3PosX += BigRock3SpeedX;
                 BigRock3PosY += BigRock3SpeedY;
                 BigRock3.style.left = BigRock3PosX + "%";
                 BigRock3.style.top = BigRock3PosY + "%";
-                BigRock3.style.rotate = SmallRock1Rotate + "deg";
                 if (SmallRock1PosX >= 120 | SmallRock1PosX <= -20 | SmallRock1PosY >= 120) {
                     SmallRock1PosX = 10 + parseInt(80 * Math.random());
                     SmallRock1PosY = -10 - parseInt(90 * Math.random());
                     SmallRock1SpeedX = (Math.random() * 2 - 1) / 3;
                     SmallRock1SpeedY = (0.2 + Math.random() * 2) / 3;
                     SmallRock1Rotate = parseInt(360 * Math.random());
+                    SmallRock1.style.rotate = SmallRock1Rotate + "deg";
                 }
                 if (SmallRock2PosX >= 120 | SmallRock2PosX <= -20 | SmallRock2PosY >= 120) {
                     SmallRock2PosX = 10 + parseInt(80 * Math.random());
@@ -376,6 +384,7 @@
                     SmallRock2SpeedX = (Math.random() * 2 - 1) / 3;
                     SmallRock2SpeedY = (0.2 + Math.random() * 2) / 3;
                     SmallRock2Rotate = parseInt(360 * Math.random());
+                    SmallRock2.style.rotate = SmallRock1Rotate + "deg";
                 }
                 if (SmallRock3PosX >= 120 | SmallRock3PosX <= -20 | SmallRock3PosY >= 120) {
                     SmallRock3PosX = 10 + parseInt(80 * Math.random());
@@ -383,6 +392,7 @@
                     SmallRock3SpeedX = (Math.random() * 2 - 1) / 3;
                     SmallRock3SpeedY = (0.2 + Math.random() * 2) / 3;
                     SmallRock3Rotate = parseInt(360 * Math.random());
+                    SmallRock3.style.rotate = SmallRock1Rotate + "deg";
                 }
                 if (BigRock1PosX >= 120 | BigRock1PosX <= -20 | BigRock1PosY >= 120) {
                     BigRock1PosX = 10 + parseInt(80 * Math.random());
@@ -390,6 +400,7 @@
                     BigRock1SpeedX = (Math.random() * 2 - 1) / 3;
                     BigRock1SpeedY = (0.2 + Math.random() * 2) / 3;
                     BigRock1Rotate = parseInt(360 * Math.random());
+                    BigRock1.style.rotate = SmallRock1Rotate + "deg";
                 }
                 if (BigRock2PosX >= 120 | BigRock2PosX <= -20 | BigRock2PosY >= 120) {
                     BigRock2PosX = 10 + parseInt(80 * Math.random());
@@ -397,6 +408,7 @@
                     BigRock2SpeedX = (Math.random() * 2 - 1) / 3;
                     BigRock2SpeedY = (0.2 + Math.random() * 2) / 3;
                     BigRock2Rotate = parseInt(360 * Math.random());
+                    BigRock2.style.rotate = SmallRock1Rotate + "deg";
                 }
                 if (BigRock3PosX >= 120 | BigRock3PosX <= -20 | BigRock3PosY >= 120) {
                     BigRock3PosX = 10 + parseInt(80 * Math.random());
@@ -404,6 +416,7 @@
                     BigRock3SpeedX = (Math.random() * 2 - 1) / 3;
                     BigRock3SpeedY = (0.2 + Math.random() * 2) / 3;
                     BigRock3Rotate = parseInt(360 * Math.random());
+                    BigRock3.style.rotate = SmallRock1Rotate + "deg";
                 }
                 if ((intersects(SmallRock1.getBoundingClientRect(), bullet1.getBoundingClientRect())
                     | intersects(SmallRock1.getBoundingClientRect(), bullet2.getBoundingClientRect())
@@ -444,11 +457,15 @@
                         bullet4InitY = (spaceShipPosY + 80);
                         bullet4PosY = 0;
                     }
+                    playExplosion(SmallRock1);
+                    SmallRock1ExplosionSound.currentTime = 0;
+                    SmallRock1ExplosionSound.play();
                     SmallRock1PosX = 10 + parseInt(80 * Math.random());
                     SmallRock1PosY = -10 - parseInt(90 * Math.random());
                     SmallRock1SpeedX = (Math.random() * 2 - 1) / 3;
                     SmallRock1SpeedY = (0.2 + Math.random() * 2) / 3;
                     SmallRock1Rotate = parseInt(360 * Math.random());
+                    SmallRock1.style.rotate = SmallRock1Rotate + "deg";
                 }
                 if ((intersects(SmallRock2.getBoundingClientRect(), bullet1.getBoundingClientRect())
                     | intersects(SmallRock2.getBoundingClientRect(), bullet2.getBoundingClientRect())
@@ -489,11 +506,15 @@
                         bullet4InitY = (spaceShipPosY + 80);
                         bullet4PosY = 0;
                     }
+                    playExplosion(SmallRock2);
+                    SmallRock2ExplosionSound.currentTime = 0;
+                    SmallRock2ExplosionSound.play();
                     SmallRock2PosX = 10 + parseInt(80 * Math.random());
                     SmallRock2PosY = -10 - parseInt(90 * Math.random());
                     SmallRock2SpeedX = (Math.random() * 2 - 1) / 3;
                     SmallRock2SpeedY = (0.2 + Math.random() * 2) / 3;
                     SmallRock2Rotate = parseInt(360 * Math.random());
+                    SmallRock2.style.rotate = SmallRock1Rotate + "deg";
                 }
                 if ((intersects(SmallRock3.getBoundingClientRect(), bullet1.getBoundingClientRect())
                     | intersects(SmallRock3.getBoundingClientRect(), bullet2.getBoundingClientRect())
@@ -534,11 +555,15 @@
                         bullet4InitY = (spaceShipPosY + 80);
                         bullet4PosY = 0;
                     }
+                    playExplosion(SmallRock3);
+                    SmallRock3ExplosionSound.currentTime = 0;
+                    SmallRock3ExplosionSound.play();
                     SmallRock3PosX = 10 + parseInt(80 * Math.random());
                     SmallRock3PosY = -10 - parseInt(90 * Math.random());
                     SmallRock3SpeedX = (Math.random() * 2 - 1) / 3;
                     SmallRock3SpeedY = (0.2 + Math.random() * 2) / 3;
                     SmallRock3Rotate = parseInt(360 * Math.random());
+                    SmallRock3.style.rotate = SmallRock1Rotate + "deg";
                 }
                 if ((intersects(BigRock1.getBoundingClientRect(), bullet1.getBoundingClientRect())
                     | intersects(BigRock1.getBoundingClientRect(), bullet2.getBoundingClientRect())
@@ -579,11 +604,15 @@
                         bullet4InitY = (spaceShipPosY + 80);
                         bullet4PosY = 0;
                     }
+                    playExplosion(BigRock1);
+                    BigRock1ExplosionSound.currentTime = 0;
+                    BigRock1ExplosionSound.play();
                     BigRock1PosX = 10 + parseInt(80 * Math.random());
                     BigRock1PosY = -10 - parseInt(90 * Math.random());
                     BigRock1SpeedX = (Math.random() * 2 - 1) / 3;
                     BigRock1SpeedY = (0.2 + Math.random() * 2) / 3;
                     BigRock1Rotate = parseInt(360 * Math.random());
+                    BigRock1.style.rotate = SmallRock1Rotate + "deg";
                 }
                 if ((intersects(BigRock2.getBoundingClientRect(), bullet1.getBoundingClientRect())
                     | intersects(BigRock2.getBoundingClientRect(), bullet2.getBoundingClientRect())
@@ -624,11 +653,15 @@
                         bullet4InitY = (spaceShipPosY + 80);
                         bullet4PosY = 0;
                     }
+                    playExplosion(BigRock2);
+                    BigRock2ExplosionSound.currentTime = 0;
+                    BigRock2ExplosionSound.play();
                     BigRock2PosX = 10 + parseInt(80 * Math.random());
                     BigRock2PosY = -10 - parseInt(90 * Math.random());
                     BigRock2SpeedX = (Math.random() * 2 - 1) / 3;
                     BigRock2SpeedY = (0.2 + Math.random() * 2) / 3;
                     BigRock2Rotate = parseInt(360 * Math.random());
+                    BigRock2.style.rotate = SmallRock1Rotate + "deg";
                 }
                 if ((intersects(BigRock3.getBoundingClientRect(), bullet1.getBoundingClientRect())
                     | intersects(BigRock3.getBoundingClientRect(), bullet2.getBoundingClientRect())
@@ -669,63 +702,83 @@
                         bullet4InitY = (spaceShipPosY + 80);
                         bullet4PosY = 0;
                     }
+                    playExplosion(BigRock3);
+                    BigRock3ExplosionSound.currentTime = 0;
+                    BigRock3ExplosionSound.play();
                     BigRock3PosX = 10 + parseInt(80 * Math.random());
                     BigRock3PosY = -10 - parseInt(90 * Math.random());
                     BigRock3SpeedX = (Math.random() * 2 - 1) / 3;
                     BigRock3SpeedY = (0.2 + Math.random() * 2) / 3;
                     BigRock3Rotate = parseInt(360 * Math.random());
+                    BigRock3.style.rotate = SmallRock1Rotate + "deg";
                 }
                 requestAnimationFrame(gameLoop);
             }
 
             gameLoop();
 
-            SmallRock1PosX = 10 + parseInt(80 * Math.random());
-            SmallRock1PosY = -10 - parseInt(90 * Math.random());
-            SmallRock1SpeedX = (Math.random() * 2 - 1) / 3;
-            SmallRock1SpeedY = (0.2 + Math.random() * 2) / 3;
-            SmallRock1Rotate = parseInt(360 * Math.random());
-
-            SmallRock2PosX = 10 + parseInt(80 * Math.random());
-            SmallRock2PosY = -10 - parseInt(90 * Math.random());
-            SmallRock2SpeedX = (Math.random() * 2 - 1) / 3;
-            SmallRock2SpeedY = (0.2 + Math.random() * 2) / 3;
-            SmallRock2Rotate = parseInt(360 * Math.random());
-
-            SmallRock3PosX = 10 + parseInt(80 * Math.random());
-            SmallRock3PosY = -10 - parseInt(90 * Math.random());
-            SmallRock3SpeedX = (Math.random() * 2 - 1) / 3;
-            SmallRock3SpeedY = (0.2 + Math.random() * 2) / 3;
-            SmallRock3Rotate = parseInt(360 * Math.random());
-
-            BigRock1PosX = 10 + parseInt(80 * Math.random());
-            BigRock1PosY = -10 - parseInt(90 * Math.random());
-            BigRock1SpeedX = (Math.random() * 2 - 1) / 3;
-            BigRock1SpeedY = (0.2 + Math.random() * 2) / 3;
-            BigRock1Rotate = parseInt(360 * Math.random());
-
-            BigRock2PosX = 10 + parseInt(80 * Math.random());
-            BigRock2PosY = -10 - parseInt(90 * Math.random());
-            BigRock2SpeedX = (Math.random() * 2 - 1) / 3;
-            BigRock2SpeedY = (0.2 + Math.random() * 2) / 3;
-            BigRock2Rotate = parseInt(360 * Math.random());
-
-            BigRock3PosX = 10 + parseInt(80 * Math.random());
-            BigRock3PosY = -10 - parseInt(90 * Math.random());
-            BigRock3SpeedX = (Math.random() * 2 - 1) / 3;
-            BigRock3SpeedY = (0.2 + Math.random() * 2) / 3;
-            BigRock3Rotate = parseInt(360 * Math.random());
-
-            function intersects(r1, r2) {
-                return !(
-                    r2.x > r1.x + r1.width ||
-                    r2.x + r2.width < r1.x ||
-                    r2.y > r1.y + r1.height ||
-                    r2.y + r2.height < r1.y
-                );
-            }
-
         });
+
+        SmallRock1PosX = 10 + parseInt(80 * Math.random());
+        SmallRock1PosY = -10 - parseInt(90 * Math.random());
+        SmallRock1SpeedX = (Math.random() * 2 - 1) / 3;
+        SmallRock1SpeedY = (0.2 + Math.random() * 2) / 3;
+        SmallRock1Rotate = parseInt(360 * Math.random());
+
+        SmallRock2PosX = 10 + parseInt(80 * Math.random());
+        SmallRock2PosY = -10 - parseInt(90 * Math.random());
+        SmallRock2SpeedX = (Math.random() * 2 - 1) / 3;
+        SmallRock2SpeedY = (0.2 + Math.random() * 2) / 3;
+        SmallRock2Rotate = parseInt(360 * Math.random());
+
+        SmallRock3PosX = 10 + parseInt(80 * Math.random());
+        SmallRock3PosY = -10 - parseInt(90 * Math.random());
+        SmallRock3SpeedX = (Math.random() * 2 - 1) / 3;
+        SmallRock3SpeedY = (0.2 + Math.random() * 2) / 3;
+        SmallRock3Rotate = parseInt(360 * Math.random());
+
+        BigRock1PosX = 10 + parseInt(80 * Math.random());
+        BigRock1PosY = -10 - parseInt(90 * Math.random());
+        BigRock1SpeedX = (Math.random() * 2 - 1) / 3;
+        BigRock1SpeedY = (0.2 + Math.random() * 2) / 3;
+        BigRock1Rotate = parseInt(360 * Math.random());
+
+        BigRock2PosX = 10 + parseInt(80 * Math.random());
+        BigRock2PosY = -10 - parseInt(90 * Math.random());
+        BigRock2SpeedX = (Math.random() * 2 - 1) / 3;
+        BigRock2SpeedY = (0.2 + Math.random() * 2) / 3;
+        BigRock2Rotate = parseInt(360 * Math.random());
+
+        BigRock3PosX = 10 + parseInt(80 * Math.random());
+        BigRock3PosY = -10 - parseInt(90 * Math.random());
+        BigRock3SpeedX = (Math.random() * 2 - 1) / 3;
+        BigRock3SpeedY = (0.2 + Math.random() * 2) / 3;
+        BigRock3Rotate = parseInt(360 * Math.random());
+
+        function intersects(r1, r2) {
+            return !(
+                r2.x > r1.x + r1.width ||
+                r2.x + r2.width < r1.x ||
+                r2.y > r1.y + r1.height ||
+                r2.y + r2.height < r1.y
+            );
+        }
+
+        function playExplosion(rock) {
+            const img = document.createElement("img");
+            img.src = "contents/ExplosionLvl1.gif";
+            img.style.position = "absolute";
+            img.style.display = "block";
+            const s = getComputedStyle(rock);
+            img.style.width = parseInt(s.width) + "px";
+            img.style.height = parseInt(s.height) + "px";
+            img.style.left = parseInt(s.left) + "px";
+            img.style.top = parseInt(s.top) + "px";
+            document.body.appendChild(img);
+            setTimeout(() => {
+                img.remove();
+            }, 1000);
+        }
 
     </script>
 
