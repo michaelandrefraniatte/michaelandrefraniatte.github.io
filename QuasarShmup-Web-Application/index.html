@@ -9,11 +9,14 @@
 <html lang="en-US">
 
 <head>
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TVP9X48X');</script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TVP9X48X');</script>
 
     <meta charset="utf-8">
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -34,10 +37,64 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             margin: 0;
             padding: 0;
         }
+
+        #animatedBackground {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url("contents/LayoutBackGroundLvl1.png");
+            background-repeat: repeat;
+            background-position: 0 0;
+            background-size: auto 100%;
+            animation: animatedBackground 500s linear infinite;
+        }
+
+        @keyframes animatedBackground {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 0 50000px;
+            }
+        }
+
+        #spaceShip {
+            position: absolute;
+            display: block;
+            left: 45%;
+            top: 80%;
+            width: 10%;
+            height: 12%;
+        }
+
+        #bullet1,
+        #bullet2,
+        #bullet3,
+        #bullet4 {
+            position: absolute;
+            display: block;
+            left: 45%;
+            top: 80%;
+            width: 10%;
+            height: 6%;
+        }
     </style>
 </head>
 
 <body>
+
+    <div id="animatedBackground">
+
+    </div>
+
+    <img id="spaceShip" src="contents/SpaceShipLvl1.png">
+    <img id="bullet1" src="contents/BulletLvl1.png">
+    <img id="bullet2" src="contents/BulletLvl1.png">
+    <img id="bullet3" src="contents/BulletLvl1.png">
+    <img id="bullet4" src="contents/BulletLvl1.png">
 
     <copyrights
         style="display: float; float: right; position: fixed; right: 4px; bottom: 0px; color: black; text-align: center; font-family: sans-serif; font-size: 2.2vh; line-height: 2.2vh;">
@@ -46,12 +103,150 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <script>
 
+        document.body.addEventListener("click", () => {
+
+            const backgroundSound = new Audio("contents/Donkey Kong Bananza OST - Stickerbush Symphony (Extended).mp3");
+            backgroundSound.volume = 1.0;
+            backgroundSound.addEventListener("ended", () => {
+                backgroundSound.currentTime = 0;
+                backgroundSound.play();
+            });
+            backgroundSound.play();
+
+            const firingSound = new Audio("contents/LaserShot7.mp3");
+            firingSound.volume = 1.0;
+
+            var keys = {};
+            var spaceShipPosX = 0;
+            var spaceShipPosY = 0;
+            var spaceShip = document.getElementById("spaceShip");
+            var firing1, firing2, firing3, firing4;
+            var bullet1 = document.getElementById("bullet1");
+            var bullet2 = document.getElementById("bullet2");
+            var bullet3 = document.getElementById("bullet3");
+            var bullet4 = document.getElementById("bullet4");
+            var bullet1PosY = 0;
+            var bullet2PosY = 0;
+            var bullet3PosY = 0;
+            var bullet4PosY = 0;
+            var bullet1InitY = 0;
+            var bullet2InitY = 0;
+            var bullet3InitY = 0;
+            var bullet4InitY = 0;
+
+            document.body.addEventListener("keydown", (event) => {
+                keys[event.key] = true;
+            });
+
+            document.body.addEventListener("keyup", (event) => {
+                keys[event.key] = false;
+            });
+
+            document.body.addEventListener('keyup', event => {
+                if (event.code === 'Space') {
+                    if (!firing1) {
+                        firing1 = true;
+                        firing4 = false;
+                        firingSound.currentTime = 0;
+                        firingSound.play();
+                    }
+                    else if (!firing2) {
+                        firing2 = true;
+                        firingSound.currentTime = 0;
+                        firingSound.play();
+                    }
+                    else if (!firing3) {
+                        firing3 = true;
+                        firingSound.currentTime = 0;
+                        firingSound.play();
+                    }
+                    else if (!firing4) {
+                        firing4 = true;
+                        firing1 = false;
+                        firing2 = false;
+                        firing3 = false;
+                        firingSound.currentTime = 0;
+                        firingSound.play();
+                    }
+                }
+            });
+
+            function gameLoop() {
+                if (keys["ArrowLeft"]) {
+                    if (spaceShipPosX + 45 >= 0) {
+                        spaceShipPosX -= 0.5;
+                    }
+                }
+                if (keys["ArrowRight"]) {
+                    if (spaceShipPosX + 45 <= 90) {
+                        spaceShipPosX += 0.5;
+                    }
+                }
+                if (keys["ArrowUp"]) {
+                    if (spaceShipPosY + 80 >= 0) {
+                        spaceShipPosY -= 0.5;
+                    }
+                }
+                if (keys["ArrowDown"]) {
+                    if (spaceShipPosY + 80 <= 88) {
+                        spaceShipPosY += 0.5;
+                    }
+                }
+                spaceShip.style.left = (spaceShipPosX + 45) + "%";
+                spaceShip.style.top = (spaceShipPosY + 80) + "%";
+                if (firing1) {
+                    bullet1PosY -= 4;
+                    bullet1.style.top = bullet1PosY + bullet1InitY + "%";
+                }
+                else {
+                    bullet1.style.left = (spaceShipPosX + 45) + "%";
+                    bullet1.style.top = (spaceShipPosY + 80) + "%";
+                    bullet1InitY = (spaceShipPosY + 80);
+                    bullet1PosY = 0;
+                }
+                if (firing2) {
+                    bullet2PosY -= 4;
+                    bullet2.style.top = bullet2PosY + bullet2InitY + "%";
+                }
+                else {
+                    bullet2.style.left = (spaceShipPosX + 45) + "%";
+                    bullet2.style.top = (spaceShipPosY + 80) + "%";
+                    bullet2InitY = (spaceShipPosY + 80);
+                    bullet2PosY = 0;
+                }
+                if (firing3) {
+                    bullet3PosY -= 4;
+                    bullet3.style.top = bullet3PosY + bullet3InitY + "%";
+                }
+                else {
+                    bullet3.style.left = (spaceShipPosX + 45) + "%";
+                    bullet3.style.top = (spaceShipPosY + 80) + "%";
+                    bullet3InitY = (spaceShipPosY + 80);
+                    bullet3PosY = 0;
+                }
+                if (firing4) {
+                    bullet4PosY -= 4;
+                    bullet4.style.top = bullet4PosY + bullet4InitY + "%";
+                }
+                else {
+                    bullet4.style.left = (spaceShipPosX + 45) + "%";
+                    bullet4.style.top = (spaceShipPosY + 80) + "%";
+                    bullet4InitY = (spaceShipPosY + 80);
+                    bullet4PosY = 0;
+                }
+
+                requestAnimationFrame(gameLoop);
+            }
+
+            gameLoop();
+        });
+
     </script>
 
 
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC469PC35"></script>
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVP9X48X"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    </body>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC469PC35"></script>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVP9X48X" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+</body>
 
 </html>
