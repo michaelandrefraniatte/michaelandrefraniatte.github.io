@@ -1,0 +1,176 @@
+﻿<!--
+• Author: Michaël André Franiatte.
+• Contact: michael.franiatte@gmail.com.
+• Publisher: https://github.com/michaelandrefraniatte.
+• Copyrights: All rights reserved, no permissions granted.
+• License: Not open source, not free of charge to use.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TVP9X48X');</script>
+
+    <meta charset="utf-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="MICHAEL ANDRE FRANIATTE">
+
+    <link rel="shortcut icon" href="contents/favicon.ico">
+
+    <title>t-rex by michael franiatte</title>
+
+    <script src="../custom/redirect.js"></script>
+
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        #bckg {
+            display: block;
+            position: absolute;
+            height: 100%;
+            width: 1000%;
+            left: -1000%;
+            top: 0%;
+            background: linear-gradient(90deg,
+                    #ffffff 0%,
+                    #000000 20%,
+                    #000000 20%,
+                    #000000 80%,
+                    #000000 80%,
+                    #ffffff 100%);
+            animation: dayNightScroll 60s linear infinite;
+        }
+
+        @keyframes dayNightScroll {
+            0% {
+                left: 1000%;
+            }
+            100% {
+                left: -1000%;
+            }
+        }
+
+        #sun {
+            display: block;
+            position: absolute;
+            height: 20%;
+            width: auto;
+            left: 100%;
+            top: 10%;
+            animation: sunScroll 60s linear infinite;
+        }
+
+        @keyframes sunScroll {
+            0% {
+                left: 100%;
+            }
+            100% {
+                left: -100%;
+            }
+        }
+
+        #moon {
+            display: block;
+            position: absolute;
+            height: 10%;
+            width: auto;
+            right: -100%;
+            top: 15%;
+            animation: moonScroll 60s linear infinite;
+        }
+
+        @keyframes moonScroll {
+            0% {
+                right: -100%;
+            }
+            100% {
+                right: 100%;
+            }
+        }
+
+        .ground {
+            display: block;
+            position: absolute;
+            height: 10%;
+            width: 100%;
+            top: 66%;
+        }
+
+        #ground1 {
+            left: 100%;
+            animation: ground1Scroll 5s linear infinite;
+        }
+
+        @keyframes ground1Scroll {
+            0% {
+                left: 100%;
+            }
+            100% {
+                left: 0%;
+            }
+        }
+        
+        #ground2 {
+            right: 0%;
+            animation: ground2Scroll 5s linear infinite;
+        }
+
+        @keyframes ground2Scroll {
+            0% {
+                right: 0%;
+            }
+            100% {
+                right: 100%;
+            }
+        }
+
+        #trex {
+            display: block;
+            position: absolute;
+            height: 30%;
+            width: 10%;
+            top: 41%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="bckg"></div>
+    <img id="sun" src="contents/sun.png">
+    <img id="moon" src="contents/moon.png">
+    <img class="ground" id="ground1" src="contents/ground.png">
+    <img class="ground" id="ground2" src="contents/ground.png">
+    <img id="trex" src="contents/t-rex.gif">
+
+    <copyrights
+        style="display: float; float: right; position: fixed; right: 4px; bottom: 0px; color: gray; text-align: center; font-family: sans-serif; font-size: 2.2vh; line-height: 2.2vh;">
+        <b>© MAF</b>
+    </copyrights>
+
+    <script>
+
+    </script>
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC469PC35"></script>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVP9X48X" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+</body>
+
+</html>
