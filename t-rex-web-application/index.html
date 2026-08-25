@@ -201,6 +201,16 @@
                 left: -10%;
             }
         }
+
+        #score {
+            display: block;
+            position: absolute;
+            color: gray;
+            left: 2%;
+            top: 92%;
+            font-size: 3.6vh;
+            font-weight: 900;
+        }
     </style>
 </head>
 
@@ -215,6 +225,7 @@
     <img class="cactus" id="cactus1" src="contents/cactus.png">
     <img class="cactus" id="cactus2" src="contents/cactus.png">
     <img class="cactus" id="cactus3" src="contents/cactus.png">
+    <div id="score">000000</div>
 
     <copyrights
         style="display: float; float: right; position: fixed; right: 4px; bottom: 0px; color: gray; text-align: center; font-family: sans-serif; font-size: 2.2vh; line-height: 2.2vh;">
@@ -229,11 +240,17 @@
         var jumpupinc = 0;
         var jumpdowninc = 0;
         var jumpinit = 0;
+        var hiting = false;
+        var scoreinc = 0;
         var tRex = document.getElementById("trex");
         var cactus1 = document.getElementById("cactus1");
         var cactus2 = document.getElementById("cactus2");
         var cactus3 = document.getElementById("cactus3");
-        var hiting = false;
+        var score = document.getElementById("score");
+
+        addEventListener("resize", (event) => { 
+            tRex.style.top = "41%;";
+        })
 
         document.body.addEventListener("click", () => {
 
@@ -281,6 +298,7 @@
                     if (intersects(tRex.getBoundingClientRect(), cactus1.getBoundingClientRect())
                         | intersects(tRex.getBoundingClientRect(), cactus2.getBoundingClientRect())
                         | intersects(tRex.getBoundingClientRect(), cactus3.getBoundingClientRect())) {
+                        incrementScore(false);
                         hit.currentTime = 0;
                         hit.play();
                         hiting = true;
@@ -290,6 +308,7 @@
                         | reached(tRex.getBoundingClientRect(), cactus2.getBoundingClientRect())
                         | reached(tRex.getBoundingClientRect(), cactus3.getBoundingClientRect())) {
                         if (!hiting) {
+                            incrementScore(true);
                             reach.currentTime = 0;
                             reach.play();
                             hiting = true;
@@ -304,6 +323,15 @@
             }
 
         });
+
+        function incrementScore(inc) {
+            if (inc) {
+                scoreinc++;
+            } else {
+                scoreinc = 0;
+            }
+            score.textContent = String(scoreinc).padStart(6, "0");
+        }
 
         function intersects(r1, r2) {
             var insetx = window.innerWidth * 0.03;
