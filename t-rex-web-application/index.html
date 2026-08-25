@@ -239,6 +239,8 @@
         var jumping;
         var jumpupinc = 0;
         var jumpdowninc = 0;
+        var jumpstep = parseInt(5 * window.innerHeight / 1080);
+        var jumproof = parseInt(150 * window.innerHeight / 1080);
         var jumpinit = 0;
         var hiting = false;
         var scoreinc = 0;
@@ -249,7 +251,11 @@
         var score = document.getElementById("score");
 
         addEventListener("resize", (event) => { 
-            tRex.style.top = "41%;";
+            jumpupinc = 0;
+            jumpdowninc = 0;
+            jumpstep = parseInt(5 * window.innerHeight / 1080);
+            jumproof = parseInt(150 * window.innerHeight / 1080);
+            tRex.style.top = "41%";
         })
 
         document.body.addEventListener("click", () => {
@@ -281,15 +287,15 @@
                         press.currentTime = 0;
                         press.play();
                     }
-                    if (jumpupinc >= 1 & jumpupinc < 150) {
-                        jumpupinc += 5;
+                    if (jumpupinc >= 1 & jumpupinc < jumproof) {
+                        jumpupinc += jumpstep;
                         tRex.style.top = jumpinit - jumpupinc + jumpdowninc + "px";
                     }
-                    if (jumpupinc >= 150) {
-                        jumpdowninc += 5;
+                    if (jumpupinc >= jumproof) {
+                        jumpdowninc += jumpstep;
                         tRex.style.top = jumpinit - jumpupinc + jumpdowninc + "px";
                     }
-                    if (jumpdowninc >= 150) {
+                    if (jumpdowninc >= jumproof) {
                         jumping = false;
                         jumpupinc = 0;
                         jumpdowninc = 0;
