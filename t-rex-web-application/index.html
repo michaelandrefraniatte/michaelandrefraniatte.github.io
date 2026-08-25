@@ -330,6 +330,9 @@
             } else {
                 scoreinc = 0;
             }
+            if (scoreinc > 999999) {
+                scoreinc = 0;
+            }
             score.textContent = String(scoreinc).padStart(6, "0");
         }
 
