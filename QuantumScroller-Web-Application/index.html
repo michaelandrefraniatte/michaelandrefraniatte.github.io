@@ -1,0 +1,323 @@
+﻿<!--
+• Author: Michaël André Franiatte.
+• Contact: michael.franiatte@gmail.com.
+• Publisher: https://github.com/michaelandrefraniatte.
+• Copyrights: All rights reserved, no permissions granted.
+• License: Not open source, not free of charge to use.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TVP9X48X');</script>
+
+    <meta charset="utf-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="MICHAEL ANDRE FRANIATTE">
+
+    <link rel="shortcut icon" type="image/png" href="contents/favicon.png" />
+
+    <title>QuantumScroller by Michael Franiatte</title>
+
+    <script src="../custom/redirect.js"></script>
+
+    <style>
+        html {
+            cursor: crosshair;
+        }
+
+        body {
+            background: black;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #animatedBackground {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url("contents/LayoutBackGroundLvl1.png");
+            background-repeat: repeat;
+            background-position: 0 0;
+            background-size: auto 100%;
+        }
+
+        #man {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="animatedBackground"></div>
+    <canvas id="man"></canvas>
+
+    <copyrights
+        style="display: float; float: right; position: fixed; right: 4px; bottom: 0px; color: white; text-align: center; font-family: sans-serif; font-size: 2.2vh; line-height: 2.2vh;">
+        <b>© MAF</b>
+    </copyrights>
+
+    <script>
+
+        var gamestart = false;
+        document.body.addEventListener("click", () => {
+
+            if (!gamestart) {
+
+                gamestart = true;
+
+                const shoot = new Audio("contents/shoot.mp3");
+                shoot.volume = 0.2;
+
+                const canvas = document.getElementById("man");
+                const ctx = canvas.getContext("2d");
+
+                // Canvas fullscreen
+                function resizeCanvas() {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                }
+                resizeCanvas();
+                window.addEventListener("resize", resizeCanvas);
+
+                // Position du stickman
+                let posX = canvas.width * 0.5;
+
+                // Animation
+                let walkCycle = 0;
+
+                // Touches
+                let leftPressed = false;
+                let rightPressed = false;
+
+                // Souris
+                let mouseX = 0;
+                let mouseY = 0;
+
+                // Projectiles
+                let bullets = [];
+
+                // --- MOUSE TRACKING ---
+                canvas.addEventListener("mousemove", (e) => {
+                    const rect = canvas.getBoundingClientRect();
+                    mouseX = e.clientX - rect.left;
+                    mouseY = e.clientY - rect.top;
+                });
+
+                // --- SHOOT ---
+                canvas.addEventListener("mousedown", () => {
+                    shootBullet();
+                });
+
+                // --- DESSIN D'UN MEMBRE ---
+                function drawLimb(x, y, length, angle) {
+                    const x2 = x + Math.cos(angle) * length;
+                    const y2 = y + Math.sin(angle) * length;
+
+                    ctx.beginPath();
+                    ctx.moveTo(x, y);
+                    ctx.lineTo(x2, y2);
+                    ctx.stroke();
+                }
+
+                // --- TIRER UN PROJECTILE ---
+                function shootBullet() {
+                    const baseY = canvas.height * 0.90;
+                    const headRadius = canvas.height * 0.03 / 3;
+                    const bodyLength = canvas.height * 0.08 / 3;
+                    const armLength = canvas.height * 0.06 / 3;
+                    const legLength = canvas.height * 0.07 / 3;
+                    const gunLength = canvas.height * 0.03 / 3;
+
+                    const bodyTop = baseY - bodyLength;
+                    const shoulderY = bodyTop + bodyLength * 0.25;
+
+                    const dx = mouseX - posX;
+                    const dy = mouseY - shoulderY;
+                    const aimAngle = Math.atan2(dy, dx);
+
+                    // Position du canon
+                    const gunX = posX + Math.cos(aimAngle) * armLength;
+                    const gunY = shoulderY + Math.sin(aimAngle) * armLength;
+
+                    const bulletX = gunX + Math.cos(aimAngle) * gunLength;
+                    const bulletY = gunY + Math.sin(aimAngle) * gunLength;
+
+                    bullets.push({
+                        x: bulletX,
+                        y: bulletY,
+                        angle: aimAngle,
+                        speed: 12,
+                        size: canvas.height * 0.01 / 3
+                    });
+
+                    shoot.currentTime = 0;
+                    shoot.play();
+                }
+
+                // --- DESSIN DU BONHOMME ---
+                function drawMan() {
+                    ctx.strokeStyle = "white";
+                    ctx.lineWidth = 4;
+                    ctx.lineCap = "round";
+
+                    // --- DIMENSIONS DYNAMIQUES ---
+                    const baseY = canvas.height * 0.90;
+                    const headRadius = canvas.height * 0.03 / 3;
+                    const bodyLength = canvas.height * 0.08 / 3;
+                    const armLength = canvas.height * 0.06 / 3;
+                    const legLength = canvas.height * 0.07 / 3;
+                    const gunLength = canvas.height * 0.03 / 3;
+
+                    // --- TÊTE ---
+                    ctx.beginPath();
+                    ctx.arc(posX, baseY - bodyLength - headRadius, headRadius, 0, Math.PI * 2);
+                    ctx.stroke();
+
+                    // --- CORPS ---
+                    const bodyTop = baseY - bodyLength;
+                    const bodyBottom = baseY;
+
+                    ctx.beginPath();
+                    ctx.moveTo(posX, bodyTop);
+                    ctx.lineTo(posX, bodyBottom);
+                    ctx.stroke();
+
+                    // --- ANGLES DE MARCHE ---
+                    const armBase = Math.PI / 2;
+                    const legBase = Math.PI / 2;
+
+                    const armAngleLeft = armBase + Math.sin(walkCycle) * 0.5;
+                    const legAngleLeft = legBase + Math.sin(walkCycle) * 0.5;
+                    const legAngleRight = legBase + Math.sin(walkCycle + Math.PI) * 0.5;
+
+                    const shoulderY = bodyTop + bodyLength * 0.25;
+
+                    // --- BRAS GAUCHE ---
+                    drawLimb(posX, shoulderY, armLength, armAngleLeft);
+
+                    // --- BRAS DROIT + ARME + LASER ---
+                    const dx = mouseX - posX;
+                    const dy = mouseY - shoulderY;
+                    const aimAngle = Math.atan2(dy, dx);
+
+                    // Bras droit
+                    drawLimb(posX, shoulderY, armLength, aimAngle);
+
+                    // Arme
+                    const gunX = posX + Math.cos(aimAngle) * armLength;
+                    const gunY = shoulderY + Math.sin(aimAngle) * armLength;
+
+                    ctx.beginPath();
+                    ctx.moveTo(gunX, gunY);
+                    ctx.lineTo(
+                        gunX + Math.cos(aimAngle) * gunLength,
+                        gunY + Math.sin(aimAngle) * gunLength
+                    );
+                    ctx.stroke();
+
+                    // Laser
+                    ctx.strokeStyle = "red";
+                    ctx.lineWidth = 2;
+
+                    ctx.beginPath();
+                    ctx.moveTo(
+                        gunX + Math.cos(aimAngle) * gunLength,
+                        gunY + Math.sin(aimAngle) * gunLength
+                    );
+                    ctx.lineTo(mouseX, mouseY);
+                    ctx.stroke();
+
+                    ctx.strokeStyle = "white";
+                    ctx.lineWidth = 4;
+
+                    // --- JAMBES ---
+                    drawLimb(posX, bodyBottom, legLength, legAngleLeft);
+                    drawLimb(posX, bodyBottom, legLength, legAngleRight);
+                }
+
+                // --- DESSIN DES PROJECTILES ---
+                function drawBullets() {
+                    ctx.fillStyle = "yellow";
+
+                    bullets.forEach((b) => {
+                        ctx.beginPath();
+                        ctx.arc(b.x, b.y, b.size, 0, Math.PI * 2);
+                        ctx.fill();
+
+                        // Avancer
+                        b.x += Math.cos(b.angle) * b.speed;
+                        b.y += Math.sin(b.angle) * b.speed;
+                    });
+
+                    // Supprimer les projectiles hors écran
+                    bullets = bullets.filter(b =>
+                        b.x >= 0 && b.x <= canvas.width &&
+                        b.y >= 0 && b.y <= canvas.height
+                    );
+                }
+
+                // --- ANIMATION ---
+                function animate() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                    const walking = leftPressed || rightPressed;
+
+                    if (rightPressed) posX += 4;
+                    if (leftPressed) posX -= 4;
+
+                    if (walking) walkCycle += 0.12;
+
+                    drawMan();
+                    drawBullets();
+
+                    requestAnimationFrame(animate);
+                }
+                animate();
+
+                // --- CONTROLES ---
+                document.addEventListener("keydown", (e) => {
+                    if (e.key === "ArrowRight") rightPressed = true;
+                    if (e.key === "ArrowLeft") leftPressed = true;
+                });
+
+                document.addEventListener("keyup", (e) => {
+                    if (e.key === "ArrowRight") rightPressed = false;
+                    if (e.key === "ArrowLeft") leftPressed = false;
+                });
+
+                bullets.forEach((bullet, index) => {
+                    if (bullet.x > enemy.x &&
+                        bullet.x < enemy.x + enemy.width &&
+                        bullet.y > enemy.y &&
+                        bullet.y < enemy.y + enemy.height) {
+                        bullets.splice(index, 1); // remove bullet
+                    }
+                });
+
+            }
+        });
+
+    </script>
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC469PC35"></script>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVP9X48X" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+</body>
+
+</html>
