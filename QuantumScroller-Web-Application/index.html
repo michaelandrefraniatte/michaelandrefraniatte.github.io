@@ -40,7 +40,7 @@
             overflow: hidden;
         }
 
-        #animatedBackground {
+        #Background {
             width: 100%;
             height: 100%;
             position: absolute;
@@ -55,16 +55,95 @@
         #man {
             display: block;
             position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        #ground {
+            width: 100%;
+            height: 7.77%;
+            position: absolute;
+            top: 92.33%;
             left: 0;
-            top: 0;
+            background-color: gray;
+            background-repeat: repeat;
+            background-position: 0 0;
+            background-size: auto 100%;
+        }
+
+        #SmallRock1 {
+            position: absolute;
+            display: block;
+            left: 25%;
+            top: -20%;
+            width: 3%;
+            height: 5%;
+            rotate: 30deg;
+        }
+
+        #SmallRock2 {
+            position: absolute;
+            display: block;
+            left: 45%;
+            top: -20%;
+            width: 6%;
+            height: 10%;
+            rotate: 60deg;
+        }
+
+        #SmallRock3 {
+            position: absolute;
+            display: block;
+            left: 65%;
+            top: -20%;
+            width: 9%;
+            height: 15%;
+            rotate: 90deg;
+        }
+
+        #BigRock1 {
+            position: absolute;
+            display: block;
+            left: 25%;
+            top: -40%;
+            width: 3%;
+            height: 5%;
+            rotate: 30deg;
+        }
+
+        #BigRock2 {
+            position: absolute;
+            display: block;
+            left: 45%;
+            top: -40%;
+            width: 6%;
+            height: 10%;
+            rotate: 60deg;
+        }
+
+        #BigRock3 {
+            position: absolute;
+            display: block;
+            left: 65%;
+            top: -40%;
+            width: 9%;
+            height: 15%;
+            rotate: 90deg;
         }
     </style>
 </head>
 
 <body>
 
-    <div id="animatedBackground"></div>
+    <div id="Background"></div>
     <canvas id="man"></canvas>
+    <div id="ground"></div>
+    <img id="SmallRock1" src="contents/SmallRockLvl1.png">
+    <img id="SmallRock2" src="contents/SmallRockLvl1.png">
+    <img id="SmallRock3" src="contents/SmallRockLvl1.png">
+    <img id="BigRock1" src="contents/BigRockLvl1.png">
+    <img id="BigRock2" src="contents/BigRockLvl1.png">
+    <img id="BigRock3" src="contents/BigRockLvl1.png">
 
     <copyrights
         style="display: float; float: right; position: fixed; right: 4px; bottom: 0px; color: white; text-align: center; font-family: sans-serif; font-size: 2.2vh; line-height: 2.2vh;">
@@ -72,6 +151,44 @@
     </copyrights>
 
     <script>
+
+        var man = document.getElementById("man");
+        var SmallRock1 = document.getElementById("SmallRock1");
+        var SmallRock2 = document.getElementById("SmallRock2");
+        var SmallRock3 = document.getElementById("SmallRock3");
+        var BigRock1 = document.getElementById("BigRock1");
+        var BigRock2 = document.getElementById("BigRock2");
+        var BigRock3 = document.getElementById("BigRock3");
+        var SmallRock1PosX = 0;
+        var SmallRock1PosY = 0;
+        var SmallRock2PosX = 0;
+        var SmallRock2PosY = 0;
+        var SmallRock3PosX = 0;
+        var SmallRock3PosY = 0;
+        var BigRock1PosX = 0;
+        var BigRock1PosY = 0;
+        var BigRock2PosX = 0;
+        var BigRock2PosY = 0;
+        var BigRock3PosX = 0;
+        var BigRock3PosY = 0;
+        var SmallRock1SpeedX = 0;
+        var SmallRock1SpeedY = 0;
+        var SmallRock2SpeedX = 0;
+        var SmallRock2SpeedY = 0;
+        var SmallRock3SpeedX = 0;
+        var SmallRock3SpeedY = 0;
+        var BigRock1SpeedX = 0;
+        var BigRock1SpeedY = 0;
+        var BigRock2SpeedX = 0;
+        var BigRock2SpeedY = 0;
+        var BigRock3SpeedX = 0;
+        var BigRock3SpeedY = 0;
+        var SmallRock1Rotate = 0;
+        var SmallRock2Rotate = 0;
+        var SmallRock3Rotate = 0;
+        var BigRock1Rotate = 0;
+        var BigRock2Rotate = 0;
+        var BigRock3Rotate = 0;
 
         var gamestart = false;
         document.body.addEventListener("click", () => {
@@ -82,6 +199,18 @@
 
                 const shoot = new Audio("contents/shoot.mp3");
                 shoot.volume = 0.2;
+                const SmallRock1ExplosionSound = new Audio("contents/Explosion5.mp3");
+                SmallRock1ExplosionSound.volume = 0.6;
+                const SmallRock2ExplosionSound = new Audio("contents/Explosion5.mp3");
+                SmallRock2ExplosionSound.volume = 0.8;
+                const SmallRock3ExplosionSound = new Audio("contents/Explosion5.mp3");
+                SmallRock3ExplosionSound.volume = 1.0;
+                const BigRock1ExplosionSound = new Audio("contents/Explosion5.mp3");
+                BigRock1ExplosionSound.volume = 0.6;
+                const BigRock2ExplosionSound = new Audio("contents/Explosion5.mp3");
+                BigRock2ExplosionSound.volume = 0.8;
+                const BigRock3ExplosionSound = new Audio("contents/Explosion5.mp3");
+                BigRock3ExplosionSound.volume = 1.0;
 
                 const canvas = document.getElementById("man");
                 const ctx = canvas.getContext("2d");
@@ -112,14 +241,14 @@
                 let bullets = [];
 
                 // --- MOUSE TRACKING ---
-                canvas.addEventListener("mousemove", (e) => {
+                document.addEventListener("mousemove", (e) => {
                     const rect = canvas.getBoundingClientRect();
                     mouseX = e.clientX - rect.left;
                     mouseY = e.clientY - rect.top;
                 });
 
                 // --- SHOOT ---
-                canvas.addEventListener("mousedown", () => {
+                document.addEventListener("mousedown", () => {
                     shootBullet();
                 });
 
@@ -161,8 +290,10 @@
                         x: bulletX,
                         y: bulletY,
                         angle: aimAngle,
-                        speed: 12,
-                        size: canvas.height * 0.01 / 3
+                        speed: 46,
+                        size: canvas.height * 0.01 / 3,
+                        lifetime: 0,        
+                        maxLifetime: 60     
                     });
 
                     shoot.currentTime = 0;
@@ -250,44 +381,234 @@
                     drawLimb(posX, bodyBottom, legLength, legAngleRight);
                 }
 
-                // --- DESSIN DES PROJECTILES ---
                 function drawBullets() {
                     ctx.fillStyle = "yellow";
 
                     bullets.forEach((b) => {
+                        // Draw bullet
                         ctx.beginPath();
                         ctx.arc(b.x, b.y, b.size, 0, Math.PI * 2);
                         ctx.fill();
 
-                        // Avancer
+                        // Move bullet
                         b.x += Math.cos(b.angle) * b.speed;
                         b.y += Math.sin(b.angle) * b.speed;
+
+                        // Increase lifetime
+                        b.lifetime++;
                     });
 
-                    // Supprimer les projectiles hors écran
+                    // Delete bullets that are off-screen OR too old
                     bullets = bullets.filter(b =>
-                        b.x >= 0 && b.x <= canvas.width &&
-                        b.y >= 0 && b.y <= canvas.height
+                        b.x >= 0 &&
+                        b.x <= canvas.width &&
+                        b.y >= 0 &&
+                        b.y <= canvas.height &&
+                        b.lifetime < b.maxLifetime
                     );
                 }
 
-                // --- ANIMATION ---
                 function animate() {
+
+                    SmallRock1PosX += SmallRock1SpeedX;
+                    SmallRock1PosY += SmallRock1SpeedY;
+                    SmallRock1.style.left = SmallRock1PosX + "%";
+                    SmallRock1.style.top = SmallRock1PosY + "%";
+                    SmallRock2PosX += SmallRock2SpeedX;
+                    SmallRock2PosY += SmallRock2SpeedY;
+                    SmallRock2.style.left = SmallRock2PosX + "%";
+                    SmallRock2.style.top = SmallRock2PosY + "%";
+                    SmallRock3PosX += SmallRock3SpeedX;
+                    SmallRock3PosY += SmallRock3SpeedY;
+                    SmallRock3.style.left = SmallRock3PosX + "%";
+                    SmallRock3.style.top = SmallRock3PosY + "%";
+                    BigRock1PosX += BigRock1SpeedX;
+                    BigRock1PosY += BigRock1SpeedY;
+                    BigRock1.style.left = BigRock1PosX + "%";
+                    BigRock1.style.top = BigRock1PosY + "%";
+                    BigRock2PosX += BigRock2SpeedX;
+                    BigRock2PosY += BigRock2SpeedY;
+                    BigRock2.style.left = BigRock2PosX + "%";
+                    BigRock2.style.top = BigRock2PosY + "%";
+                    BigRock3PosX += BigRock3SpeedX;
+                    BigRock3PosY += BigRock3SpeedY;
+                    BigRock3.style.left = BigRock3PosX + "%";
+                    BigRock3.style.top = BigRock3PosY + "%";
+                    if (SmallRock1PosX >= 120 | SmallRock1PosX <= -20 | SmallRock1PosY >= 120) {
+                        smallRock1Init();
+                    }
+                    if (SmallRock2PosX >= 120 | SmallRock2PosX <= -20 | SmallRock2PosY >= 120) {
+                        smallRock2Init();
+                    }
+                    if (SmallRock3PosX >= 120 | SmallRock3PosX <= -20 | SmallRock3PosY >= 120) {
+                        smallRock3Init();
+                    }
+                    if (BigRock1PosX >= 120 | BigRock1PosX <= -20 | BigRock1PosY >= 120) {
+                        bigRock1Init();
+                    }
+                    if (BigRock2PosX >= 120 | BigRock2PosX <= -20 | BigRock2PosY >= 120) {
+                        bigRock2Init();
+                    }
+                    if (BigRock3PosX >= 120 | BigRock3PosX <= -20 | BigRock3PosY >= 120) {
+                        bigRock3Init();
+                    }
+
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                    const walking = leftPressed || rightPressed;
+                    let walking = false;
 
-                    if (rightPressed) posX += 4;
-                    if (leftPressed) posX -= 4;
+                    // Déplacement vers la droite
+                    if (rightPressed) {
+                        posX += 2;
 
-                    if (walking) walkCycle += 0.12;
+                        // Limite droite
+                        if (posX > canvas.width - canvas.height * 0.05) {
+                            posX = canvas.width - canvas.height * 0.05;
+                        } else {
+                            walking = true; // il marche seulement si il avance vraiment
+                        }
+                    }
+
+                    // Déplacement vers la gauche
+                    if (leftPressed) {
+                        posX -= 2;
+
+                        // Limite gauche
+                        if (posX < canvas.height * 0.05) {
+                            posX = canvas.height * 0.05;
+                        } else {
+                            walking = true; // il marche seulement si il avance vraiment
+                        }
+                    }
+
+                    // Animation des jambes uniquement si walking = true
+                    if (walking) {
+                        walkCycle += 0.12;
+                    }
 
                     drawMan();
                     drawBullets();
 
+                    bullets.forEach((bullet, index) => {
+    const bulletbody = {
+        x: bullet.x - bullet.size,
+        y: bullet.y - bullet.size,
+        width: bullet.size * 2,
+        height: bullet.size * 2
+    };
+                        if (intersects(SmallRock1.getBoundingClientRect(), bulletbody)) {
+                            bullets.splice(index, 1);
+                            playExplosion(SmallRock1);
+                            SmallRock1ExplosionSound.currentTime = 0;
+                            SmallRock1ExplosionSound.play();
+                            smallRock1Init();
+                            return;
+                        }
+                        if (intersects(SmallRock2.getBoundingClientRect(), bulletbody)) {
+                            bullets.splice(index, 1);
+                            playExplosion(SmallRock2);
+                            SmallRock2ExplosionSound.currentTime = 0;
+                            SmallRock2ExplosionSound.play();
+                            smallRock2Init();
+                            return;
+                        }
+                        if (intersects(SmallRock3.getBoundingClientRect(), bulletbody)) {
+                            bullets.splice(index, 1);
+                            playExplosion(SmallRock3);
+                            SmallRock3ExplosionSound.currentTime = 0;
+                            SmallRock3ExplosionSound.play();
+                            smallRock3Init();
+                            return;
+                        }
+                        if (intersects(BigRock1.getBoundingClientRect(), bulletbody)) {
+                            bullets.splice(index, 1);
+                            playExplosion(BigRock1);
+                            BigRock1ExplosionSound.currentTime = 0;
+                            BigRock1ExplosionSound.play();
+                            bigRock1Init();
+                            return;
+                        }
+                        if (intersects(BigRock2.getBoundingClientRect(), bulletbody)) {
+                            bullets.splice(index, 1);
+                            playExplosion(BigRock2);
+                            BigRock2ExplosionSound.currentTime = 0;
+                            BigRock2ExplosionSound.play();
+                            bigRock2Init();
+                            return;
+                        }
+                        if (intersects(BigRock3.getBoundingClientRect(), bulletbody)) {
+                            bullets.splice(index, 1);
+                            playExplosion(BigRock3);
+                            BigRock3ExplosionSound.currentTime = 0;
+                            BigRock3ExplosionSound.play();
+                            bigRock3Init();
+                            return;
+                        }
+                    });
+
+                    var manbody = getManBoundingBox();
+
+                    if (intersects(SmallRock1.getBoundingClientRect(), manbody)) {
+                        playExplosion(SmallRock1);
+                        SmallRock1ExplosionSound.currentTime = 0;
+                        SmallRock1ExplosionSound.play();
+                        smallRock1Init();
+                    }
+                    if (intersects(SmallRock2.getBoundingClientRect(), manbody)) {
+                        playExplosion(SmallRock2);
+                        SmallRock2ExplosionSound.currentTime = 0;
+                        SmallRock2ExplosionSound.play();
+                        smallRock2Init();
+                    }
+                    if (intersects(SmallRock3.getBoundingClientRect(), manbody)) {
+                        playExplosion(SmallRock3);
+                        SmallRock3ExplosionSound.currentTime = 0;
+                        SmallRock3ExplosionSound.play();
+                        smallRock3Init();
+                    }
+                    if (intersects(BigRock1.getBoundingClientRect(), manbody)) {
+                        playExplosion(BigRock1);
+                        BigRock1ExplosionSound.currentTime = 0;
+                        BigRock1ExplosionSound.play();
+                        bigRock1Init();
+                    }
+                    if (intersects(BigRock2.getBoundingClientRect(), manbody)) {
+                        playExplosion(BigRock2);
+                        BigRock2ExplosionSound.currentTime = 0;
+                        BigRock2ExplosionSound.play();
+                        bigRock2Init();
+                    }
+                    if (intersects(BigRock3.getBoundingClientRect(), manbody)) {
+                        playExplosion(BigRock3);
+                        BigRock3ExplosionSound.currentTime = 0;
+                        BigRock3ExplosionSound.play();
+                        bigRock3Init();
+                    }
+
                     requestAnimationFrame(animate);
                 }
+
                 animate();
+
+                function getManBoundingBox() {
+                    const baseY = canvas.height * 0.90;
+                    const headRadius = canvas.height * 0.03 / 3;
+                    const bodyLength = canvas.height * 0.08 / 3;
+                    const armLength = canvas.height * 0.06 / 3;
+                    const legLength = canvas.height * 0.07 / 3;
+
+                    const topY = baseY - bodyLength - headRadius * 2;
+                    const bottomY = baseY;
+                    const leftX = posX - armLength;
+                    const rightX = posX + armLength;
+
+                    return {
+                        x: leftX,
+                        y: topY,
+                        width: rightX - leftX,
+                        height: bottomY - topY
+                    };
+                }
 
                 // --- CONTROLES ---
                 document.addEventListener("keydown", (e) => {
@@ -300,17 +621,85 @@
                     if (e.key === "ArrowLeft") leftPressed = false;
                 });
 
-                bullets.forEach((bullet, index) => {
-                    if (bullet.x > enemy.x &&
-                        bullet.x < enemy.x + enemy.width &&
-                        bullet.y > enemy.y &&
-                        bullet.y < enemy.y + enemy.height) {
-                        bullets.splice(index, 1); // remove bullet
-                    }
-                });
-
             }
         });
+
+        smallRock1Init();
+        function smallRock1Init() {
+            SmallRock1PosX = 10 + parseInt(80 * Math.random());
+            SmallRock1PosY = -10 - parseInt(90 * Math.random());
+            SmallRock1SpeedX = (Math.random() * 2 - 1) / 3;
+            SmallRock1SpeedY = (0.2 + Math.random() * 2) / 3;
+            SmallRock1Rotate = parseInt(360 * Math.random());
+            SmallRock1.style.rotate = SmallRock1Rotate + "deg";
+        }
+        smallRock2Init();
+        function smallRock2Init() {
+            SmallRock2PosX = 10 + parseInt(80 * Math.random());
+            SmallRock2PosY = -10 - parseInt(90 * Math.random());
+            SmallRock2SpeedX = (Math.random() * 2 - 1) / 3;
+            SmallRock2SpeedY = (0.2 + Math.random() * 2) / 3;
+            SmallRock2Rotate = parseInt(360 * Math.random());
+            SmallRock2.style.rotate = SmallRock1Rotate + "deg";
+        }
+        smallRock3Init();
+        function smallRock3Init() {
+            SmallRock3PosX = 10 + parseInt(80 * Math.random());
+            SmallRock3PosY = -10 - parseInt(90 * Math.random());
+            SmallRock3SpeedX = (Math.random() * 2 - 1) / 3;
+            SmallRock3SpeedY = (0.2 + Math.random() * 2) / 3;
+            SmallRock3Rotate = parseInt(360 * Math.random());
+            SmallRock3.style.rotate = SmallRock1Rotate + "deg";
+        }
+        bigRock1Init();
+        function bigRock1Init() {
+            BigRock1PosX = 10 + parseInt(80 * Math.random());
+            BigRock1PosY = -10 - parseInt(90 * Math.random());
+            BigRock1SpeedX = (Math.random() * 2 - 1) / 3;
+            BigRock1SpeedY = (0.2 + Math.random() * 2) / 3;
+            BigRock1Rotate = parseInt(360 * Math.random());
+            BigRock1.style.rotate = SmallRock1Rotate + "deg";
+        }
+        bigRock2Init();
+        function bigRock2Init() {
+            BigRock2PosX = 10 + parseInt(80 * Math.random());
+            BigRock2PosY = -10 - parseInt(90 * Math.random());
+            BigRock2SpeedX = (Math.random() * 2 - 1) / 3;
+            BigRock2SpeedY = (0.2 + Math.random() * 2) / 3;
+            BigRock2Rotate = parseInt(360 * Math.random());
+            BigRock2.style.rotate = SmallRock1Rotate + "deg";
+        }
+        bigRock3Init();
+        function bigRock3Init() {
+            BigRock3PosX = 10 + parseInt(80 * Math.random());
+            BigRock3PosY = -10 - parseInt(90 * Math.random());
+            BigRock3SpeedX = (Math.random() * 2 - 1) / 3;
+            BigRock3SpeedY = (0.2 + Math.random() * 2) / 3;
+            BigRock3Rotate = parseInt(360 * Math.random());
+            BigRock3.style.rotate = SmallRock1Rotate + "deg";
+        }
+
+        function intersects(r1, r2) {
+            var insetx = window.innerWidth * 0.01;
+            var insety = window.innerHeight * 0.01;
+            return !(r2.x > r1.x + r1.width - insetx | r2.x + r2.width < r1.x + insetx | r2.y > r1.y + r1.height - insety | r2.y + r2.height < r1.y + insety);
+        }
+
+        function playExplosion(rock) {
+            const img = document.createElement("img");
+            img.src = "contents/ExplosionLvl1.gif";
+            img.style.position = "absolute";
+            img.style.display = "block";
+            const s = getComputedStyle(rock);
+            img.style.width = parseInt(s.width) + "px";
+            img.style.height = parseInt(s.height) + "px";
+            img.style.left = parseInt(s.left) + "px";
+            img.style.top = parseInt(s.top) + "px";
+            document.body.appendChild(img);
+            setTimeout(() => {
+                img.remove();
+            }, 1000);
+        }
 
     </script>
 
