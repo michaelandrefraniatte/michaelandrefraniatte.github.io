@@ -354,44 +354,6 @@ function expireAccept() {
 	localStorage.setItem("copyrights", "expired accept");
 }
 
-// Going back and reload with event handler instead of the listener addEventListener("focus", (event) => {});
-onfocus = (event) => {
-	for (var i = 0; i < images.length; i++) {
-		images[i].title = "Click to expand";
-	}
-	var target = window.location.href;
-	if (!target.endsWith("/#copyrights")) {
-		changeVisible();
-	}
-	checkAcceptCopyrights();
-	var backloader = document.getElementsByClassName("backloader")[0];
-	if (backloader) {
-		backloader.style.display = "block";
-		backloader.style.zIndex = "0";
-	}
-};
-
-function changeVisible() {
-	$('#main').removeClass('fade');
-	$('#main').addClass('fadeIn');
-	modalaccept.style.display = "none";
-	document.getElementsByTagName('html')[0].style.overflowY = 'visible';
-	document.body.style.overflow = 'visible';
-}
-
-function changeNotVisible() {
-	$('#main').removeClass('fadeIn');
-	$('#main').addClass('fade');
-	modalaccept.style.display = "block";
-	document.getElementsByTagName('html')[0].style.overflowY = "hidden";
-	document.body.style.overflow = 'hidden';
-	var getitem = localStorage.getItem("copyrights");
-	if (getitem == "no accept" | getitem == "expired accept" | localStorage.getItem("rgpd") == "no consent") {
-		var chkBox = document.getElementById('acceptbox');
-		chkBox.checked = true;
-	}
-}
-
 // Pagination
 var numberofpages = document.querySelectorAll(".pagination").length;
 var pagenumber = 1;
@@ -436,6 +398,56 @@ function sliceToPage(number) {
 		pagenumber = numberofpages;
 	}
 	goToPage(pagenumber);
+}
+
+// Going back and reload with event handler instead of the listener addEventListener("focus", (event) => {});
+onfocus = (event) => {
+	for (var i = 0; i < images.length; i++) {
+		images[i].title = "Click to expand";
+	}
+	var target = window.location.href;
+	if (!target.endsWith("/#copyrights")) {
+		changeVisible();
+	}
+	checkAcceptCopyrights();
+	var backloader = document.getElementsByClassName("backloader")[0];
+	if (backloader) {
+		backloader.style.display = "block";
+		backloader.style.zIndex = "0";
+	}
+};
+
+function changeVisible() {
+	$('#main').removeClass('fade');
+	$('#main').addClass('fadeIn');
+	modalaccept.style.display = "none";
+	document.getElementsByTagName('html')[0].style.overflowY = 'visible';
+	document.body.style.overflow = 'visible';
+	var pages = document.querySelectorAll(".page");
+	pages.forEach((el) => {
+		if (el.dataset.id == pagenumber) {
+			el.style.display = "";
+		}
+	});
+}
+
+function changeNotVisible() {
+	$('#main').removeClass('fadeIn');
+	$('#main').addClass('fade');
+	modalaccept.style.display = "block";
+	document.getElementsByTagName('html')[0].style.overflowY = "hidden";
+	document.body.style.overflow = 'hidden';
+	var getitem = localStorage.getItem("copyrights");
+	if (getitem == "no accept" | getitem == "expired accept" | localStorage.getItem("rgpd") == "no consent") {
+		var chkBox = document.getElementById('acceptbox');
+		chkBox.checked = true;
+	}
+	var pages = document.querySelectorAll(".page");
+	pages.forEach((el) => {
+		setTimeout(() => {
+			el.style.display = "none";
+		}, "1000");
+	});
 }
 
 // Slideshow for Youtube videos
