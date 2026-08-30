@@ -292,8 +292,8 @@
                         angle: aimAngle,
                         speed: 46,
                         size: canvas.height * 0.01 / 3,
-                        lifetime: 0,        
-                        maxLifetime: 60     
+                        lifetime: 0,
+                        maxLifetime: 60
                     });
 
                     shoot.currentTime = 0;
@@ -490,12 +490,12 @@
                     drawBullets();
 
                     bullets.forEach((bullet, index) => {
-    const bulletbody = {
-        x: bullet.x - bullet.size,
-        y: bullet.y - bullet.size,
-        width: bullet.size * 2,
-        height: bullet.size * 2
-    };
+                        const bulletbody = {
+                            x: bullet.x - bullet.size,
+                            y: bullet.y - bullet.size,
+                            width: bullet.size * 2,
+                            height: bullet.size * 2
+                        };
                         if (intersects(SmallRock1.getBoundingClientRect(), bulletbody)) {
                             bullets.splice(index, 1);
                             playExplosion(SmallRock1);
