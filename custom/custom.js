@@ -461,6 +461,12 @@ function changeNotVisible() {
 		var chkBox = document.getElementById('acceptbox');
 		chkBox.checked = true;
 	}
+	var pages = document.querySelectorAll(".page");
+	if (pages) {
+		pages.forEach((el) => {
+			el.style.display = "none";
+		});
+	}
 }
 
 // Slideshow for Youtube videos
