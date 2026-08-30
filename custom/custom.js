@@ -102,11 +102,22 @@ function rgpdNoConsent() {
 				changeVisible();
 				openBanner();
 				openBannerContact();
-				setTimeout(expireAccept, 2000);
 			}
 		};
 	}
 	else {
+		$('#main').removeClass('fadeIn');
+		$('#main').addClass('fade');
+		for (var i = 0; i < images.length; i++) {
+			images[i].title = "";
+		}
+		document.getElementsByTagName('html')[0].style.overflowY = "hidden";
+		document.body.style.overflow = 'hidden';
+		var backloader = document.getElementsByClassName("backloader")[0];
+		if (backloader) {
+			backloader.style.display = "block";
+			backloader.style.zIndex = "2147483638";
+		}
 		window.location.href = "../#copyrights";
 	}
 }
