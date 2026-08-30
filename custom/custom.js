@@ -95,6 +95,15 @@ function rgpdNoConsent() {
 	var ismain = target.endsWith('michaelandrefraniatte.github.io') | target.endsWith('michaelandrefraniatte.github.io/') | target.endsWith('michaelandrefraniatte.github.io/index.html') | target.endsWith('michaelandrefraniatte.github.io/#copyrights') | target.endsWith('michaelandrefraniatte.github.io/#copyrights/') | target.endsWith('michaelandrefraniatte.github.io/index.html#copyrights') | target.endsWith('michaelandrefraniatte.github.io/index.html#copyrights/');
 	if (ismain | target.endsWith('index.html#copyrights')) {
 		changeNotVisible();
+		document.getElementById("acceptbutton").onclick = async () => {
+			var chkBox = document.getElementById('acceptbox');
+			if (chkBox.checked) {
+				localStorage.setItem("copyrights", "accept");
+				changeVisible();
+				openBanner();
+				openBannerContact();
+			}
+		};
 	}
 	else {
 		$('#main').removeClass('fadeIn');
@@ -111,20 +120,6 @@ function rgpdNoConsent() {
 		}
 		window.location.href = "../#copyrights";
 	}
-}
-
-var acceptbutton = document.getElementById("acceptbutton")
-
-if (acceptbutton) {
-	acceptbutton.onclick = async () => {
-		var chkBox = document.getElementById('acceptbox');
-		if (chkBox.checked) {
-			localStorage.setItem("copyrights", "accept");
-			changeVisible();
-			openBanner();
-			openBannerContact();
-		}
-	};
 }
 
 function closeBanner() {
@@ -349,13 +344,31 @@ function clickLogo() {
 	}, 1000);
 }
 
+var target = window.location.href;
+if (!target.endsWith("/#copyrights")) {
+	changeVisible();
+}
+
 checkAcceptCopyrights();
 
 function checkAcceptCopyrights() {
 	var target = window.location.href;
 	if (localStorage.getItem("rgpd") != "consent" | target.endsWith("/#copyrights")) {
 		changeNotVisible();
+		document.getElementById("acceptbutton").onclick = async () => {
+			var chkBox = document.getElementById('acceptbox');
+			if (chkBox.checked) {
+				localStorage.setItem("copyrights", "accept");
+				changeVisible();
+				setTimeout(expireAccept, 2000);
+			}
+		};
 	}
+}
+
+// Timeout after navigation
+function expireAccept() {
+	localStorage.setItem("copyrights", "expired accept");
 }
 
 // Pagination
@@ -379,7 +392,7 @@ function goToPage(number) {
 			el.classList.add("fadeout");
 			el.classList.remove("fadein");
 			setTimeout(() => {
-				el.style.display = "none";
+					el.style.display = "none";
 			}, "1000");
 		}
 		else {
@@ -387,7 +400,7 @@ function goToPage(number) {
 			el.classList.remove("fadein");
 			el.classList.add("fadein");
 			setTimeout(() => {
-				el.style.display = "";
+					el.style.display = "";
 			}, "1000");
 		}
 	});
@@ -431,9 +444,6 @@ function changeVisible() {
 	pages.forEach((el) => {
 		if (el.dataset.id == pagenumber) {
 			el.style.display = "";
-		}
-		else {
-			el.style.display = "none";
 		}
 	});
 }
