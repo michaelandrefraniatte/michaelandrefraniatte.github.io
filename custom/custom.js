@@ -441,11 +441,13 @@ function changeVisible() {
 	document.getElementsByTagName('html')[0].style.overflowY = 'visible';
 	document.body.style.overflow = 'visible';
 	var pages = document.querySelectorAll(".page");
-	pages.forEach((el) => {
-		if (el.dataset.id == pagenumber) {
-			el.style.display = "";
-		}
-	});
+	if (pages) {
+		pages.forEach((el) => {
+			if (el.dataset.id == pagenumber) {
+				el.style.display = "";
+			}
+		});
+	}
 }
 
 function changeNotVisible() {
@@ -459,12 +461,6 @@ function changeNotVisible() {
 		var chkBox = document.getElementById('acceptbox');
 		chkBox.checked = true;
 	}
-	var pages = document.querySelectorAll(".page");
-	pages.forEach((el) => {
-		setTimeout(() => {
-			el.style.display = "none";
-		}, "1000");
-	});
 }
 
 // Slideshow for Youtube videos
