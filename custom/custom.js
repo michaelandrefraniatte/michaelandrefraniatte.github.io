@@ -92,7 +92,7 @@ function rgpdNoConsent() {
 		localStorage.setItem("rgpd", "no consent");
 	}
 	var target = window.location.href;
-	var ismain = target.endsWith('michaelandrefraniatte.github.io') | target.endsWith('michaelandrefraniatte.github.io/') | target.endsWith('michaelandrefraniatte.github.io/index.html') | target.endsWith('michaelandrefraniatte.github.io/#copyrights') | target.endsWith('michaelandrefraniatte.github.io/#copyrights/');
+	var ismain = target.endsWith('michaelandrefraniatte.github.io') | target.endsWith('michaelandrefraniatte.github.io/') | target.endsWith('michaelandrefraniatte.github.io/index.html') | target.endsWith('michaelandrefraniatte.github.io/#copyrights') | target.endsWith('michaelandrefraniatte.github.io/#copyrights/') | target.endsWith('michaelandrefraniatte.github.io/index.html#copyrights') | target.endsWith('michaelandrefraniatte.github.io/index.html#copyrights/');
 	if (ismain | target.endsWith('index.html#copyrights')) {
 		changeNotVisible();
 		document.getElementById("acceptbutton").onclick = async () => {
