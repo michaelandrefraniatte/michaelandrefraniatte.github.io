@@ -38,18 +38,19 @@ checkingBanner();
 function checkingBanner() {
 	var getitem = localStorage.getItem("rgpd");
 	if (getitem == "" | getitem == null | getitem == "undefined" | getitem == "no consent") {
+		changeNotVisible();
 		openBanner();
 		openBannerContact();
 	}
 	else if (getitem == "consent") {
 		closeBanner();
-		var pages = document.querySelectorAll(".page");
-		pages.forEach((el) => {
-			if (el.dataset.id == 1) {
-				el.style.display = "";
-			}
-		});
+		changeVisible();
 	}
+}
+
+// Timeout after navigation
+function expireAccept() {
+	localStorage.setItem("copyrights", "expired accept");
 }
 
 const infobulle = document.getElementsByClassName("infobulle")[0];
@@ -111,20 +112,6 @@ function rgpdNoConsent() {
 		}
 		window.location.href = "../#copyrights";
 	}
-}
-
-var acceptbutton = document.getElementById("acceptbutton")
-
-if (acceptbutton) {
-	acceptbutton.onclick = async () => {
-		var chkBox = document.getElementById('acceptbox');
-		if (chkBox.checked) {
-			localStorage.setItem("copyrights", "accept");
-			changeVisible();
-			openBanner();
-			openBannerContact();
-		}
-	};
 }
 
 function closeBanner() {
@@ -356,6 +343,16 @@ function checkAcceptCopyrights() {
 	if (localStorage.getItem("rgpd") != "consent" | target.endsWith("/#copyrights")) {
 		changeNotVisible();
 	}
+	else {
+		for (var i = 0; i < images.length; i++) {
+			images[i].title = "Click to expand";
+		}
+		var backloader = document.getElementsByClassName("backloader")[0];
+		if (backloader) {
+			backloader.style.display = "block";
+			backloader.style.zIndex = "0";
+		}
+	}
 }
 
 // Pagination
@@ -406,19 +403,7 @@ function sliceToPage(number) {
 
 // Going back and reload with event handler instead of the listener addEventListener("focus", (event) => {});
 onfocus = (event) => {
-	for (var i = 0; i < images.length; i++) {
-		images[i].title = "Click to expand";
-	}
-	var target = window.location.href;
-	if (!target.endsWith("/#copyrights")) {
-		changeVisible();
-	}
 	checkAcceptCopyrights();
-	var backloader = document.getElementsByClassName("backloader")[0];
-	if (backloader) {
-		backloader.style.display = "block";
-		backloader.style.zIndex = "0";
-	}
 };
 
 function changeVisible() {
@@ -455,6 +440,20 @@ function changeNotVisible() {
 			el.style.display = "none";
 		}, "1000");
 	});
+}
+
+var acceptbutton = document.getElementById("acceptbutton")
+if (acceptbutton) {
+	acceptbutton.onclick = async () => {
+		var chkBox = document.getElementById('acceptbox');
+		if (chkBox.checked) {
+			localStorage.setItem("copyrights", "accept");
+			changeVisible();
+			openBanner();
+			openBannerContact();
+			setTimeout(expireAccept, 2000);
+		}
+	};
 }
 
 // Slideshow for Youtube videos
