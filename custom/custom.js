@@ -43,6 +43,12 @@ function checkingBanner() {
 	}
 	else if (getitem == "consent") {
 		closeBanner();
+		var pages = document.querySelectorAll(".page");
+		pages.forEach((el) => {
+			if (el.dataset.id == 1) {
+				el.style.display = "";
+			}
+		});
 	}
 }
 
