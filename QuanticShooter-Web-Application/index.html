@@ -203,6 +203,8 @@
 
                 const enemyBullets = [];
 
+                let blindness = 3;
+
                 document.addEventListener("keydown", e => {
                     if (keys.hasOwnProperty(e.key)) keys[e.key] = true;
                 });
@@ -421,6 +423,11 @@
 
                         shoot.currentTime = 0;
                         shoot.play();
+
+                        blindness = 0.5;
+                        setTimeout(() => {
+                            blindness = 3;
+                        }, 4500);
                     }
                 });
 
@@ -670,37 +677,6 @@
                     }
                 }
 
-                function enemyCanSeePlayer() {
-                    const dx = player.x - enemy.x;
-                    const dy = player.y - enemy.y;
-
-                    const angleToPlayer = Math.atan2(dy, dx);
-                    const diff = Math.abs(angleToPlayer - enemy.angle);
-
-                    return diff < Math.PI / 3; // 60°
-                }
-
-                function lineBlockedByWall(x1, y1, x2, y2) {
-                    const canvasRect = canvas.getBoundingClientRect();
-
-                    for (const w of walls) {
-                        const r = w.getBoundingClientRect();
-
-                        const ex1 = canvasRect.left + x1;
-                        const ey1 = canvasRect.top + y1;
-                        const ex2 = canvasRect.left + x2;
-                        const ey2 = canvasRect.top + y2;
-
-                        if (
-                            ex1 < r.right && ex2 > r.left &&
-                            ey1 < r.bottom && ey2 > r.top
-                        ) {
-                            return true;
-                        }
-                    }
-                    return false;
-                }
-
                 function visionBlockedByWall(x1, y1, x2, y2) {
                     const canvasRect = canvas.getBoundingClientRect();
 
@@ -735,24 +711,12 @@
                     const diff = Math.abs(angleToPlayer - enemy.angle);
 
                     // hors du cône de vision
-                    if (diff > Math.PI / 3) return false;
+                    if (diff > Math.PI / blindness) return false;
 
                     // mur entre les deux ?
                     if (visionBlockedByWall(enemy.x, enemy.y, player.x, player.y)) return false;
 
                     return true;
-                }
-
-                function enemyTurn() {
-                    const target = enemyPath[enemy.pathIndex];
-
-                    // rotation nette
-                    enemy.angle = target.angle;
-
-                    // prochain point
-                    enemy.pathIndex = (enemy.pathIndex + 1) % enemyPath.length;
-
-                    enemy.state = "patrol";
                 }
 
                 function resetPositions() {
