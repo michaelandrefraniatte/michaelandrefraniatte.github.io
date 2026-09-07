@@ -43,12 +43,86 @@
         canvas {
             display: block;
         }
+
+        .vwalls {
+            background-color: gray;
+            width: 10px;
+        }
+
+        #vwall1 {
+            display: block;
+            position: absolute;
+            left: 30%;
+            top: 10%;
+            height: 450px;
+        }
+
+        #vwall2 {
+            display: block;
+            position: absolute;
+            left: 90%;
+            top: 10%;
+            height: 550px;
+        }
+
+        .hwalls {
+            background-color: gray;
+            height: 10px;
+        }
+
+        #hwall1 {
+            display: block;
+            position: absolute;
+            left: 30%;
+            top: 10%;
+            width: 60%;
+        }
+
+        #hwall2 {
+            display: block;
+            position: absolute;
+            left: 30%;
+            top: calc(10% + 550px);
+            width: 60%;
+        }
+
+        #vwall3 {
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 10%;
+            height: 400px;
+        }
+
+        #door {
+            position: absolute;
+            background-color: red;
+            width: 5px;
+            height: 100px;
+            left: 30%;
+            top: calc(10% + 450px);
+            transition: transform 0.4s ease;
+        }
+
+        #door.open {
+            transform: translateY(-100%);
+        }
+
+        #door.close {
+            transform: translateY(0);
+        }
     </style>
 </head>
 
 <body>
 
     <canvas id="game"></canvas>
+    <div class="vwalls" id="vwall1"></div>
+    <div class="vwalls" id="vwall2"></div>
+    <div class="hwalls" id="hwall1"></div>
+    <div class="hwalls" id="hwall2"></div>
+    <div class="vwalls" id="vwall3"></div>
+    <div class="close" id="door"></div>
 
     <copyrights
         style="display: float; float: right; position: fixed; right: 4px; bottom: 0px; color: white; text-align: center; font-family: sans-serif; font-size: 2.2vh; line-height: 2.2vh;">
@@ -62,6 +136,15 @@
         let walkCycle = 0;
         let mouseX = 0;
         let mouseY = 0;
+        const walls = [
+            document.getElementById("vwall1"),
+            document.getElementById("vwall2"),
+            document.getElementById("vwall3"),
+            document.getElementById("hwall1"),
+            document.getElementById("hwall2"),
+            document.getElementById("door")
+        ];
+        const door = document.getElementById("door");
 
         // Resize canvas
         function resize() {
@@ -73,8 +156,8 @@
 
         // Player
         const player = {
-            x: canvas.width / 2,
-            y: canvas.height / 2,
+            x: 100,
+            y: 100,
             speed: 4,
             angle: 0
         };
@@ -105,14 +188,48 @@
             player.angle = Math.atan2(my - player.y, mx - player.x);
         });
 
-        // Update loop
         function update() {
             let moving = false;
 
-            if (keys.ArrowUp) { player.y -= player.speed; moving = true; }
-            if (keys.ArrowDown) { player.y += player.speed; moving = true; }
-            if (keys.ArrowLeft) { player.x -= player.speed; moving = true; }
-            if (keys.ArrowRight) { player.x += player.speed; moving = true; }
+            let nextX = player.x;
+            let nextY = player.y;
+
+            if (keys.ArrowUp) { nextY -= player.speed; moving = true; }
+            if (keys.ArrowDown) { nextY += player.speed; moving = true; }
+            if (keys.ArrowLeft) { nextX -= player.speed; moving = true; }
+            if (keys.ArrowRight) { nextX += player.speed; moving = true; }
+
+            // Conversion CANVAS → ÉCRAN
+            const canvasRect = canvas.getBoundingClientRect();
+            const nextScreenX = canvasRect.left + nextX;
+            const nextScreenY = canvasRect.top + nextY;
+
+            // Collision murs
+            let blocked = false;
+            for (const w of walls) {
+                if (intersectsRect(nextScreenX, nextScreenY, w)) {
+                    blocked = true;
+                    break;
+                }
+            }
+
+            // --- PORTE COULISSANTE ---
+            if (intersectsRect(nextScreenX, nextScreenY, door)) {
+                if (door.classList == "close") {
+                    door.classList.remove("close");
+                    door.classList.add("open");
+                    setTimeout(() => {
+                        door.classList.remove("open");
+                        door.classList.add("close");
+                    }, 2500);
+                }
+            }
+
+            // Appliquer le mouvement
+            if (!blocked) {
+                player.x = nextX;
+                player.y = nextY;
+            }
 
             if (moving) walkCycle += 0.15;
         }
@@ -285,6 +402,29 @@
                 ctx.arc(b.x, b.y, 5, 0, Math.PI * 2);
                 ctx.fill();
             }
+            bullets.forEach((bullet, index) => {
+                // conversion canvas → écran
+                const canvasRect = canvas.getBoundingClientRect();
+                const bx = canvasRect.left + bullet.x;
+                const by = canvasRect.top + bullet.y;
+                // collision avec les murs
+                for (const w of walls) {
+                    if (intersectsRect(bx, by, w)) {
+                        bullets.splice(index, 1); // détruire la bullet
+                        return;
+                    }
+                }
+            });
+        }
+
+        function intersectsRect(px, py, rect) {
+            const r = rect.getBoundingClientRect();
+            return (
+                px >= r.left &&
+                px <= r.right &&
+                py >= r.top &&
+                py <= r.bottom
+            );
         }
 
     </script>
