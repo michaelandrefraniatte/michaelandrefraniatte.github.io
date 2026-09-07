@@ -143,6 +143,7 @@
                 const canvas = document.getElementById("game");
                 const ctx = canvas.getContext("2d");
                 let walkCycle = 0;
+                let blocked = false;
                 let mouseX = 0;
                 let mouseY = 0;
                 const walls = [
@@ -213,17 +214,16 @@
                     const nextScreenX = canvasRect.left + nextX;
                     const nextScreenY = canvasRect.top + nextY;
 
-                    // Collision murs
-                    let blocked = false;
+                    blocked = false;
                     for (const w of walls) {
-                        if (intersectsRect(nextScreenX, nextScreenY, w)) {
+                        if (intersects(nextScreenX, nextScreenY, w)) {
                             blocked = true;
                             break;
                         }
                     }
 
                     // --- PORTE COULISSANTE ---
-                    if (intersectsRect(nextScreenX, nextScreenY, door)) {
+                    if (intersects(nextScreenX, nextScreenY, door)) {
                         if (door.classList == "close") {
                             door.classList.remove("close");
                             door.classList.add("open");
@@ -240,7 +240,7 @@
                         player.y = nextY;
                     }
 
-                    if (moving) walkCycle += 0.15;
+                    if (moving & !blocked) walkCycle += 0.15;
                 }
 
                 function drawPlayer() {
@@ -256,7 +256,7 @@
                         keys.ArrowUp || keys.ArrowDown ||
                         keys.ArrowLeft || keys.ArrowRight;
 
-                    if (moving) walkCycle += 0.15;
+                    if (moving & !blocked) walkCycle += 0.15;
 
                     const swing = Math.sin(walkCycle);
 
@@ -328,7 +328,7 @@
                     ctx.stroke();
 
                     // Pieds réalistes
-                    if (moving) {
+                    if (moving & !blocked) {
                         ctx.beginPath();
                         ctx.arc(-7 + footLeftX, footLeftY, 6, 0, Math.PI * 2);
                         ctx.fill();
@@ -386,7 +386,7 @@
                             angle: bulletAngle,
                             speed: 12
                         });
-                        
+
                         shoot.currentTime = 0;
                         shoot.play();
                     }
@@ -435,6 +435,18 @@
                         px <= r.right &&
                         py >= r.top &&
                         py <= r.bottom
+                    );
+                }
+
+                function intersects(px, py, rect) {
+                    const r = rect.getBoundingClientRect();
+                    const insetX = -window.innerWidth * 0.01;
+                    const insetY = -window.innerHeight * 0.01;
+                    return (
+                        px >= r.left + insetX &&
+                        px <= r.right - insetX &&
+                        py >= r.top + insetY &&
+                        py <= r.bottom - insetY
                     );
                 }
             }
