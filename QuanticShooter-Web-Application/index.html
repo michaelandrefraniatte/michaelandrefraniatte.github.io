@@ -139,6 +139,8 @@
 
                 const shoot = new Audio("contents/shoot.mp3");
                 shoot.volume = 0.2;
+                const enemyshoot = new Audio("contents/shoot.mp3");
+                enemyshoot.volume = 0.2;
                 const bullets = [];
                 const canvas = document.getElementById("game");
                 const ctx = canvas.getContext("2d");
@@ -179,6 +181,27 @@
                     ArrowLeft: false,
                     ArrowRight: false
                 };
+
+                const enemyPath = [
+                    { x: 850, y: 150, angle: 0 },            // droite
+                    { x: 1300, y: 150, angle: Math.PI / 2 },  // bas
+                    { x: 1300, y: 400, angle: Math.PI },      // gauche
+                    { x: 850, y: 400, angle: -Math.PI / 2 }, // haut
+                ];
+
+                const enemy = {
+                    x: enemyPath[0].x,
+                    y: enemyPath[0].y,
+                    angle: 0,
+                    speed: 4,
+                    walkCycle: 0,
+                    pathIndex: 0,
+                    fireCooldown: 0,
+                    fireRate: 40,
+                    state: "patrol" // "patrol" | "chase"
+                };
+
+                const enemyBullets = [];
 
                 document.addEventListener("keydown", e => {
                     if (keys.hasOwnProperty(e.key)) keys[e.key] = true;
@@ -241,6 +264,7 @@
                     }
 
                     if (moving & !blocked) walkCycle += 0.15;
+
                 }
 
                 function drawPlayer() {
@@ -349,6 +373,14 @@
 
                     drawPlayer();
                     drawBullets();
+
+                    updateEnemy();
+                    enemyShoot();
+                    updateEnemyBullets();
+
+                    drawEnemy();
+                    drawEnemyBullets();
+
                     requestAnimationFrame(loop);
                 }
 
@@ -404,6 +436,19 @@
                             bullets.splice(i, 1);
                         }
                     }
+                    // Collision balle joueur → ennemi
+                    for (let i = bullets.length - 1; i >= 0; i--) {
+                        const b = bullets[i];
+
+                        const dx = b.x - enemy.x;
+                        const dy = b.y - enemy.y;
+
+                        if (Math.hypot(dx, dy) < 20) { // rayon de la tête de l'ennemi
+                            bullets.splice(i, 1);
+                            resetPositions();
+                            return;
+                        }
+                    }
                 }
 
                 function drawBullets() {
@@ -426,6 +471,308 @@
                             }
                         }
                     });
+                }
+
+                function updateEnemy() {
+                    if (enemySeesPlayer()) {
+                        enemy.state = "chase";
+                        enemy.speed = 2;
+                    }
+                    else {
+                        enemy.state = "patrol";
+                        enemy.speed = 4;
+                    }
+                    if (enemy.state === "patrol") updateEnemyPatrol();
+                    else if (enemy.state === "chase") updateEnemyChase();
+                }
+
+                function drawEnemy() {
+                    ctx.save();
+                    ctx.translate(enemy.x, enemy.y);
+                    ctx.rotate(enemy.angle);
+
+                    // vue du dessus
+                    ctx.rotate(-Math.PI / 2);
+
+                    const moving = enemy.moving;
+                    if (moving) enemy.walkCycle += 0.15;
+
+                    const swing = Math.sin(enemy.walkCycle);
+
+                    // Mains (déjà parfaites)
+                    const handLeftX = -20 - swing * 2;
+                    const handRightX = 20 + swing * 2;
+
+                    // --- PIEDS DANS LE REPÈRE LOCAL (LA SOLUTION) ---
+                    const footOffsetLeft = moving ? -swing * 20 : 0;
+                    const footOffsetRight = moving ? swing * 20 : 0;
+
+                    // direction locale du corps :
+                    // X = droite/gauche
+                    // Y = avant/arrière
+                    const footLeftX = 0 * footOffsetLeft;   // pas de décalage latéral
+                    const footLeftY = footOffsetLeft;       // avance/recul dans l’axe du corps
+
+                    const footRightX = 0 * footOffsetRight;
+                    const footRightY = footOffsetRight;
+
+                    ctx.strokeStyle = "red";
+                    ctx.fillStyle = "red";
+                    ctx.lineWidth = 4;
+
+                    // Tête
+                    ctx.beginPath();
+                    ctx.arc(0, 0, 15, 0, Math.PI * 2);
+                    ctx.stroke();
+
+                    // Bras
+                    ctx.beginPath();
+                    ctx.moveTo(handLeftX, 0);
+                    ctx.lineTo(handRightX, 0);
+                    ctx.stroke();
+
+                    ctx.beginPath();
+                    ctx.arc(handLeftX, 0, 5, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    ctx.beginPath();
+                    ctx.arc(handRightX, 0, 5, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    // Barre centrale
+                    ctx.lineWidth = 5;
+                    ctx.beginPath();
+                    ctx.moveTo(0, -10);
+                    ctx.lineTo(0, 10);
+                    ctx.stroke();
+
+                    // Pieds réalistes
+                    if (moving) {
+                        ctx.beginPath();
+                        ctx.arc(-7 + footLeftX, footLeftY, 6, 0, Math.PI * 2);
+                        ctx.fill();
+
+                        ctx.beginPath();
+                        ctx.arc(7 + footRightX, footRightY, 6, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+
+                    ctx.restore();
+                }
+
+                function updateEnemyChase() {
+                    const dx = player.x - enemy.x;
+                    const dy = player.y - enemy.y;
+
+                    enemy.angle = Math.atan2(dy, dx);
+
+                    const nextX = enemy.x + Math.cos(enemy.angle) * enemy.speed;
+                    const nextY = enemy.y + Math.sin(enemy.angle) * enemy.speed;
+
+                    const canvasRect = canvas.getBoundingClientRect();
+                    const ex = canvasRect.left + nextX;
+                    const ey = canvasRect.top + nextY;
+
+                    let blocked = false;
+                    for (const w of walls) {
+                        if (intersects(ex, ey, w)) {
+                            blocked = true;
+                            break;
+                        }
+                    }
+
+                    enemy.moving = !blocked;
+
+                    if (!blocked) {
+                        enemy.x = nextX;
+                        enemy.y = nextY;
+                        enemy.walkCycle += 0.15;
+                    }
+                }
+
+                function enemyShoot() {
+                    if (!enemySeesPlayer()) return;
+
+                    if (enemy.fireCooldown > 0) {
+                        enemy.fireCooldown--;
+                        return;
+                    }
+
+                    enemy.fireCooldown = enemy.fireRate;
+
+                    enemyBullets.push({
+                        x: enemy.x,
+                        y: enemy.y,
+                        angle: enemy.angle,
+                        speed: 8
+                    });
+
+                    enemyshoot.currentTime = 0;
+                    enemyshoot.play();
+                }
+
+                function updateEnemyBullets() {
+                    enemyBullets.forEach((b, index) => {
+                        b.x += Math.cos(b.angle) * b.speed;
+                        b.y += Math.sin(b.angle) * b.speed;
+
+                        const canvasRect = canvas.getBoundingClientRect();
+                        const bx = canvasRect.left + b.x;
+                        const by = canvasRect.top + b.y;
+
+                        for (const w of walls) {
+                            if (intersects(bx, by, w)) {
+                                enemyBullets.splice(index, 1);
+                                return;
+                            }
+                        }
+                        // Collision balle ennemi → joueur
+                        const dx = b.x - player.x;
+                        const dy = b.y - player.y;
+
+                        if (Math.hypot(dx, dy) < 20) { // rayon de la tête du joueur
+                            enemyBullets.splice(index, 1);
+                            resetPositions();
+                            return;
+                        }
+                    });
+                }
+
+                function drawEnemyBullets() {
+                    ctx.fillStyle = "red";
+                    enemyBullets.forEach(b => {
+                        ctx.beginPath();
+                        ctx.arc(b.x, b.y, 4, 0, Math.PI * 2);
+                        ctx.fill();
+                    });
+                }
+
+                function updateEnemyPatrol() {
+                    const target = enemyPath[enemy.pathIndex];
+
+                    const dx = target.x - enemy.x;
+                    const dy = target.y - enemy.y;
+
+                    const dist = Math.hypot(dx, dy);
+
+                    // orientation vers le prochain point
+                    enemy.angle = Math.atan2(dy, dx);
+
+                    // déplacement
+                    if (dist > 5) {
+                        enemy.x += Math.cos(enemy.angle) * enemy.speed;
+                        enemy.y += Math.sin(enemy.angle) * enemy.speed;
+                        enemy.walkCycle += 0.15;
+                        enemy.moving = true;
+                    } else {
+                        enemy.pathIndex = (enemy.pathIndex + 1) % enemyPath.length;
+                        enemy.moving = false;
+                    }
+                }
+
+                function enemyCanSeePlayer() {
+                    const dx = player.x - enemy.x;
+                    const dy = player.y - enemy.y;
+
+                    const angleToPlayer = Math.atan2(dy, dx);
+                    const diff = Math.abs(angleToPlayer - enemy.angle);
+
+                    return diff < Math.PI / 3; // 60°
+                }
+
+                function lineBlockedByWall(x1, y1, x2, y2) {
+                    const canvasRect = canvas.getBoundingClientRect();
+
+                    for (const w of walls) {
+                        const r = w.getBoundingClientRect();
+
+                        const ex1 = canvasRect.left + x1;
+                        const ey1 = canvasRect.top + y1;
+                        const ex2 = canvasRect.left + x2;
+                        const ey2 = canvasRect.top + y2;
+
+                        if (
+                            ex1 < r.right && ex2 > r.left &&
+                            ey1 < r.bottom && ey2 > r.top
+                        ) {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+
+                function visionBlockedByWall(x1, y1, x2, y2) {
+                    const canvasRect = canvas.getBoundingClientRect();
+
+                    // On convertit les points en coordonnées écran
+                    const ex1 = canvasRect.left + x1;
+                    const ey1 = canvasRect.top + y1;
+                    const ex2 = canvasRect.left + x2;
+                    const ey2 = canvasRect.top + y2;
+
+                    for (const w of walls) {
+                        const r = w.getBoundingClientRect();
+
+                        // Test simple : si la ligne traverse le rectangle du mur
+                        if (
+                            Math.min(ex1, ex2) < r.right &&
+                            Math.max(ex1, ex2) > r.left &&
+                            Math.min(ey1, ey2) < r.bottom &&
+                            Math.max(ey1, ey2) > r.top
+                        ) {
+                            return true;
+                        }
+                    }
+
+                    return false;
+                }
+
+                function enemySeesPlayer() {
+                    const dx = player.x - enemy.x;
+                    const dy = player.y - enemy.y;
+
+                    const angleToPlayer = Math.atan2(dy, dx);
+                    const diff = Math.abs(angleToPlayer - enemy.angle);
+
+                    // hors du cône de vision
+                    if (diff > Math.PI / 3) return false;
+
+                    // mur entre les deux ?
+                    if (visionBlockedByWall(enemy.x, enemy.y, player.x, player.y)) return false;
+
+                    return true;
+                }
+
+                function enemyTurn() {
+                    const target = enemyPath[enemy.pathIndex];
+
+                    // rotation nette
+                    enemy.angle = target.angle;
+
+                    // prochain point
+                    enemy.pathIndex = (enemy.pathIndex + 1) % enemyPath.length;
+
+                    enemy.state = "patrol";
+                }
+
+                function resetPositions() {
+                    // Réinitialiser le joueur
+                    player.x = 100;
+                    player.y = 100;
+                    player.angle = 0;
+
+                    // Réinitialiser l'ennemi
+                    enemy.x = enemyPath[0].x;
+                    enemy.y = enemyPath[0].y;
+                    enemy.angle = enemyPath[0].angle;
+                    enemy.pathIndex = 0;
+                    enemy.walkCycle = 0;
+                    enemy.state = "patrol";
+                    enemy.speed = 4;
+
+                    // Effacer les balles
+                    bullets.length = 0;
+                    enemyBullets.length = 0;
                 }
 
                 function intersectsRect(px, py, rect) {
