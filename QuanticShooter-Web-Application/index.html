@@ -130,302 +130,315 @@
     </copyrights>
 
     <script>
-        const bullets = [];
-        const canvas = document.getElementById("game");
-        const ctx = canvas.getContext("2d");
-        let walkCycle = 0;
-        let mouseX = 0;
-        let mouseY = 0;
-        const walls = [
-            document.getElementById("vwall1"),
-            document.getElementById("vwall2"),
-            document.getElementById("vwall3"),
-            document.getElementById("hwall1"),
-            document.getElementById("hwall2"),
-            document.getElementById("door")
-        ];
-        const door = document.getElementById("door");
+        var gamestart = false;
+        document.body.addEventListener("click", () => {
 
-        // Resize canvas
-        function resize() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        resize();
-        window.addEventListener("resize", resize);
+            if (!gamestart) {
 
-        // Player
-        const player = {
-            x: 100,
-            y: 100,
-            speed: 4,
-            angle: 0
-        };
+                gamestart = true;
 
-        // Input
-        let keys = {
-            ArrowUp: false,
-            ArrowDown: false,
-            ArrowLeft: false,
-            ArrowRight: false
-        };
+                const shoot = new Audio("contents/shoot.mp3");
+                shoot.volume = 0.2;
+                const bullets = [];
+                const canvas = document.getElementById("game");
+                const ctx = canvas.getContext("2d");
+                let walkCycle = 0;
+                let mouseX = 0;
+                let mouseY = 0;
+                const walls = [
+                    document.getElementById("vwall1"),
+                    document.getElementById("vwall2"),
+                    document.getElementById("vwall3"),
+                    document.getElementById("hwall1"),
+                    document.getElementById("hwall2"),
+                    document.getElementById("door")
+                ];
+                const door = document.getElementById("door");
 
-        document.addEventListener("keydown", e => {
-            if (keys.hasOwnProperty(e.key)) keys[e.key] = true;
-        });
-
-        document.addEventListener("keyup", e => {
-            if (keys.hasOwnProperty(e.key)) keys[e.key] = false;
-        });
-
-        // Mouse orientation
-        canvas.addEventListener("mousemove", e => {
-            const rect = canvas.getBoundingClientRect();
-            const mx = e.clientX - rect.left;
-            const my = e.clientY - rect.top;
-            mouseX = e.clientX - rect.left;
-            mouseY = e.clientY - rect.top;
-            player.angle = Math.atan2(my - player.y, mx - player.x);
-        });
-
-        function update() {
-            let moving = false;
-
-            let nextX = player.x;
-            let nextY = player.y;
-
-            if (keys.ArrowUp) { nextY -= player.speed; moving = true; }
-            if (keys.ArrowDown) { nextY += player.speed; moving = true; }
-            if (keys.ArrowLeft) { nextX -= player.speed; moving = true; }
-            if (keys.ArrowRight) { nextX += player.speed; moving = true; }
-
-            // Conversion CANVAS → ÉCRAN
-            const canvasRect = canvas.getBoundingClientRect();
-            const nextScreenX = canvasRect.left + nextX;
-            const nextScreenY = canvasRect.top + nextY;
-
-            // Collision murs
-            let blocked = false;
-            for (const w of walls) {
-                if (intersectsRect(nextScreenX, nextScreenY, w)) {
-                    blocked = true;
-                    break;
+                // Resize canvas
+                function resize() {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
                 }
-            }
+                resize();
+                window.addEventListener("resize", resize);
 
-            // --- PORTE COULISSANTE ---
-            if (intersectsRect(nextScreenX, nextScreenY, door)) {
-                if (door.classList == "close") {
-                    door.classList.remove("close");
-                    door.classList.add("open");
-                    setTimeout(() => {
-                        door.classList.remove("open");
-                        door.classList.add("close");
-                    }, 2500);
-                }
-            }
+                // Player
+                const player = {
+                    x: 100,
+                    y: 100,
+                    speed: 4,
+                    angle: 0
+                };
 
-            // Appliquer le mouvement
-            if (!blocked) {
-                player.x = nextX;
-                player.y = nextY;
-            }
+                // Input
+                let keys = {
+                    ArrowUp: false,
+                    ArrowDown: false,
+                    ArrowLeft: false,
+                    ArrowRight: false
+                };
 
-            if (moving) walkCycle += 0.15;
-        }
-
-        function drawPlayer() {
-            ctx.save();
-            ctx.translate(player.x, player.y);
-            ctx.rotate(player.angle);
-
-            // Correction de l’orientation (vue du dessus réelle)
-            ctx.rotate(-Math.PI / 2);
-
-            // Détection du mouvement
-            const moving =
-                keys.ArrowUp || keys.ArrowDown ||
-                keys.ArrowLeft || keys.ArrowRight;
-
-            if (moving) walkCycle += 0.15;
-
-            const swing = Math.sin(walkCycle);
-
-            // Mains
-            const handLeftX = -20 - swing * 2;
-            const handRightX = 20 + swing * 2;
-
-            // --- DIRECTION DE MARCHE (repère global) ---
-            let moveX = 0;
-            let moveY = 0;
-
-            if (keys.ArrowUp) moveY -= 1;
-            if (keys.ArrowDown) moveY += 1;
-            if (keys.ArrowLeft) moveX -= 1;
-            if (keys.ArrowRight) moveX += 1;
-
-            const len = Math.hypot(moveX, moveY);
-            if (len > 0) {
-                moveX /= len;
-                moveY /= len;
-            }
-
-            // --- CONVERSION DANS LE REPÈRE DU JOUEUR ---
-            // angle interne du joueur
-            const correctedAngle = player.angle - Math.PI / 2;
-
-            // rotation inverse du vecteur de marche
-            const moveLocalX = moveX * Math.cos(correctedAngle) + moveY * Math.sin(correctedAngle);
-            const moveLocalY = -moveX * Math.sin(correctedAngle) + moveY * Math.cos(correctedAngle);
-
-            // --- PIEDS ORIENTÉS CORRECTEMENT ---
-            const footOffsetLeft = moving ? -swing * 20 : 0;
-            const footOffsetRight = moving ? swing * 20 : 0;
-
-            const footLeftX = moveLocalX * footOffsetLeft;
-            const footLeftY = moveLocalY * footOffsetLeft;
-
-            const footRightX = moveLocalX * footOffsetRight;
-            const footRightY = moveLocalY * footOffsetRight;
-
-            ctx.strokeStyle = "white";
-            ctx.fillStyle = "white";
-            ctx.lineWidth = 4;
-
-            // Tête
-            ctx.beginPath();
-            ctx.arc(0, 0, 15, 0, Math.PI * 2);
-            ctx.stroke();
-
-            // Mains (-0-)
-            ctx.beginPath();
-            ctx.moveTo(handLeftX, 0);
-            ctx.lineTo(handRightX, 0);
-            ctx.stroke();
-
-            ctx.beginPath();
-            ctx.arc(handLeftX, 0, 5, 0, Math.PI * 2);
-            ctx.fill();
-
-            ctx.beginPath();
-            ctx.arc(handRightX, 0, 5, 0, Math.PI * 2);
-            ctx.fill();
-
-            // Barre verticale des pieds (|0|)
-            ctx.lineWidth = 5;
-            ctx.beginPath();
-            ctx.moveTo(0, -10);
-            ctx.lineTo(0, 10);
-            ctx.stroke();
-
-            // Pieds réalistes
-            if (moving) {
-                ctx.beginPath();
-                ctx.arc(-7 + footLeftX, footLeftY, 6, 0, Math.PI * 2);
-                ctx.fill();
-
-                ctx.beginPath();
-                ctx.arc(7 + footRightX, footRightY, 6, 0, Math.PI * 2);
-                ctx.fill();
-            }
-
-            ctx.restore();
-        }
-
-        // Main loop
-        function loop() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            update();
-            updateBullets();
-
-            drawPlayer();
-            drawBullets();
-            requestAnimationFrame(loop);
-        }
-
-        loop();
-
-        canvas.addEventListener("mousedown", e => {
-            if (e.button === 0) {
-
-                // Angle réel du joueur (avec correction -90°)
-                const correctedAngle = player.angle - Math.PI / 2;
-
-                // Position locale de la main droite (dans drawPlayer)
-                const handRightX = 20 + Math.sin(walkCycle) * 2; // EXACT comme ton dessin
-                const handRightY = 0;
-
-                // Conversion locale -> globale
-                const startX =
-                    player.x +
-                    handRightX * Math.cos(correctedAngle) -
-                    handRightY * Math.sin(correctedAngle);
-
-                const startY =
-                    player.y +
-                    handRightX * Math.sin(correctedAngle) +
-                    handRightY * Math.cos(correctedAngle);
-
-                // Direction vers la souris
-                const dx = mouseX - startX;
-                const dy = mouseY - startY;
-                const bulletAngle = Math.atan2(dy, dx);
-
-                bullets.push({
-                    x: startX,
-                    y: startY,
-                    angle: bulletAngle,
-                    speed: 12
+                document.addEventListener("keydown", e => {
+                    if (keys.hasOwnProperty(e.key)) keys[e.key] = true;
                 });
-            }
-        });
 
-        function updateBullets() {
-            for (let b of bullets) {
-                b.x += Math.cos(b.angle) * b.speed;
-                b.y += Math.sin(b.angle) * b.speed;
-            }
+                document.addEventListener("keyup", e => {
+                    if (keys.hasOwnProperty(e.key)) keys[e.key] = false;
+                });
 
-            // Supprimer les projectiles hors écran
-            for (let i = bullets.length - 1; i >= 0; i--) {
-                const b = bullets[i];
-                if (b.x < 0 || b.x > canvas.width || b.y < 0 || b.y > canvas.height) {
-                    bullets.splice(i, 1);
+                // Mouse orientation
+                canvas.addEventListener("mousemove", e => {
+                    const rect = canvas.getBoundingClientRect();
+                    const mx = e.clientX - rect.left;
+                    const my = e.clientY - rect.top;
+                    mouseX = e.clientX - rect.left;
+                    mouseY = e.clientY - rect.top;
+                    player.angle = Math.atan2(my - player.y, mx - player.x);
+                });
+
+                function update() {
+                    let moving = false;
+
+                    let nextX = player.x;
+                    let nextY = player.y;
+
+                    if (keys.ArrowUp) { nextY -= player.speed; moving = true; }
+                    if (keys.ArrowDown) { nextY += player.speed; moving = true; }
+                    if (keys.ArrowLeft) { nextX -= player.speed; moving = true; }
+                    if (keys.ArrowRight) { nextX += player.speed; moving = true; }
+
+                    // Conversion CANVAS → ÉCRAN
+                    const canvasRect = canvas.getBoundingClientRect();
+                    const nextScreenX = canvasRect.left + nextX;
+                    const nextScreenY = canvasRect.top + nextY;
+
+                    // Collision murs
+                    let blocked = false;
+                    for (const w of walls) {
+                        if (intersectsRect(nextScreenX, nextScreenY, w)) {
+                            blocked = true;
+                            break;
+                        }
+                    }
+
+                    // --- PORTE COULISSANTE ---
+                    if (intersectsRect(nextScreenX, nextScreenY, door)) {
+                        if (door.classList == "close") {
+                            door.classList.remove("close");
+                            door.classList.add("open");
+                            setTimeout(() => {
+                                door.classList.remove("open");
+                                door.classList.add("close");
+                            }, 2500);
+                        }
+                    }
+
+                    // Appliquer le mouvement
+                    if (!blocked) {
+                        player.x = nextX;
+                        player.y = nextY;
+                    }
+
+                    if (moving) walkCycle += 0.15;
                 }
-            }
-        }
 
-        function drawBullets() {
-            ctx.fillStyle = "yellow";
-            for (let b of bullets) {
-                ctx.beginPath();
-                ctx.arc(b.x, b.y, 5, 0, Math.PI * 2);
-                ctx.fill();
-            }
-            bullets.forEach((bullet, index) => {
-                // conversion canvas → écran
-                const canvasRect = canvas.getBoundingClientRect();
-                const bx = canvasRect.left + bullet.x;
-                const by = canvasRect.top + bullet.y;
-                // collision avec les murs
-                for (const w of walls) {
-                    if (intersectsRect(bx, by, w)) {
-                        bullets.splice(index, 1); // détruire la bullet
-                        return;
+                function drawPlayer() {
+                    ctx.save();
+                    ctx.translate(player.x, player.y);
+                    ctx.rotate(player.angle);
+
+                    // Correction de l’orientation (vue du dessus réelle)
+                    ctx.rotate(-Math.PI / 2);
+
+                    // Détection du mouvement
+                    const moving =
+                        keys.ArrowUp || keys.ArrowDown ||
+                        keys.ArrowLeft || keys.ArrowRight;
+
+                    if (moving) walkCycle += 0.15;
+
+                    const swing = Math.sin(walkCycle);
+
+                    // Mains
+                    const handLeftX = -20 - swing * 2;
+                    const handRightX = 20 + swing * 2;
+
+                    // --- DIRECTION DE MARCHE (repère global) ---
+                    let moveX = 0;
+                    let moveY = 0;
+
+                    if (keys.ArrowUp) moveY -= 1;
+                    if (keys.ArrowDown) moveY += 1;
+                    if (keys.ArrowLeft) moveX -= 1;
+                    if (keys.ArrowRight) moveX += 1;
+
+                    const len = Math.hypot(moveX, moveY);
+                    if (len > 0) {
+                        moveX /= len;
+                        moveY /= len;
+                    }
+
+                    // --- CONVERSION DANS LE REPÈRE DU JOUEUR ---
+                    // angle interne du joueur
+                    const correctedAngle = player.angle - Math.PI / 2;
+
+                    // rotation inverse du vecteur de marche
+                    const moveLocalX = moveX * Math.cos(correctedAngle) + moveY * Math.sin(correctedAngle);
+                    const moveLocalY = -moveX * Math.sin(correctedAngle) + moveY * Math.cos(correctedAngle);
+
+                    // --- PIEDS ORIENTÉS CORRECTEMENT ---
+                    const footOffsetLeft = moving ? -swing * 20 : 0;
+                    const footOffsetRight = moving ? swing * 20 : 0;
+
+                    const footLeftX = moveLocalX * footOffsetLeft;
+                    const footLeftY = moveLocalY * footOffsetLeft;
+
+                    const footRightX = moveLocalX * footOffsetRight;
+                    const footRightY = moveLocalY * footOffsetRight;
+
+                    ctx.strokeStyle = "white";
+                    ctx.fillStyle = "white";
+                    ctx.lineWidth = 4;
+
+                    // Tête
+                    ctx.beginPath();
+                    ctx.arc(0, 0, 15, 0, Math.PI * 2);
+                    ctx.stroke();
+
+                    // Mains (-0-)
+                    ctx.beginPath();
+                    ctx.moveTo(handLeftX, 0);
+                    ctx.lineTo(handRightX, 0);
+                    ctx.stroke();
+
+                    ctx.beginPath();
+                    ctx.arc(handLeftX, 0, 5, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    ctx.beginPath();
+                    ctx.arc(handRightX, 0, 5, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    // Barre verticale des pieds (|0|)
+                    ctx.lineWidth = 5;
+                    ctx.beginPath();
+                    ctx.moveTo(0, -10);
+                    ctx.lineTo(0, 10);
+                    ctx.stroke();
+
+                    // Pieds réalistes
+                    if (moving) {
+                        ctx.beginPath();
+                        ctx.arc(-7 + footLeftX, footLeftY, 6, 0, Math.PI * 2);
+                        ctx.fill();
+
+                        ctx.beginPath();
+                        ctx.arc(7 + footRightX, footRightY, 6, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+
+                    ctx.restore();
+                }
+
+                // Main loop
+                function loop() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    update();
+                    updateBullets();
+
+                    drawPlayer();
+                    drawBullets();
+                    requestAnimationFrame(loop);
+                }
+
+                loop();
+
+                canvas.addEventListener("mousedown", e => {
+                    if (e.button === 0) {
+
+                        // Angle réel du joueur (avec correction -90°)
+                        const correctedAngle = player.angle - Math.PI / 2;
+
+                        // Position locale de la main droite (dans drawPlayer)
+                        const handRightX = 20 + Math.sin(walkCycle) * 2; // EXACT comme ton dessin
+                        const handRightY = 0;
+
+                        // Conversion locale -> globale
+                        const startX =
+                            player.x +
+                            handRightX * Math.cos(correctedAngle) -
+                            handRightY * Math.sin(correctedAngle);
+
+                        const startY =
+                            player.y +
+                            handRightX * Math.sin(correctedAngle) +
+                            handRightY * Math.cos(correctedAngle);
+
+                        // Direction vers la souris
+                        const dx = mouseX - startX;
+                        const dy = mouseY - startY;
+                        const bulletAngle = Math.atan2(dy, dx);
+
+                        bullets.push({
+                            x: startX,
+                            y: startY,
+                            angle: bulletAngle,
+                            speed: 12
+                        });
+                        
+                        shoot.currentTime = 0;
+                        shoot.play();
+                    }
+                });
+
+                function updateBullets() {
+                    for (let b of bullets) {
+                        b.x += Math.cos(b.angle) * b.speed;
+                        b.y += Math.sin(b.angle) * b.speed;
+                    }
+                    // Supprimer les projectiles hors écran
+                    for (let i = bullets.length - 1; i >= 0; i--) {
+                        const b = bullets[i];
+                        if (b.x < 0 || b.x > canvas.width || b.y < 0 || b.y > canvas.height) {
+                            bullets.splice(i, 1);
+                        }
                     }
                 }
-            });
-        }
 
-        function intersectsRect(px, py, rect) {
-            const r = rect.getBoundingClientRect();
-            return (
-                px >= r.left &&
-                px <= r.right &&
-                py >= r.top &&
-                py <= r.bottom
-            );
-        }
+                function drawBullets() {
+                    ctx.fillStyle = "yellow";
+                    for (let b of bullets) {
+                        ctx.beginPath();
+                        ctx.arc(b.x, b.y, 5, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                    bullets.forEach((bullet, index) => {
+                        // conversion canvas → écran
+                        const canvasRect = canvas.getBoundingClientRect();
+                        const bx = canvasRect.left + bullet.x;
+                        const by = canvasRect.top + bullet.y;
+                        // collision avec les murs
+                        for (const w of walls) {
+                            if (intersectsRect(bx, by, w)) {
+                                bullets.splice(index, 1); // détruire la bullet
+                                return;
+                            }
+                        }
+                    });
+                }
+
+                function intersectsRect(px, py, rect) {
+                    const r = rect.getBoundingClientRect();
+                    return (
+                        px >= r.left &&
+                        px <= r.right &&
+                        py >= r.top &&
+                        py <= r.bottom
+                    );
+                }
+            }
+        });
 
     </script>
 
