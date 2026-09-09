@@ -193,6 +193,7 @@
                     x: enemyPath[0].x,
                     y: enemyPath[0].y,
                     angle: 0,
+                    visualAngle: 0,
                     speed: 4,
                     walkCycle: 0,
                     pathIndex: 0,
@@ -380,6 +381,7 @@
                     enemyShoot();
                     updateEnemyBullets();
 
+                    updateEnemyVisualRotation();
                     drawEnemy();
                     drawEnemyBullets();
 
@@ -496,7 +498,7 @@
                 function drawEnemy() {
                     ctx.save();
                     ctx.translate(enemy.x, enemy.y);
-                    ctx.rotate(enemy.angle);
+                    ctx.rotate(enemy.visualAngle);
 
                     // vue du dessus
                     ctx.rotate(-Math.PI / 2);
@@ -607,10 +609,35 @@
 
                     enemy.fireCooldown = enemy.fireRate;
 
+                    // --- MAIN DROITE DE L'ENNEMI (comme ton joueur) ---
+                    const swing = Math.sin(enemy.walkCycle);
+                    const handRightX = 20 + swing * 2;
+                    const handRightY = 0;
+
+                    // angle interne (vue du dessus)
+                    const correctedAngle = enemy.angle - Math.PI / 2;
+
+                    // conversion locale -> globale
+                    const startX =
+                        enemy.x +
+                        handRightX * Math.cos(correctedAngle) -
+                        handRightY * Math.sin(correctedAngle);
+
+                    const startY =
+                        enemy.y +
+                        handRightX * Math.sin(correctedAngle) +
+                        handRightY * Math.cos(correctedAngle);
+
+                    // direction vers le joueur
+                    const dx = player.x - startX;
+                    const dy = player.y - startY;
+                    const bulletAngle = Math.atan2(dy, dx);
+
+                    // tirer depuis la main droite
                     enemyBullets.push({
-                        x: enemy.x,
-                        y: enemy.y,
-                        angle: enemy.angle,
+                        x: startX,
+                        y: startY,
+                        angle: bulletAngle,
                         speed: 8
                     });
 
@@ -737,6 +764,13 @@
                     // Effacer les balles
                     bullets.length = 0;
                     enemyBullets.length = 0;
+                }
+
+                function updateEnemyVisualRotation() {
+                    const diff = enemy.angle - enemy.visualAngle;
+                    const normalized = Math.atan2(Math.sin(diff), Math.cos(diff));
+
+                    enemy.visualAngle += normalized * 0.15; // vitesse de rotation visuelle
                 }
 
                 function intersectsRect(px, py, rect) {
