@@ -199,7 +199,9 @@
                     pathIndex: 0,
                     fireCooldown: 0,
                     fireRate: 40,
-                    state: "patrol" // "patrol" | "chase"
+                    state: "patrol",
+                    nextStopTime: 0,
+                    stopTimer: 0
                 };
 
                 const enemyBullets = [];
@@ -682,6 +684,31 @@
                 }
 
                 function updateEnemyPatrol() {
+
+                    const now = performance.now();
+
+                    // --- SI L'ENNEMI EST EN PAUSE ---
+                    if (enemy.stopTimer > 0) {
+                        enemy.stopTimer--;
+                        enemy.moving = false;
+                        return;
+                    }
+
+                    // --- ARRÊT ALÉATOIRE ENTRE 10 ET 30 SECONDES ---
+                    if (now >= enemy.nextStopTime) {
+
+                        // durée de l'arrêt : entre 5 et 10 secondes
+                        enemy.stopTimer = Math.floor(300 + Math.random() * 300);
+                        // 300 frames ≈ 5s, 600 frames ≈ 10s
+
+                        // prochain arrêt dans 10 à 30 secondes
+                        enemy.nextStopTime = now + (10000 + Math.random() * 20000);
+
+                        enemy.moving = false;
+                        return;
+                    }
+
+                    // --- PATROUILLE NORMALE ---
                     const target = enemyPath[enemy.pathIndex];
 
                     const dx = target.x - enemy.x;
@@ -689,10 +716,8 @@
 
                     const dist = Math.hypot(dx, dy);
 
-                    // orientation vers le prochain point
                     enemy.angle = Math.atan2(dy, dx);
 
-                    // déplacement
                     if (dist > 5) {
                         enemy.x += Math.cos(enemy.angle) * enemy.speed;
                         enemy.y += Math.sin(enemy.angle) * enemy.speed;
