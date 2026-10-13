@@ -49,6 +49,14 @@ function expireAccept() {
 	localStorage.setItem("copyrights", "expired accept");
 }
 
+// Going back and reload with event handler instead of the listener addEventListener("focus", (event) => {});
+onfocus = (event) => {
+	var backloader = document.getElementsByClassName("backloader")[0];
+	if (backloader) {
+		backloader.style.display = "none";
+	}
+};
+
 // Enable interaction after content loading totally completed
 function window_onload() {
 	var backloader = document.getElementsByClassName("backloader")[0];
