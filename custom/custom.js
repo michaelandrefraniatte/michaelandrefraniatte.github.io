@@ -417,40 +417,6 @@ function sliceToPage(number) {
 	goToPage(pagenumber);
 }
 
-// Going back and reload with event handler instead of the listener addEventListener("focus", (event) => {});
-onfocus = (event) => {
-	checkingBanner();
-	for (var i = 0; i < images.length; i++) {
-		images[i].title = "Click to expand";
-	}
-	checkAcceptCopyrights();
-	var backloader = document.getElementsByClassName("backloader")[0];
-	if (backloader) {
-		backloader.style.display = "none";
-	}
-	var target = window.location.href;
-	if (!target.endsWith("/#copyrights")) {
-		changeVisible();
-	}
-};
-
-// Going back and reload with event handler instead of the listener onfocus = (event) => {};
-addEventListener("focus", (event) => {
-	checkingBanner();
-	for (var i = 0; i < images.length; i++) {
-		images[i].title = "Click to expand";
-	}
-	checkAcceptCopyrights();
-	var backloader = document.getElementsByClassName("backloader")[0];
-	if (backloader) {
-		backloader.style.display = "none";
-	}
-	var target = window.location.href;
-	if (!target.endsWith("/#copyrights")) {
-		changeVisible();
-	}
-});
-
 function changeVisible() {
 	$('#main').removeClass('fade');
 	$('#main').addClass('fadeIn');
