@@ -17,16 +17,6 @@ else {
 	setTimeout(expireAccept, 2000);
 }
 
-// Going back and reload with event handler instead of the listener onfocus = (event) => {};
-addEventListener("focus", (event) => {
-	if (getitem != "accept") {
-		goToMain();
-	}
-	else {
-		setTimeout(expireAccept, 2000);
-	}
-});
-
 // Go to main if not accepting copyrights
 function goToMain() {
 	var target = window.location.href;
@@ -51,11 +41,33 @@ function expireAccept() {
 
 // Going back and reload with event handler instead of the listener addEventListener("focus", (event) => {});
 onfocus = (event) => {
+	var getitem = localStorage.getItem("copyrights");
+	if (getitem != "accept") {
+		goToMain();
+	}
+	else {
+		setTimeout(expireAccept, 2000);
+	}
 	var backloader = document.getElementsByClassName("backloader")[0];
 	if (backloader) {
 		backloader.style.display = "none";
 	}
 };
+
+// Going back and reload with event handler instead of the listener onfocus = (event) => {};
+addEventListener("focus", (event) => {
+	var getitem = localStorage.getItem("copyrights");
+	if (getitem != "accept") {
+		goToMain();
+	}
+	else {
+		setTimeout(expireAccept, 2000);
+	}
+	var backloader = document.getElementsByClassName("backloader")[0];
+	if (backloader) {
+		backloader.style.display = "none";
+	}
+});
 
 // Enable interaction after content loading totally completed
 function window_onload() {
