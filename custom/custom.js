@@ -430,8 +430,7 @@ onfocus = (event) => {
 	checkAcceptCopyrights();
 	var backloader = document.getElementsByClassName("backloader")[0];
 	if (backloader) {
-		backloader.style.display = "block";
-		backloader.style.zIndex = "0";
+		backloader.style.display = "none";
 	}
 };
 
