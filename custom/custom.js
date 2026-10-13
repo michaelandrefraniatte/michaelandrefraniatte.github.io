@@ -426,6 +426,7 @@ onfocus = (event) => {
 	if (!target.endsWith("/#copyrights")) {
 		changeVisible();
 	}
+	checkingBanner();
 	checkAcceptCopyrights();
 	var backloader = document.getElementsByClassName("backloader")[0];
 	if (backloader) {
