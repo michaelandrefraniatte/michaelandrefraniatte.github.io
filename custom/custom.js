@@ -419,6 +419,7 @@ function sliceToPage(number) {
 
 // Going back and reload with event handler instead of the listener addEventListener("focus", (event) => {});
 onfocus = (event) => {
+	checkingBanner();
 	for (var i = 0; i < images.length; i++) {
 		images[i].title = "Click to expand";
 	}
@@ -426,7 +427,6 @@ onfocus = (event) => {
 	if (!target.endsWith("/#copyrights")) {
 		changeVisible();
 	}
-	checkingBanner();
 	checkAcceptCopyrights();
 	var backloader = document.getElementsByClassName("backloader")[0];
 	if (backloader) {
