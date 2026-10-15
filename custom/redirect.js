@@ -72,3 +72,11 @@ window.addEventListener("keydown",function (e) {
         e.preventDefault();
     }
 });
+
+// Set the cursor ASAP to "Wait"
+document.body.style.cursor = "wait";
+
+// When the window has finished loading, set it back to default...
+window.onload = function() {
+	document.body.style.cursor = "default";
+}

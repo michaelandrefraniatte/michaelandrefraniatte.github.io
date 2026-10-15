@@ -298,6 +298,7 @@ for (var i = 0; i < images.length; i++) {
 var modalaccept = document.getElementsByClassName("modalaccept")[0];
 
 $('a:not(.dl-link)').click(function (event) {
+	document.body.style.cursor = "wait";
 	event.preventDefault();
 	$('#main').removeClass('fadeIn');
 	$('#main').addClass('fade');
@@ -376,6 +377,7 @@ var numberofpages = document.querySelectorAll(".pagination").length;
 var pagenumber = 1;
 
 function goToPage(number) {
+	localStorage.setItem("page", number);
 	pagenumber = number;
 	var pagination = document.querySelectorAll(".pagination");
 	pagination.forEach((el) => {
@@ -402,6 +404,34 @@ function goToPage(number) {
 			setTimeout(() => {
 					el.style.display = "";
 			}, "1000");
+		}
+	});
+}
+
+// Go to last page viewed
+var getitempage = localStorage.getItem("page");
+if (getitempage != null & getitempage != "undefined") {
+	goToLastPage(getitempage);
+}
+else {
+	goToLastPage(1);
+}
+
+function goToLastPage(number) {
+	pagenumber = number;
+	var pagination = document.querySelectorAll(".pagination");
+	pagination.forEach((el) => {
+		if (el.dataset.id == pagenumber) {
+			el.innerText = "⬤";
+		}
+	});
+	var pages = document.querySelectorAll(".page");
+	pages.forEach((el) => {
+		if (el.dataset.id == pagenumber) {
+			el.style.display = "";
+		}
+		else {
+			el.style.display = "none";
 		}
 	});
 }
