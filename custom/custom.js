@@ -421,17 +421,21 @@ function goToLastPage(number) {
 	pagenumber = number;
 	var pagination = document.querySelectorAll(".pagination");
 	pagination.forEach((el) => {
-		if (el.dataset.id == pagenumber) {
-			el.innerText = "⬤";
+		if (el.hasAttribute("data-id")) {
+			if (el.dataset.id == pagenumber) {
+				el.innerText = "⬤";
+			}
 		}
 	});
 	var pages = document.querySelectorAll(".page");
 	pages.forEach((el) => {
-		if (el.dataset.id == pagenumber) {
-			el.style.display = "";
-		}
-		else {
-			el.style.display = "none";
+		if (el.hasAttribute("data-id")) {
+			if (el.dataset.id == pagenumber) {
+				el.style.display = "";
+			}
+			else {
+				el.style.display = "none";
+			}
 		}
 	});
 }
