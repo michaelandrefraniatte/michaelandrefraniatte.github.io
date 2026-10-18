@@ -735,6 +735,10 @@
                 your script from the cmd prompt command opening when you build it, Visual Studio 2026 (aka 18) is required because it need MSBuild installed, and 
                 also you need to create the csproj file, with same name of your script to build, under the dedicated folder (it contain the name of the project file 
                 and the libraries needed to change manually).</li>
+            <li><b><u>Drift:</u></b> At run of a script, it init sticks and accelerometer and center absolute gyro. You can init and center at anytime assignating a 
+                button for it by yourself. For perfect absolute gyro, you have to increase magnitude to avoid drift and decrease time to avoid discenter when you move 
+                depending of the polling rate of your controller, as examples a frequence of 250 Hz is a time of 4 and a frequence of 1000 Hz is a time of 1, but 
+                never set a time of 0.</li>
         </ul>
         <br>
         <br>
